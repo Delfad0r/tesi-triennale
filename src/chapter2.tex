@@ -1,0 +1,38 @@
+\chapter{Omologia e coomologia degli spazi fibrati}
+
+\section{Omologia singolare cubica}
+
+L'omologia singolare classica utilizza i simplessi singolari come oggetti fondamentali. Per la teoria degli spazi fibrati dovremo introdurre la nozione di omologia singolare cubica, che impiega cubi in luogo dei simplessi. Come è lecito aspettarsi, i cubi si prestano meglio allo studio degli spazi prodotto, e anche a quello degli spazi fibrati che, come vedremo, ne sono una generalizzazione.
+
+Nel seguito indicheremo con $I$ l'intervallo $[0,1]$ con l'usuale topologia euclidea. Sia inoltre $X$ uno spazio topologico.
+
+\begin{definition}
+Sia $n\in\NN$. Si dice cubo singolare (o più semplicemente cubo) di dimensione $n$ un'applicazione continua $\map{u}{I^n}{X}$. Un cubo di dimensione $n\ge 1$ si dice degenere se non dipende dall'ultima coordinata, ossia se $u(x_1,\ldots,x_{n-1},x_n)=u(x_1,\ldots,x_{n-1},x_n')$ per ogni $x_1,\ldots,x_n,x_n'\in I$.
+\end{definition}
+
+Denotiamo con $Q_n(X)$ il gruppo abeliano libero avente per base l'insieme dei cubi singolari di dimensione $n$, con $D_n$ il gruppo abeliano libero avente per base l'insieme dei cubi degeneri di dimensione $n$. Per definire il complesso $Q_\bullet(X)$ è necessario costruire mappe di bordo $\map{d_n}{Q_n(X)}{Q_{n-1}(X)}$.
+
+Sia $u$ un cubo di dimensione $n$, $p,q\in\NN$ con $p+q=n$, $H$ un sottoinsieme di $\{1,\ldots,n\}$ di cardinalità $p$, $K$ il complementare di $H$, $\varphi_K$ l'unica applicazione strettamente crescente da $K$ in $\{1,\ldots,q\}$; sia inoltre $\epsilon\in\{0,1\}$. Definiamo allora il cubo singolare $\lambda^\epsilon_Hu$ di dimensione $q$:
+$$
+\lambda^\epsilon_Hu(x_1,\ldots,x_n)=u(y_1,\ldots,y_n)\qquad\text{, dove }y_i=\begin{cases}\epsilon&\text{se $i\in H$}\\x_{\varphi_K(i)}&\text{se $i\in K$}\end{cases}.
+$$
+Per snellire la notazione, se $H=\{i\}$ (ossia se $p=1$), scriviamo $\lambda^\epsilon_i$ in luogo di $\lambda^\epsilon_{\{i\}}$. Dato un cubo $u$ di dimensione $n$, definiamo dunque
+$$
+d_nu=\sum_{i=0}^n(\lambda^0_iu-\lambda^1_iu),
+$$
+estendendola per $\ZZ$-linearità a tutto $Q_n(X)$. È immediato verificare che $\lambda^\epsilon_i\lambda^{\epsilon'}_j=\lambda^{\epsilon'}_{j-1}\lambda^\epsilon_i$; un semplice conto mostra allora che $d_nd_{n+1}=0$. Abbiamo così definito il complesso $Q_\bullet(X)$. Si vede inoltre che $D_\bullet(X)$ è un sottocomplesso di $Q_\bullet(X)$: se $u$ è un cubo degenere di dimensione $n$, allora anche $\lambda^\epsilon_iu$ è degenere per $0\le i<n$, mentre $\lambda^0_nu=\lambda^1_nu$, pertanto $du$ è degenere.
+\begin{definition}
+Si dice complesso singolare (cubico) di $X$ il complesso $C_\bullet(X)=Q_\bullet(X)/D_\bullet(X)$. I suoi gruppi di omologia e coomologia a coefficienti in un gruppo abeliano $G$ si dicono gruppi di omologia e coomologia singolare (cubica) di $X$ a coefficienti in $G$.
+\end{definition}
+Poiché nel seguito faremo uso esclusivamente dell'omologia singolare cubica, impiegheremo le notazioni classiche dell'omologia singolare: 
+\begin{align*}
+C_\bullet(X;G)&=C_\bullet(X)\tensor G\\
+H_n(X;G)&=H_n(C_\bullet(X;G))\\
+C^\bullet(X;G)&=\Hom(C_\bullet,G)\\
+H^n(X;G)&=H^n(C^\bullet(X;G)).
+\end{align*}
+Sia inoltre $H^*(X;G)=\Dirsum_{n\ge 0}H^n(X;G)$. Esattamente come nel caso della teoria singolare classica, se $G$ è un anello, $H^*(X;G)$ acquisisce una struttura di anello graduato. Si definisce il \cupproduct come segue: se $u$ è un cubo di dimensione $p+q$ e $f,g$ sono cocatene di dimensione $p,q$ rispettivamente, allora
+$$
+(f\cupp g)u=\sum_H\rho_{H,K}f(\lambda^0_Ku)\cdot g(\lambda^1_Hu),
+$$
+dove $H$ varia fra i sottoinsiemi di $\{1,\ldots,p+q\}$ di cardinalità $p$, $K$ è il complementare di $H$ e $\rho_{H,K}=(-1)^\nu$ ($\nu$ indica il numero di coppie $(i,j)\in H\times K$ con $j<i$).

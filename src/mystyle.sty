@@ -1,0 +1,61 @@
+\ProvidesPackage{mystyle}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% References
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage{theoremref}
+
+% Prescript
+\usepackage{tensor}
+\newcommand{\pre}[2]{\tensor*[^{#1}]{#2}{}}
+
+% Theorem environments
+\theoremstyle{definition}
+\newtheorem{definition}{Definizione}[chapter]
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{proposition}[theorem]{Proposizione}
+\newtheorem{corollary}[theorem]{Corollario}
+
+% Operators
+\newcommand*{\Dirsum}{\bigoplus}
+\renewcommand*{\tensor}{\mathbin{\otimes}}
+\newcommand*{\cupp}{\smile}
+
+% Letters
+\newcommand*{\NN}{\mathbb{N}}
+\newcommand*{\ZZ}{\mathbb{Z}}
+
+% Sets
+\newcommand*{\subs}{\subseteq}
+
+% Maps
+\newcommand*{\map}[3]{#1\colon#2\to#3}
+\newcommand*{\Map}[5]{%
+\begin{align*}
+#1:#2&\longrightarrow#3\\
+#4&\longmapsto#5
+\end{align*}
+}
+
+% Mysterious terms
+\newcommand*{\cupproduct}{prodotto cup}
+
+% DeclareMathOperator
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Hom}{Hom}
