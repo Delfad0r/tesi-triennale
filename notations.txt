@@ -1,2 +1,3 @@
 N: numeri naturali (interi >= 0)
 Z: numeri interi
+I: [0,1]

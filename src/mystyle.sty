@@ -9,6 +9,11 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 
+% Diagrams
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\newenvironment*{diagram}[1][]{$$\begin{tikzcd}[#1]}{\end{tikzcd}$$}
+
 % References
 \usepackage{hyperref}
 \hypersetup{
@@ -22,7 +27,8 @@
 
 % Prescript
 \usepackage{tensor}
-\newcommand{\pre}[2]{\tensor*[^{#1}]{#2}{}}
+\let\oldtensor\tensor
+\newcommand*{\pre}[2]{\oldtensor*[^{#1}]{#2}{}}
 
 % Theorem environments
 \theoremstyle{definition}
@@ -31,11 +37,13 @@
 \newtheorem{theorem}{Teorema}[chapter]
 \newtheorem{proposition}[theorem]{Proposizione}
 \newtheorem{corollary}[theorem]{Corollario}
+\newtheorem{lemma}[theorem]{Lemma}
 
 % Operators
+\newcommand*{\dirsum}{\mathbin{\oplus}}
 \newcommand*{\Dirsum}{\bigoplus}
 \renewcommand*{\tensor}{\mathbin{\otimes}}
-\newcommand*{\cupp}{\smile}
+\newcommand*{\cupp}{\mathbin{\smile}}
 
 % Letters
 \newcommand*{\NN}{\mathbb{N}}
@@ -54,8 +62,11 @@
 }
 
 % Mysterious terms
+\newcommand*{\missing}{$\blacksquare$}
+\newcommand*{\mistery}{\textbf{(?)}}
 \newcommand*{\cupproduct}{prodotto cup}
 
 % DeclareMathOperator
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Tor}{Tor}

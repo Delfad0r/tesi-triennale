@@ -1,0 +1,67 @@
+\chapter{Gruppi di omotopia delle sfere}
+
+\section{Metodo generale}
+
+\begin{definition}
+Uno spazio topologico $X$ si dice uniformemente localmente contrattile (ULC) se esiste un intorno $U$ della diagonale $\Delta\subs X\times X$ tale che le due applicazioni da $U$ in $X$ definite rispettivamente da $(x,y)\mapsto x$ e $(x,y)\mapsto y$ sono omotope mediante un'omotopia che fissa $\Delta$.
+\end{definition}
+
+Si può mostrare che, se $X$ è connesso per archi e ULC, allora $X$ ammette un rivestimento universale ULC; inoltre, se $X$ è ULC, allora anche $\Omega X$ (lo spazio dei cammini chiusi su $X$) è ULC.
+
+Sia $X$ uno spazio connesso per archi ULC. Definiamo ricorsivamente:
+\begin{itemize}
+\item $X_0=X$;
+\item $T_{n+1}$ è il rivestimento universale di $X_n$ per $n\ge 0$;
+\item $X_n=\Omega T_n$ per $n\ge 1$.
+\end{itemize}
+Osserviamo che si tratta di buone definizioni: $X_0$ è connesso per archi e ULC, dunque $T_0$ è ULC; inoltre $T_0$ è semplicemente connesso, pertanto $X_1$ è  connesso per archi e ULC, e la costruzione si può ripetere indefinitamente.
+
+Possiamo ora ricavare una relazione interessante fra i gruppi di omotopia di $X$ e i gruppi di omologia di $X_n$.
+
+\begin{proposition}\thlabel{homotopy-groups-of-x-n}
+Per ogni $n\ge 0,i\ge 1$ vale $\pi_i(X_n)=\pi_{i+n}(X)$.
+\end{proposition}
+\begin{proof}
+La relazione è banalmente vera per $n=0$. Ragionando per induzione, possiamo supporre che sia vera per $n-1$. Poiché $T_n$ è il rivestimento universale di $X_{n-1}$, vale $\pi_1(T_n)=0$ e $\pi_i(T_n)=\pi_i(X_{n-1})=\pi_{i+n-1}(X)$ per $i\ge 2$. Consideriamo la fibrazione $X_n\rightarrow E_{x,T_n}\rightarrow T_n$ e la successione esatta lunga dei gruppi di omotopia
+\begin{diagram}
+\pi_{i+1}(E_{x,T_n})\rar&\pi_{i+1}(T_n)\rar&\pi_i(X_n)\rar&\pi_i(E_{x,T_n})
+\end{diagram}
+Ma $E_{x,T_n}$ è contrattile, pertanto per ogni $i\ge 1$ vale $\pi_i(X_n)=\pi_{i+1}(T_n)=\pi_{i+n}(X)$.
+\end{proof}
+\begin{corollary}\thlabel{homotopy-groups-homology-groups}
+Per ogni $n\ge 1$ vale $H_1(X_n)=\pi_{n+1}(X)$.
+\end{corollary}
+\begin{proof}
+Sappiamo che $\pi_1(X_n)=\pi_n(X)$; in particolare $\pi_1(X_n)$ è abeliano. Per il teorema di Hurewicz, $\pi_1(X_n)=H_1(X_n)$.
+\end{proof}
+Osserviamo che, per $n\ge 1$, $X_n$ è un H-spazio, dunque il suo gruppo fondamentale, ossia $\pi_{n+1}(X)$, agisce banalmente sui gruppi di omologia e coomologia di $T_n$ (\missing{}).
+
+\begin{proposition}\thlabel{homotopy-groups-finitely-generated}
+Supponiamo che $X$ sia semplicemente connesso, e che i gruppi $H_i(X)$ siano finitamente generati per ogni $i\ge 0$. Allora i gruppi $\pi_i(X)$ sono finitamente generati per ogni $i\ge 0$.
+\end{proposition}
+\begin{proof}
+Per il \thref{homotopy-groups-homology-groups} è sufficiente mostrare che i gruppi di omologia di $X_n$ e di $T_n$ sono finitamente generati per ogni $n\ge 0$. Ciò è sicuramente vero per $X_0$ per ipotesi e per $T_1$ poiché $T_1=X_0$. Inoltre da \missing{} segue che anche i gruppi di omologia di $X_1$ sono fintamente generati. Ragioniamo ora per induzione, supponendo di aver dimostrato che i gruppi di omologia di $T_{n-1}$ e $X_{n-1}$ sono finitamente generati. Sia $\pi=\pi_1(X_{n-1})$. Consideriamo la successione spettrale $E^{p,q}_r$ associata al rivestimento $T_n\rightarrow X_{n-1}$ data da \missing{}. Vale $E^{p,q}_2=H_p(\pi;H_q(T_n))$, e $E_\infty$ è il gruppo graduato associato a $H(X_{n-1})$. Poiché $\pi$ agisce banalmente su $H_q(T_n)$, per il teorema dei coefficienti universali vale
+$$
+E^{p,q}_2=(H_p(\pi)\tensor H_q(T_n))\dirsum\Tor(H_{p-1}(\pi),H_q(T_n)).
+$$
+I gruppi di omologia di $X_{n-1}$ sono finitamente generati per ipotesi induttiva, e $\pi$ è finitamente generato poiché $\pi=H_1(X_{n-1})$. \mistery{} % Vedi corollario 1, pag. 500
+Ripetendo il ragionamento di \missing{} si ottiene che i gruppi di omologia di $T_n$ sono finitamente generati. Applicando di nuovo \missing{} troviamo che anche i gruppi di omologia di $X_n$ sono finitamente generati.
+\end{proof}
+
+\begin{proposition}\thlabel{homotopy-groups-tensor-k}
+Supponiamo che $X$ sia semplicemente connesso, e che i gruppi $H_i(X)$ siano finitamente generati per ogni $i\ge 0$. Sia $K$ un campo. Supponiamo inoltre che $H_i(X;K)=0$ per $0<i<n$. Allora $\pi_i(X)\tensor K=H_i(X;K)$ per $2\le i\le n$.
+\end{proposition}
+\begin{proof}
+Dimostriamo inizialmente il seguente fatto: dati $i>0,j\le n-i$ vale $H_i(X_j;K)=H_{i+j}(X;K)$.
+Mostriamolo per induzione su $j$. Per $j=0$ la tesi è ovvia. Sia ora $j\ge 1$. Abbiamo $\pi_1(X_{j-1})\tensor K=H_1(X_{j-1})\tensor K=H_1(X_{j-1};K)=0$. $\pi_1(X_{j-1})=\pi_j(X)$ è un gruppo abeliano finitamente generato, dunque è in realtà finito, e il suo ordine è coprimo con la caratteristica di $K$. Per \missing{} vale $H_i(T_j;K)=H_i(X_{j-1};K)$ per ogni $i\ge 0$. Per concludere è sufficiente ricordare che $X_j=\Omega T_j$ è applicare \missing{}.
+
+La tesi della proposizione segue ora banalmente. Se $2\le i\le n$ vale
+$$
+\pi_i(X)\tensor K=H_1(X_{i-1})\tensor K=H_i(X)\tensor K=H_i(X;K).
+$$
+\end{proof}
+
+\section{Sfere di dimensione dispari}
+\begin{lemma}
+Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso, $\Omega=\Omega X$; sia inoltre $K$ un campo. Supponiamo che $H^*(X;K)$ sia isomorfa a un'algebra di polinomi $K[u]$ generata da un elemento $u$ di grado $n\ge 2$ pari. Allora $H^*(\Omega;K)$ è isomorfa a un'algebra esterna generata da un elemento $v$ di grado $n-1$.
+\end{lemma}
