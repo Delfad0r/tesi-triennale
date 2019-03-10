@@ -22,7 +22,7 @@ Possiamo ora ricavare una relazione interessante fra i gruppi di omotopia di $X$
 Per ogni $n\ge 0,i\ge 1$ vale $\pi_i(X_n)=\pi_{i+n}(X)$.
 \end{proposition}
 \begin{proof}
-La relazione è banalmente vera per $n=0$. Ragionando per induzione, possiamo supporre che sia vera per $n-1$. Poiché $T_n$ è il rivestimento universale di $X_{n-1}$, vale $\pi_1(T_n)=0$ e $\pi_i(T_n)=\pi_i(X_{n-1})=\pi_{i+n-1}(X)$ per $i\ge 2$. Consideriamo la fibrazione $X_n\rightarrow E_{x,T_n}\rightarrow T_n$ e la successione esatta lunga dei gruppi di omotopia
+La relazione è banalmente vera per $n=0$. Ragionando per induzione, possiamo supporre che sia vera per $n-1$. Poiché $T_n$ è il rivestimento universale di $X_{n-1}$, vale $\pi_1(T_n)=0$ e $\pi_i(T_n)=\pi_i(X_{n-1})=\pi_{i+n-1}(X)$ per $i\ge 2$. Consideriamo la fibrazione $X_n\to E_{x,T_n}\to T_n$ e la successione esatta lunga dei gruppi di omotopia
 \begin{diagram}
 \pi_{i+1}(E_{x,T_n})\rar&\pi_{i+1}(T_n)\rar&\pi_i(X_n)\rar&\pi_i(E_{x,T_n})
 \end{diagram}
@@ -40,7 +40,7 @@ Osserviamo che, per $n\ge 1$, $X_n$ è un H-spazio, dunque il suo gruppo fondame
 Supponiamo che $X$ sia semplicemente connesso, e che i gruppi $H_i(X)$ siano finitamente generati per ogni $i\ge 0$. Allora i gruppi $\pi_i(X)$ sono finitamente generati per ogni $i\ge 0$.
 \end{proposition}
 \begin{proof}
-Per il \thref{homotopy-groups-homology-groups} è sufficiente mostrare che i gruppi di omologia di $X_n$ e di $T_n$ sono finitamente generati per ogni $n\ge 0$. Ciò è sicuramente vero per $X_0$ per ipotesi e per $T_1$ poiché $T_1=X_0$. Inoltre da \missing{} segue che anche i gruppi di omologia di $X_1$ sono fintamente generati. Ragioniamo ora per induzione, supponendo di aver dimostrato che i gruppi di omologia di $T_{n-1}$ e $X_{n-1}$ sono finitamente generati. Sia $\pi=\pi_1(X_{n-1})$. Consideriamo la successione spettrale $E^{p,q}_r$ associata al rivestimento $T_n\rightarrow X_{n-1}$ data da \missing{}. Vale $E^{p,q}_2=H_p(\pi;H_q(T_n))$, e $E_\infty$ è il gruppo graduato associato a $H(X_{n-1})$. Poiché $\pi$ agisce banalmente su $H_q(T_n)$, per il teorema dei coefficienti universali vale
+Per il \thref{homotopy-groups-homology-groups} è sufficiente mostrare che i gruppi di omologia di $X_n$ e di $T_n$ sono finitamente generati per ogni $n\ge 0$. Ciò è sicuramente vero per $X_0$ per ipotesi e per $T_1$ poiché $T_1=X_0$. Inoltre da \missing{} segue che anche i gruppi di omologia di $X_1$ sono fintamente generati. Ragioniamo ora per induzione, supponendo di aver dimostrato che i gruppi di omologia di $T_{n-1}$ e $X_{n-1}$ sono finitamente generati. Sia $\pi=\pi_1(X_{n-1})$. Consideriamo la successione spettrale $E^{p,q}_r$ associata al rivestimento $T_n\to X_{n-1}$ data da \missing{}. Vale $E^{p,q}_2=H_p(\pi;H_q(T_n))$, e $E_\infty$ è il gruppo graduato associato a $H(X_{n-1})$. Poiché $\pi$ agisce banalmente su $H_q(T_n)$, per il teorema dei coefficienti universali vale
 $$
 E^{p,q}_2=(H_p(\pi)\tensor H_q(T_n))\dirsum\Tor(H_{p-1}(\pi),H_q(T_n)).
 $$
@@ -62,6 +62,12 @@ $$
 \end{proof}
 
 \section{Sfere di dimensione dispari}
-\begin{lemma}
+\begin{lemma}\thlabel{cohomology-of-omega-of-space-with-polynomyal-cohomology}
 Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso, $\Omega=\Omega X$; sia inoltre $K$ un campo. Supponiamo che $H^*(X;K)$ sia isomorfa a un'algebra di polinomi $K[u]$ generata da un elemento $u$ di grado $n\ge 2$ pari. Allora $H^*(\Omega;K)$ è isomorfa a un'algebra esterna generata da un elemento $v$ di grado $n-1$.
 \end{lemma}
+\begin{proof}
+
+\end{proof}
+\begin{proposition}\thlabel{homotopy-groups-of-odd-sphere-finite}
+Per ogni $n$ dispari e per ogni $i>n$, il gruppo $\pi_i(S^n)$ è finito.
+\end{proposition}
