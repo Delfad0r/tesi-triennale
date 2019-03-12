@@ -22,7 +22,7 @@ Possiamo ora ricavare una relazione interessante fra i gruppi di omotopia di $X$
 Per ogni $n\ge 0,i\ge 1$ vale $\pi_i(X_n)=\pi_{i+n}(X)$.
 \end{proposition}
 \begin{proof}
-La relazione è banalmente vera per $n=0$. Ragionando per induzione, possiamo supporre che sia vera per $n-1$. Poiché $T_n$ è il rivestimento universale di $X_{n-1}$, vale $\pi_1(T_n)=0$ e $\pi_i(T_n)=\pi_i(X_{n-1})=\pi_{i+n-1}(X)$ per $i\ge 2$. Consideriamo la fibrazione $X_n\to E_{x,T_n}\to T_n$ e la successione esatta lunga dei gruppi di omotopia
+La relazione è banalmente vera per $n=0$. Ragionando per induzione, possiamo supporre che sia vera per $n-1$. Poiché $T_n$ è il rivestimento universale di $X_{n-1}$, vale $\pi_1(T_n)=0$ e $\pi_i(T_n)=\pi_i(X_{n-1})=\pi_{i+n-1}(X)$ per $i\ge 2$. Consideriamo la fibrazione $X_n\to E_{x,T_n}\to T_n$\todo{Introdurre questa notazione} e la successione esatta lunga dei gruppi di omotopia
 \begin{diagram}
 \pi_{i+1}(E_{x,T_n})\rar&\pi_{i+1}(T_n)\rar&\pi_i(X_n)\rar&\pi_i(E_{x,T_n})
 \end{diagram}
@@ -34,13 +34,13 @@ Per ogni $n\ge 1$ vale $H_1(X_n)=\pi_{n+1}(X)$.
 \begin{proof}
 Sappiamo che $\pi_1(X_n)=\pi_n(X)$; in particolare $\pi_1(X_n)$ è abeliano. Per il teorema di Hurewicz, $\pi_1(X_n)=H_1(X_n)$.
 \end{proof}
-Osserviamo che, per $n\ge 1$, $X_n$ è un H-spazio, dunque il suo gruppo fondamentale, ossia $\pi_{n+1}(X)$, agisce banalmente sui gruppi di omologia e coomologia di $T_n$ (\missing{}).
+Osserviamo che, per $n\ge 1$, $X_n$ è un H-spazio, dunque il suo gruppo fondamentale, ossia $\pi_{n+1}(X)$, agisce banalmente sui gruppi di omologia e coomologia di $T_n$ (\thref{h-space-trivial-action}).
 
 \begin{proposition}\thlabel{homotopy-groups-finitely-generated}
 Supponiamo che $X$ sia semplicemente connesso, e che i gruppi $H_i(X)$ siano finitamente generati per ogni $i\ge 0$. Allora i gruppi $\pi_i(X)$ sono finitamente generati per ogni $i\ge 0$.
 \end{proposition}
 \begin{proof}
-Per il \thref{homotopy-groups-homology-groups} è sufficiente mostrare che i gruppi di omologia di $X_n$ e di $T_n$ sono finitamente generati per ogni $n\ge 0$. Ciò è sicuramente vero per $X_0$ per ipotesi e per $T_1$ poiché $T_1=X_0$. Inoltre da \missing{} segue che anche i gruppi di omologia di $X_1$ sono fintamente generati. Ragioniamo ora per induzione, supponendo di aver dimostrato che i gruppi di omologia di $T_{n-1}$ e $X_{n-1}$ sono finitamente generati. Sia $\pi=\pi_1(X_{n-1})$. Consideriamo la successione spettrale $E^{p,q}_r$ associata al rivestimento $T_n\to X_{n-1}$ data da \missing{}. Vale $E^{p,q}_2=H_p(\pi;H_q(T_n))$, e $E_\infty$ è il gruppo graduato associato a $H(X_{n-1})$. Poiché $\pi$ agisce banalmente su $H_q(T_n)$, per il teorema dei coefficienti universali vale
+Per il \thref{homotopy-groups-homology-groups} è sufficiente mostrare che i gruppi di omologia di $X_n$ e di $T_n$ sono finitamente generati per ogni $n\ge 0$. Ciò è sicuramente vero per $X_0$ per ipotesi e per $T_1$ poiché $T_1=X_0$. Inoltre da \missing{} segue che anche i gruppi di omologia di $X_1$ sono fintamente generati. Ragioniamo ora per induzione, supponendo di aver dimostrato che i gruppi di omologia di $T_{n-1}$ e $X_{n-1}$ sono finitamente generati. Sia $\pi=\pi_1(X_{n-1})$. Consideriamo la successione spettrale $E^{p,q}_r$ associata al rivestimento $T_n\to X_{n-1}$ data da \missing{} (ricordiamo che $\pi$ agisce banalmente sui gruppi di omologia di $T_n$). Vale $E^{p,q}_2=H_p(\pi;H_q(T_n))$, e $E_\infty$ è il gruppo graduato associato a $H(X_{n-1})$. Dal il teorema dei coefficienti universali otteniamo
 $$
 E^{p,q}_2=(H_p(\pi)\tensor H_q(T_n))\dirsum\Tor(H_{p-1}(\pi),H_q(T_n)).
 $$
@@ -52,12 +52,16 @@ Ripetendo il ragionamento di \missing{} si ottiene che i gruppi di omologia di $
 Supponiamo che $X$ sia semplicemente connesso, e che i gruppi $H_i(X)$ siano finitamente generati per ogni $i\ge 0$. Sia $K$ un campo. Supponiamo inoltre che $H_i(X;K)=0$ per $0<i<n$. Allora $\pi_i(X)\tensor K=H_i(X;K)$ per $2\le i\le n$.
 \end{proposition}
 \begin{proof}
-Dimostriamo inizialmente il seguente fatto: dati $i>0,j\le n-i$ vale $H_i(X_j;K)=H_{i+j}(X;K)$.
-Mostriamolo per induzione su $j$. Per $j=0$ la tesi è ovvia. Sia ora $j\ge 1$. Abbiamo $\pi_1(X_{j-1})\tensor K=H_1(X_{j-1})\tensor K=H_1(X_{j-1};K)=0$. $\pi_1(X_{j-1})=\pi_j(X)$ è un gruppo abeliano finitamente generato, dunque è in realtà finito, e il suo ordine è coprimo con la caratteristica di $K$. Per \missing{} vale $H_i(T_j;K)=H_i(X_{j-1};K)$ per ogni $i\ge 0$. Per concludere è sufficiente ricordare che $X_j=\Omega T_j$ è applicare \missing{}.
-
-La tesi della proposizione segue ora banalmente. Se $2\le i\le n$ vale
+Dimostriamo inizialmente il seguente fatto: dati $i>0,0\le j\le n-i$ vale $H_i(X_j;K)=H_{i+j}(X;K)$.
+Mostriamolo per induzione su $j$. Per $j=0$ la tesi è ovvia. Sia ora $j\ge 1$. Abbiamo 
 $$
-\pi_i(X)\tensor K=H_1(X_{i-1})\tensor K=H_i(X)\tensor K=H_i(X;K).
+\pi_1(X_{j-1})\tensor K=H_1(X_{j-1})\tensor K=H_1(X_{j-1};K)=H_j(X;K)=0.
+$$
+Il gruppo abeliano $\pi_1(X_{j-1})$ è finitamente generato, dunque è in realtà finito, e il suo ordine è coprimo con la caratteristica di $K$. Per \missing{} vale $H_i(T_j;K)=H_i(X_{j-1};K)$ per ogni $i\ge 0$. Per concludere è sufficiente ricordare che $X_j=\Omega T_j$ e applicare \missing{}.
+
+La tesi della proposizione segue ora banalmente: se $2\le i\le n$ vale
+$$
+\pi_i(X)\tensor K=H_1(X_{i-1})\tensor K=H_1(X_{i-1};K)=H_i(X;K).
 $$
 \end{proof}
 
@@ -69,5 +73,5 @@ Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso, $\Ome
 
 \end{proof}
 \begin{proposition}\thlabel{homotopy-groups-of-odd-sphere-finite}
-Per ogni $n$ dispari e per ogni $i>n$, il gruppo $\pi_i(S^n)$ è finito.
+Per ogni $n\ge 3$ dispari e per ogni $i>n$, il gruppo $\pi_i(S^n)$ è finito.
 \end{proposition}

@@ -29,11 +29,91 @@ Poiché nel seguito faremo uso esclusivamente dell'omologia singolare cubica, im
 \begin{align*}
 C_\bullet(X;G)&=C_\bullet(X)\tensor G\\
 H_n(X;G)&=H_n(C_\bullet(X;G))\\
-C^\bullet(X;G)&=\Hom(C_\bullet,G)\\
+C^\bullet(X;G)&=\Hom(C_\bullet(X),G)\\
 H^n(X;G)&=H^n(C^\bullet(X;G)).
 \end{align*}
-Sia inoltre $H^*(X;G)=\Dirsum_{n\ge 0}H^n(X;G)$. Esattamente come nel caso della teoria singolare classica, se $G$ è un anello, $H^*(X;G)$ acquisisce una struttura di anello graduato. Si definisce il \cupproduct{} come segue: se $u$ è un cubo di dimensione $p+q$ e $f,g$ sono cocatene di dimensione $p,q$ rispettivamente, allora
+Osserviamo che $C^n(X;G)$ può essere interpretato come il gruppo delle funzioni $\map{f}{C_n(X)}{G}$ nulle sui cubi degeneri.
+
+Siano inoltre $H(X;G)=\Dirsum_{n\ge 0}H_n(X;G)$, $H^*(X;G)=\Dirsum_{n\ge 0}H^n(X;G)$. Esattamente come nel caso della teoria singolare classica, se $G$ è un anello, $H^*(X;G)$ acquisisce una struttura di anello graduato. Si definisce il \cupproduct{} come segue: se $u$ è un cubo di dimensione $p+q$ e $f,g$ sono cocatene di dimensione $p,q$ rispettivamente, allora
 $$
 (f\cupp g)u=\sum_H\rho_{H,K}f(\lambda^0_Ku)\cdot g(\lambda^1_Hu),
 $$
-dove $H$ varia fra i sottoinsiemi di $\{1,\ldots,p+q\}$ di cardinalità $p$, $K$ è il complementare di $H$ e $\rho_{H,K}=(-1)^\nu$ ($\nu$ indica il numero di coppie $(i,j)\in H\times K$ con $j<i$).
+dove $H$ varia fra i sottoinsiemi di $\{1,\ldots,p+q\}$ di cardinalità $p$, $K$ è il complementare di $H$ e $\rho_{H,K}=(-1)^\nu$ ($\nu$ indica il numero di coppie $(i,j)\in H\times K$ con $j<i$). Il \cupproduct{} è ben definito: poiché $f$ e $g$ sono nulle sui cubi degeneri, si vede anche $f\cupp g$ soddisfa la stessa proprietà (se $u$ è degenere, allora anche uno fra $\lambda^0_Ku$ e $\lambda^1_Hu$ lo è). Si verifica poi che $\cupp$ è associativo, e che
+$$
+d(f\cupp g)=df\cupp g+(-1)^pf\cupp dg,
+$$
+da cui segue che il \cupproduct{} passa al quoziente, definendo un prodotto in coomologia $\map{\cupp}{H^*(X;G)\times H^*(X;G)}{H^*(X;G)}$.
+
+Si può dimostrare che l'approccio dell'omologia cubica conduce ai medesimi risultati dell'omologia singolare classica.
+
+\begin{proposition}\thlabel{cubic-homology-isomorphic-classical-homology}
+Denotiamo con $H_\Delta(X;G),H^*_\Delta(X;G)$ l'omologia e la coomologia singolare standard. Allora $H(X;G)\iso H_\Delta(X;G)$ come gruppi graduati, e $H^*(X;G)\iso H_\Delta^*(X;G)$ come anelli graduati.
+\end{proposition}
+\begin{corollary}\thlabel{cohomology-ring-anticommutative}
+Siano $f,g\in H^*(X;G)$ rispettivamente di grado $p$ e $q$. Allora $f\cupp g=(-1)^{pq}g\cupp f$.
+\end{corollary}
+Studiando più esplicitamente l'isomorfismo fra l'omologia (e la coomologia) cubica e quella singolare classica si può dimostrare quanto segue.
+\begin{proposition}\thlabel{cubic-homology-single-vertex}
+Supponiamo che $X$ sia connesso per archi; sia $x\in X$ un punto fissato. Allora i gruppi di omologia e coomologia (cubica)  di $X$ rimangono inalterati se ci si limita a considerare cubi singolari aventi tutti i vertici in $x$.
+\end{proposition}
+
+\section{Spazi fibrati}
+\begin{definition}
+Un'applicazione continua suriettiva $\map{p}{E}{B}$ si dice fibrazione se soddisfa la seguente proprietà (sollevamento dell'omotopia per poliedri finiti): dati un poliedro finito $P$ e due applicazioni continue $\map{f}{I\times P}{B},\map{g}{P}{E}$ tali che $pg=fi$ (dove $i$ denota l'inclusione $\map{i}{P}{I\times P}$ definita da $i(x)=(0,x)$), esiste un'applicazione continua $\map{h}{I\times P}{E}$ tale che $ph=f$ e $hi=g$.
+\begin{diagram}
+P\rar{g}\dar{i}&E\dar{p}\\
+I\times P\rar{f}\ar[ru,dashed,"h"]&B
+\end{diagram}
+\end{definition}
+Se $\map{p}{E}{B}$ è una fibrazione, chiameremo $E$ spazio totale e $B$ spazio base.
+In realtà il sollevamento dell'omotopia per poliedri finiti implica una proprietà più forte.
+\begin{proposition}\thlabel{homotopy-lifting-plus}
+Sia $\map{p}{E}{B}$ una fibrazione, $A\subs X$ due poliedri finiti; indichiamo con $\map{i}{A}{X}$ l'inclusione. Siano $\map{f}{X}{B},\map{g}{A}{E}$ applicazioni continue tali che $pg=fi$. Allora esiste un'applicazione continua $\map{h}{X}{E}$ tale che $ph=f$ e $hi=g$.
+\begin{diagram}
+A\rar{g}\dar{i}&E\dar{p}\\
+X\rar{f}\ar[ru,dashed,"h"]&B
+\end{diagram}
+\end{proposition}
+\begin{proof}
+\begin{lemma}
+La proposizione è vera se $X=A\times I^n$ per un qualche $n\ge 0$ e $i(x)=(x,0)$.
+\end{lemma}
+\begin{proof}
+
+\end{proof}
+\end{proof}
+\begin{proposition}\thlabel{fibration-homotopy-exact-sequence}
+Sia $\map{p}{E}{B}$ una fibrazione, $e\in E,b=p(e),F=p^{-1}(e)$.
+\begin{enumerate}
+\item La mappa $p$ induce un isomorfismo $\map{p_*}{\pi_i(E,F,e)}{\pi_i(B,b)}$ per ogni $i\ge 1$.
+\item Esiste una successione esatta lunga di gruppi
+\begin{diagram}
+\ldots\rar&\pi_{i+1}(E,e)\rar&\pi_{i+1}(B,b)\rar&\pi_i(F,e)\rar&\pi_i(E,e)\rar&\ldots\rar&\pi_1(E,e)\rar&\pi_1(B,b)
+\end{diagram}
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+
+\end{proof}
+
+\section{Un'ipotesi aggiuntiva}
+Sia $\map{p}{E}{B}$ una fibrazione, $e\in E,b=p(e),F=p^{-1}(e)$.
+\begin{proposition}\thlabel{fibration-path-connected-base-and-fiber}
+Supponiamo che $B$ e $F$ siano connesse per archi. Allora anche $E$ e tutte le altre fibre sono connesse per archi.
+\end{proposition}
+\begin{proof}
+
+\end{proof}
+D'ora in poi considereremo solo fibrazioni con spazio base e fibre connessi per archi. Per la \thref{cubic-homology-single-vertex} possiamo limitarci a considerare cubi con vertici in un singolo punto fissato nello studio dell'omologia e della coomologia. Nel seguito supporremo dunque implicitamente che i cubi in $F$ ed $E$ abbiano tutti i vertici in un punto fissato $e$, e che i cubi in $B$ abbiano tutti i vertici in $b=p(e)$.
+
+Ci proponiamo ora di mostrare come il gruppo fondamentale di $B$ agisca sui gruppi di omologia e coomologia di $F$.
+
+\begin{definition}
+Sia $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $C$ un'applicazione che a ogni cubo $u$ di dimensione $n$ di $F$ ne associa uno $Cu$ di dimensione $n+1$. $C$ si dice costruzione subordinata a $\gamma$ se soddisfa le seguenti proprietà per ogni cubo $u$ di dimensione $n$:
+\begin{enumerate}
+\item $\lambda^0_1 Cu=u$;
+\item $(p\circ Cu)(t,t_1,\ldots,t_n)=\gamma(t)$ per ogni $t_1,\ldots,t_n\in I$;
+\item $C\lambda^\epsilon_iu=\lambda^\epsilon_{i+1}Cu$ per $0\le i\le n,\epsilon\in\{0,1\}$;
+\item se $u$ è degenere, allora anche $Cu$ lo è.
+\end{enumerate}
+\end{definition}

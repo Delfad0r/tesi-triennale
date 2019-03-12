@@ -124,10 +124,10 @@ $$
 e ciò è reso possibile dal fatto che $(\{0\}\times I)\cup(I\times\{0\})\cup(I\times\{1\})$ è un retratto di $I\times I$.
 \end{proof}
 
-Notiamo che le fibre di $p$ sono spazi del tipo $E_{x,y}$, dunque sono tutte omotopicamente equivalenti a $\Omega X$. Possiamo allora applicare i risultati del \autoref{chapter-fibration} per ottenere quanto segue.
 \begin{proposition}
-Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso, $A,B\subs X$ due sottospazi connessi per archi; sia $\Omega=\Omega X$. Allora esiste una successione spettrale $E^{p,q}_r$ tale che $E^{p,q}_2=H_p(A\times B,H_q(\Omega))$, il cui gruppo terminale $E_\infty$ è isomorfo al gruppo graduato associato a una filtrazione di $H(E_{A,B})$.\todo{Eventualmente giustificare l'azione banale}
+Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso, $x\in X$; sia $\Omega=\Omega X$. Allora esiste una successione spettrale $E^{p,q}_r$ tale che $E^{p,q}_2=H_p(X,H_q(\Omega))$, il cui gruppo terminale $E_\infty$ è isomorfo al gruppo graduato associato a una filtrazione di $H(E_{x,X})$.
 \end{proposition}
+\begin{proof}
+Consideriamo la fibrazione $E_{x,X}\to X$ della \thref{path-space-fibration} (dove abbiamo identificato $\{x\}\times X$ con $X$). Le fibre sono spazi del tipo $E_{x,y}$, dunque omotopicamente equivalenti a $\Omega$. Poiché $X$ è semplicemente connesso, $\Omega$ è connesso per archi. Siamo dunque nelle condizioni di applicare \missing{}, da cui segue immediatamente la tesi.
+\end{proof}
 Naturalmente esiste la successione spettrale analoga in coomologia.
-
-Sarà particolarmente interessante studiare il caso in cui $A=\{x\}$. Sotto questa ipotesi, infatti, $E_{A,B}$ è contrattile, dunque ha omologia e coomologia banali.

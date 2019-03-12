@@ -1,0 +1,16 @@
+\chapter{Lemmi a caso}
+
+\todo{Rendere questo capitolo un po' più serio (o inglobarlo altrove)}
+
+\section{Primo lemma}
+\begin{proposition}\thlabel{finitely-generated-homology-groups}
+Sia $A$ un PID, $\fibration{F}{E}{B}$ una fibrazione. Supponiamo che tutti i gruppi di omologia di $E$ e di $B$ a coefficienti in $A$ siano $A$-moduli finitamente generati. Allora lo stesso vale per $F$.
+\end{proposition}
+\begin{proof}
+Sia $E^{p,q}_r$ la successione spettrale associata alla fibrazione. Mostriamo per induzione su $i$ che $H_i(F;A)$ è un $A$-modulo finitamente generato. Per $i=0$ è ovvio, essendo $F$ connesso per archi. Sia ora $i>0$. Supponiamo per assurdo che $H_i(F;A)=E^{0,i}_2$ non sia finitamente generato. Allora nemmeno $E^{0,i}_3$ è finitamente generato: infatti $E^{0,i}_3$ è il quoziente di $E^{0,i}_2$ per l'immagine del differenziale $\map{d^{2,i-1}_2}{E^{2,i-1}_2}{E^{0,i}_2}$, la quale è finitamente generata in quanto
+$$
+E^{2,i-1}_2=(H_2(B;A)\tensor H_{i-1}(F;A))\dirsum\Tor(H_1(B;A),H_{i-1}(F;A))
+$$
+\todo{$\Tor$ di moduli f.g. è f.g.? Sì, se $A$ è PID}
+è finitamente generato per ipotesi induttiva. Procedendo allo stesso modo si trova che $E^{0,i}_r$ non è finitamente generato per alcun $r\ge 2$. Ma ciò è assurdo, poiché per $r$ sufficientemente grande $E^{0,i}_r=E^{0,i}_\infty$ è un sottomodulo del modulo graduato associato a $H_i(E;A)$, che è finitamente generato per ipotesi.
+\end{proof}
