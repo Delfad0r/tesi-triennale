@@ -32,7 +32,7 @@ H_n(X;G)&=H_n(C_\bullet(X;G))\\
 C^\bullet(X;G)&=\Hom(C_\bullet(X),G)\\
 H^n(X;G)&=H^n(C^\bullet(X;G)).
 \end{align*}
-Osserviamo che $C^n(X;G)$ può essere interpretato come il gruppo delle funzioni $\map{f}{C_n(X)}{G}$ nulle sui cubi degeneri.
+Osserviamo che $C^n(X;G)$ può essere interpretato come il gruppo delle funzioni dai cubi di dimensione $n$ in $G$ che sono nulle sui cubi degeneri.
 
 Siano inoltre $H(X;G)=\Dirsum_{n\ge 0}H_n(X;G)$, $H^*(X;G)=\Dirsum_{n\ge 0}H^n(X;G)$. Esattamente come nel caso della teoria singolare classica, se $G$ è un anello, $H^*(X;G)$ acquisisce una struttura di anello graduato. Si definisce il \cupproduct{} come segue: se $u$ è un cubo di dimensione $p+q$ e $f,g$ sono cocatene di dimensione $p,q$ rispettivamente, allora
 $$
@@ -96,24 +96,64 @@ Sia $\map{p}{E}{B}$ una fibrazione, $e\in E,b=p(e),F=p^{-1}(e)$.
 
 \end{proof}
 
-\section{Un'ipotesi aggiuntiva}
-Sia $\map{p}{E}{B}$ una fibrazione, $e\in E,b=p(e),F=p^{-1}(e)$.
 \begin{proposition}\thlabel{fibration-path-connected-base-and-fiber}
-Supponiamo che $B$ e $F$ siano connesse per archi. Allora anche $E$ e tutte le altre fibre sono connesse per archi.
+Sia $\map{p}{E}{B}$ una fibrazione, $e\in E,b=p(e),F=p^{-1}(e)$. Supponiamo che $B$ e $F$ siano connesse per archi. Allora anche $E$ e tutte le altre fibre sono connesse per archi.
 \end{proposition}
 \begin{proof}
 
 \end{proof}
 D'ora in poi considereremo solo fibrazioni con spazio base e fibre connessi per archi. Per la \thref{cubic-homology-single-vertex} possiamo limitarci a considerare cubi con vertici in un singolo punto fissato nello studio dell'omologia e della coomologia. Nel seguito supporremo dunque implicitamente che i cubi in $F$ ed $E$ abbiano tutti i vertici in un punto fissato $e$, e che i cubi in $B$ abbiano tutti i vertici in $b=p(e)$.
 
+\section{Azione di $\pi_1(B)$ sull'omologia della fibra}
+
 Ci proponiamo ora di mostrare come il gruppo fondamentale di $B$ agisca sui gruppi di omologia e coomologia di $F$.
 
 \begin{definition}
-Sia $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $C$ un'applicazione che a ogni cubo $u$ di dimensione $n$ di $F$ ne associa uno $Cu$ di dimensione $n+1$. $C$ si dice costruzione subordinata a $\gamma$ se soddisfa le seguenti proprietà per ogni cubo $u$ di dimensione $n$:
+Sia $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ un'applicazione che a ogni cubo $u$ di dimensione $n$ di $F$ ne associa uno $Tu$ di dimensione $n+1$. $T$ si dice costruzione subordinata a $\gamma$ se soddisfa le seguenti proprietà per ogni cubo $u$ di dimensione $n$:
 \begin{enumerate}
-\item $\lambda^0_1 Cu=u$;
-\item $(p\circ Cu)(t,t_1,\ldots,t_n)=\gamma(t)$ per ogni $t_1,\ldots,t_n\in I$;
-\item $C\lambda^\epsilon_iu=\lambda^\epsilon_{i+1}Cu$ per $0\le i\le n,\epsilon\in\{0,1\}$;
-\item se $u$ è degenere, allora anche $Cu$ lo è.
+\item $\lambda^0_1 Tu=u$;
+\item $(p\circ Tu)(t,t_1,\ldots,t_n)=\gamma(t)$ per ogni $t_1,\ldots,t_n\in I$;
+\item $T\lambda^\epsilon_iu=\lambda^\epsilon_{i+1}Tu$ per $0\le i\le n,\epsilon\in\{0,1\}$;
+\item se $u$ è degenere, allora anche $Tu$ lo è.
 \end{enumerate}
 \end{definition}
+Ogni costruzione $T$ induce un morfismo di complessi $\map{S_T}{C_\bullet(F)}{C_\bullet(F)}$ definito da $(S_Tu)(t)=(Tu)(1,t)$. Le proprietà delle costruzioni garantiscono che $S_Tu$ è effettivamente un cubo di $F$, che cubi degeneri vengono mandati in cubi degeneri e che $S_T$ commuta con la mappa di bordo. A sua volta, $S_T$ induce endomorfismi dei gruppi di omologia e coomologia di $F$.
+\begin{proposition}\thlabel{subordinate-construction-homotopy-equivalence}
+Siano $\gamma_1,\gamma_2$ cammini chiusi in $B$ con estremi in $b$, $T_1,T_2$ costruzioni subordinate rispettivamente a $\gamma_1,\gamma_2$. Supponiamo che $\gamma_1,\gamma_2$ rappresentino lo stesso elemento del gruppo fondamentale. Allora i morfismi di complessi $S_{T_1}$ e $S_{T_2}$ sono omotopi.
+\end{proposition}
+\begin{proof}
+
+\end{proof}
+Si potrebbe dimostrare che per ogni cammino $\gamma$ esiste una costruzione subordinata a $\gamma$, e che l'applicazione $\pi_1(B,b)\to\Aut(H_n(F))$ è un omomorfismo di gruppi, ma non utilizzeremo questi risultati.\todo{Serre lo fa però.} 
+Ci limitiamo a dimostrare quanto segue.
+\begin{proposition}\thlabel{trivial-path-trivial-action}
+Sia $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ una costruzione subordinata a $\gamma$. Supponiamo che $\gamma$ sia omotopicamente banale. Allora $S_T$ induce l'identità in omologia e in coomologia.
+\end{proposition}
+\begin{proof}
+
+\end{proof}
+Motivati dalla proposizione precedente, ci limiteremo spesso a studiare fibrazioni in cui l'azione di $\pi_1(B)$ sui gruppi di omologia e coomologia di $F$ è banale (con questa espressione intendiamo che per ogni costruzione $T$ subordinata a un qualche cammino il morfismo $S_T$ induce l'identità in omologia e in coomologia).
+\begin{corollary}\thlabel{simply-connected-trivial-action}
+Se $B$ è semplicemente connesso, allora $\pi_1(B)$ agisce banalmente sui gruppi di omologia e coomologia di $F$.
+\end{corollary}
+
+\section{Successione spettrale di uno spazio fibrato}
+Per applicare i risultati di \missing{}, è necessario definire una filtrazione crescente sul complesso singolare $C_\bullet(E)$ (d'ora in poi ometteremo la $E$ dell'argomento). Ciò che faremo sarà filtrare il complesso $Q_\bullet$ con dei sottocomplessi $Q^p_\bullet$ e prenderne le immagini nel quoziente $C_\bullet$. Sia dunque $Q^p_n$ il sottogruppo di $Q_n$ generato dai cubi $u\in Q_n$ tali che $p\circ u$ dipende solo dalle prime $p$ coordinate (e $Q^p_n=Q_n$ se $p>n$). Si vede immediatamente che i $Q^p_\bullet$ sono sottocomplessi di $Q_\bullet$ e che soddisfano le proprietà di una filtrazione crescente. Dunque lo stesso vale per $C^p_\bullet=(Q^p_\bullet+D_\bullet)/D_\bullet$, che definiscono una filtrazione crescente per $C_\bullet$. Applicando \missing{} otteniamo una successione spettrale $E^{p,q}_r$ il cui gruppo terminale $E_\infty$ è isomorfo al gruppo graduato associato a una filtrazione di $H(E)$. Come vedremo, è possibile calcolare esplicitamente i termini $E^{p,q}_2$ della successione spettrale in funzione dei gruppi di omologia di $B$ e di $F$.
+
+Costruiamo due applicazioni $B^p$ e $F^p$ definite sui cubi di $Q^p_\bullet$. Se $u\in\ Q^p_n$ è un cubo di dimensione $n$ con $n\ge p$, posto $q=n-p$, definiamo
+\begin{align*}
+(B^pu)(t_1,\ldots,t_p)=pu(t_1,\ldots,t_p,0,\ldots,0);\\
+(F^pu)(t_1,\ldots,t_q)=u(0,\ldots,0,t_1,\ldots,t_q).
+\end{align*}
+$B^pu$ è un cubo di $B$ di dimensione $p$; notiamo che, poiché $u\in Q^p_n$, possiamo sostituire gli zeri nella definizione con qualunque altra $q$-upla di numeri fra $0$ e $1$. $F^pu$ è invece un cubo di $F$ di dimensione $q$; la sua immagine è contenuta in $F$ poiché
+$$
+p(F^pu)(t_1,\ldots,t_q)=pu(0,\ldots,0,t_1,\ldots,t_q)=pu(0,\ldots,0)=b.
+$$
+Le seguenti proprietà sono di verifica immediata.
+\begin{enumerate}
+\item Se $u\in Q^{p-1}_n$ allora $B^pu$ è degenere.
+\item Se $u$ è degenere e $q>0$ allora $F^pu$ è degenere; se $u$ è degenere e $q=0$ allora $B^pu$ è degenere.
+\item Se $i>p,\epsilon\in\{0,1\}$ allora $B^p\lambda^\epsilon_iu=B^pu$ e $F^p\lambda^\epsilon_iu=\lambda^\epsilon_{i-p}F^pu$.
+\end{enumerate}
+
+Ricordiamo che $E^{p,q}_0=C^p_{p+q}/C^{p-1}_{p+q}$ e che il differenziale $\map{d^{p,q}_0}{E^{p,q}_0}{E^{p,q-1}_0}$ si ottiene dalla mappa di bordo di $C_\bullet$ per passaggio al quoziente. 
