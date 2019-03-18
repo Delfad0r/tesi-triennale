@@ -21,7 +21,7 @@ Sia $A$ un PID, $\fibration{F}{E}{B}$ una fibrazione in cui $\pi_1(B)$ agisce ba
 \begin{enumerate}
 \item Esiste una successione esatta
 \begin{diagram}
-H_{p+q-1}(F;A)\rar&H_{p+q-1}(E;A)\rar&H_{p+q-1}(B;A)\rar&H_{p+q-2}(F;A)\rar&\ldots\rar&H_2(B;A)\rar&H_1(F;A)\rar&H_1(E;A)\rar&H_1(B;A)\rar&0.
+H_{p+q-1}(F;A)\rar&H_{p+q-1}(E;A)\rar&H_{p+q-1}(B;A)\rar{d_{p+q-1}}&H_{p+q-2}(F;A)\rar&\ldots\rar&H_2(B;A)\rar{d_2}&H_1(F;A)\rar&H_1(E;A)\rar&H_1(B;A)\rar&0
 \end{diagram}
 \item L'applicazione $\map{p_*}{H_i(E,F;A)}{H_i(B;A)}$ indotta da $p$ è un isomorfismo per $2\le i<p+q$ ed è suriettiva per $i=p+q$.
 \end{enumerate}
@@ -42,7 +42,7 @@ pertanto $p_\ast$ è suriettiva. Sia ora $2\le i<p+q$; consideriamo il diagramma
 H_i(F;A)\rar\dar{\1}&H_i(E;A)\rar\dar{1}&H_i(E,F;A)\rar\dar{p_\ast}&H_{i-1}(F;A)\rar\dar{\1}&H_{i-1}(E;A)\dar{\1}\\
 H_i(F;A)\rar&H_i(E;A)\rar&H_i(B;A)\rar&H_{i-1}(F;A)\rar&H_{i-1}(E;A)
 \end{diagram}
-La prima riga è la sequenza esatta lunga della coppia $(E,F)$, la seconda deriva dalla prima parte della proposizione, e la commutatività segue da \missing{}. La tesi segue allora dal lemma dei cinque.\todo{Rivedere dopo aver fatto il diagramma del capitolo 1.}
+La prima riga è la successione esatta lunga della coppia $(E,F)$, la seconda deriva dalla prima parte della proposizione ed è esatta, e la commutatività segue da \missing{}. La tesi segue allora dal lemma dei cinque.\todo{Rivedere dopo aver fatto il diagramma del capitolo 1.}
 \end{enumerate}
 \end{proof}
 Naturalmente vale un teorema analogo per i moduli di coomologia.
@@ -50,5 +50,38 @@ Naturalmente vale un teorema analogo per i moduli di coomologia.
 Supponiamo che $H_i(E;A)=0$ per ogni $i>0$ e che $H_i(B;A)=0$ per $0<i<p$. Allora la sospensione $\map{\Sigma}{H_i(F;A)}{H_{i+1}(B;A)}$ è un isomorfismo per $0<i<2p-2$ ed è suriettiva per $i=2p-2$.
 \end{corollary}
 \begin{proof}
-Dalla prima parte della \thref{fibration-homology-exact-sequence} (applicata con $q=1$) segue che $H_i(F;A)=0$ per $0<i<p-1$. Dalla seconda parte (applicata con $q=p-1$) segue immediatamente la tesi, ricordando che $\Sigma=p_\ast\circ\del^{-1}$ (dove $\map{\del}{H_{i+1}(E,F;A)}{H_i(F;A)}$ denota il morfismo di bordo).
+Dalla prima parte della \thref{fibration-homology-exact-sequence} (applicata con $q=1$) segue che $H_i(F;A)=0$ per $0<i<p-1$. Dalla seconda parte (applicata con $q=p-1$) segue immediatamente la tesi, ricordando che $\Sigma=p_\ast\del^{-1}$ (dove $\map{\del}{H_{i+1}(E,F;A)}{H_i(F;A)}$ denota il morfismo di bordo).
 \end{proof}
+Notiamo in particolare che, nelle ipotesi del corollario, $H_i(F;A)=0$ per $0<i<p-1$.
+\section{Successione esatta di Wang}
+\begin{proposition}\thlabel{wang-exact-sequence}
+Sia $A$ un PID, $\fibration{F}{E}{B}$ una fibrazione in cui $\pi_1(B)$ agisce banalmente sui moduli di coomologia di $F$. Supponiamo che $B$ abbia lo stesso anello di coomologia della sfera $S^k$ con $k\ge 2$ e che sia semplicemente connesso.  Allora esiste una successione esatta
+\begin{diagram}
+\ldots\rar&H^n(E;A)\rar&H^n(F;A)\rar{\theta}&H^{n-k+1}(F;A)\rar&H^{n+1}(E;A)\rar&\ldots
+\end{diagram}
+Inoltre $\theta$ è una derivazione se $k$ è dispari e un'antiderivazione se $k$ è pari, ossia
+$$
+\theta(x\cdot y)=\theta x\cdot y+(-1)^{(k+1)\deg x}x\cdot\theta y.
+$$
+\end{proposition}
+\begin{proof}
+Denotiamo con $E_r$ la successione spettrale in coomologia associata alla fibrazione. Per ipotesi $H^i(B;A)$ è un $A$-modulo libero finitamente generato per ogni $i$, dunque per \missing{} $E_2$ è isomorfo come $A$-algebra a $H^*(B;A)\tensor H^*(F;A)$. Pertanto, per ogni grado totale $n$, $E_2$ ha al più due termini $E^{i,j}_2$ non nulli, corrispondenti a $i=0$ e $i=k$. Applicando \missing{}\todo{Nella proposizione serve dire che la mappa è il differenziale.} otteniamo la successione esatta
+\begin{diagram}
+\ldots\rar&H^n(E;A)\rar&E^{0,n}_2\rar{d_k}&E^{k,n-k+1}_2\rar&H^{n+1}(E;A)\rar&\ldots
+\end{diagram}
+Ricordiamo che $E^{0,n}_2=H^n(F;A)$ e che
+$$
+E^{k,n-k+1}_2=H^k(B;A)\tensor H^{n-k+1}(F;A).
+$$
+Sia $s$ un generatore di $H^k(B;A)$; consideriamo l'isomorfismo
+\Map{g}{H^{n-k+1}(F;A)}{H^k(B;A)\tensor H^{n-k+1}(F;A)}{x}{s\tensor x}
+Posto $\theta=g^{-1}d_k$, otteniamo la successione esatta della tesi. Per mostrare la seconda parte, calcoliamo
+\begin{align*}
+d_k(x\cdot y)&=d_kx\cdot y+(-1)^{\deg x}x\cdot d_ky\\
+&=(s\tensor\theta x)\cdot(1\tensor y)+(-1)^{\deg x}(1\tensor x)\cdot (s\tensor\theta y)\\
+&=s\tensor(\theta x\cdot y+(-1)^{(k+1)\deg x}x\cdot\theta y),
+\end{align*}
+ma anche $d_k(x\cdot y)=s\tensor\theta(x\cdot y)$, da cui la tesi.\todo{Spiegare come funziona il prodotto (i segni in particolare).}
+\end{proof}
+
+Ripetendo la prima parte della dimostrazione, si vede facilmente che esiste una successione esatta duale in omologia.

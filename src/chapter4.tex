@@ -66,7 +66,7 @@ Mostriamo innanzitutto che $\ast$ è continuo. Grazie alla \thref{compact-open-t
 
 Mostriamo poi che l'applicazione
 \Map{\varphi_1}{\Omega_x}{\Omega_x}{f}{f\ast e}
-è omotopa all'identità su $\Omega_x$ (mediante un'omotopia che fissa $e$), dove $e$ è il cammino che vale costantemente $x$. È sufficiente considerare, per $s\in I$ e $f\in\Omega_x$, 
+è omotopa all'identità su $\Omega_x$ (mediante un'omotopia che fissa $e$), dove $e$ è il cammino che vale costantemente $x$ (è evidente che $e\ast e=e$). È sufficiente considerare, per $s\in I$ e $f\in\Omega_x$, 
 $$
 \varphi_s(f)(t)=
 \begin{cases}
@@ -125,9 +125,23 @@ e ciò è reso possibile dal fatto che $(\{0\}\times I)\cup(I\times\{0\})\cup(I\
 \end{proof}
 
 \begin{proposition}
-Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso, $x\in X$; sia $\Omega=\Omega X$. Allora esiste una successione spettrale $E^{p,q}_r$ tale che $E^{p,q}_2=H_p(X,H_q(\Omega))$, il cui gruppo terminale $E_\infty$ è isomorfo al gruppo graduato associato a una filtrazione di $H(E_{x,X})$.
+Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso, $x\in X$. Allora esiste una successione spettrale $E^{p,q}_r$ tale che $E^{p,q}_2=H_p(X,H_q(\Omega))$, il cui gruppo terminale $E_\infty$ è isomorfo al gruppo graduato associato a una filtrazione di $H(E_{x,X})$.
 \end{proposition}
 \begin{proof}
-Consideriamo la fibrazione $E_{x,X}\to X$ della \thref{path-space-fibration} (dove abbiamo identificato $\{x\}\times X$ con $X$). Le fibre sono spazi del tipo $E_{x,y}$, dunque omotopicamente equivalenti a $\Omega$. Poiché $X$ è semplicemente connesso, $\Omega$ è connesso per archi. Siamo dunque nelle condizioni di applicare \missing{}, da cui segue immediatamente la tesi.
+Consideriamo la fibrazione $E_{x,X}\to X$ della \thref{path-space-fibration} (dove abbiamo identificato $\{x\}\times X$ con $X$). Le fibre sono spazi del tipo $E_{x,y}$, dunque omotopicamente equivalenti a $\Omega$. Poiché $X$ è semplicemente connesso, $\Omega$ è connesso per archi, e inoltre l'azione di $\pi_1(X)$ sui gruppi di omologia di $\Omega$ è banale. Siamo dunque nelle condizioni di applicare \missing{}, da cui segue immediatamente la tesi.
 \end{proof}
-Naturalmente esiste la successione spettrale analoga in coomologia.
+Naturalmente esiste la successione spettrale duale in coomologia.
+
+\begin{proposition}\thlabel{loop-space-finitely-generated-homology}
+Siano $A$ un PID, $X$ uno spazio topologico connesso per archi e semplicemente connesso. Supponiamo che tutti i moduli di omologia di $X$ a coefficienti in $A$ siano finitamente generati. Allora vale lo stesso per $\Omega$.
+\end{proposition}
+\begin{proof}
+Sia $x\in X$ un punto. Poiché $E_{x,X}$ è contrattile, tutti i suoi moduli di omologia sono finitamente generati (in particolare $H_0(E_{x,X};A)=0$ e $H_i(E_{x,X};A)=A$ per $i>0$). Applicando la \thref{finitely-generated-homology-groups} alla fibrazione $\fibration{\Omega}{E_{x,X}}{X}$ si ottiene immediatamente la tesi.
+\end{proof}
+
+\begin{proposition}\thlabel{loop-space-suspension-isomorphism}
+Sia $A$ un PID, $X$ uno spazio topologico connesso per archi e semplicemente connesso. Supponiamo che $H_i(X;A)=0$ per $0<i<p$. Allora la sospensione $\map{\Sigma}{H_i(\Omega;A)}{H_{i+1}(X;A)}$ è un isomorfismo per $0<i<2p-2$ ed è suriettiva per $i=2p-2$.
+\end{proposition}
+\begin{proof}
+La tesi segue immediatamente dal \thref{fibration-suspension-isomorphism} applicato alla fibrazione $\fibration{\Omega}{E_{x,X}}{X}$, ricordando che $E_{x,X}$ è contrattile.
+\end{proof}
