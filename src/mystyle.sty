@@ -13,7 +13,7 @@
 % Diagrams
 \usepackage{tikz}
 \usepackage{tikz-cd}
-\newenvironment*{diagram}[1][]{$$\begin{tikzcd}[#1]}{\end{tikzcd}$$}
+\newenvironment*{diagram}[1][]{\begin{equation*}\begin{tikzcd}[#1]}{\end{tikzcd}\end{equation*}}
 
 % References
 \usepackage{hyperref}
@@ -57,6 +57,7 @@
 
 % Other aliases
 \newcommand*{\del}{\partial}
+\newcommand*{\converges}{\Rightarrow}
 
 % Maps
 \newcommand*{\map}[3]{#1\colon#2\to#3}

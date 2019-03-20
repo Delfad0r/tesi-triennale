@@ -1,95 +1,60 @@
 \chapter{Successioni spettrali}
-
-\section{Prime definizioni}
-
+\section{Definizioni}
 \begin{definition}
-Un gruppo abeliano $A$ si dice graduato se si scrive come somma diretta di sottogruppi
-$$
-A=\Dirsum_{n\in\NN}\pre{n}{A}.
-$$
-Gli elementi non nulli di $\pre{n}{A}$ si dicono omogenei di grado $n$. Se $x\in A\setminus0$ è omogeneo di grado $n$ scriviamo $\deg{x}=n$.
-\end{definition}
-\begin{definition}
-Sia $A$ un gruppo graduato. Un'applicazione $\map{d}{A}{A}$ si dice differenziale di grado $k$ se $dd=0$ e per ogni $n\in\NN$ vale $d(\pre{n}{A})\subs\pre{n+k}{A}$.
-\end{definition}
-A ogni gruppo graduato $A$ dotato di un differenziale $d$ di grado $-1$ è associato in modo naturale un complesso di gruppi abeliani $A_\bullet$ dove l'$n$-esimo gruppo è $\pre{n}{A}$ e le mappe di bordo sono $d_n=d|_{\pre{n}{A}}$. Possiamo allora definire i gruppi di omologia di $A$ riconducendoci al complesso associato: $H_n(A)=H_n(A_\bullet)$. In altri termini:
-$$
-H_n(A)=\frac{\ker d\cap\pre{n}{A}}{\im d\cap\pre{n}{A}}.
-$$
-\begin{definition}
-Sia $A$ un gruppo graduato dotato di un differenziale $d$ di grado $-1$. Si dice filtrazione crescente una successione di sottogruppi $A^p$ indicizzata da $p\in\NN$ che soddisfi le seguenti proprietà.
+Si dice successione spettrale (omologica) una famiglia di gruppi abeliani $E^{p,q}_r$ indicizzata da $p,q\in\ZZ,r\in\NN$ dotata di omomorfismi $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}_r}$ (detti mappe di bordo) che soddisfa le seguenti proprietà:
 \begin{enumerate}
-\item $\bigcup_{p\in\NN}A^p=A$.
-\item Per ogni $p$ vale $A^p\subs A^{p+1}$.
-\item Ogni $A^p$ è somma diretta delle sue componenti omogenee $\pre{n}{A}\cap A^p$.
-\item\label{filtering-degree-total-degree} Per ogni $n$ vale $\pre{n}{A}\subs A^n$.
-\item Ogni $A^p$ è stabile per $d$, ossia $d(A^p)\subs A^p$.
-\end{enumerate}
-\end{definition}
-In questa situazione, poniamo per comodità $A^p=0$ per $p < 0$ e $\pre{n}{A}=0$ per $n<0$. Definiamo inoltre, per ogni $r\in\ZZ$, i sottogruppi di $A^p$:
-\begin{itemize}
-\item $C^p_r=d^{-1}(A^{p-r})\cap A^p$;
-\item $B^p_r=d(A^{p+r})\cap A^p$;
-\item $C^p_\infty=d^{-1}(0)\cap A^p$;
-\item $B^p_\infty=d(A)\cap A^p$.
-\end{itemize}
-Valgono le seguenti relazioni di inclusione:
-$$
-\ldots\subs B^p_{r-1}\subs B^p_r\subs\ldots\subs B^p_\infty\subs C^p_\infty\subs\ldots\subs C^p_r\subs C^p_{r-1}\subs\ldots\subs C^p_0=A^p.
-$$
-È facile convincersi che questi sottogruppi sono ancora gruppi graduati, ossia si scrivono come somma diretta delle loro componenti omogenee (secondo il grado di A). Per motivi che risulteranno evidenti in seguito, conviene definire, per $p,q\in\ZZ$, $A^{p,q}=\pre{p+q}{A}\cap A^p$ (gli elementi omogenei di $A^p$ di grado $p+q$). Denotiamo con $C^{p,q}_r=C^p_r\cap A^{p,q}$ gli elementi omogenei di grado $p+q$ di $C^p_r$; definiamo analogamente $B^{p,q}_r,C^{p,q}_\infty,B^{p,q}_\infty$.
-
-Possiamo ora costruire la successione spettrale associata ad $A$. Dati $p,q\in\ZZ,r\in\NN$ definiamo
-$$
-E^{p,q}_r=\frac{C^{p,q}_r}{B^{p,q}_{r-1}+C^{p-1,q+1}_{r-1}}.
-$$
-In $E^{p,q}_r$, $p$ è detto grado filtrante, $q$ grado complementare, $p+q$ grado totale (quest'ultimo corrisponde al grado in $A$).
-Osserviamo che 
-\begin{align*}
-d(C^{p,q}_r)&=d(d^{-1}(A^{p-r})\cap A^{p,q})\\
-&\subs A^{p-r}\cap d(A^{p,q})\\
-&=A^{p-r,q+r-1}\cap d(A^p)\\
-&=B^{p-r,q+r-1}_r\\
-&\subs C^{p-r,q+r-1}_r
-\end{align*}
-e
-\begin{align*}
-d(B^{p,q}_{r-1}+C^{p-1,q+1}_{r-1})&=d(C^{p-1,q+1}_{r-1})\\
-&\subs B^{p-r,q+r-1}_{r-1}\\
-&\subs B^{p-r,q+r-1}_{r-1}+C^{p-r-1,q+r}_{r-1},
-\end{align*}
-dunque il differenziale $d$ passa al quoziente $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}_r}$. Come si vede immediatamente, il differenziale:
-\begin{itemize}
-\item diminuisce di $r$ il grado filtrante,
-\item aumenta di $r-1$ il grado complementare,
-\item diminuisce di $1$ il grado totale.
-\end{itemize}
-Per concludere, definiamo i gruppi terminali
-$$
-E^{p,q}_\infty=\frac{C^{p,q}_\infty}{B^{p,q}_\infty+C^{p-1,q+1}_\infty}.
-$$
-\begin{proposition}\thlabel{spectral-sequence-first-properties}
-La successione spettrale $E$ soddisfa le seguenti proprietà.
-\begin{enumerate}
+\item $E^{p,q}_r=0$ per $p<0$ o $q<0$;
+\item $d^{p-r,q+r-1}_r\circ d^{p,q}_r=0$;
 \item $E^{p,q}_{r+1}=\ker d^{p,q}_r/\im d^{p+r,q-r+1}_r$.
-\item $E^{p,q}_r=0$ per $p<0$ o $q<0$.
-\item Se $r>p$, allora $E^{p,q}_{r+1}$ è un quoziente di $E^{p,q}_r$.
-\item Se $r>q+1$, allora $E^{p,q}_{r+1}$ è un sottogruppo di $E^{p,q}_r$.
-\item $E^{p,q}_r=E^{p,q}_\infty$ per $r$ sufficientemente grande (in particolare, per $r>\max\{p,q+1\}$).
 \end{enumerate}
+\end{definition}
+\todo{Utile disegnino illustrativo e descrizione a parole.}
+Fissati $p,q\ge 0$, per $r$ sufficientemente grande (in particolare $r>p$ e $r>q+1$) i morfismi di bordo $d^{p,q}_r$ sono nulli, in quanto uno fra dominio e codominio è nullo, dunque $E^{p,q}_r$ è definitivamente uguale a un certo gruppo abeliano $E^{p,q}_\infty$.
+\begin{definition}
+Si dice che una successione spettrale $E^{p,q}_r$ converge a una famiglia di gruppi abeliani $H_n$ (e si scrive $E^{p,q}_r\converges H_{p+q}$) se esistono filtrazioni
+$$
+0=H^{-1}_n\subs H^0_n\subs H^1_n\subs\ldots\subs H^{n-2}_n\subs H^{n-1}_n\subs H^n_n=H_n
+$$
+tali che $E^{p,q}_\infty=H^p_{p+q}/H^{p-1}_{p+q}$.
+\end{definition}
+
+\section{Una successione esatta}
+\begin{proposition}\thlabel{spectral-exact-sequence}
+Sia $E^{p,q}_r\converges H_{p+q}$ una successione spettrale, $i,j,r>0$ con $i\le j$. Per ogni $i\le n\le j$ siano date due coppie di interi $(a'_n,b'_n),(a''_n,b''_n)$ con $a'_n+b'_n=a''_n+b''_n=n$ e $a'_n<a''_n$. Supponiamo che per ogni $i\le n\le j$ valga $E^{p,q}_r=0$ ogniqualvolta:
+\begin{itemize}
+\item $p+q=n$ e $(p,q)\neq(a'_n,b'_n),(a''_n,b''_n)$;
+\item $p+q=n-1$ e $p\le a'_n-r$;
+\item $p+q=n+1$ e $p\ge a''_n+r$.
+\end{itemize}
+Denotiamo con $\pre{n}{E}'_r$ il gruppo $E^{p,q}_r$ con $p=a'_n,q=b'_n$, e analogamente sia $\pre{n}{E}''_r$ il gruppo $E^{p,q}_r$ con $p=a''_n,q=b''_n$. Denotiamo inoltre con $\pre{n}{d}$ l'applicazione $\map{d^{p,q}_s}{\pre{n}{E}''_r}{\pre{n-1}{E}'_r}$ corrispondente a $p=a''_n,q=b''_n,s=a''_n-a'_{n-1}$ oppure l'applicazione nulla se $s<r$. Allora $\pre{n}{d}$ è ben definita per ogni $i\le n<j$ ed esiste una successione esatta
+\begin{diagram}
+\pre{j}{E}'_r\rar&H_j\rar&\pre{j}{E}''_r\rar{\pre{j}{d}}&\pre{j-1}E'_r\rar&\ldots\rar{\pre{i+1}{d}}&\pre{i}{E}'_r\rar&H_i\rar&\pre{i}{E}''_r
+\end{diagram}
 \end{proposition}
 \begin{proof}
-\leavevmode
-\begin{enumerate}
-\item \todo{Fare i conti}
-\item Osserviamo che $E^{p,q}_0=A^{p,q}/A^{p-1,q+1}$. Se $p<0$ chiaramente $E^{p,q}_0=0$ (ricordiamo che abbiamo posto $A^p=0$ per $p<0$). Se $q<0$, allora $A^{p,q}=\pre{p+q}{A}\cap A^p\subs\pre{p+1}{A}\cap A^{p-1}=A^{p-1,q+1}$, dunque $E^{p,q}_0=0$ anche in questo caso. La proprietà è pertanto vera per $r=0$; ma $E^{p,q}_{r+1}$ è un quoziente di un sottogruppo di $E^{p,q}_r$, da cui per induzione $E^{p,q}_r=0$ per ogni $r\ge 0$.
-\item Se $r>p$, allora $E^{p-r,q+r-1}_r=0$, da cui $d^{p,q}_r=0$. Segue che $E^{p,q}_{r+1}=E^{p,q}_r/\im d^{p+r,q-r+1}_r$ è un quoziente di $E^{p,q}_r$.
-\item Se $r>q+1$, allora $E^{p+r,q+r-1}_r=0$, da cui $d^{p+r,q+r-1}=0$. Segue che $E^{p,q}_{r+1}=\ker d^{p,q}_r/0$ è un sottogruppo di $E^{p,q}_r$.
-\item Se $r>p$, allora $C^p_r=C^p_\infty$ e $C^{p-1}_{r-1}=C^{p-1}_\infty$. Se $r>q+1$, allora
+Siano $i\le n\le j$, $p,q$ interi con $p+q=n$ e $p\neq a'_n,a''_n$. Poiché $E^{p,q}_r=0$, anche $E^{p,q}_s=0$ per $s\ge r$, e dunque $E^{p,q}_\infty=0$. Dalla definizione di convergenza segue che $\pre{n}{E}'_\infty=H_n'$ e $\pre{n}{E}''_\infty=H_n''/H_n'=H_n/\pre{n}{E}'_\infty$, dove $H_n'$ è il termine della filtrazione $H^p_n$ corrispondente a $p=a'_n$ e $H_n''$ quello corrispondente a $p=a''_n$. Abbiamo dunque la successione esatta
+\begin{diagram}\label{spectral-exact-sequence:first-exact-sequence}\tag{$\star$}
+0\rar&\pre{n}{E}'_\infty\rar&H_n\rar&\pre{n}{E}''_\infty\rar&0
+\end{diagram}
+Mostriamo ora i seguenti fatti.
+\begin{itemize}
+\item Per $i\le n\le j$ e $s\ge r$ le mappe di bordo $\map{d^{p,q}_s}{\pre{n}{E}'_s}{E^{p-s,q+s-1}_s}$ sono nulle, dove $p=a'_n,q=b'_n$. Infatti $E^{p-s,q+s-1}_r$ è nullo per ipotesi, dunque anche $E^{p-s,q+s-1}_s$ è nullo.
+\item Per $i\le n\le j$ e $s\ge r$ le mappe di bordo $\map{d^{p+s,q-s+1}_s}{E^{p+s,q-s+1}_s}{\pre{n}{E}''_s}$ sono nulle, dove $p=a''_n,q=b''_n$. Infatti $E^{p+s,q-s+1}_r$ è nullo per ipotesi, dunque anche $E^{p+s,q-s+1}_s$ è nullo.
+\item Per $i\le n<j$ e $s\ge r$ le mappe di bordo $\map{d^{p+s,q-s+1}_s}{E^{p+s,q-s+1}_s}{\pre{n}{E}'_s}$ sono nulle, dove $p=a'_n,q=b'_n$, con l'unica eventuale eccezione di $s=a''_{n+1}-a'_n$ (almeno se questo valore è $\ge r$). Infatti gli unici valori di $s$ per cui la mappa di bordo può essere non nulla sono $s=a'_{n+1}-a'_n$ e $s=a''_{n+1}-a'_n$, ma abbiamo già visto che le mappe di bordo uscenti da $\pre{n+1}E'_s$ sono nulle per ogni $s\ge r$, dunque l'unica possibilità è $s=a''_{n+1}-a'_n$.
+\item Per $i<n\le j$ e $s\ge r$ le mappe di bordo $\map{d^{p,q}_s}{\pre{n}{E}''_s}{E^{p-s,q+s-1}}$ sono nulle, dove $p=a''_n,q=b''_n$, con l'unica eventuale eccezione di $s=a''_n-a'_{n-1}$. La dimostrazione è analoga a quella del punto precedente.
+\end{itemize}
+Risulta evidente da questi fatti che, fissato $i<n\le j$, l'applicazione $\pre{n}{d}$ dell'enunciato è ben definita: infatti se $s=a''_n-a_{n-1}\ge r$ vale
 \begin{align*}
-B^{p,q}_\infty&=d(A)\cap A^{p,q}=d(\pre{p+q+1}{A})\cap A^{p,q}\\
-&\subs d(A^{p+q+1})\cap A^{p,q}\subs d(A^{p+r})\cap A^{p,q}=B^{p,q}_r.
+\pre{n}{E}''_r=\pre{n}{E}''_{r+1}=\ldots=\pre{n}{E}''_s,&&\pre{n-1}{E}'_r=\pre{n-1}{E}'_{r+1}=\ldots=\pre{n-1}{E}'_s.
 \end{align*}
-Pertanto, se $r>\max\{p,q+1\}$, allora $E^{p,q}_r=E^{p,q}_\infty$.
-\end{enumerate}
+Inoltre vale in ogni caso
+\begin{align*}
+\pre{n}{E}''_\infty=\ker\pre{n}{d}\subs\pre{n}{E}''_r,&&\pre{n-1}{E}'_\infty=\pre{n-1}{E}'_r/\im\pre{n}{d}.
+\end{align*}
+Partendo dalla \eqref{spectral-exact-sequence:first-exact-sequence} possiamo così scrivere le successioni esatte
+\begin{diagram}
+\pre{n+1}{E}''_r\rar{\pre{n+1}{d}}&\pre{n}{E}'_r\rar&H_n\rar&\pre{n}{E}''_r\\
+\pre{n}{E}'_r\rar&H_n\rar&\pre{n}{E}''_r\rar{\pre{n}{d}}&\pre{n-1}{E}'_r
+\end{diagram}
+la prima valida per $i\le n<j$ e la seconda per $i<n\le j$. Sovrapponendole si ottiene la successione esatta della tesi.
 \end{proof}
