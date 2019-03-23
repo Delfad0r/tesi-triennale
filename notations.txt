@@ -3,3 +3,4 @@ Z: numeri interi
 I: [0,1] (in realtà c'è scritto da qualche parte)
 \1: identità
 omotopia e omologia relative
+complessi di gruppi abeliani

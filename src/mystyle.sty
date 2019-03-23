@@ -13,6 +13,13 @@
 % Diagrams
 \usepackage{tikz}
 \usepackage{tikz-cd}
+\tikzset{
+  symbol/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$#1$}}}
+  }
+}
 \newenvironment*{diagram}[1][]{\begin{equation*}\begin{tikzcd}[#1]}{\end{tikzcd}\end{equation*}}
 
 % References
@@ -39,6 +46,7 @@
 \newtheorem{proposition}[theorem]{Proposizione}
 \newtheorem{corollary}[theorem]{Corollario}
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
 
 % Operators
 \newcommand*{\dirsum}{\mathbin{\oplus}}
@@ -53,6 +61,7 @@
 
 % Relations
 \newcommand*{\subs}{\subseteq}
+\newcommand*{\sups}{\supseteq}
 \newcommand*{\iso}{\simeq}
 
 % Other aliases
