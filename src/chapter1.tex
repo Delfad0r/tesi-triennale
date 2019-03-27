@@ -9,7 +9,7 @@ Si dice successione spettrale (omologica) una famiglia di gruppi abeliani $E^{p,
 \end{enumerate}
 \end{definition}
 \todo{Utile disegnino illustrativo e descrizione a parole.}
-Fissati $p,q\ge 0$, per $r$ sufficientemente grande le mappe di bordo entranti e uscenti da $E^{p,q}_r$ sono nulle: in particolare per $r>p$ il codominio di $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}}$ è nullo, mentre per $r>q+1$ il dominio di $\map{d^{p+r,q-r+1}_r}{E^{p+r,q-r+1}}{E^{p,q}_r}$ è nullo. Pertanto $E^{p,q}_r$ è definitivamente uguale a un certo gruppo abeliano $E^{p,q}_\infty$, detto gruppo terminale.
+L'intero $p$ è detto grado filtrante, $q$ è detto grado complementare e $n=p+q$ è detto grado totale. Fissati $p,q\ge 0$, per $r$ sufficientemente grande le mappe di bordo entranti e uscenti da $E^{p,q}_r$ sono nulle: in particolare per $r>p$ il codominio di $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}}$ è nullo, mentre per $r>q+1$ il dominio di $\map{d^{p+r,q-r+1}_r}{E^{p+r,q-r+1}}{E^{p,q}_r}$ è nullo. Pertanto $E^{p,q}_r$ è definitivamente uguale a un certo gruppo abeliano $E^{p,q}_\infty$, detto gruppo terminale.
 \begin{definition}
 Si dice che una successione spettrale $E^{p,q}_r$ converge a una famiglia di gruppi abeliani $H_n$ (e si scrive $E^{p,q}_r\converges H_{p+q}$) se esistono filtrazioni
 $$
@@ -93,7 +93,6 @@ dunque la mappa di bordo passa al quoziente
 $$
 \map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}_r}.
 $$
-L'intero $p$ è detto grado filtrante, $q$ è detto grado complementare e $n=p+q$ è detto grado totale.
 \begin{proposition}\thlabel{spectral-sequence-of-filtered-complex}
 I gruppi $E^{p,q}_r$, insieme alle mappe di bordo $d^{p,q}_r$, formano una successione spettrale con gruppo terminale $E^{p,q}_\infty$. Inoltre $E^{p,q}_r\converges H_{p+q}(C_\bullet)$.
 \end{proposition}
@@ -228,8 +227,13 @@ La mappa di bordo passa al quoziente $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r
 \begin{proposition}\thlabel{spectral-sequence-of-filtered-cocomplex}
 I gruppi $E^{p,q}_r$, insieme alle mappe di bordo $d^{p,q}_r$, formano una successione spettrale coomologica con gruppo terminale $E^{p,q}_\infty$. Inoltre $E^{p,q}_r\converges H^{p+q}(C^\bullet)$.
 \end{proposition}
-Se $C^\bullet$ è munito di una struttura di anello, come spesso accade nelle applicazioni topologiche, allora ne esiste anche una indotta sui termini della successione spettrale associata. Più precisamente, supponiamo che sia definito un prodotto $\map{\cupp}{C^n\times C^m}{C^{n+m}}$ che soddisfa le seguenti proprietà:
+Se $C^\bullet$ è munito di una struttura di anello, come spesso accade nel contesto topologico, allora ne esiste anche una indotta sui termini della successione spettrale associata. Più precisamente, supponiamo che sia definito un prodotto $\map{\cupp}{C^n\times C^m}{C^{n+m}}$ che soddisfa le seguenti proprietà:
 \begin{enumerate}
 \item $d(x\cupp y)=dx\cupp y+(-1)^nx\cupp dy$, dove $n$ è il grado di $x$ (in altre parole, $d$ è un'antiderivazione);
 \item $C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}$.
 \end{enumerate}
+Si verifica \todo{Farlo a un certo punto.} allora che $\cupp$ passa al quoziente, inducendo un prodotto $E^{p,q}_r\times E^{p',q'}_r\to E^{p+p',q+q'}_r$ che risulta essere un'antiderivazione rispetto al grado totale.
+
+Esibiamo ora una costruzione che permette di associare una successione spettrale coomologica a un complesso filtrato $(C_\bullet, d)$. Sia $G$ un gruppo abeliano. Consideriamo il cocomplesso $C^\bullet=\Hom(C_\bullet,G)$ con mappe di bordo $-\circ d$. Il cocomplesso $C^\bullet$ eredita una filtrazione decrescente $C^n_p=\Ann C_n^{p-1}$ (le proprietà richieste si verificano facilmente), a partire dalla quale possiamo costruire una successione spettrale coomologica $E^{p,q}_r$.
+
+\section{Successione spettrale associata al rivestimento universale}
