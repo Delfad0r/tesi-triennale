@@ -93,6 +93,7 @@ dunque la mappa di bordo passa al quoziente
 $$
 \map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}_r}.
 $$
+L'intero $p$ è detto grado filtrante, $q$ è detto grado complementare e $n=p+q$ è detto grado totale.
 \begin{proposition}\thlabel{spectral-sequence-of-filtered-complex}
 I gruppi $E^{p,q}_r$, insieme alle mappe di bordo $d^{p,q}_r$, formano una successione spettrale con gruppo terminale $E^{p,q}_\infty$. Inoltre $E^{p,q}_r\converges H_{p+q}(C_\bullet)$.
 \end{proposition}
@@ -206,3 +207,29 @@ Denotiamo con $\pre{n}{E}'_r$ il gruppo $E^{p,q}_r$ con $p=a'_n,q=b'_n$, e analo
 \pre{i}{E}''_r\rar&H^i\rar&\pre{i}{E}'_r\rar{\pre{i}{d}}&\pre{i+1}E''_r\rar&\ldots\rar{\pre{j-1}{d}}&\pre{j}{E}''_r\rar&H^j\rar&\pre{j}{E}'_r
 \end{diagram}
 \end{proposition}
+\begin{definition}
+Sia $C^\bullet$ un cocomplesso di gruppi abeliani con $C^n=0$ per $n<0$. Si dice filtrazione (decrescente) di $C^\bullet$ una successione di sottocomplessi $C_p^\bullet\subs C^\bullet$ indicizzati da $p\in\ZZ$ che soddisfa le seguenti proprietà:
+\begin{enumerate}
+\item $C_p^\bullet=C^\bullet$ per $p\le 0$;
+\item $C_{p+1}^\bullet\subs C_p^\bullet$;
+\item $C^p_{p+1}=0$.
+\end{enumerate}
+\end{definition}
+In modo del tutto analogo a quanto visto per le filtrazioni crescenti, è possibile costruire una successione spettrale coomologica associata a un cocomplesso filtrato. Riportiamo per completezza i passi fondamentali. Definiamo
+\begin{itemize}
+\item $Z^{p,q}_r=C_p^n\cap (d^n)^{-1}(C_{p+r}^{n+1})$;
+\item $Z^{p,q}_\infty=C_p^n\cap(d^n)^{-1}(0)$;
+\item $B^{p,q}_r=C_p^n\cap d^{n-1}(C_{p-r}^{n-1})$;
+\item $B^{p,q}_\infty=C_p^n\cap d^{n-1}(C^{n-1})$;
+\item $E^{p,q}_r=Z^{p,q}_r/(Z^{p+1,q-1}_{r-1}+B^{p,q}_{r-1})$;
+\item $E^{p,q}_\infty=Z^{p,q}_\infty/(Z^{p+1,q-1}_{\infty}+B^{p,q}_\infty)$.
+\end{itemize}
+La mappa di bordo passa al quoziente $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}$.
+\begin{proposition}\thlabel{spectral-sequence-of-filtered-cocomplex}
+I gruppi $E^{p,q}_r$, insieme alle mappe di bordo $d^{p,q}_r$, formano una successione spettrale coomologica con gruppo terminale $E^{p,q}_\infty$. Inoltre $E^{p,q}_r\converges H^{p+q}(C^\bullet)$.
+\end{proposition}
+Se $C^\bullet$ è munito di una struttura di anello, come spesso accade nelle applicazioni topologiche, allora ne esiste anche una indotta sui termini della successione spettrale associata. Più precisamente, supponiamo che sia definito un prodotto $\map{\cupp}{C^n\times C^m}{C^{n+m}}$ che soddisfa le seguenti proprietà:
+\begin{enumerate}
+\item $d(x\cupp y)=dx\cupp y+(-1)^nx\cupp dy$, dove $n$ è il grado di $x$ (in altre parole, $d$ è un'antiderivazione);
+\item $C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}$.
+\end{enumerate}
