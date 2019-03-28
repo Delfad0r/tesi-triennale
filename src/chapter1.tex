@@ -60,6 +60,7 @@ la prima valida per $i\le n<j$ e la seconda per $i<n\le j$. Sovrapponendole si o
 \end{proof}
 
 \section{Successione spettrale associata a un complesso filtrato}
+\label{sec:spectral-sequence-filtered-complex}
 \begin{definition}
 Sia $C_\bullet$ un complesso di gruppi abeliani con $C_n=0$ per $n<0$. Si dice filtrazione (crescente) di $C_\bullet$ una successione di sottocomplessi $C^p_\bullet\subs C_\bullet$ indicizzati da $p\in\ZZ$ che soddisfa le seguenti proprietà:
 \begin{enumerate}
@@ -84,7 +85,7 @@ Pertanto possiamo definire i gruppi
 \begin{align*}
 E^{p,q}_r=\frac{Z^{p,q}_r}{Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1}},&&E^{p,q}_\infty=\frac{Z^{p,q}_\infty}{Z^{p-1,q+1}_\infty+B^{p,q}_\infty}.
 \end{align*}
-È immediato verificare che
+Osserviamo in particolare che $E^{p,q}_0=C^p_n/C^{p-1}_n$. È immediato verificare che
 \begin{align*}
 d(Z^{p,q}_r)&\subs Z^{p-r,q+r-1}_r\\
 d(Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1})&\subs Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1},
