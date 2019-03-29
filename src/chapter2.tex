@@ -217,5 +217,17 @@ Esiste un'applicazione $S$ che associa a ogni cubo $u\in Q^p_n(E)$ un cubo $Su\i
 
 \end{proof}
 Dato un cubo $u\in E^{p,q}_0$, definiamo $hu=(-1)^pSu$, ed estendiamo $h$ a una mappa
-$\map{h}{E^{p,q}_0}{E^{p,q+1}_0}$ per $\ZZ$-linearità. Osserviamo che $h$ è ben definita (ossia è compatibile con il quoziente che definisce $E^{p,q}_0$): infatti se $u\in Q^{p-1}_n(E)$ allora $Su\in Q^{p-1}_{n+1}(E)$ per la proprietà 
+$\map{h}{E^{p,q}_0}{E^{p,q+1}_0}$ per $\ZZ$-linearità. Osserviamo che $h$ è ben definita (ossia è compatibile con il quoziente che definisce $E^{p,q}_0$): infatti se $u\in Q^{p-1}_n(E)$ allora $Su\in Q^{p-1}_{n+1}(E)$ per la proprietà \ref{spectral-sequence-of-fibration-homotopy-equivalence:pr1}; se $u$ è degenere e $q>0$ allora $Su$ è degenere (proprietà \ref{spectral-sequence-of-fibration-homotopy-equivalence:pr4}), mentre se $u$ è degenere e $q=0$ allora $B^pSu$ è degenere (proprietà \ref{spectral-sequence-of-fibration-homotopy-equivalence:pr1}), dunque $Su\in Q^{p-1}_{n+1}(E)$.
+
+Mostriamo ora che $h$ definisce un'omotopia fra $\psi^p\varphi^p$ e l'identità. Calcoliamo
+\begin{align*}
+d^p_0hu+hd^p_0u&=(-1)^p(d^p_0Su+Sd^p_0u)\\
+&=(-1)^p\left(\sum_{i=p+1}^{n+1}(-1)^i(\lambda^0_iSu-\lambda^1_iSu)+\sum_{i=p+1}^n(-1)^i(S\lambda^0_iu-\lambda^1_iu)\right)\\
+&=(-1)^p(-1)^{p+1}(u-K(B^pu,F^pu))+\\
+&\phantomop(-1)^p\sum_{i=p+2}^{n+1}(-1)^i(S\lambda^0_{i-1}u-S\lambda^1_{i-1}u)+\\
+&\phantomop(-1)^p\sum_{i=p+1}^n(-1)^i(S\lambda^0_iu-\lambda^1_iu)\\
+&=K(B^pu,F^pu)-u\\
+&=\psi^p\varphi^pu-u.
+\end{align*}
+Questo conclude la dimostrazione.
 \end{proof}
