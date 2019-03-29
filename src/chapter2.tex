@@ -142,8 +142,8 @@ Per applicare i risultati della Sezione \ref{sec:spectral-sequence-filtered-comp
 
 Costruiamo due applicazioni $B^p$ e $F^p$ definite sui cubi di $Q^p_\bullet$ (ed estese per $\ZZ$-linearità a tutto $Q^p_\bullet$). Se $u\in\ Q^p_n$ è un cubo di dimensione $n$ con $n\ge p$, posto $q=n-p$, definiamo
 \begin{align*}
-(B^pu)(t_1,\ldots,t_p)=pu(t_1,\ldots,t_p,0,\ldots,0);\\
-(F^pu)(t_1,\ldots,t_q)=u(0,\ldots,0,t_1,\ldots,t_q).
+(B^pu)(t_1,\ldots,t_p)&=pu(t_1,\ldots,t_p,0,\ldots,0);\\
+(F^pu)(t_1,\ldots,t_q)&=u(0,\ldots,0,t_1,\ldots,t_q).
 \end{align*}
 $B^pu$ è un cubo di $B$ di dimensione $p$; notiamo che, poiché $u\in Q^p_n$, possiamo sostituire gli zeri nella definizione con qualunque altra $q$-upla di reali fra $0$ e $1$. $F^pu$ è invece un cubo di $F$ di dimensione $q$; la sua immagine è contenuta in $F$ poiché
 $$
@@ -151,7 +151,7 @@ p(F^pu)(t_1,\ldots,t_q)=pu(0,\ldots,0,t_1,\ldots,t_q)=pu(0,\ldots,0)=b.
 $$
 Le seguenti proprietà sono di verifica immediata.
 \begin{enumerate}
-\item\label{spectral-sequence-of-fibration:pr1} Se $u\in Q^{p-1}_n$ allora $B^pu$ è degenere.
+\item\label{spectral-sequence-of-fibration:pr1} $B^pu$ è degenere se e solo se $u\in Q^{p-1}_n$.
 \item\label{spectral-sequence-of-fibration:pr2} Se $u$ è degenere e $q>0$ allora $F^pu$ è degenere; se $u$ è degenere e $q=0$ allora $B^pu$ è degenere.
 \item\label{spectral-sequence-of-fibration:pr3} Se $i>p,\epsilon\in\{0,1\}$ allora $B^p\lambda^\epsilon_iu=B^pu$ e $F^p\lambda^\epsilon_iu=\lambda^\epsilon_{i-p}F^pu$.
 \end{enumerate}
@@ -178,11 +178,44 @@ Ci proponiamo di mostrare che $\varphi^p$ è in realtà un'equivalenza omotopica
 \begin{lemma}\thlabel{spectral-sequence-of-fibration-psi-construction}
 Esiste un'applicazione $K$ che associa a ogni coppia di cubi $(u,v)$ con $u\in Q_p(B)$ e $v\in Q_q(F)$ un cubo $K(u,v)\in Q^p_{p+q}(E)$ e che soddisfa le seguenti proprietà:
 \begin{enumerate}
-\item $B^pK(u,v)=u$ e $F^pK(u,v)=v$;
-\item per ogni $i\le q,\epsilon\in\{0,1\}$ vale $K(u,\lambda^\epsilon_iv)=\lambda^\epsilon_{i+p}K(u,v)$;
-\item se $v$ è degenere allora $K(u,v)$ è degenere.
+\item\label{spectral-sequence-of-fibration-psi-construction:pr1} $B^pK(u,v)=u$ e $F^pK(u,v)=v$;
+\item\label{spectral-sequence-of-fibration-psi-construction:pr2} per ogni $i\le q,\epsilon\in\{0,1\}$ vale $K(u,\lambda^\epsilon_iv)=\lambda^\epsilon_{i+p}K(u,v)$;
+\item\label{spectral-sequence-of-fibration-psi-construction:pr3} se $v$ è degenere allora $K(u,v)$ è degenere.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
 
+\end{proof}
+
+Definiamo allora il morfismo di complessi
+\Map{\psi^p}{J^p_\bullet}{E^{p,\bullet}_0}{u\tensor v}{K(u,v)}
+Osserviamo che $\psi^p$ è ben definito (ossia è compatibile con i quozienti che definiscono $J^p_\bullet$): infatti se $u$ è degenere allora $B^pK(u,v)$ è degenere per la \ref{spectral-sequence-of-fibration-psi-construction:pr1}, dunque $K(u,v)\in Q^{p-1}_\bullet$. Se invece $v$ è degenere allora $K(u,v)$ è degenere per la \ref{spectral-sequence-of-fibration-psi-construction:pr3}. Inoltre $\psi^p$ è effettivamente un morfismo di complessi, come mostra un semplice verifica:
+\begin{align*}
+\psi^pd_J(u\tensor v)&=(-1)^p\psi^p(u\tensor dv)\\
+&=(-1)^p\psi^p\left(u\tensor\sum_{i=1}^q(-1)^i(\lambda^0_iv-\lambda^1_iv)\right)\\
+&=\sum_{i=1}^q(-1)^{p+i}(K(u,\lambda^0_iv)-K(u,\lambda^1_iv))\\
+&=\sum_{i=p+1}^n(-1)^i(\lambda^0_iK(u,v)-\lambda^1_iK(u,v))\\
+&=d^p_0\psi^p(u\tensor v).
+\end{align*}
+
+\begin{proposition}\thlabel{spectral-sequence-of-fibration-homotopy-equivalence}
+Per ogni $p$ la mappa $\map{\varphi^p}{E^{p,\bullet}_0}{J^p_\bullet}$ è un'equivalenza omotopica, e $\map{\psi^p}{J^p_\bullet}{E^{p,\bullet}_0}$ è un'inversa omotopica.
+\end{proposition}
+\begin{proof}
+Si vede immediatamente che $\varphi^p\psi^p=\1$. Per dimostrare che $\psi^p\varphi^p$ è omotopo all'identità ci serviremo del seguente lemma.
+\begin{lemma*}
+Esiste un'applicazione $S$ che associa a ogni cubo $u\in Q^p_n(E)$ un cubo $Su\in Q^p_{n+1}$ e che soddisfa le seguenti proprietà:
+\begin{enumerate}
+\item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr1} $B^pSu=B^pu$;
+\item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr2} $\lambda^0_{p+1}Su=u$ e $\lambda^1_{p+1}Su=K(B^pu,F^pu)$;
+\item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr3} se $i>p$ vale $S\lambda^\epsilon_iu=\lambda^\epsilon_{i+1}Su$;
+\item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr4} se $q>0$ e $u$ è degenere, allora $Su$ è degenere.
+%\item $Su(0,\ldots,0,t,x_1,\ldots,x_q)=u(0,\ldots,0,x_1,\ldots,x_q)$.
+\end{enumerate}
+\end{lemma*}
+\begin{proof}
+
+\end{proof}
+Dato un cubo $u\in E^{p,q}_0$, definiamo $hu=(-1)^pSu$, ed estendiamo $h$ a una mappa
+$\map{h}{E^{p,q}_0}{E^{p,q+1}_0}$ per $\ZZ$-linearità. Osserviamo che $h$ è ben definita (ossia è compatibile con il quoziente che definisce $E^{p,q}_0$): infatti se $u\in Q^{p-1}_n(E)$ allora $Su\in Q^{p-1}_{n+1}(E)$ per la proprietà 
 \end{proof}

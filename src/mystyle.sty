@@ -72,10 +72,10 @@
 % Maps
 \newcommand*{\map}[3]{#1\colon#2\to#3}
 \newcommand*{\Map}[5]{%
-\begin{align*}
-#1:#2&\longrightarrow#3\\
-#4&\longmapsto#5
-\end{align*}
+\begin{alignat*}{2}
+#1:\;&&#2&\longrightarrow#3\\
+&&#4&\longmapsto#5
+\end{alignat*}
 }
 \newcommand*{\fibration}[3]{#1\hookrightarrow #2\to #3}
 
