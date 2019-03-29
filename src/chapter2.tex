@@ -19,7 +19,7 @@ $$
 $$
 Per snellire la notazione, se $H=\{i\}$ (ossia se $p=1$), scriviamo $\lambda^\epsilon_i$ in luogo di $\lambda^\epsilon_{\{i\}}$. Dato un cubo $u$ di dimensione $n$, definiamo dunque
 $$
-d_nu=\sum_{i=0}^n(\lambda^0_iu-\lambda^1_iu),
+d_nu=\sum_{i=1}^n(\lambda^0_iu-\lambda^1_iu),
 $$
 estendendola per $\ZZ$-linearità a tutto $Q_n(X)$. È immediato verificare che $\lambda^\epsilon_i\lambda^{\epsilon'}_j=\lambda^{\epsilon'}_{j-1}\lambda^\epsilon_i$; un semplice conto mostra allora che $d_nd_{n+1}=0$. Abbiamo così definito il complesso $Q_\bullet(X)$. Si vede inoltre che $D_\bullet(X)$ è un sottocomplesso di $Q_\bullet(X)$: se $u$ è un cubo degenere di dimensione $n$, allora anche $\lambda^\epsilon_iu$ è degenere per $0\le i<n$, mentre $\lambda^0_nu=\lambda^1_nu$, pertanto $du$ è degenere.
 \begin{definition}
@@ -50,7 +50,7 @@ Si può dimostrare che l'approccio dell'omologia cubica conduce ai medesimi risu
 Denotiamo con $H_\Delta(X;G),H^*_\Delta(X;G)$ l'omologia e la coomologia singolare standard. Allora $H(X;G)\iso H_\Delta(X;G)$ come gruppi graduati, e $H^*(X;G)\iso H_\Delta^*(X;G)$ come anelli graduati.
 \end{proposition}
 \begin{corollary}\thlabel{cohomology-ring-anticommutative}
-Siano $f,g\in H^*(X;G)$ rispettivamente di grado $p$ e $q$. Allora $f\cupp g=(-1)^{pq}g\cupp f$.
+Siano $f,g\in H^*(X;G)$ rispettivamente di grado $p$ e $q$. Allora $f\cdot g=(-1)^{pq}g\cdot f$.
 \end{corollary}
 Studiando più esplicitamente l'isomorfismo fra l'omologia (e la coomologia) cubica e quella singolare classica si può dimostrare quanto segue.
 \begin{proposition}\thlabel{cubic-homology-single-vertex}
@@ -140,7 +140,7 @@ Se $B$ è semplicemente connesso, allora $\pi_1(B)$ agisce banalmente sui gruppi
 \section{Successione spettrale di uno spazio fibrato}
 Per applicare i risultati della Sezione \ref{sec:spectral-sequence-filtered-complex}, è necessario definire una filtrazione crescente sul complesso singolare $C_\bullet(E)$ (d'ora in poi ometteremo la $E$ dell'argomento). Ciò che faremo sarà filtrare il complesso $Q_\bullet$ con dei sottocomplessi $Q^p_\bullet$ e prenderne le immagini nel quoziente $C_\bullet$. Sia dunque $Q^p_n$ il sottogruppo di $Q_n$ generato dai cubi $u\in Q_n$ tali che $p\circ u$ dipende solo dalle prime $p$ coordinate (e $Q^p_n=Q_n$ se $p>n$). Si vede immediatamente che i $Q^p_\bullet$ sono sottocomplessi di $Q_\bullet$ e che soddisfano le proprietà di una filtrazione crescente. Dunque lo stesso vale per $C^p_\bullet=(Q^p_\bullet+D_\bullet)/D_\bullet$, che definiscono una filtrazione crescente per $C_\bullet$. Applicando la \thref{spectral-sequence-of-filtered-complex} otteniamo una successione spettrale $E^{p,q}_r\converges H_{p+q}(E)$. Come vedremo, è possibile calcolare esplicitamente i termini $E^{p,q}_2$ della successione spettrale in funzione dei gruppi di omologia di $B$ e di $F$.
 
-Costruiamo due applicazioni $B^p$ e $F^p$ definite sui cubi di $Q^p_\bullet$. Se $u\in\ Q^p_n$ è un cubo di dimensione $n$ con $n\ge p$, posto $q=n-p$, definiamo
+Costruiamo due applicazioni $B^p$ e $F^p$ definite sui cubi di $Q^p_\bullet$ (ed estese per $\ZZ$-linearità a tutto $Q^p_\bullet$). Se $u\in\ Q^p_n$ è un cubo di dimensione $n$ con $n\ge p$, posto $q=n-p$, definiamo
 \begin{align*}
 (B^pu)(t_1,\ldots,t_p)=pu(t_1,\ldots,t_p,0,\ldots,0);\\
 (F^pu)(t_1,\ldots,t_q)=u(0,\ldots,0,t_1,\ldots,t_q).
@@ -151,13 +151,38 @@ p(F^pu)(t_1,\ldots,t_q)=pu(0,\ldots,0,t_1,\ldots,t_q)=pu(0,\ldots,0)=b.
 $$
 Le seguenti proprietà sono di verifica immediata.
 \begin{enumerate}
-\item Se $u\in Q^{p-1}_n$ allora $B^pu$ è degenere.
-\item Se $u$ è degenere e $q>0$ allora $F^pu$ è degenere; se $u$ è degenere e $q=0$ allora $B^pu$ è degenere.
-\item Se $i>p,\epsilon\in\{0,1\}$ allora $B^p\lambda^\epsilon_iu=B^pu$ e $F^p\lambda^\epsilon_iu=\lambda^\epsilon_{i-p}F^pu$.
+\item\label{spectral-sequence-of-fibration:pr1} Se $u\in Q^{p-1}_n$ allora $B^pu$ è degenere.
+\item\label{spectral-sequence-of-fibration:pr2} Se $u$ è degenere e $q>0$ allora $F^pu$ è degenere; se $u$ è degenere e $q=0$ allora $B^pu$ è degenere.
+\item\label{spectral-sequence-of-fibration:pr3} Se $i>p,\epsilon\in\{0,1\}$ allora $B^p\lambda^\epsilon_iu=B^pu$ e $F^p\lambda^\epsilon_iu=\lambda^\epsilon_{i-p}F^pu$.
 \end{enumerate}
 
-Ricordiamo che $E^{p,q}_0=C^p_{p+q}/C^{p-1}_{p+q}$ e che la mappa $\map{d^{p,q}_0}{E^{p,q}_0}{E^{p,q-1}_0}$ si ottiene dalla mappa di bordo di $C_\bullet$ per passaggio al quoziente. Possiamo dunque raggruppare i termini della successione spettrale per $r=0$ in complessi $E^{p,\bullet}_0$, con mappe di bordo $d^p_0$.
+Ricordiamo che $E^{p,q}_0=C^p_{p+q}/C^{p-1}_{p+q}$ e che la mappa $\map{d^{p,q}_0}{E^{p,q}_0}{E^{p,q-1}_0}$ si ottiene dalla mappa di bordo di $C_\bullet$ per passaggio al quoziente. Possiamo dunque raggruppare i termini della successione spettrale aventi $r=0$ in complessi $E^{p,\bullet}_0$, con mappe di bordo $d^p_0$. Osserviamo che
+$$
+d^p_0u=\sum_{i>p}(-1)^i(\lambda^0_iu-\lambda^1_iu)
+$$
+in quanto per $i\le p$ vale $\lambda^\epsilon_iu\in Q^p_\bullet$.
 
 Consideriamo il complesso $J^p_\bullet=C_p(B)\tensor C_\bullet(F)$ con mappe di bordo $d_J(b\tensor f)=(-1)^pb\tensor df$, e sia $\varphi^p$ il morfismo di complessi
 \Map{\varphi^p}{E^{p,\bullet}_0}{J^p_\bullet}{u}{B^pu\tensor F^pu}
-Le proprietà 
+Le proprietà \ref{spectral-sequence-of-fibration:pr1} e \ref{spectral-sequence-of-fibration:pr2} garantiscono che si tratta di una buona definizione (ossia che è compatibile con il quoziente che definisce $E^{p,\bullet}_0$), mentre dalla \ref{spectral-sequence-of-fibration:pr3} segue che $\varphi^p$ è effettivamente un morfismo di complessi:
+\begin{align*}
+\varphi^pd^p_0u&=\varphi^p\sum_{i>p}(-1)^i(\lambda^0_iu-\lambda^1_iu)\\
+&=\sum_{i>p}(-1)^i(B^p\lambda^0_iu\tensor F^p\lambda^0_iu-B^p\lambda^1_iu\tensor F^p\lambda^1_iu)\\
+&=\sum_{i>p}(-1)^pB^pu\tensor(-1)^{p-i}(\lambda^0_{i-p}F^pu-\lambda^1_{i-p}F^pu)\\
+&=(-1)^pB^pu\tensor dF^pu\\
+&=d_J\varphi^pu.
+\end{align*}
+
+Ci proponiamo di mostrare che $\varphi^p$ è in realtà un'equivalenza omotopica. Sfrutteremo il seguente lemma per costruire un'inversa omotopica.
+
+\begin{lemma}\thlabel{spectral-sequence-of-fibration-psi-construction}
+Esiste un'applicazione $K$ che associa a ogni coppia di cubi $(u,v)$ con $u\in Q_p(B)$ e $v\in Q_q(F)$ un cubo $K(u,v)\in Q^p_{p+q}(E)$ e che soddisfa le seguenti proprietà:
+\begin{enumerate}
+\item $B^pK(u,v)=u$ e $F^pK(u,v)=v$;
+\item per ogni $i\le q,\epsilon\in\{0,1\}$ vale $K(u,\lambda^\epsilon_iv)=\lambda^\epsilon_{i+p}K(u,v)$;
+\item se $v$ è degenere allora $K(u,v)$ è degenere.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+
+\end{proof}
