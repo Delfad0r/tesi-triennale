@@ -56,6 +56,7 @@ Studiando più esplicitamente l'isomorfismo fra l'omologia (e la coomologia) cub
 \begin{proposition}\thlabel{cubic-homology-single-vertex}
 Supponiamo che $X$ sia connesso per archi; sia $x\in X$ un punto fissato. Allora i gruppi di omologia e coomologia (cubica)  di $X$ rimangono inalterati se ci si limita a considerare cubi singolari aventi tutti i vertici in $x$.
 \end{proposition}
+\todo{Ma serve davvero?}
 
 \section{Spazi fibrati}
 \begin{definition}
@@ -65,7 +66,8 @@ P\rar{g}\dar{i}&E\dar{p}\\
 I\times P\rar{f}\ar[ru,dashed,"h"]&B
 \end{diagram}
 \end{definition}
-Se $\map{p}{E}{B}$ è una fibrazione, chiameremo $E$ spazio totale e $B$ spazio base.
+Se $\map{p}{E}{B}$ è una fibrazione, chiameremo $E$ spazio totale e $B$ spazio base. Inoltre la terna $(p, E, B)$ è detta spazio fibrato; con tale espressione potremo anche indicare, con lieve abuso di notazione, il solo spazio $E$.
+
 In realtà il sollevamento dell'omotopia per poliedri finiti implica una proprietà più forte.
 \begin{proposition}\thlabel{homotopy-lifting-plus}
 Sia $\map{p}{E}{B}$ una fibrazione, $A\subs X$ due poliedri finiti; indichiamo con $\map{i}{A}{X}$ l'inclusione. Siano $\map{f}{X}{B},\map{g}{A}{E}$ applicazioni continue tali che $pg=fi$. Allora esiste un'applicazione continua $\map{h}{X}{E}$ tale che $ph=f$ e $hi=g$.
@@ -109,7 +111,7 @@ D'ora in poi considereremo solo fibrazioni con spazio base e fibre connessi per 
 Ci proponiamo ora di mostrare come il gruppo fondamentale di $B$ agisca sui gruppi di omologia e coomologia di $F$.
 
 \begin{definition}
-Sia $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ un'applicazione che a ogni cubo $u$ di dimensione $n$ di $F$ ne associa uno $Tu$ di dimensione $n+1$. $T$ si dice costruzione subordinata a $\gamma$ se soddisfa le seguenti proprietà per ogni cubo $u$ di dimensione $n$:
+Sia $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ un'applicazione che a ogni cubo $u$ di dimensione $n$ di $F$ associa un cubo $Tu$ di $E$ di dimensione $n+1$. $T$ si dice costruzione subordinata a $\gamma$ se soddisfa le seguenti proprietà per ogni cubo $u$ di dimensione $n$:
 \begin{enumerate}
 \item $\lambda^0_1 Tu=u$;
 \item $(p\circ Tu)(t,t_1,\ldots,t_n)=\gamma(t)$ per ogni $t_1,\ldots,t_n\in I$;
@@ -199,12 +201,12 @@ Osserviamo che $\psi^p$ è ben definito (ossia è compatibile con i quozienti ch
 \end{align*}
 
 \begin{proposition}\thlabel{spectral-sequence-of-fibration-homotopy-equivalence}
-Per ogni $p$ la mappa $\map{\varphi^p}{E^{p,\bullet}_0}{J^p_\bullet}$ è un'equivalenza omotopica, e $\map{\psi^p}{J^p_\bullet}{E^{p,\bullet}_0}$ è un'inversa omotopica.
+Per ogni $p$ la mappa $\map{\varphi^p}{E^{p,\bullet}_0}{J^p_\bullet}$ è un'equivalenza omotopica, di cui $\map{\psi^p}{J^p_\bullet}{E^{p,\bullet}_0}$ è un'inversa omotopica.
 \end{proposition}
 \begin{proof}
 Si vede immediatamente che $\varphi^p\psi^p=\1$. Per dimostrare che $\psi^p\varphi^p$ è omotopo all'identità ci serviremo del seguente lemma.
 \begin{lemma*}
-Esiste un'applicazione $S$ che associa a ogni cubo $u\in Q^p_n(E)$ un cubo $Su\in Q^p_{n+1}$ e che soddisfa le seguenti proprietà:
+Esiste un'applicazione $S$ \todo{Forse $S$ non è il nome più adatto?} che associa a ogni cubo $u\in Q^p_n(E)$ un cubo $Su\in Q^p_{n+1}$ e che soddisfa le seguenti proprietà:
 \begin{enumerate}
 \item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr1} $B^pSu=B^pu$;
 \item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr2} $\lambda^0_{p+1}Su=u$ e $\lambda^1_{p+1}Su=K(B^pu,F^pu)$;
@@ -231,3 +233,66 @@ d^p_0hu+hd^p_0u&=(-1)^p(d^p_0Su+Sd^p_0u)\\
 \end{align*}
 Questo conclude la dimostrazione.
 \end{proof}
+
+Da questa proposizione segue che le mappe indotte in omologia $\map{\varphi_*}{H_q(E^{p,\bullet}_0)}{H_q(J^p_\bullet)}$ sono isomorfismi. Osserviamo però che $H_q(E^{p,\bullet}_0)=E^{p,q}_1$, mentre dal fatto che $C_p(B)$ è un gruppo abeliano libero segue
+$$
+H_q(J^p_\bullet)=H_q(C_p(B)\tensor C_\bullet(F))=C_p(B)\tensor H_q(F)=C_p(B;H_q(F)).
+$$
+Abbiamo dunque dimostrato la seguente.
+\begin{proposition}\thlabel{spectral-sequence-of-fibration-E-1}
+I morfismi di complessi $\varphi^p$ inducono isomorfismi $\map{\varphi_*}{E^{p,q}_1}{C_p(B;H_q(F))}$.
+\end{proposition}
+
+Per calcolare i termini $E^{p,q}_2$ della successione spettrale, è necessario studiare come si trasformano le mappe di bordo $d^{p,q}_1$ mediante l'isomorfismo $\varphi_*$.
+\begin{proposition}\thlabel{spectral-sequence-of-fibration-boundary-map}
+Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di omologia di $F$. Allora il seguente diagramma commuta
+\begin{diagram}
+E^{p,q}_1\rar{d^{p,q}_1}\dar{\varphi_*}&E^{p-1,q}_1\dar{\varphi_*}\\
+C_p(B;H_q(F))\rar{d}&C_{p-1}(B;H_q(F))
+\end{diagram}
+dove abbiamo denotato con $d$ la mappa di bordo canonica del complesso singolare.
+\end{proposition}
+\begin{proof}
+Consideriamo un elemento $x=b\tensor h\in C_p(B;H_q(F))$, dove $b$ è un cubo di $B$ di dimensione $p$; sia $m\in C_q(F)$ un ciclo della classe di omologia di $h$. Ci proponiamo di calcolare $\varphi^{p-1}d\psi^p(b\tensor m)$; per passaggio al quoziente otterremo $\varphi_*d^{p,q}_1\varphi_*^{-1}x$. Scriviamo $m$ come somma di cubi: $m=\sum_{\alpha}g_\alpha u_\alpha$ con $g_\alpha\in\ZZ$. Calcoliamo
+$$
+d\psi^p(b\tensor m)=\sum_\alpha\sum_{i=1}^n(-1)^ig_\alpha(\lambda^0_iK(b,u_\alpha)-\lambda^1_iK(b,u_\alpha)).
+$$
+Osserviamo però che
+\begin{align*}
+\sum_{\alpha}\sum_{i=p+1}^n(-1)^ig_\alpha(\lambda^0_iK(b,u_\alpha)-\lambda^1_iK(b,u_\alpha))&=\sum_{\alpha}\sum_{i=p+1}^n(-1)^ig_\alpha(K(b,\lambda^0_{i-p}u_\alpha)-K(b,\lambda^1_{i-p}u_\alpha))\\
+&=\sum_\alpha(-1)^pg_\alpha\psi^p(b\tensor du_\alpha)\\
+&=(-1)^p\psi^p(b\tensor dm)\\
+&=0,
+\end{align*}
+da cui
+$$
+d\psi^p(b\tensor m)=\sum_\alpha\sum_{i=1}^p(-1)^ig_\alpha(\lambda^0_iK(b,u_\alpha)-\lambda^1_iK(b,u_\alpha)).
+$$
+Poiché $K(b,u_\alpha)\in Q^p_{p+q}$, abbiamo che $\lambda^\epsilon_iK(b,u_\alpha)\in Q^{p-1}_{p+q-1}$, dunque possiamo applicare $\varphi^{p-1}$ ai singoli termini della sommatoria, ottenendo
+$$
+\varphi^{p-1}d\psi^p(b\tensor m)=\sum_\alpha\sum_{i=1}^p\sum_{\epsilon=0}^1(-1)^{i+\epsilon}g_\alpha B^{p-1}\lambda^\epsilon_iK(b,u_\alpha)\tensor F^{p-1}\lambda^\epsilon_iK(b,u_\alpha).
+$$
+Si vede facilmente che $B^{p-1}\lambda^{\epsilon}_iK(b,u_\alpha)=\lambda^\epsilon_i B^pK(b,u_\alpha)=\lambda^\epsilon_ib$. Per quanto riguarda $F^{p-1}\lambda^\epsilon_iK(b,u_\alpha)$ abbiamo invece
+$$
+(F^{p-1}\lambda^\epsilon_iK(b,u_\alpha))(x_1,\ldots,x_q)=K(b,u_\alpha)(0,\ldots,0,\epsilon,0,\ldots,0,x_1,\ldots,x_q)
+$$
+dove $\epsilon$ si trova in posizione $i$. Consideriamo l'applicazione $T$ che a ogni cubo $u$ di $F$ di dimensione $q$ associa un cubo $Tu$ di $E$ di dimensione $q+1$ definito da
+$$
+Tu(t,x_1,\ldots,x_q)=K(b,u)(0,\ldots,0,t\epsilon,0,\ldots,0,x_1,\ldots,x_q)
+$$
+dove $t\epsilon$ si trova di nuovo in posizione $i$. Si verifica facilmente che $T$ è una costruzione subordinata al cammino $t\mapsto b(0,\ldots,0,t\epsilon,0,\ldots,0)$. È inoltre evidente che $S_Tu=F^{p-1}\lambda^\epsilon_iK(b,u)$. Se denotiamo con $S_{i,\epsilon,b}$ il morfismo $S_T$ associato all'applicazione $T$ determinata dai valori fissati di $i,\epsilon$ e $b$, possiamo scrivere
+\begin{align*}
+\varphi^{p-1}d\psi^p(b\tensor m)&=\sum_\alpha\sum_{i=1}^p(-1)^{i}g_\alpha(\lambda^0_ib\tensor S_{i,\epsilon,b}u_\alpha-\lambda^1_ib\tensor S_{i,\epsilon,b}u_\alpha)\\
+&=\sum_{i=1}^p(-1)^i(\lambda^0_ib\tensor S_{i,\epsilon,b}m-\lambda^1_ib\tensor S_{i,\epsilon,b}m).
+\end{align*}
+Passando al quoziente, ricordando che $S_{i,\epsilon, b}$ induce l'identità in omologia, otteniamo infine
+$$
+\varphi_*d^{p,q}_1\varphi_*^{-1}x\varphi_*d^{p,q}_1=\varphi_*^{-1}(b\tensor h)=db\tensor h.
+$$
+\end{proof}
+Da questa proposizione segue immediatamente il risultato conclusivo della sezione.
+\begin{proposition}\thlabel{spectral-sequence-of-fibration-E-2}
+Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di omologia di $F$. Allora $\varphi_*$ induce un isomorfismo $E^{p,q}_2\iso H_p(B;H_q(F))$.
+\end{proposition}
+
+Osserviamo che i risultati ottenuti fino a questo punto rimangono validi se consideriamo l'omologia a coefficienti in un gruppo abeliano $G$: a ogni spazio fibrato si può associare una successione spettrale $E^{p,q}_r$ (derivante dall'omologia a coefficienti in $G$) i cui termini con $r=2$ sono isomorfi a $H_p(B;H_q(F;G))$.
