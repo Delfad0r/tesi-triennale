@@ -322,13 +322,27 @@ Si mostra poi, in modo del tutto analogo a quanto fatto per la successione spett
 \begin{proposition}\thlabel{cohomological-spectral-sequence-of-fibration-E-2}
 Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coomologia di $F$. Allora $\psi^*$ induce un isomorfismo $E^{\ast p,q}_2\iso H^p(B;H^q(F;G))$.
 \end{proposition}
-Supponiamo ora che $G$ sia anche un anello. Allora i gruppi di coomologia di $E$ acquistano una struttura di anello, e lo stesso accade per i gruppi $E^\ast_r$. Infatti il \cupproduct{} definisce una struttura di anello su $C^\bullet(E;G)$; si verifica facilmente che tale prodotto soddisfa la condizione $C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}$, dunque come mostrato in \missing{} i termini della successione spettrale $E^\ast_r$ ereditano una struttura di anello per la quale le mappe di bordo sono antiderivazioni. È naturale domandarsi come questa struttura si trasformi mediante l'isomorfismo della \thref{cohomological-spectral-sequence-of-fibration-E-2}. Osserviamo che anche su $H^*(B;H^*(F;G))$ è definita una struttura di anello: infatti $H^*(F;G)$ è un anello (con il prodotto dato dal \cupproduct{} su $F$), dunque su $H^*(B;H^*(F;G))$ è definito il prodotto dato dal \cupproduct{} su $B$.
+Supponiamo ora che $G$ sia anche un anello. Allora i gruppi di coomologia di $E$ acquistano una struttura di anello, e lo stesso accade per i gruppi $E^\ast_r$. Infatti il \cupproduct{} definisce una struttura di anello su $C^\bullet(E;G)$; si verifica facilmente che tale prodotto soddisfa la condizione $C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}$, dunque come mostrato in \missing{} i termini della successione spettrale $E^\ast_r$ ereditano una struttura di anello per la quale le mappe di bordo sono antiderivazioni. È naturale domandarsi come questa struttura si trasformi mediante l'isomorfismo della \thref{cohomological-spectral-sequence-of-fibration-E-2}.
+Definiamo
+$$
+H^*(B;H^*(F;G))=\Dirsum_{p,q}H^p(B;H^q(F;G)).
+$$
+La proposizione precedente ci dice che $\psi^*$ induce un isomorfismo $E^\ast_2\iso H^*(B;H^*(F;G))$ di gruppi abeliani.
+Osserviamo però che su $H^*(B;H^*(F;G))$ è definita anche una struttura di anello, data dal \cupproduct{} su $B$ e su $F$
+$$
+H^p(B;H^q(F;G))\times H^{p'}(B;H^{q'}(F;G))\longrightarrow H^{p+p'}(B;H^{q+q'}(F;G))
+$$
+Vedremo con la proposizione seguente che $\psi^*$ è anche un isomorfismo di anelli, a meno di un segno.
 
 \begin{proposition}\thlabel{cohomological-spectral-sequence-of-fibration-ring}
 Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coomologia di $F$. Siano $g\in E^{\ast p,q}_2,g'\in E^{\ast p',q'}_2$. Allora $\psi^*(g\cdot g')=(-1)^{p'q}\psi^*(g)\cdot\psi^*(g')$.
 \end{proposition}
 \begin{proof}
-Cerchiamo di studiare più approfonditamente la struttura di anello indotta dal \cupproduct{} su $C^\bullet(B;H^*(F;G))$. Innanzitutto, poiché $C^p(B;H^*(F;G))=H^*(J^\bullet_p)$, è sufficiente calcolare il prodotto fra elementi di $H^q(J^\bullet_p)$. Siano dunque $\bar{f}\in H^q(J^\bullet_p),\bar{f}'\in H^{q'}(J^\bullet_{p'})$, e consideriamo $f\in J^q_p,f'\in J^{q'}_{p'}$ rappresentanti delle classi di coomologia rispettivamente di $\bar{f},\bar{f}'$. Possiamo interpretare $f$ come una funzione che a ogni coppia di cubi $u\in C_p(B),v\in C_q(F)$ associa un elemento $f(u,v)\in G$; inoltre $f(u,v)=0$ ogniqualvolta uno fra $u$ e $v$ è degenere. Allora il prodotto $f\cupp f'$ appartiene a $J^{q+q'}_{p+p'}$, e sviluppando il \cupproduct{} su $B$ e su $F$ si ottiene che
+Cerchiamo di studiare più approfonditamente la struttura di anello indotta dal \cupproduct{} su 
+$$
+C^\bullet(B;H^*(F;G))=\Dirsum_qC^\bullet(B;H^q(F;G))=H^*(J^\bullet_p).
+$$
+Siano dunque $\bar{f}\in H^q(J^\bullet_p),\bar{f}'\in H^{q'}(J^\bullet_{p'})$, e consideriamo $f\in J^q_p,f'\in J^{q'}_{p'}$ rappresentanti delle classi di coomologia rispettivamente di $\bar{f},\bar{f}'$. Possiamo interpretare $f$ come una funzione che a ogni coppia di cubi $u\in C_p(B),v\in C_q(F)$ associa un elemento $f(u,v)\in G$; inoltre $f(u,v)=0$ ogniqualvolta uno fra $u$ e $v$ è degenere. Allora il prodotto $f\cupp f'$ appartiene a $J^{q+q'}_{p+p'}$, e sviluppando il \cupproduct{} su $B$ e su $F$ si ottiene che
 $$
 (f\cupp f')(u,v)=\sum_{H,M}\rho_{H,L}\rho_{M,N}f(\lambda^0_Lu,\lambda^0_Nv)\cdot f'(\lambda^1_Hu,\lambda^1_Mv),
 $$
@@ -384,4 +398,42 @@ g\cdot g'&=\varphi^*(\psi^*(g\cdot g'))\\
 &=(-1)^{nn'}g'\cdot g,
 \end{align*}
 dove abbiamo sfruttato la \thref{cohomological-spectral-sequence-of-fibration-ring} e la proposizione analoga per $\varphi^*$. Dunque la tesi è vera per $r=2$. Ma allora è vera per ogni $r\ge 2$, poiché la struttura di anello di $E^\ast_r$ si ottiene per passaggio al quoziente da quella di $E^\ast_{r-1}$.
+\end{proof}
+
+Concludiamo la sezione con un risultato che permette di semplificare, sotto alcune ipotesi, il calcolo del termine $E^\ast_2$ della successione spettrale. Se $M$ e $N$ sono due $G$-algebre graduate, possiamo definire su $M\tensor N$ una struttura di $G$-algebra come segue: se $x,x'\in M$ e $y,y'\in N$ sono elementi omogenei di gradi, rispettivamente $p,p',q,q'$, allora
+$$
+(x\tensor y)(x'\tensor y')=(-1)^{p'q}(xx'\tensor yy').
+$$
+\begin{proposition}\thlabel{cohomological-spectral-sequence-of-fibration-tensor-product}
+Sia $G$ un PID. Supponiamo che sia soddisfatta una delle due condizioni seguenti:
+\begin{enumerate}
+\item $H_p(B;G)$ è un $G$-modulo libero finitamente generato per ogni $p\ge 0$;
+\item $H^q(F;G)$ è un $G$-modulo libero finitamente generato per ogni $q\ge 0$.
+\end{enumerate}
+Allora esiste un isomorfismo di $G$-algebre $H^*(B;G)\tensor H^*(F;G)\iso E^\ast_2$.
+\end{proposition}
+\begin{proof}
+Consideriamo l'applicazione
+\Map{i}{C^p(B;G)\tensor H^q(F;G)}{C^p(B;H^q(F;G))}{b\tensor f}{(u\mapsto b(u)\cdot f)}
+Per passaggio al quoziente otteniamo
+$$
+\map{i^*}{H^p(B;G)\tensor H^q(F;G)}{H^p(B;H^q(F;G))}
+$$
+È evidente che $\varphi^*\circ i^*$ preserva la struttura moltiplicativa, dunque è sufficiente mostrare che, sotto le ipotesi dell'enunciato, $i^*$ è un isomorfismo di $G$-moduli.
+\begin{enumerate}
+\item Per il teorema dei coefficienti universali abbiamo che
+$$
+H^p(B;H^q(F;G))\iso\Hom(H_p(B;G),H^q(F;G))
+$$
+e
+$$
+H^p(B;G)\iso\Hom(H_p(B;G),G),
+$$
+dunque possiamo interpretare $i^*$ come la mappa canonica
+$$
+\map{i^*}{\Hom(H_p(B;G),G)\tensor H^q(F;G)}{\Hom(H_p(B;G),H^q(F;G))}
+$$
+Per additività di $\Hom(-,-)$ e di $-\tensor-$, essendo $H_p(B;G)$ libero e finitamente generato, possiamo limitarci a considerare il caso $H_p(B;G)=G$, in cui $i^*$ è ovviamente un isomorfismo.
+\item Per additività di $-\tensor-$ e di $H^p(B;-)$, essendo $H^q(F;G)$ libero e finitamente generato, possiamo limitarci a considerare il caso $H^p(B;G)=G$, in cui $i^*$ è ovviamente un isomorfismo.
+\end{enumerate}
 \end{proof}

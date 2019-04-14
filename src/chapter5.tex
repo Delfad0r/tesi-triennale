@@ -44,7 +44,7 @@ La tesi è sicuramente vera per $X_0$ per ipotesi e per $T_1$ poiché $T_1=X_0$.
 $$
 E^{p,q}_2=(H_p(\pi)\tensor H_q(T_n))\dirsum\Tor(H_{p-1}(\pi),H_q(T_n)).
 $$
-I gruppi di omologia di $X_{n-1}$ sono finitamente generati per ipotesi induttiva, e $\pi$ è finitamente generato poiché $\pi=H_1(X_{n-1})$. \mistery{} % Vedi corollario 1, pag. 500
+I gruppi di omologia di $X_{n-1}$ sono finitamente generati per ipotesi induttiva, e $\pi$ è finitamente generato poiché $\pi=H_1(X_{n-1})$. \todo{E quindi? Io voglio $H_p(\pi)$ f.g.} % Vedi corollario 1, pag. 500
 Ripetendo la dimostrazione della \thref{finitely-generated-homology-groups} si ottiene che i gruppi di omologia di $T_n$ sono finitamente generati. Applicando di nuovo \thref{loop-space-finitely-generated-homology} troviamo che anche i gruppi di omologia di $X_n$ sono finitamente generati.
 \end{proof}
 
@@ -59,13 +59,16 @@ La tesi segue immediatamente dal \thref{homotopy-groups-homology-groups} e dalla
 Supponiamo che $X$ sia semplicemente connesso, e che i gruppi $H_i(X)$ siano finitamente generati per ogni $i\ge 0$. Sia $K$ un campo. Supponiamo inoltre che $H_i(X;K)=0$ per $0<i<n$. Allora $\pi_i(X)\tensor K=H_i(X;K)$ per $2\le i\le n$.
 \end{proposition}
 \begin{proof}
-Dimostriamo inizialmente il seguente fatto: dati $i>0,0\le j\le n-i$ vale $H_i(X_j;K)=H_{i+j}(X;K)$.
-Mostriamolo per induzione su $j$. Per $j=0$ la tesi è ovvia. Sia ora $j\ge 1$. Abbiamo 
+\begin{lemma*}
+Dati $i>0,0\le j\le n-i$ vale $H_i(X_j;K)=H_{i+j}(X;K)$.
+\end{lemma*}
+\begin{proof}
+Mostriamo la tesi per induzione su $j$; per $j=0$ è ovvia. Sia ora $j\ge 1$. Abbiamo 
 $$
 \pi_1(X_{j-1})\tensor K=H_1(X_{j-1})\tensor K=H_1(X_{j-1};K)=H_j(X;K)=0.
 $$
 Il gruppo abeliano $\pi_1(X_{j-1})$ è finitamente generato, dunque è in realtà finito, e il suo ordine è coprimo con la caratteristica di $K$. Per \missing{} vale $H_i(T_j;K)=H_i(X_{j-1};K)$ per ogni $i\ge 0$. Per concludere è sufficiente ricordare che $X_j=\Omega T_j$ e applicare la \thref{loop-space-suspension-isomorphism}.
-
+\end{proof}
 La tesi della proposizione segue ora banalmente: se $2\le i\le n$ vale
 $$
 \pi_i(X)\tensor K=H_1(X_{i-1})\tensor K=H_1(X_{i-1};K)=H_i(X;K).
@@ -102,6 +105,7 @@ da cui (essendo $\theta$ un isomorfismo) $e_i\cdot e_j=e_{i+j}$.
 Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso; sia inoltre $K$ un campo. Supponiamo che $H^*(X;K)$ sia l'algebra di polinomi generata da un elemento $u$ di grado $n\ge 2$ pari. Allora $H^*(\Omega;K)$ è l'algebra esterna generata da un elemento $v$ di grado $n-1$.
 \end{lemma}
 \begin{proof}
+
 \todo{Farla (dopo averla capita).}
 \end{proof}
 \begin{proposition}\thlabel{homotopy-groups-of-odd-sphere-finite}
