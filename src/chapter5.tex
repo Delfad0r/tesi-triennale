@@ -59,8 +59,9 @@ La tesi segue immediatamente dal \thref{homotopy-groups-homology-groups} e dalla
 Supponiamo che $X$ sia semplicemente connesso, e che i gruppi $H_i(X)$ siano finitamente generati per ogni $i\ge 0$. Sia $K$ un campo. Supponiamo inoltre che $H_i(X;K)=0$ per $0<i<n$. Allora $\pi_i(X)\tensor K=H_i(X;K)$ per $2\le i\le n$.
 \end{proposition}
 \begin{proof}
+Mostriamo innanzitutto un lemma preliminare.
 \begin{lemma*}
-Dati $i>0,0\le j\le n-i$ vale $H_i(X_j;K)=H_{i+j}(X;K)$.
+Nelle ipotesi della proposizione, dati $i>0,0\le j\le n-i$ vale $H_i(X_j;K)=H_{i+j}(X;K)$.
 \end{lemma*}
 \begin{proof}
 Mostriamo la tesi per induzione su $j$; per $j=0$ è ovvia. Sia ora $j\ge 1$. Abbiamo 
@@ -105,14 +106,28 @@ da cui (essendo $\theta$ un isomorfismo) $e_i\cdot e_j=e_{i+j}$.
 Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso; sia inoltre $K$ un campo. Supponiamo che $H^*(X;K)$ sia l'algebra di polinomi generata da un elemento $u$ di grado $n\ge 2$ pari. Allora $H^*(\Omega;K)$ è l'algebra esterna generata da un elemento $v$ di grado $n-1$.
 \end{lemma}
 \begin{proof}
+Da \missing{} segue che $H^i(\Omega;K)=0$ per $0<i<n-1$; inoltre, poiché $E_{x,X}$ è contrattile, $\map{d_n}{H^{n-1}(\Omega;K)}{H^n(X;K)}$ è un isomorfismo. \todo{Mi serve una proposizione che dica questo.} Consideriamo la successione spettrale coomologica $E^{p,q}_r\converges H^{p+q}(E_{x,X};K)$. Notiamo che siamo nelle condizioni di applicare la \thref{cohomological-spectral-sequence-of-fibration-tensor-product}, da cui $E_2=H^*(X;K)\tensor H^*(\Omega;K)$; in particolare, identificheremo $H^*(X;K)$ con $H^*(X;K)\tensor 1$ e $1\tensor H^*(\Omega;K)$ con $H^*(\Omega;K)$. Osserviamo, di conseguenza, che se $p$ non è multiplo di $n$ allora $E^{p,q}_2=0$ (e dunque anche $E^{p,q}_r=0$ per $r\ge2$). Pertanto, per $r$ non multiplo di $n$, le mappe di bordo $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}$ sono tutte nulle (infatti almeno uno fra $p$ e $p+r$ non è divisibile per $n$). In particolare vale $E_2=E_3=\ldots=E_n$.
 
-\todo{Farla (dopo averla capita).}
+Poiché $u$ è un generatore di $H^n(X;K)$, allora $v=d_n^{-1}u$ è un generatore di $H^{n-1}(\Omega;K)$. Denotiamo con $U_r$ il sottomodulo di $E_r$ generato dagli elementi di grado complementare $q\le n-1$, ossia
+$$
+U_r=\Dirsum_{\substack{p\\q\le n-1}}E^{p,q}_r.
+$$
+Osserviamo che $\{u^k,u^k\cdot v\}_{k\ge 0}$ è una base di $U_n$. Dal fatto che $d_n$ è un'antiderivazione e $d_nv=u$ segue che $d_n u^k=0$ e $d_n(u^k\cdot v)=u^{k+1}$. Ma allora tutti i cocicli di $U_n$ sono anche cobordi (rispetto a $d_n$), eccezion fatta per gli elementi di grado $0$, pertanto $U_r=E^{0,0}_r$ per ogni $r\ge n+1$.
+
+Mostriamo infine, per induzione su $q\ge n$, che $H^q(\Omega;K)=0$. Supponiamo per assurdo che esista un $w\in H^q(\Omega;K)$ non nullo. Ricordiamo che $H^q(\Omega;K)=E^{0,q}_n$. Se $w$ annullasse tutte le mappe di bordo $d_r$ con $r\ge n$, allora avremmo che $E^{0,q}_\infty\neq 0$, contro il fatto che $H^q(E_{x,X})=0$. Sia dunque $r$ il minimo intero $\ge n$ tale che $d_rw\neq 0$.
+\begin{itemize}
+\item Se $r=n$ allora $d_nw\in E^{n,q-(n-1)}_n$. Affinché $E^{n,q-(n-1)}_n$ sia non nullo è necessario, per ipotesi induttiva, che $q-(n-1)$ valga $n-1$ (o $0$, ma $q>n-1$). Pertanto $d_nw=ku\cdot v$ per un certo $k\in K$. Applicando $d_n$ a entrambi i membri si ottiene $0=ku^2$, da cui, essendo $u^2\neq 0$, necessariamente $k=0$ e $d_nw=0$, assurdo.
+\item Se $r>n$ allora $U_r=E^{0,0}_r$ e $E{p,q'}_r=0$ per $n\le q'<q$ per ipotesi induttiva. Poiché $d_rw\in E^{r,q-r+1}_r$, necessariamente $d_rw=0$, assurdo.
+\end{itemize}
+Dunque non può esistere alcun $w\in H^q(\Omega;K)$ non nullo, e questo conclude la dimostrazione (infatti $H^*(\Omega;K)=H^0(\Omega;K)\dirsum H^{n-1}(\Omega;K)$.
 \end{proof}
 \begin{proposition}\thlabel{homotopy-groups-of-odd-sphere-finite}
 Per ogni $n\ge 3$ dispari e per ogni $i>n$, il gruppo $\pi_i(S^n)$ è finito.
 \end{proposition}
 \begin{proof}
-Sia $X=S^n$, e siano $X_i,T_i$ gli spazi costruiti secondo il metodo generale della sezione precedente. Sia $K$ un campo di caratteristica nulla; calcoliamo le algebre di coomologia degli spazi $X_i$ e $T_i$ a coefficienti in $K$. Abbiamo che $T_1=X$, dunque la sua algebra di coomologia è l'algebra esterna generata da un elemento di grado $n$. Per il \thref{cohomology-of-omega-of-space-with-exterior-cohomology}, l'algebra di coomologia di $X_1$ è l'algebra di polinomi generata da un elemento di grado $n-1$. Dalla \thref{homotopy-groups-of-x-n} deduciamo che $\pi_1(X_1)=\pi_2(X)=0$, ossia $X_1$ è semplicemente connesso, da cui $T_2=X_1$. Applicando il \thref{cohomology-of-omega-of-space-with-polynomyal-cohomology} otteniamo che l'algebra di coomologia di $X_2$ è l'algebra esterna generata da un elemento di grado $n-2$. Proseguendo in questo modo risulta che l'algebra di coomologia di $X_{n-1}$ è l'algebra esterna generata da un elemento di grado $1$; in particolare $H^i(X_{n-1};K)=0$ per $i\ge 2$. Dal teorema dei coefficienti universali si deduce immediatamente che $H_i(X_{n-1};K)=0$ per $i\ge 2$. Essendo $\pi_1(X_{n-1})=\pi_n(X)=\ZZ$, da \missing{} segue che $H_i(T_n;K)=0$ per $i>0$. Ma $T_n$ è semplicemente connesso e i suoi gruppi di omologia sono finitamente generati, dunque possiamo applicare la \thref{homotopy-groups-tensor-k} e dedurre che $\pi_i(T_n)\tensor K=0$ per ogni $i\ge 2$. Sfruttando la \thref{homotopy-groups-of-x-n} e il fatto che $T_n$ è il rivestimento universale di $X_{n-1}$ otteniamo infine che 
+Sia $X=S^n$, e siano $X_i,T_i$ gli spazi costruiti secondo il metodo generale della sezione precedente (la costruzione è lecita, in quanto $S^n$ è un poliedro finito, dunque ULC\todo{Dimostrarlo.}). Sia $K$ un campo di caratteristica nulla; calcoliamo le algebre di coomologia degli spazi $X_i$ e $T_i$ a coefficienti in $K$. Abbiamo che $T_1=X$, dunque la sua algebra di coomologia è l'algebra esterna generata da un elemento di grado $n$. Per il \thref{cohomology-of-omega-of-space-with-exterior-cohomology}, l'algebra di coomologia di $X_1$ è l'algebra di polinomi generata da un elemento di grado $n-1$. Dalla \thref{homotopy-groups-of-x-n} deduciamo che $\pi_1(X_1)=\pi_2(X)=0$, ossia $X_1$ è semplicemente connesso, da cui $T_2=X_1$. Applicando il \thref{cohomology-of-omega-of-space-with-polynomyal-cohomology} otteniamo che l'algebra di coomologia di $X_2$ è l'algebra esterna generata da un elemento di grado $n-2$.
+
+Proseguendo in questo modo risulta che l'algebra di coomologia di $X_{n-1}$ è l'algebra esterna generata da un elemento di grado $1$; in particolare $H^i(X_{n-1};K)=0$ per $i\ge 2$. Dal teorema dei coefficienti universali si deduce immediatamente che $H_i(X_{n-1};K)=0$ per $i\ge 2$. Essendo $\pi_1(X_{n-1})=\pi_n(X)=\ZZ$, da \missing{} segue che $H_i(T_n;K)=0$ per $i>0$. Ma $T_n$ è semplicemente connesso e i suoi gruppi di omologia sono finitamente generati, dunque possiamo applicare la \thref{homotopy-groups-tensor-k} e dedurre che $\pi_i(T_n)\tensor K=0$ per ogni $i\ge 2$. Sfruttando la \thref{homotopy-groups-of-x-n} e il fatto che $T_n$ è il rivestimento universale di $X_{n-1}$ otteniamo infine che 
 $$
 \pi_{n+i-1}(X)\tensor K=\pi_i(X_{n-1})\tensor K=\pi_i(T_n)\tensor K=0
 $$
