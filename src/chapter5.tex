@@ -22,7 +22,7 @@ Possiamo ora ricavare una relazione interessante fra i gruppi di omotopia di $X$
 Per ogni $n\ge 0,i\ge 1$ vale $\pi_i(X_n)=\pi_{i+n}(X)$.
 \end{proposition}
 \begin{proof}
-La relazione è banalmente vera per $n=0$. Ragionando per induzione, possiamo supporre che sia vera per $n-1$. Poiché $T_n$ è il rivestimento universale di $X_{n-1}$, vale $\pi_1(T_n)=0$ e $\pi_i(T_n)=\pi_i(X_{n-1})=\pi_{i+n-1}(X)$ per $i\ge 2$. Consideriamo la fibrazione $X_n\to E_{x,T_n}\to T_n$ \todo{Introdurre questa notazione} e la successione esatta lunga dei gruppi di omotopia
+La relazione è banalmente vera per $n=0$. Ragionando per induzione, possiamo supporre che sia vera per $n-1$. Poiché $T_n$ è il rivestimento universale di $X_{n-1}$, vale $\pi_1(T_n)=0$ e $\pi_i(T_n)=\pi_i(X_{n-1})=\pi_{i+n-1}(X)$ per $i\ge 2$. Consideriamo la fibrazione $\fibration{X_n}{E_{x,T_n}}{T_n}$ \todo{Introdurre questa notazione} e la successione esatta lunga dei gruppi di omotopia
 \begin{diagram}
 \pi_{i+1}(E_{x,T_n})\rar&\pi_{i+1}(T_n)\rar&\pi_i(X_n)\rar&\pi_i(E_{x,T_n})
 \end{diagram}
@@ -119,7 +119,7 @@ Mostriamo infine, per induzione su $q\ge n$, che $H^q(\Omega;K)=0$. Supponiamo p
 \item Se $r=n$ allora $d_nw\in E^{n,q-(n-1)}_n$. Affinché $E^{n,q-(n-1)}_n$ sia non nullo è necessario, per ipotesi induttiva, che $q-(n-1)$ valga $n-1$ (o $0$, ma $q>n-1$). Pertanto $d_nw=ku\cdot v$ per un certo $k\in K$. Applicando $d_n$ a entrambi i membri si ottiene $0=ku^2$, da cui, essendo $u^2\neq 0$, necessariamente $k=0$ e $d_nw=0$, assurdo.
 \item Se $r>n$ allora $U_r=E^{0,0}_r$ e $E{p,q'}_r=0$ per $n\le q'<q$ per ipotesi induttiva. Poiché $d_rw\in E^{r,q-r+1}_r$, necessariamente $d_rw=0$, assurdo.
 \end{itemize}
-Dunque non può esistere alcun $w\in H^q(\Omega;K)$ non nullo, e questo conclude la dimostrazione (infatti $H^*(\Omega;K)=H^0(\Omega;K)\dirsum H^{n-1}(\Omega;K)$.
+Dunque non può esistere alcun $w\in H^q(\Omega;K)$ non nullo, e questo conclude la dimostrazione (infatti $H^*(\Omega;K)=H^0(\Omega;K)\dirsum H^{n-1}(\Omega;K)$).
 \end{proof}
 \begin{proposition}\thlabel{homotopy-groups-of-odd-sphere-finite}
 Per ogni $n\ge 3$ dispari e per ogni $i>n$, il gruppo $\pi_i(S^n)$ è finito.

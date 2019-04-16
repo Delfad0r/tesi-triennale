@@ -125,7 +125,7 @@ e ciò è reso possibile dal fatto che $(\{0\}\times I)\cup(I\times\{0\})\cup(I\
 \end{proof}
 
 \begin{proposition}
-Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso, $x\in X$. Allora esiste una successione spettrale $E^{p,q}_r$ tale che $E^{p,q}_2=H_p(X,H_q(\Omega))$, il cui gruppo terminale $E_\infty$ è isomorfo al gruppo graduato associato a una filtrazione di $H(E_{x,X})$.
+Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso, $x\in X$. Allora esiste una successione spettrale $E^{p,q}_r\converges H_{p+q}(E_{x,X})$ tale che $E^{p,q}_2=H_p(X;H_q(\Omega))$.
 \end{proposition}
 \begin{proof}
 Consideriamo la fibrazione $E_{x,X}\to X$ della \thref{path-space-fibration} (dove abbiamo identificato $\{x\}\times X$ con $X$). Le fibre sono spazi del tipo $E_{x,y}$, dunque omotopicamente equivalenti a $\Omega$. Poiché $X$ è semplicemente connesso, $\Omega$ è connesso per archi, e inoltre l'azione di $\pi_1(X)$ sui gruppi di omologia di $\Omega$ è banale. Siamo dunque nelle condizioni di applicare \missing{}, da cui segue immediatamente la tesi.
@@ -136,7 +136,7 @@ Naturalmente esiste la successione spettrale duale in coomologia.
 Siano $A$ un PID, $X$ uno spazio topologico connesso per archi e semplicemente connesso. Supponiamo che tutti i moduli di omologia di $X$ a coefficienti in $A$ siano finitamente generati. Allora vale lo stesso per $\Omega$.
 \end{proposition}
 \begin{proof}
-Sia $x\in X$ un punto. Poiché $E_{x,X}$ è contrattile, tutti i suoi moduli di omologia sono finitamente generati (in particolare $H_0(E_{x,X};A)=0$ e $H_i(E_{x,X};A)=A$ per $i>0$). Applicando la \thref{finitely-generated-homology-groups} alla fibrazione $\fibration{\Omega}{E_{x,X}}{X}$ si ottiene immediatamente la tesi.
+Sia $x\in X$ un punto. Poiché $E_{x,X}$ è contrattile, tutti i suoi moduli di omologia sono finitamente generati (in particolare $H_0(E_{x,X};A)=A$ e $H_i(E_{x,X};A)=0$ per $i>0$). Applicando la \thref{finitely-generated-homology-groups} alla fibrazione $\fibration{\Omega}{E_{x,X}}{X}$ si ottiene immediatamente la tesi.
 \end{proof}
 
 \begin{proposition}\thlabel{loop-space-suspension-isomorphism}
