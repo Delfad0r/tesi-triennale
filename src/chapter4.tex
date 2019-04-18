@@ -17,15 +17,19 @@ h_{3-3t}(p(x))&\frac{2}{3}\le t
 Per la proprietà di sollevamento dell'omotopia, esiste un'omotopia $\map{\tilde{H}}{I\times T}{T}$ con $\tilde{H}_0=\1$ e $p\tilde{H}=H$. Osserviamo che il cammino $t\mapsto H_t(\tilde{e})$ è omotopo a $\gamma$ e $\tilde{H}_0(\tilde{e})=\tilde{e}$, pertanto $\tilde{H}_1(\tilde{e})=\tilde{\gamma}(1)=\tilde{e}'$. Ma allora $\tilde{H}_1$ è un sollevamento dell'identità di $G$ tale che $\tilde{H}_1(\tilde{e})=f(\tilde{e})$. Dalla connessione di $G$ segue che $\tilde{H}_1=f$. Ma $\tilde{H}_1=f$ e $\tilde{H}_0=\1$ sono omotope mediante $\tilde H$.
 \end{proof}
 \begin{corollary}\thlabel{h-space-trivial-action}
-Sia $G$ un H-spazio connesso, $T$ il suo rivestimento universale. Allora il gruppo fondamentale di $G$ agisce banalmente sui gruppi di omotopia, di omologia e di coomologia di $T$.
+Sia $G$ un H-spazio connesso, $T$ il suo rivestimento universale. Allora il gruppo fondamentale di $G$ agisce banalmente sui moduli di omologia e di coomologia di $T$.
 \end{corollary}
 
 \section{Prime proprietà degli spazi di cammini}
 Dati due spazi topologici $X,Y$, denotiamo con $C(X,Y)$ l'insieme delle funzioni continue da $X$ in $Y$. Riportiamo alcune nozioni di base relative alla topologia compatta-aperta.
 \begin{definition}
-La topologia compatta-aperta su $C(X,Y)$ è la topologia generata da $\{V(K,U):\text{$K\subs X$ compatto, $U\subs Y$ aperto}\}$, dove $V(K,U)$ è l'insieme delle funzioni $f\in C(X,Y)$ tali che $f(K)\subs U$.
+La topologia compatta-aperta su $C(X,Y)$ è la topologia generata da 
+$$
+\{V(K,U):\text{$K\subs X$ compatto, $U\subs Y$ aperto}\},
+$$
+dove $V(K,U)$ è l'insieme delle funzioni $f\in C(X,Y)$ tali che $f(K)\subs U$.
 \end{definition}
-D'ora in poi considereremo sempre su $C(X,Y)$ la topologia compatta-aperta.
+D'ora in poi considereremo sempre $C(X,Y)$ come spazio topologico munito della topologia compatta-aperta.
 \begin{proposition}\thlabel{compact-open-topology-properties}
 Siano $X,Y,Z$ spazi topologici con $X$ localmente compatto di Hausdorff.
 \begin{enumerate}
@@ -44,7 +48,7 @@ Dato uno spazio topologico $X$ e due sottospazi $A,B\subs X$, denotiamo con $E_{
 Per ogni $x\in X$ lo spazio $E_{x,X}$ è contrattile.
 \end{proposition}
 \begin{proof}
-Definiamo l'applicazione
+Definiamo l'omotopia
 \Map{H}{I\times E_{x,X}}{E_{x,X}}{(s,f)}{H(s,f)}
 dove $H(s,f)(t)=f(st)$. Per la \thref{compact-open-topology-properties}, $H$ è continua. Inoltre $H_1$ è l'identità, mentre per ogni $f$ $H_0(f)$ è il cammino che vale costantemente $x$. Dunque l'identità su $E_{x,X}$ è omotopa a un'applicazione costante, ossia $E_{x,X}$ è contrattile.
 \end{proof}

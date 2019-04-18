@@ -86,7 +86,7 @@ Pertanto possiamo definire i moduli
 \begin{align*}
 E^{p,q}_r=\frac{Z^{p,q}_r}{Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1}},&&E^{p,q}_\infty=\frac{Z^{p,q}_\infty}{Z^{p-1,q+1}_\infty+B^{p,q}_\infty}.
 \end{align*}
-Osserviamo in particolare che $E^{p,q}_0=C^p_n/C^{p-1}_n$. È immediato verificare che
+Notiamo in particolare che $E^{p,q}_0=C^p_n/C^{p-1}_n$. È immediato verificare che
 \begin{align*}
 d(Z^{p,q}_r)&\subs Z^{p-r,q+r-1}_r\\
 d(Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1})&\subs Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1},
@@ -96,7 +96,7 @@ $$
 \map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}_r}.
 $$
 \begin{proposition}\thlabel{spectral-sequence-of-filtered-complex}
-I gruppi $E^{p,q}_r$, insieme alle mappe di bordo $d^{p,q}_r$, formano una successione spettrale con modulo terminale $E^{p,q}_\infty$. Inoltre $E^{p,q}_r\converges H_{p+q}(C_\bullet)$.
+I moduli $E^{p,q}_r$, insieme alle mappe di bordo $d^{p,q}_r$, formano una successione spettrale con modulo terminale $E^{p,q}_\infty$. Inoltre $E^{p,q}_r\converges H_{p+q}(C_\bullet)$.
 \end{proposition}
 \begin{proof}
 Mostriamo preliminarmente un semplice lemma che utilizzeremo più volte nel corso della dimostrazione.
@@ -195,6 +195,7 @@ $$
 tali che $E^{p,q}_\infty=H^{p+q}_p/H^{p+q}_{p+1}$.
 \end{definition}
 I risultati visti finora relativamente alle successioni spettrali omologiche presentano varianti del tutto analoghe per le successioni spettrali coomologiche.
+\subsection{Una successione esatta}
 \begin{proposition}\thlabel{cohomological-spectral-exact-sequence}
 Sia $E^{p,q}_r\converges H^{p+q}$ una successione spettrale coomologica, $i,j,r>0$ con $i\le j$. Per ogni $i\le n\le j$ siano date due coppie di interi $(a'_n,b'_n),(a''_n,b''_n)$ con $a'_n+b'_n=a''_n+b''_n=n$ e $a'_n<a''_n$. Supponiamo che per ogni $i\le n\le j$ valga $E^{p,q}_r=0$ ogniqualvolta:
 \begin{itemize}
@@ -208,6 +209,8 @@ Denotiamo con $\pre{n}{E}'_r$ il modulo $E^{p,q}_r$ con $p=a'_n,q=b'_n$, e analo
 \pre{i}{E}''_r\rar&H^i\rar&\pre{i}{E}'_r\rar{\pre{i}{d}}&\pre{i+1}E''_r\rar&\ldots\rar{\pre{j-1}{d}}&\pre{j}{E}''_r\rar&H^j\rar&\pre{j}{E}'_r
 \end{diagram}
 \end{proposition}
+
+\subsection{Cocomplessi filtrati}
 \begin{definition}
 Sia $C^\bullet$ un cocomplesso di $R$-moduli con $C^n=0$ per $n<0$. Si dice filtrazione (decrescente) di $C^\bullet$ una successione di sottocomplessi $C_p^\bullet\subs C^\bullet$ indicizzati da $p\in\ZZ$ che soddisfa le seguenti proprietà:
 \begin{enumerate}
@@ -229,13 +232,59 @@ La mappa di bordo passa al quoziente $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r
 \begin{proposition}\thlabel{spectral-sequence-of-filtered-cocomplex}
 I moduli $E^{p,q}_r$, insieme alle mappe di bordo $d^{p,q}_r$, formano una successione spettrale coomologica con modulo terminale $E^{p,q}_\infty$. Inoltre $E^{p,q}_r\converges H^{p+q}(C^\bullet)$.
 \end{proposition}
-Se $C^\bullet$ è munito di una struttura di anello, come spesso accade nel contesto topologico, allora ne esiste anche una indotta sui termini della successione spettrale associata. Più precisamente, supponiamo che sia definito un prodotto $\map{\cupp}{C^n\times C^m}{C^{n+m}}$ che soddisfa le seguenti proprietà:
+
+\subsection{Struttura moltiplicativa}
+Se $C^\bullet$ è munito di una struttura di anello, come spesso accade nel contesto topologico, allora ne esiste anche una indotta sui termini della successione spettrale associata. Più precisamente, supponiamo che sia definito un prodotto $R$-bilineare $\map{\cupp}{C^n\times C^m}{C^{n+m}}$ che soddisfa le seguenti proprietà:
 \begin{enumerate}
 \item $d(x\cupp y)=dx\cupp y+(-1)^nx\cupp dy$, dove $n$ è il grado di $x$ (in altre parole, $d$ è un'antiderivazione);
 \item $C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}$.
 \end{enumerate}
-Si verifica \todo{Farlo a un certo punto.} allora che $\cupp$ passa al quoziente, inducendo un prodotto $E^{p,q}_r\times E^{p',q'}_r\to E^{p+p',q+q'}_r$; inoltre le mappe di bordo $d^{p,q}_r$ risultano essere antiderivazioni rispetto al grado totale. È dunque conveniente definire $E_r=\Dirsum_{p,q}E^{p,q}_r$, che sotto queste ipotesi diventa un anello "bigraduato" (da $p$ e da $q$).
+Si verifica \todo{Farlo a un certo punto.} allora che $\cupp$ passa al quoziente, inducendo un prodotto $E^{p,q}_r\times E^{p',q'}_r\to E^{p+p',q+q'}_r$; inoltre le mappe di bordo $d^{p,q}_r$ risultano essere antiderivazioni rispetto al grado totale. È dunque conveniente definire $E_r=\Dirsum_{p,q}E^{p,q}_r$, che sotto queste ipotesi diventa una $R$-algebra bigraduata (da $p$ e da $q$).
 
-Esibiamo ora una costruzione che permette di associare una successione spettrale coomologica a un complesso filtrato $(C_\bullet, d)$. Sia $G$ un $R$-modulo. Consideriamo il cocomplesso $C^\bullet=\Hom(C_\bullet,G)$ con mappe di bordo $-\circ d$. Il cocomplesso $C^\bullet$ eredita una filtrazione decrescente $C^n_p=\Ann C_n^{p-1}$ (le proprietà richieste si verificano facilmente), a partire dalla quale possiamo costruire una successione spettrale coomologica $E^{p,q}_r$.
+\subsection{Cocomplesso filtrato duale}
+Esibiamo ora una costruzione che permette di associare una successione spettrale coomologica a un complesso filtrato $(C_\bullet, d)$. Sia $G$ un $R$-modulo. Consideriamo il cocomplesso $C^\bullet=\Hom(C_\bullet,G)$ con mappe di bordo $-\circ d$. Il cocomplesso $C^\bullet$ eredita una filtrazione decrescente $C^n_p=\Ann C_n^{p-1}$ (le proprietà richieste si verificano facilmente), a partire dalla quale possiamo costruire una successione spettrale coomologica $E^{p,q}_r\converges H^{p+q}(C_\bullet;G)$.
 
-\section{Successione spettrale associata al rivestimento universale}
+\section{Successione spettrale associata a un rivestimento universale}
+\todo{Breve introduzione.}
+\begin{proposition}\thlabel{spectral-sequence-of-universal-covering}
+Siano $G$ un $R$-modulo, $X$ uno spazio topologico che ammette un rivestimento universale $\map{p}{T}{X}$. Sia $\pi$ il gruppo fondamentale di $X$. Allora esiste una successione spettrale $E^{p,q}_r\converges H_{p+q}(X;G)$ tale che $E^{p,q}_2=H_p(\pi;H_q(T;G))$.
+\end{proposition}
+Precisiamo che nell'enunciato abbiamo denotato con $H_p(\pi;H_q(T;G)))$ il $p$-esimo modulo di omologia di $\pi$ a coefficienti nel $\pi$-modulo $H_q(T;G)$.
+\begin{corollary}\thlabel{}
+Supponiamo che $G$ sia un campo; supponiamo inoltre che il gruppo fondamentale $\pi$ sia il gruppo additivo $\ZZ$ e che agisca banalmente sui moduli di omologia di $T$. Allora
+$$
+H_i(X;G)=H_i(T;G)\dirsum H_{i-1}(T;G)
+$$
+per ogni $i$.
+\end{corollary}
+\begin{proof}
+Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. È ben noto che, se l'azione di $\ZZ$ su $H_q(T;G)$ è banale, allora
+$$
+E^{p,q}_2=H_p(\ZZ;H_q(T;G))=H_p(S^1;H_q(T;G))=
+\begin{cases}
+H_q(T;G)&p=0,1\\
+0&p\ge 2
+\end{cases}.
+$$
+Abbiamo quindi che tutte le mappe di bordo $d^{p,q}_r$ con $r\ge 2$ sono nulle, pertanto $E^{p,q}_2=E^{p,q}_\infty$. Essendo $G$ un campo, per definizione di convergenza vale
+$$
+H_i(X;G)=\Dirsum_{p+q=i}E^{p,q}_\infty=E^{0,i}_2\dirsum E^{1,i-1}_2=H_i(T;G)\dirsum H_{i-1}(T;G).
+$$
+\end{proof}
+\begin{corollary}
+Supponiamo che $\pi$ sia finito e che agisca banalmente sui gruppi di omologia di $T$; supponiamo inoltre che $G$ sia un campo la cui caratteristica non divide l'ordine di $\pi$. Allora $H_i(X;G)=H_i(T;G)$ per ogni $i$.
+\end{corollary}
+\begin{proof}
+Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. È ben noto che, con le ipotesi fatte, vale
+$$
+H_p(\pi;H_q(T;G))=
+\begin{cases}
+H_q(T;G)&p=0\\
+0&p>0
+\end{cases}.
+$$
+Abbiamo quindi che tutte le mappe di bordo $d^{p,q}_r$ con $r\ge 2$ sono nulle, pertanto $E^{p,q}_2=E^{p,q}_\infty$. Essendo $G$ un campo, per definizione di convergenza vale
+$$
+H_i(X;G)=\Dirsum_{p+q=i}E^{p,q}_\infty=E^{0,i}_2=H_i(T;G).
+$$
+\end{proof}

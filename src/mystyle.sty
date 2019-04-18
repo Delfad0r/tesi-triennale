@@ -34,6 +34,24 @@
 }
 \usepackage{theoremref}
 
+% Unused labels
+\usepackage{etoolbox}
+\let\svlabel\thlabel
+\let\svref\thref
+\def\unusedlabels{}
+\renewcommand\thlabel[1]{\svlabel{#1}\global\edef\unusedlabels{\unusedlabels$<$#1$>$ }}
+\renewcommand\thref[1]{\svref{#1}%
+  \edef\teststring{$<$#1$>$}%
+  \edef\tmp{\unusedlabels}%
+  \def\unusedlabels{}%
+  \expandafter\refhelper\tmp\relax%
+}
+\def\refhelper#1 #2\relax{%
+  \edef\expandcase{#1}%
+  \ifdefstrequal{\teststring}{\expandcase}{}{\edef\unusedlabels{\unusedlabels#1 }}%
+  \if\relax#2\relax\else\refhelper#2\relax\fi
+}
+
 % Prescript
 \usepackage{tensor}
 \let\oldtensor\tensor
