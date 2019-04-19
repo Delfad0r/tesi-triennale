@@ -1,23 +1,23 @@
 \chapter{Spazi di cammini}
 \section{H-spazi}
 \begin{definition}
-Sia $G$ uno spazio topologico munito di un prodotto $\map{\vee}{G\times G}{G}$ continuo. $G$ si dice H-spazio se esiste $e\in G$ con $e\vee e=e$ tale che le applicazioni da $G$ in $G$ definite da $x\mapsto x\vee e$ e $x\mapsto e\vee x$ siano omotope all'identità mediante omotopie che fissano $e$.
+Sia $\Omega$ uno spazio topologico munito di un prodotto $\map{\vee}{\Omega\times \Omega}{\Omega}$ continuo. $\Omega$ si dice H-spazio se esiste $e\in \Omega$ con $e\vee e=e$ tale che le applicazioni da $\Omega$ in $\Omega$ definite da $x\mapsto x\vee e$ e $x\mapsto e\vee x$ siano omotope all'identità mediante omotopie che fissano $e$.
 \end{definition}
 \begin{proposition}\thlabel{h-space-trivial-automorphisms-of-covering-space}
-Sia $G$ un H-spazio connesso, $\map{p}{T}{G}$ un rivestimento. Allora gli automorfismi di rivestimento di $T$ sono omotopi all'identità.
+Sia $\Omega$ un H-spazio connesso, $\map{p}{T}{\Omega}$ un rivestimento. Allora gli automorfismi di rivestimento di $T$ sono omotopi all'identità.
 \end{proposition}
 \begin{proof}
-Sia $\map{f}{T}{T}$ un automorfismo di rivestimento, $\tilde{e}$ un elemento della fibra di $e$, $\tilde{e}'=f(\tilde{e})$. Sia poi $\map{\gamma}{I}{G}$ con $\gamma(0)=\gamma(1)=e$ il cui sollevamento $\tilde\gamma$ soddisfi $\tilde\gamma(0)=\tilde{e},\tilde\gamma(1)=\tilde{e}'$. Sia infine $\map{h}{I\times G}{G}$ un'omotopia con $h_0(x)=x$ e $h_1(x)=e\vee x$. Definiamo l'omotopia
-\Map{H}{I\times T}{G}{(x,t)}{
+Sia $\map{f}{T}{T}$ un automorfismo di rivestimento, $\tilde{e}$ un elemento della fibra di $e$, $\tilde{e}'=f(\tilde{e})$. Sia poi $\map{\gamma}{I}{\Omega}$ con $\gamma(0)=\gamma(1)=e$ il cui sollevamento $\tilde\gamma$ soddisfi $\tilde\gamma(0)=\tilde{e},\tilde\gamma(1)=\tilde{e}'$. Sia infine $\map{h}{I\times \Omega}{\Omega}$ un'omotopia con $h_0(x)=x$ e $h_1(x)=e\vee x$. Definiamo l'omotopia
+\Map{H}{I\times T}{\Omega}{(x,t)}{
 \begin{cases}
 h_{3t}(p(x))&t\le\frac{1}{3}\\
 \gamma(3t-1)\vee p(x)&\frac{1}{3}\le t\le\frac{2}{3}\\
 h_{3-3t}(p(x))&\frac{2}{3}\le t
 \end{cases}}
-Per la proprietà di sollevamento dell'omotopia, esiste un'omotopia $\map{\tilde{H}}{I\times T}{T}$ con $\tilde{H}_0=\1$ e $p\tilde{H}=H$. Osserviamo che il cammino $t\mapsto H_t(\tilde{e})$ è omotopo a $\gamma$ e $\tilde{H}_0(\tilde{e})=\tilde{e}$, pertanto $\tilde{H}_1(\tilde{e})=\tilde{\gamma}(1)=\tilde{e}'$. Ma allora $\tilde{H}_1$ è un sollevamento dell'identità di $G$ tale che $\tilde{H}_1(\tilde{e})=f(\tilde{e})$. Dalla connessione di $G$ segue che $\tilde{H}_1=f$. Ma $\tilde{H}_1=f$ e $\tilde{H}_0=\1$ sono omotope mediante $\tilde H$.
+Per la proprietà di sollevamento dell'omotopia, esiste un'omotopia $\map{\tilde{H}}{I\times T}{T}$ con $\tilde{H}_0=\1$ e $p\tilde{H}=H$. Osserviamo che il cammino $t\mapsto H_t(\tilde{e})$ è omotopo a $\gamma$ e $\tilde{H}_0(\tilde{e})=\tilde{e}$, pertanto $\tilde{H}_1(\tilde{e})=\tilde{\gamma}(1)=\tilde{e}'$. Ma allora $\tilde{H}_1$ è un sollevamento dell'identità di $\Omega$ tale che $\tilde{H}_1(\tilde{e})=f(\tilde{e})$. Dalla connessione di $\Omega$ segue che $\tilde{H}_1=f$. Ma $\tilde{H}_1=f$ e $\tilde{H}_0=\1$ sono omotope mediante $\tilde H$.
 \end{proof}
 \begin{corollary}\thlabel{h-space-trivial-action}
-Sia $G$ un H-spazio connesso, $T$ il suo rivestimento universale. Allora il gruppo fondamentale di $G$ agisce banalmente sui moduli di omologia e di coomologia di $T$.
+Sia $\Omega$ un H-spazio connesso, $T$ il suo rivestimento universale. Allora il gruppo fondamentale di $\Omega$ agisce banalmente sui moduli di omologia e di coomologia di $T$.
 \end{corollary}
 
 \section{Prime proprietà degli spazi di cammini}
@@ -128,15 +128,33 @@ $$
 e ciò è reso possibile dal fatto che $(\{0\}\times I)\cup(I\times\{0\})\cup(I\times\{1\})$ è un retratto di $I\times I$.
 \end{proof}
 
+Consideriamo ora uno spazio topologico $X$ connesso per archi e semplicemente connesso.
+
 \begin{corollary}\thlabel{loop-space-fibration}
-Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso. Allora esistono uno spazio contrattile $E$ e una fibrazione $\fibration{\Omega}{E}{X}$ con fibra connessa per archi.
+Esistono uno spazio contrattile $E$ e una fibrazione $\fibration{\Omega}{E}{X}$ con fibra connessa per archi.
 \end{corollary}
 
-\begin{proposition}\thlabel{loop-space-finitely-generated-homology}
-Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso. Supponiamo che i gruppi $H_i(X)$ siano finitamente generati. Allora anche i gruppi $H_i(\Omega)$ lo sono.
-\end{proposition}
+Possiamo così applicare agli spazi di cammini (almeno nel caso in cui $X$ è semplicemente connesso) i risultati generali sviluppati per gli spazi fibrati, sfruttando in più il fatto che lo spazio totale è contrattile.
+
+\begin{corollary}\thlabel{loop-space-finitely-generated-homology}
+Supponiamo che i gruppi $H_i(X)$ siano finitamente generati. Allora anche i gruppi $H_i(\Omega)$ lo sono.
+\end{corollary}
 \begin{proof}
-Per la dimostrazione ci avvarremo del seguente.
-\todo{Rifare.}
-Consideriamo la fibrazione $\fibration{\Omega}{E}{X}$ del \thref{loop-space-fibration}. Poiché $E$ è contrattile, i suoi gruppi di omologia sono finitamente generati. Applicando il Lemma si ottiene immediatamente la tesi.
+Consideriamo la fibrazione $\fibration{\Omega}{E}{X}$ del \thref{loop-space-fibration}. Poiché $E$ è contrattile, i suoi gruppi di omologia sono finitamente generati. Applicando la \thref{fibration-finitely-generated-homology-groups} si ottiene immediatamente la tesi.
 \end{proof}
+
+\begin{corollary}\thlabel{loop-space-homology-isomorphism}
+Sia $G$ un PID. Supponiamo che $H_i(X;G)=0$ per $0<i<p$. Allora $\map{d_i}{H_i(X;G)}{H_{i-1}(\Omega;G)}$ è un isomorfismo per $2\le i\le p$ (in particolare $H_i(\Omega;G)=0$ per $0<i<p-1$).
+\end{corollary}
+\begin{proof}
+Consideriamo la fibrazione $\fibration{\Omega}{E}{X}$ del \thref{loop-space-fibration}. Dalla \thref{fibration-homology-exact-sequence} (applicata con $q=1$) otteniamo le successioni esatte
+\begin{diagram}
+H_i(E;G)\rar&H_i(X;G)\rar{d_i}&H_{i-1}(\Omega;G)\rar&H_{i-1}(E;G)
+\end{diagram}
+per $2\le i\le p$. Poiché $E$ è contrattile, $H_i(E;G)=0$ per ogni $i>0$, da cui la tesi.
+\end{proof}
+
+Naturalmente vale il risultato "duale" in coomologia.
+\begin{corollary}\thlabel{loop-space-cohomology-isomorphism}
+Sia $G$ un PID. Supponiamo che $H^i(X;G)=0$ per $0<i<p$. Allora $\map{d_i}{H^{i-1}(\Omega;G)}{H^i(X;G)}$ è un isomorfismo per $2\le i\le p$ (in particolare $H^i(\Omega;G)=0$ per $0<i<p-1$).
+\end{corollary}

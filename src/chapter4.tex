@@ -27,7 +27,7 @@ Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coo
 \end{proposition}
 
 
-\section{Struttura moltiplicativa del termine \texorpdfstring{$E^*_2$}{E*2}}
+\section{Struttura moltiplicativa di \texorpdfstring{$E^*_2$}{E*2}}
 Supponiamo ora che $G$ sia anche un anello. Allora i gruppi di coomologia di $E$ acquistano una struttura di $G$-algebra, e lo stesso accade per i gruppi $E^\ast_r$. Infatti il \cupproduct{} definisce una struttura di anello su $C^\bullet(E)$; si verifica facilmente che tale prodotto soddisfa la condizione $C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}$, dunque come mostrato nel paragrafo \ref{cohomological-spectral-sequence:multiplicative-structure} i termini della successione spettrale $E^\ast_r$ ereditano una struttura di anello per la quale le mappe di bordo sono antiderivazioni. È naturale domandarsi come questa struttura si trasformi mediante l'isomorfismo della \thref{cohomological-spectral-sequence-of-fibration-E-2}.
 Definiamo
 $$
@@ -106,7 +106,7 @@ g\cdot g'&=\varphi^*(\psi^*(g\cdot g'))\\
 dove abbiamo sfruttato la \thref{cohomological-spectral-sequence-of-fibration-ring} e il risultato analogo per $\varphi^*$. Dunque la tesi è vera per $r=2$. Ma allora è vera per ogni $r\ge 2$, poiché la struttura di anello di $E^\ast_r$ si ottiene per passaggio al quoziente da quella di $E^\ast_{r-1}$.
 \end{proof}
 
-\section{Semplificazione del termine \texorpdfstring{$E^*_2$}{E*2}}
+\section{Semplificazione di \texorpdfstring{$E^*_2$}{E*2}}
 Continuiamo a supporre che $G$ sia un anello. Sotto alcune ipotesi risulta possibile semplificare il calcolo del termine $E^\ast_2$ della successione spettrale. Se $M$ e $N$ sono due $G$-algebre graduate, possiamo definire su $M\tensor N$ una struttura di $G$-algebra come segue: se $x,x'\in M$ e $y,y'\in N$ sono elementi omogenei di gradi, rispettivamente $p,p',q,q'$, allora
 $$
 (x\tensor y)(x'\tensor y')=(-1)^{p'q}(xx'\tensor yy').
@@ -147,10 +147,10 @@ Per additività di $\Hom(-,-)$ e di $-\tensor-$, essendo $H_p(B;G)$ libero e fin
 
 \section{Applicazioni}
 Presentiamo innanzitutto il risultato "duale" della \thref{fibration-homology-exact-sequence}; omettiamo la dimostrazione, del tutto analoga.
-\begin{proposition}
+\begin{proposition}\thlabel{fibration-cohomology-exact-sequence}
 Sia $G$ un PID, $\fibration{F}{E}{B}$ una fibrazione in cui il gruppo fondamentale di $B$ agisce banalmente sui moduli di coomologia di $F$. Supponiamo che $H^i(B;G)=0$ per $0<i<p$ e che $H^i(F;G)=0$ per $0<i<q$. Allora esiste una successione esatta
 \begin{diagram}
-H^1(B;G)\rar&H^1(E;G)\rar&H^1(F;G)\rar{d_1}&H^2(B;G)\rar&\ldots\rar&H^{p+q-2}(F;G)\rar{d_{p+q-2}}&H^{p+q-1}(B;G)\rar&H^{p+q-1}(E;G)\rar&H^{p+q-1}(F;G)
+H^1(B;G)\rar&H^1(E;G)\rar&H^1(F;G)\rar{d_2}&H^2(B;G)\rar&\ldots\rar&H^{p+q-2}(F;G)\rar{d_{p+q-1}}&H^{p+q-1}(B;G)\rar&H^{p+q-1}(E;G)\rar&H^{p+q-1}(F;G)
 \end{diagram}
 \end{proposition}
 
