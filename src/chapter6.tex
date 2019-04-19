@@ -1,0 +1,130 @@
+\chapter{Gruppi di omotopia delle sfere}
+
+\section{Metodo generale}
+
+\begin{definition}
+Uno spazio topologico $X$ si dice uniformemente localmente contrattile (ULC) se esiste un intorno $U$ della diagonale $\Delta\subs X\times X$ tale che le due applicazioni da $U$ in $X$ definite rispettivamente da $(x,y)\mapsto x$ e $(x,y)\mapsto y$ sono omotope mediante un'omotopia che fissa $\Delta$.
+\end{definition}
+
+Si può mostrare che, se $X$ è connesso per archi e ULC, allora $X$ ammette un rivestimento universale ULC; inoltre, se $X$ è ULC, allora anche $\Omega X$ (lo spazio dei cammini chiusi su $X$) è ULC.
+
+Sia $X$ uno spazio connesso per archi ULC. Definiamo ricorsivamente:
+\begin{itemize}
+\item $X_0=X$;
+\item $T_{n+1}$ è il rivestimento universale di $X_n$ per $n\ge 0$;
+\item $X_n=\Omega T_n$ per $n\ge 1$.
+\end{itemize}
+Osserviamo che si tratta di buone definizioni: $X_0$ è connesso per archi e ULC, dunque $T_1$ è ULC; inoltre $T_1$ è semplicemente connesso, pertanto $X_1$ è  connesso per archi e ULC, e la costruzione si può ripetere indefinitamente.
+
+Possiamo ora ricavare una relazione interessante fra i gruppi di omotopia di $X$ e i gruppi di omologia di $X_n$.
+
+\begin{proposition}\thlabel{homotopy-groups-of-x-n}
+Per ogni $n\ge 0,i\ge 1$ vale $\pi_i(X_n)=\pi_{i+n}(X)$.
+\end{proposition}
+\begin{proof}
+La relazione è banalmente vera per $n=0$. Ragionando per induzione, possiamo supporre che sia vera per $n-1$. Poiché $T_n$ è il rivestimento universale di $X_{n-1}$, vale $\pi_1(T_n)=0$ e $\pi_i(T_n)=\pi_i(X_{n-1})=\pi_{i+n-1}(X)$ per $i\ge 2$. Consideriamo la fibrazione $\fibration{X_n}{E}{T_n}$ del \thref{loop-space-fibration} e la successione esatta lunga dei gruppi di omotopia associata:
+\begin{diagram}
+\pi_{i+1}(E_{x,T_n})\rar&\pi_{i+1}(T_n)\rar&\pi_i(X_n)\rar&\pi_i(E_{x,T_n})
+\end{diagram}
+Ma $E$ è contrattile, pertanto per ogni $i\ge 1$ vale $\pi_i(X_n)=\pi_{i+1}(T_n)=\pi_{i+n}(X)$.
+\end{proof}
+\begin{corollary}\thlabel{homotopy-groups-homology-groups}
+Per ogni $n\ge 1$ vale $H_1(X_n)=\pi_{n+1}(X)$.
+\end{corollary}
+\begin{proof}
+Sappiamo che $\pi_1(X_n)=\pi_{n+1}(X)$; in particolare $\pi_1(X_n)$ è abeliano. Per il teorema di Hurewicz, $\pi_1(X_n)=H_1(X_n)$.
+\end{proof}
+Osserviamo che, per $n\ge 1$, $X_n$ è un H-spazio, dunque il suo gruppo fondamentale agisce banalmente sui gruppi di omologia e coomologia di $T_n$ (\thref{h-space-trivial-action}).
+
+\begin{proposition}\thlabel{homology-groups-finitely-generated}
+Supponiamo che $X$ sia semplicemente connesso, e che i gruppi $H_i(X)$ siano finitamente generati per ogni $i\ge 0$. Allora i gruppi di omologia di $X_i$ e di $T_i$ sono finitamente generati per ogni $i\ge 0$.
+\end{proposition}
+\begin{proof}
+La tesi è sicuramente vera per $X_0$ per ipotesi e per $T_1$ poiché $T_1=X_0$. Dalla \thref{loop-space-finitely-generated-homology} segue che se la tesi vale per $T_i$ allora vale anche per $X_i$, mentre dalla \thref{homology-of-universal-covering-finitely-generated} si ottiene che se la tesi è vera per $X_i$ allora è vera anche per $T_{i+1}$ (ricordiamo che il gruppo fondamentale di $X_i$ agisce banalmente sull'omologia di $T_{i+1}$). Per induzione si ha la tesi per ogni $i$.
+\end{proof}
+
+\begin{corollary}\thlabel{homotopy-groups-finitely-generated}
+Supponiamo che $X$ sia semplicemente connesso, e che i gruppi $H_i(X)$ siano finitamente generati per ogni $i\ge 0$. Allora i gruppi $\pi_i(X)$ sono finitamente generati per ogni $i\ge 0$.
+\end{corollary}
+\begin{proof}
+La tesi segue immediatamente dal \thref{homotopy-groups-homology-groups} e dalla \thref{homology-groups-finitely-generated}
+\end{proof}
+
+\begin{proposition}\thlabel{homotopy-groups-tensor-k}
+Supponiamo che $X$ sia semplicemente connesso, e che i gruppi $H_i(X)$ siano finitamente generati per ogni $i\ge 0$. Sia $K$ un campo. Supponiamo inoltre che $H_i(X;K)=0$ per $0<i<n$. Allora $\pi_i(X)\tensor K=H_i(X;K)$ per $2\le i\le n$.
+\end{proposition}
+\begin{proof}
+Mostriamo innanzitutto un lemma preliminare.
+\begin{lemma*}
+Nelle ipotesi della proposizione, dati $i>0,0\le j\le n-i$ vale $H_i(X_j;K)=H_{i+j}(X;K)$.
+\end{lemma*}
+\begin{proof}
+Mostriamo la tesi per induzione su $j$; per $j=0$ è ovvia. Sia ora $j\ge 1$. Abbiamo 
+$$
+\pi_1(X_{j-1})\tensor K=H_1(X_{j-1})\tensor K=H_1(X_{j-1};K)=H_j(X;K)=0.
+$$
+Il gruppo abeliano $\pi_1(X_{j-1})$ è finitamente generato, dunque è in realtà finito, e il suo ordine è coprimo con la caratteristica di $K$. Per \missing{} vale $H_i(T_j;K)=H_i(X_{j-1};K)$ per ogni $i\ge 0$. Per concludere è sufficiente ricordare che $X_j=\Omega T_j$ e applicare la \thref{loop-space-suspension-isomorphism}.
+\end{proof}
+La tesi della proposizione segue ora banalmente: se $2\le i\le n$ vale
+$$
+\pi_i(X)\tensor K=H_1(X_{i-1})\tensor K=H_1(X_{i-1};K)=H_i(X;K).
+$$
+\end{proof}
+
+\section{Sfere di dimensione dispari}
+\begin{lemma}\thlabel{cohomology-of-omega-of-space-with-exterior-cohomology}
+Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso; sia inoltre $K$ un campo di caratteristica nulla. Supponiamo che $H^*(X;K)$ sia l'algebra esterna generata da un elemento di grado $n\ge 3$ dispari. Allora $H^*(\Omega;K)$ è l'algebra di polinomi generata da un elemento di grado $n-1$.
+\end{lemma}
+\begin{proof}
+Osserviamo che $X$ ha la stessa algebra di coomologia della sfera $S^n$, dunque possiamo scrivere la successione esatta di Wang associata alla fibrazione $\fibration{\Omega}{E_{x,X}}{X}$:
+\begin{diagram}
+H^i(E_{x,X};K)\rar&H^i(\Omega;K)\rar{\theta}&H^{i-k+1}(\Omega K)\rar&H^{i+1}(E_{x,X};K)
+\end{diagram}
+Poiché $E_{x,X}$ è contrattile, $H^i(E_{x,X};K)=0$ per $i>0$, dunque $\theta$ è un isomorfismo e $H^i(\Omega;K)=H^{i+(k-1)}(\Omega;K)$ per ogni $i\ge 0$, ossia
+$$
+H^i(\Omega;K)=
+\begin{cases}
+K&\text{se $i\equiv 0\pmod{k-1}$}\\
+0&\text{altrimenti}
+\end{cases}.
+$$
+Definiamo per ogni $i\ge 0$ un elemento $e_i\in H^{(k-1)i}(\Omega;K)$ per ricorsione: $e_0=1\in H^0(\Omega;K)$ e $e_i=i\theta^{-1}e_{i-1}$. È evidente che gli $e_i$ formano una base di $H^*(\Omega;K)$ come $K$-modulo; basta allora dimostrare che $e_i\cdot e_j=e_{i+j}$ per concludere che $H^*(\Omega;K)$ è l'algebra di polinomi generata da $e_1$. Dalla successione esatta di Wang sappiamo che $\theta$ è una derivazione, in quanto $n$ è dispari. Per induzione su $i+j$ si vede che
+\begin{align*}
+\theta(e_i\cdot e_j)&=\theta e_i\cdot e_j+e_i\cdot\theta e_j\\
+&=i e_{i-1}\cdot e_j+e_i\cdot je_{j-1}\\
+&=(i+j)e_{i+j-1}\\
+&=\theta e_{i+j}
+\end{align*}
+da cui (essendo $\theta$ un isomorfismo) $e_i\cdot e_j=e_{i+j}$.
+\end{proof}
+\begin{lemma}\thlabel{cohomology-of-omega-of-space-with-polynomyal-cohomology}
+Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso; sia inoltre $K$ un campo. Supponiamo che $H^*(X;K)$ sia l'algebra di polinomi generata da un elemento $u$ di grado $n\ge 2$ pari. Allora $H^*(\Omega;K)$ è l'algebra esterna generata da un elemento $v$ di grado $n-1$.
+\end{lemma}
+\begin{proof}
+Da \missing{} segue che $H^i(\Omega;K)=0$ per $0<i<n-1$; inoltre, poiché $E_{x,X}$ è contrattile, $\map{d_n}{H^{n-1}(\Omega;K)}{H^n(X;K)}$ è un isomorfismo. \todo{Mi serve una proposizione che dica questo.} Consideriamo la successione spettrale coomologica $E^{p,q}_r\converges H^{p+q}(E_{x,X};K)$. Notiamo che siamo nelle condizioni di applicare la \thref{cohomological-spectral-sequence-of-fibration-tensor-product}, da cui $E_2=H^*(X;K)\tensor H^*(\Omega;K)$; in particolare, identificheremo $H^*(X;K)$ con $H^*(X;K)\tensor 1$ e $1\tensor H^*(\Omega;K)$ con $H^*(\Omega;K)$. Osserviamo, di conseguenza, che se $p$ non è multiplo di $n$ allora $E^{p,q}_2=0$ (e dunque anche $E^{p,q}_r=0$ per $r\ge2$). Pertanto, per $r$ non multiplo di $n$, le mappe di bordo $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}$ sono tutte nulle (infatti almeno uno fra $p$ e $p+r$ non è divisibile per $n$). In particolare vale $E_2=E_3=\ldots=E_n$.
+
+Poiché $u$ è un generatore di $H^n(X;K)$, allora $v=d_n^{-1}u$ è un generatore di $H^{n-1}(\Omega;K)$. Denotiamo con $U_r$ il sottomodulo di $E_r$ generato dagli elementi di grado complementare $q\le n-1$, ossia
+$$
+U_r=\Dirsum_{\substack{p\\q\le n-1}}E^{p,q}_r.
+$$
+Osserviamo che $\{u^k,u^k\cdot v\}_{k\ge 0}$ è una base di $U_n$. Dal fatto che $d_n$ è un'antiderivazione e $d_nv=u$ segue che $d_n u^k=0$ e $d_n(u^k\cdot v)=u^{k+1}$. Ma allora tutti i cocicli di $U_n$ sono anche cobordi (rispetto a $d_n$), eccezion fatta per gli elementi di grado $0$, pertanto $U_r=E^{0,0}_r$ per ogni $r\ge n+1$.
+
+Mostriamo infine, per induzione su $q\ge n$, che $H^q(\Omega;K)=0$. Supponiamo per assurdo che esista un $w\in H^q(\Omega;K)$ non nullo. Ricordiamo che $H^q(\Omega;K)=E^{0,q}_n$. Se $w$ annullasse tutte le mappe di bordo $d_r$ con $r\ge n$, allora avremmo che $E^{0,q}_\infty\neq 0$, contro il fatto che $H^q(E_{x,X})=0$. Sia dunque $r$ il minimo intero $\ge n$ tale che $d_rw\neq 0$.
+\begin{itemize}
+\item Se $r=n$ allora $d_nw\in E^{n,q-(n-1)}_n$. Affinché $E^{n,q-(n-1)}_n$ sia non nullo è necessario, per ipotesi induttiva, che $q-(n-1)$ valga $n-1$ (o $0$, ma $q>n-1$). Pertanto $d_nw=ku\cdot v$ per un certo $k\in K$. Applicando $d_n$ a entrambi i membri si ottiene $0=ku^2$, da cui, essendo $u^2\neq 0$, necessariamente $k=0$ e $d_nw=0$, assurdo.
+\item Se $r>n$ allora $U_r=E^{0,0}_r$ e $E^{p,q'}_r=0$ per $n\le q'<q$ per ipotesi induttiva. Poiché $d_rw\in E^{r,q-r+1}_r$, necessariamente $d_rw=0$, assurdo.
+\end{itemize}
+Dunque non può esistere alcun $w\in H^q(\Omega;K)$ non nullo, e questo conclude la dimostrazione (infatti $H^*(\Omega;K)=H^0(\Omega;K)\dirsum H^{n-1}(\Omega;K)$).
+\end{proof}
+\begin{proposition}\thlabel{homotopy-groups-of-odd-sphere-finite}
+Per ogni $n\ge 3$ dispari e per ogni $i>n$, il gruppo $\pi_i(S^n)$ è finito.
+\end{proposition}
+\begin{proof}
+Sia $X=S^n$, e siano $X_i,T_i$ gli spazi costruiti secondo il metodo generale della sezione precedente (la costruzione è lecita, in quanto $S^n$ è un poliedro finito, dunque ULC\todo{Dimostrarlo.}). Sia $K$ un campo di caratteristica nulla; calcoliamo le algebre di coomologia degli spazi $X_i$ e $T_i$ a coefficienti in $K$. Abbiamo che $T_1=X$, dunque la sua algebra di coomologia è l'algebra esterna generata da un elemento di grado $n$. Per il \thref{cohomology-of-omega-of-space-with-exterior-cohomology}, l'algebra di coomologia di $X_1$ è l'algebra di polinomi generata da un elemento di grado $n-1$. Dalla \thref{homotopy-groups-of-x-n} deduciamo che $\pi_1(X_1)=\pi_2(X)=0$, ossia $X_1$ è semplicemente connesso, da cui $T_2=X_1$. Applicando il \thref{cohomology-of-omega-of-space-with-polynomyal-cohomology} otteniamo che l'algebra di coomologia di $X_2$ è l'algebra esterna generata da un elemento di grado $n-2$.
+
+Proseguendo in questo modo risulta che l'algebra di coomologia di $X_{n-1}$ è l'algebra esterna generata da un elemento di grado $1$; in particolare $H^i(X_{n-1};K)=0$ per $i\ge 2$. Dal teorema dei coefficienti universali si deduce immediatamente che $H_i(X_{n-1};K)=0$ per $i\ge 2$. Essendo $\pi_1(X_{n-1})=\pi_n(X)=\ZZ$, da \missing{} segue che $H_i(T_n;K)=0$ per $i>0$. Ma $T_n$ è semplicemente connesso e i suoi gruppi di omologia sono finitamente generati, dunque possiamo applicare la \thref{homotopy-groups-tensor-k} e dedurre che $\pi_i(T_n)\tensor K=0$ per ogni $i\ge 2$. Sfruttando la \thref{homotopy-groups-of-x-n} e il fatto che $T_n$ è il rivestimento universale di $X_{n-1}$ otteniamo infine che 
+$$
+\pi_{n+i-1}(X)\tensor K=\pi_i(X_{n-1})\tensor K=\pi_i(T_n)\tensor K=0
+$$
+per ogni $i\ge 2$, ossia che $\pi_i(X)\tensor K=0$ per $i>n$. Ricordando che i gruppi di omotopia di $X$ sono finitamente generati (\thref{homotopy-groups-finitely-generated}) possiamo concludere che $\pi_i(S^n)$ è un gruppo abeliano finito per $i>n$.
+\end{proof}

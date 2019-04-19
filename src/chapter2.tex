@@ -32,9 +32,10 @@ H_n(X;G)&=H_n(C_\bullet(X;G))\\
 C^\bullet(X;G)&=\Hom(C_\bullet(X),G)\\
 H^n(X;G)&=H^n(C^\bullet(X;G)).
 \end{align*}
-Osserviamo che $C^n(X;G)$ può essere interpretato come il gruppo abeliano delle funzioni dai cubi di dimensione $n$ in $G$ che sono nulle sui cubi degeneri.
+Osserviamo che $C^n(X;G)$ può essere interpretato come il gruppo abeliano delle funzioni dai cubi di dimensione $n$ in $G$ che sono nulle sui cubi degeneri. Siano inoltre $H_*(X;G)=\Dirsum_{n\ge 0}H_n(X;G)$, $H^*(X;G)=\Dirsum_{n\ge 0}H^n(X;G)$.
 
-Siano inoltre $H_*(X;G)=\Dirsum_{n\ge 0}H_n(X;G)$, $H^*(X;G)=\Dirsum_{n\ge 0}H^n(X;G)$. Esattamente come nel caso della teoria singolare classica, se $G$ è un anello $H^*(X)$ acquisisce una struttura di $G$-algebra graduata. Si definisce il \cupproduct{} come segue: se $u$ è un cubo di dimensione $p+q$ e $f,g$ sono cocatene di dimensione $p,q$ rispettivamente, allora
+\subsection{Prodotto cup}\label{cubic-homology:cup-product}
+Esattamente come nel caso della teoria singolare classica, se $G$ è un anello $H^*(X)$ acquisisce una struttura di $G$-algebra graduata. Si definisce il \cupproduct{} come segue: se $u$ è un cubo di dimensione $p+q$ e $f,g$ sono cocatene di dimensione $p,q$ rispettivamente, allora
 $$
 (f\cupp g)u=\sum_H\rho_{H,K}f(\lambda^0_Ku)\cdot g(\lambda^1_Hu),
 $$
@@ -44,10 +45,11 @@ d(f\cupp g)=df\cupp g+(-1)^pf\cupp dg,
 $$
 da cui segue che il \cupproduct{} passa al quoziente, definendo un prodotto in coomologia $H^*(X)\times H^*(X)\to H^*(X)$.
 
+\subsection{Confronto con l'omologia singolare classica}\label{cubic-homology:comparison}
 Si può dimostrare che l'approccio dell'omologia cubica conduce ai medesimi risultati dell'omologia singolare classica.
 
 \begin{proposition}\thlabel{cubic-homology-isomorphic-classical-homology}
-Denotiamo con $H_*^\Delta(X;G),H^*_\Delta(X;G)$ l'omologia e la coomologia singolare standard. Allora $H_i(X;G)\iso H_i^\Delta(X;G)$ e $H^i(X;G)\iso H_\Delta^i(X;G)$. Inoltre, se $G$ è anche un anello, allora l'isomorfismo in coomologia preserva la struttura moltiplicativa.
+Denotiamo con $H_*^\Delta(X;G),H^*_\Delta(X;G)$ l'omologia e la coomologia singolare classiche. Allora $H_i(X;G)\iso H_i^\Delta(X;G)$ e $H^i(X;G)\iso H_\Delta^i(X;G)$. Inoltre, se $G$ è anche un anello, allora l'isomorfismo in coomologia preserva la struttura moltiplicativa.
 \end{proposition}
 \begin{corollary}\thlabel{cohomology-ring-anticommutative}
 Supponiamo che $G$ sia un anello. Siano $f,g\in H^*(X;G)$ rispettivamente di grado $p$ e $q$. Allora $f\cdot g=(-1)^{pq}g\cdot f$.
@@ -103,7 +105,7 @@ Sia $\map{p}{E}{B}$ una fibrazione, $e\in E,b=p(e),F=p^{-1}(e)$. Supponiamo che 
 \begin{proof}
 
 \end{proof}
-D'ora in poi considereremo solo fibrazioni con spazio base e fibre connessi per archi. Per la \thref{cubic-homology-single-vertex} possiamo limitarci a considerare cubi con vertici in un singolo punto fissato nello studio dell'omologia e della coomologia. Nel seguito supporremo dunque implicitamente che i cubi in $F$ ed $E$ abbiano tutti i vertici in un punto fissato $e$, e che i cubi in $B$ abbiano tutti i vertici in $b=p(e)$.
+D'ora in poi considereremo solo fibrazioni con spazio base e fibre connessi per archi. Per la \thref{cubic-homology-single-vertex} possiamo limitarci a considerare cubi con vertici in un singolo punto fissato nello studio dell'omologia e della coomologia. Nel seguito supporremo dunque implicitamente che i cubi in $F$ ed $E$ abbiano tutti i vertici in un punto fissato $e$, e che i cubi in $B$ abbiano tutti i vertici in $b=p(e)$. Utilizzeremo inoltre la notazione $\fibration{F}{E}{B}$ per indicare una fibrazione $\map{p}{E}{B}$ di fibra $F$ (i punti $e$ e $b$ saranno spesso irrilevanti).
 
 \section{Azione del gruppo fondamentale di \texorpdfstring{$B$}{B} sull'omologia della fibra}
 
@@ -118,7 +120,11 @@ Sia $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ un'applicazione ch
 \item se $u$ è degenere, allora anche $Tu$ lo è.
 \end{enumerate}
 \end{definition}
-Ogni costruzione $T$ induce un morfismo di complessi $\map{S_T}{C_\bullet(F)}{C_\bullet(F)}$ definito da $(S_Tu)(t)=(Tu)(1,t)$. Le proprietà delle costruzioni garantiscono che $S_Tu$ è effettivamente un cubo di $F$, che cubi degeneri vengono mandati in cubi degeneri e che $S_T$ commuta con la mappa di bordo. A sua volta, $S_T$ induce endomorfismi dei gruppi di omologia e coomologia di $F$.
+Ogni costruzione $T$ induce un morfismo di complessi $\map{S_T}{C_\bullet(F)}{C_\bullet(F)}$ definito da 
+$$
+(S_Tu)(t_1,\ldots,t_n)=(Tu)(1,t_1,\ldots,t_n).
+$$
+Le proprietà delle costruzioni garantiscono che $S_Tu$ è effettivamente un cubo di $F$, che cubi degeneri vengono mandati in cubi degeneri e che $S_T$ commuta con la mappa di bordo. A sua volta, $S_T$ induce endomorfismi dei gruppi di omologia e coomologia di $F$.
 \begin{proposition}\thlabel{subordinate-construction-homotopy-equivalence}
 Siano $\gamma_1,\gamma_2$ cammini chiusi in $B$ con estremi in $b$, $T_1,T_2$ costruzioni subordinate rispettivamente a $\gamma_1,\gamma_2$. Supponiamo che $\gamma_1,\gamma_2$ rappresentino lo stesso elemento del gruppo fondamentale. Allora i morfismi di complessi $S_{T_1}$ e $S_{T_2}$ sono omotopi.
 \end{proposition}
@@ -133,306 +139,9 @@ Sia $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ una costruzione su
 \begin{proof}
 
 \end{proof}
-Motivati dalla proposizione precedente, ci limiteremo spesso a studiare fibrazioni in cui l'azione di $\pi_1(B)$ sui gruppi di omologia e coomologia di $F$ è banale (con questa espressione intendiamo che per ogni costruzione $T$ subordinata a un qualche cammino il morfismo $S_T$ induce l'identità in omologia e in coomologia).
+
 \begin{corollary}\thlabel{simply-connected-trivial-action}
 Se $B$ è semplicemente connesso, allora $\pi_1(B)$ agisce banalmente sui gruppi di omologia e coomologia di $F$.
 \end{corollary}
 
-\section{Successione spettrale di uno spazio fibrato}
-Per applicare i risultati della Sezione \ref{sec:spectral-sequence-filtered-complex}, è necessario definire una filtrazione crescente sul complesso singolare $C_\bullet(E)$ (d'ora in poi ometteremo la $E$ dell'argomento). Ciò che faremo sarà filtrare il complesso $Q_\bullet$ con dei sottocomplessi $Q^p_\bullet$ e prenderne le immagini nel quoziente $C_\bullet$. Sia dunque $Q^p_n$ il sottogruppo di $Q_n$ generato dai cubi $u\in Q_n$ tali che $p\circ u$ dipende solo dalle prime $p$ coordinate (e $Q^p_n=Q_n$ se $p>n$). Si vede immediatamente che i $Q^p_\bullet$ sono sottocomplessi di $Q_\bullet$ e che soddisfano le proprietà di una filtrazione crescente. Dunque lo stesso vale per $C^p_\bullet=(Q^p_\bullet+D_\bullet)/D_\bullet$, che definiscono una filtrazione crescente per $C_\bullet$. Applicando la \thref{spectral-sequence-of-filtered-complex} otteniamo una successione spettrale $E^{p,q}_r\converges H_{p+q}(E)$. Come vedremo, è possibile calcolare esplicitamente i termini $E^{p,q}_2$ della successione spettrale in funzione dei gruppi di omologia di $B$ e di $F$.
-
-Costruiamo due applicazioni $B^p$ e $F^p$ definite sui cubi di $Q^p_\bullet$ (ed estese per $\ZZ$-linearità a tutto $Q^p_\bullet$). Se $u\in\ Q^p_n$ è un cubo di dimensione $n$ con $n\ge p$, posto $q=n-p$, definiamo
-\begin{align*}
-(B^pu)(t_1,\ldots,t_p)&=pu(t_1,\ldots,t_p,0,\ldots,0);\\
-(F^pu)(t_1,\ldots,t_q)&=u(0,\ldots,0,t_1,\ldots,t_q).
-\end{align*}
-$B^pu$ è un cubo di $B$ di dimensione $p$; notiamo che, poiché $u\in Q^p_n$, possiamo sostituire gli zeri nella definizione con qualunque altra $q$-upla di reali fra $0$ e $1$. $F^pu$ è invece un cubo di $F$ di dimensione $q$; la sua immagine è contenuta in $F$ poiché
-$$
-p(F^pu)(t_1,\ldots,t_q)=pu(0,\ldots,0,t_1,\ldots,t_q)=pu(0,\ldots,0)=b.
-$$
-Le seguenti proprietà sono di verifica immediata.
-\begin{enumerate}
-\item\label{spectral-sequence-of-fibration:pr1} $B^pu$ è degenere se e solo se $u\in Q^{p-1}_n$.
-\item\label{spectral-sequence-of-fibration:pr2} Se $u$ è degenere e $q>0$ allora $F^pu$ è degenere; se $u$ è degenere e $q=0$ allora $B^pu$ è degenere.
-\item\label{spectral-sequence-of-fibration:pr3} Se $i>p,\epsilon\in\{0,1\}$ allora $B^p\lambda^\epsilon_iu=B^pu$ e $F^p\lambda^\epsilon_iu=\lambda^\epsilon_{i-p}F^pu$.
-\end{enumerate}
-
-Ricordiamo che $E^{p,q}_0=C^p_{p+q}/C^{p-1}_{p+q}$ e che la mappa $\map{d^{p,q}_0}{E^{p,q}_0}{E^{p,q-1}_0}$ si ottiene dalla mappa di bordo di $C_\bullet$ per passaggio al quoziente. Possiamo dunque raggruppare i termini della successione spettrale aventi $r=0$ in complessi $E^{p,\bullet}_0$, con mappe di bordo $d^p_0$. Osserviamo che
-$$
-d^p_0u=\sum_{i>p}(-1)^i(\lambda^0_iu-\lambda^1_iu)
-$$
-in quanto per $i\le p$ vale $\lambda^\epsilon_iu\in Q^p_\bullet$.
-
-Consideriamo il complesso $J^p_\bullet=C_p(B)\tensor C_\bullet(F)$ con mappe di bordo $d_J(b\tensor f)=(-1)^pb\tensor df$, e sia $\varphi^p$ il morfismo di complessi
-\Map{\varphi^p}{E^{p,\bullet}_0}{J^p_\bullet}{u}{B^pu\tensor F^pu}
-Le proprietà \ref{spectral-sequence-of-fibration:pr1} e \ref{spectral-sequence-of-fibration:pr2} garantiscono che si tratta di una buona definizione (ossia che è compatibile con il quoziente che definisce $E^{p,\bullet}_0$), mentre dalla \ref{spectral-sequence-of-fibration:pr3} segue che $\varphi^p$ è effettivamente un morfismo di complessi:
-\begin{align*}
-\varphi^pd^p_0u&=\varphi^p\sum_{i>p}(-1)^i(\lambda^0_iu-\lambda^1_iu)\\
-&=\sum_{i>p}(-1)^i(B^p\lambda^0_iu\tensor F^p\lambda^0_iu-B^p\lambda^1_iu\tensor F^p\lambda^1_iu)\\
-&=\sum_{i>p}(-1)^pB^pu\tensor(-1)^{p-i}(\lambda^0_{i-p}F^pu-\lambda^1_{i-p}F^pu)\\
-&=(-1)^pB^pu\tensor dF^pu\\
-&=d_J\varphi^pu.
-\end{align*}
-
-Ci proponiamo di mostrare che $\varphi^p$ è in realtà un'equivalenza omotopica. Sfrutteremo il seguente lemma per costruire un'inversa omotopica.
-
-\begin{lemma}\thlabel{spectral-sequence-of-fibration-psi-construction}
-Esiste un'applicazione $K$ che associa a ogni coppia di cubi $(u,v)$ con $u\in Q_p(B)$ e $v\in Q_q(F)$ un cubo $K(u,v)\in Q^p_{p+q}(E)$ e che soddisfa le seguenti proprietà:
-\begin{enumerate}
-\item\label{spectral-sequence-of-fibration-psi-construction:pr1} $B^pK(u,v)=u$ e $F^pK(u,v)=v$;
-\item\label{spectral-sequence-of-fibration-psi-construction:pr2} per ogni $i\le q,\epsilon\in\{0,1\}$ vale $K(u,\lambda^\epsilon_iv)=\lambda^\epsilon_{i+p}K(u,v)$;
-\item\label{spectral-sequence-of-fibration-psi-construction:pr3} se $v$ è degenere allora $K(u,v)$ è degenere.
-\end{enumerate}
-\end{lemma}
-\begin{proof}
-
-\end{proof}
-
-Definiamo allora il morfismo di complessi
-\Map{\psi^p}{J^p_\bullet}{E^{p,\bullet}_0}{u\tensor v}{K(u,v)}
-Osserviamo che $\psi^p$ è ben definito (ossia è compatibile con i quozienti che definiscono $J^p_\bullet$): infatti se $u$ è degenere allora $B^pK(u,v)$ è degenere per la \ref{spectral-sequence-of-fibration-psi-construction:pr1}, dunque $K(u,v)\in Q^{p-1}_\bullet$. Se invece $v$ è degenere allora $K(u,v)$ è degenere per la \ref{spectral-sequence-of-fibration-psi-construction:pr3}. Inoltre $\psi^p$ è effettivamente un morfismo di complessi, come mostra un semplice verifica:
-\begin{align*}
-\psi^pd_J(u\tensor v)&=(-1)^p\psi^p(u\tensor dv)\\
-&=(-1)^p\psi^p\left(u\tensor\sum_{i=1}^q(-1)^i(\lambda^0_iv-\lambda^1_iv)\right)\\
-&=\sum_{i=1}^q(-1)^{p+i}(K(u,\lambda^0_iv)-K(u,\lambda^1_iv))\\
-&=\sum_{i=p+1}^n(-1)^i(\lambda^0_iK(u,v)-\lambda^1_iK(u,v))\\
-&=d^p_0\psi^p(u\tensor v).
-\end{align*}
-
-\begin{proposition}\thlabel{spectral-sequence-of-fibration-homotopy-equivalence}
-Per ogni $p$ la mappa $\map{\varphi^p}{E^{p,\bullet}_0}{J^p_\bullet}$ è un'equivalenza omotopica, di cui $\map{\psi^p}{J^p_\bullet}{E^{p,\bullet}_0}$ è un'inversa omotopica.
-\end{proposition}
-\begin{proof}
-Si vede immediatamente che $\varphi^p\psi^p=\1$. Per dimostrare che $\psi^p\varphi^p$ è omotopo all'identità ci serviremo del seguente lemma.
-\begin{lemma}
-Esiste un'applicazione $S$ \todo{Forse $S$ non è il nome più adatto?} che associa a ogni cubo $u\in Q^p_n(E)$ un cubo $Su\in Q^p_{n+1}$ e che soddisfa le seguenti proprietà:
-\begin{enumerate}
-\item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr1} $B^pSu=B^pu$;
-\item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr2} $\lambda^0_{p+1}Su=u$ e $\lambda^1_{p+1}Su=K(B^pu,F^pu)$;
-\item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr3} se $i>p$ vale $S\lambda^\epsilon_iu=\lambda^\epsilon_{i+1}Su$;
-\item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr4} se $q>0$ e $u$ è degenere, allora $Su$ è degenere.
-%\item $Su(0,\ldots,0,t,x_1,\ldots,x_q)=u(0,\ldots,0,x_1,\ldots,x_q)$.
-\end{enumerate}
-\end{lemma}
-\begin{proof}
-
-\end{proof}
-Dato un cubo $u\in E^{p,q}_0$, definiamo $hu=(-1)^pSu$, ed estendiamo $h$ a una mappa
-$\map{h}{E^{p,q}_0}{E^{p,q+1}_0}$ per $\ZZ$-linearità. Osserviamo che $h$ è ben definita (ossia è compatibile con il quoziente che definisce $E^{p,q}_0$): infatti se $u\in Q^{p-1}_n(E)$ allora $Su\in Q^{p-1}_{n+1}(E)$ per la proprietà \ref{spectral-sequence-of-fibration-homotopy-equivalence:pr1}; se $u$ è degenere e $q>0$ allora $Su$ è degenere (proprietà \ref{spectral-sequence-of-fibration-homotopy-equivalence:pr4}), mentre se $u$ è degenere e $q=0$ allora $B^pSu$ è degenere (proprietà \ref{spectral-sequence-of-fibration-homotopy-equivalence:pr1}), dunque $Su\in Q^{p-1}_{n+1}(E)$.
-
-Mostriamo ora che $h$ definisce un'omotopia fra $\psi^p\varphi^p$ e l'identità. Calcoliamo
-\begin{align*}
-d^p_0hu+hd^p_0u&=(-1)^p(d^p_0Su+Sd^p_0u)\\
-&=(-1)^p\left(\sum_{i=p+1}^{n+1}(-1)^i(\lambda^0_iSu-\lambda^1_iSu)+\sum_{i=p+1}^n(-1)^i(S\lambda^0_iu-\lambda^1_iu)\right)\\
-&=(-1)^p(-1)^{p+1}(u-K(B^pu,F^pu))+\\
-&\phantomop(-1)^p\sum_{i=p+2}^{n+1}(-1)^i(S\lambda^0_{i-1}u-S\lambda^1_{i-1}u)+\\
-&\phantomop(-1)^p\sum_{i=p+1}^n(-1)^i(S\lambda^0_iu-\lambda^1_iu)\\
-&=K(B^pu,F^pu)-u\\
-&=\psi^p\varphi^pu-u.
-\end{align*}
-Questo conclude la dimostrazione.
-\end{proof}
-
-Da questa proposizione segue che le mappe indotte in omologia $\map{\varphi_*}{H_q(E^{p,\bullet}_0)}{H_q(J^p_\bullet)}$ sono isomorfismi. Osserviamo però che $H_q(E^{p,\bullet}_0)=E^{p,q}_1$, mentre dal fatto che $C_p(B)$ è un gruppo abeliano libero segue
-$$
-H_q(J^p_\bullet)=H_q(C_p(B)\tensor C_\bullet(F))=C_p(B)\tensor H_q(F)=C_p(B;H_q(F)).
-$$
-Abbiamo dunque dimostrato la seguente.
-\begin{proposition}\thlabel{spectral-sequence-of-fibration-E-1}
-I morfismi di complessi $\varphi^p$ inducono isomorfismi $\map{\varphi_*}{E^{p,q}_1}{C_p(B;H_q(F))}$.
-\end{proposition}
-
-Per calcolare i termini $E^{p,q}_2$ della successione spettrale, è necessario studiare come si trasformano le mappe di bordo $d^{p,q}_1$ mediante l'isomorfismo $\varphi_*$.
-\begin{proposition}\thlabel{spectral-sequence-of-fibration-boundary-map}
-Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di omologia di $F$. Allora il seguente diagramma commuta
-\begin{diagram}
-E^{p,q}_1\rar{d^{p,q}_1}\dar{\varphi_*}&E^{p-1,q}_1\dar{\varphi_*}\\
-C_p(B;H_q(F))\rar{d}&C_{p-1}(B;H_q(F))
-\end{diagram}
-dove abbiamo denotato con $d$ la mappa di bordo canonica del complesso singolare.
-\end{proposition}
-\begin{proof}
-Consideriamo un elemento $x=b\tensor h\in C_p(B;H_q(F))$, dove $b$ è un cubo di $B$ di dimensione $p$; sia $m\in C_q(F)$ un ciclo della classe di omologia di $h$. Ci proponiamo di calcolare $\varphi^{p-1}d\psi^p(b\tensor m)$; per passaggio al quoziente otterremo $\varphi_*d^{p,q}_1\varphi_*^{-1}x$. Scriviamo $m$ come somma di cubi: $m=\sum_{\alpha}g_\alpha u_\alpha$ con $g_\alpha\in\ZZ$. Calcoliamo
-$$
-d\psi^p(b\tensor m)=\sum_\alpha\sum_{i=1}^n(-1)^ig_\alpha(\lambda^0_iK(b,u_\alpha)-\lambda^1_iK(b,u_\alpha)).
-$$
-Osserviamo però che
-\begin{align*}
-\sum_{\alpha}\sum_{i=p+1}^n(-1)^ig_\alpha(\lambda^0_iK(b,u_\alpha)-\lambda^1_iK(b,u_\alpha))&=\sum_{\alpha}\sum_{i=p+1}^n(-1)^ig_\alpha(K(b,\lambda^0_{i-p}u_\alpha)-K(b,\lambda^1_{i-p}u_\alpha))\\
-&=\sum_\alpha(-1)^pg_\alpha\psi^p(b\tensor du_\alpha)\\
-&=(-1)^p\psi^p(b\tensor dm)\\
-&=0,
-\end{align*}
-da cui
-$$
-d\psi^p(b\tensor m)=\sum_\alpha\sum_{i=1}^p(-1)^ig_\alpha(\lambda^0_iK(b,u_\alpha)-\lambda^1_iK(b,u_\alpha)).
-$$
-Poiché $K(b,u_\alpha)\in Q^p_{p+q}$, abbiamo che $\lambda^\epsilon_iK(b,u_\alpha)\in Q^{p-1}_{p+q-1}$, dunque possiamo applicare $\varphi^{p-1}$ ai singoli termini della sommatoria, ottenendo
-$$
-\varphi^{p-1}d\psi^p(b\tensor m)=\sum_\alpha\sum_{i=1}^p\sum_{\epsilon=0}^1(-1)^{i+\epsilon}g_\alpha B^{p-1}\lambda^\epsilon_iK(b,u_\alpha)\tensor F^{p-1}\lambda^\epsilon_iK(b,u_\alpha).
-$$
-Si vede facilmente che $B^{p-1}\lambda^{\epsilon}_iK(b,u_\alpha)=\lambda^\epsilon_i B^pK(b,u_\alpha)=\lambda^\epsilon_ib$. Per quanto riguarda $F^{p-1}\lambda^\epsilon_iK(b,u_\alpha)$ abbiamo invece
-$$
-(F^{p-1}\lambda^\epsilon_iK(b,u_\alpha))(x_1,\ldots,x_q)=K(b,u_\alpha)(0,\ldots,0,\epsilon,0,\ldots,0,x_1,\ldots,x_q)
-$$
-dove $\epsilon$ si trova in posizione $i$. Consideriamo l'applicazione $T$ che a ogni cubo $u$ di $F$ di dimensione $q$ associa un cubo $Tu$ di $E$ di dimensione $q+1$ definito da
-$$
-Tu(t,x_1,\ldots,x_q)=K(b,u)(0,\ldots,0,t\epsilon,0,\ldots,0,x_1,\ldots,x_q)
-$$
-dove $t\epsilon$ si trova di nuovo in posizione $i$. Si verifica facilmente che $T$ è una costruzione subordinata al cammino $t\mapsto b(0,\ldots,0,t\epsilon,0,\ldots,0)$. È inoltre evidente che $S_Tu=F^{p-1}\lambda^\epsilon_iK(b,u)$. Se denotiamo con $S_{i,\epsilon,b}$ il morfismo $S_T$ associato all'applicazione $T$ determinata dai valori fissati di $i,\epsilon$ e $b$, possiamo scrivere
-\begin{align*}
-\varphi^{p-1}d\psi^p(b\tensor m)&=\sum_\alpha\sum_{i=1}^p(-1)^{i}g_\alpha(\lambda^0_ib\tensor S_{i,\epsilon,b}u_\alpha-\lambda^1_ib\tensor S_{i,\epsilon,b}u_\alpha)\\
-&=\sum_{i=1}^p(-1)^i(\lambda^0_ib\tensor S_{i,\epsilon,b}m-\lambda^1_ib\tensor S_{i,\epsilon,b}m).
-\end{align*}
-Passando al quoziente, ricordando che $S_{i,\epsilon, b}$ induce l'identità in omologia, otteniamo infine
-$$
-\varphi_*d^{p,q}_1\varphi_*^{-1}x\varphi_*d^{p,q}_1=\varphi_*^{-1}(b\tensor h)=db\tensor h.
-$$
-\end{proof}
-Da questa proposizione segue immediatamente il risultato conclusivo della sezione.
-\begin{proposition}\thlabel{spectral-sequence-of-fibration-E-2}
-Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di omologia di $F$. Allora $\varphi_*$ induce un isomorfismo $E^{p,q}_2\iso H_p(B;H_q(F))$.
-\end{proposition}
-
-Osserviamo che i risultati ottenuti fino a questo punto rimangono validi se consideriamo l'omologia a coefficienti in un gruppo abeliano $G$: a ogni spazio fibrato si può associare una successione spettrale $E^{p,q}_r$ (derivante dall'omologia a coefficienti in $G$) i cui termini con $r=2$ sono isomorfi a $H_p(B;H_q(F;G))$.
-
-\section{Successione spettrale coomologica di uno spazio fibrato}
-Come è lecito aspettarsi, dato uno spazio fibrato è possibile associarvi anche una successione spettrale coomologica. Sia $G$ un gruppo abeliano. Partendo dal complesso filtrato $C_\bullet$ procediamo come mostrato in \fullref{cohomological-spectral-sequence:dual-complex}, costruendo il cocomplesso $C^\bullet=\Hom(C_\bullet, G)$ e filtrandolo mediante i sottocomplessi $C^\bullet_p=\Ann C^{p-1}_\bullet$. Otteniamo così una successione spettrale coomologica $E^{\ast p,q}_r \converges H^{p+q}(E;G)$.
-
-Osserviamo che
-$$
-E^{\ast p,q}_0=\frac{\Ann C^{p-1}_n}{\Ann C^p_n}=\frac{\Hom(C_n/C^{p-1}_n,G)}{\Hom(C_n/C^p_n,G)},
-$$
-ma, poiché la successione esatta
-\begin{diagram}
-0\rar&C^p_n/C^{p-1}_n\rar&C_n/C^{p-1}_n\rar&C_n/C^p_n\rar&0
-\end{diagram}
-spezza, otteniamo
-$$
-E^{\ast p,q}_0=\Hom(C^p_n/C^{p-1}_n,G)=\Hom(E^{p,q}_0,G).
-$$
-Possiamo quindi interpretare gli elementi di $E^{\ast p,q}_0$ come funzioni che associano a ogni cubo di $Q^p_n$ un elemento di $G$ e che sono nulle sui cubi degeneri e su quelli di $Q^{p-1}_n$.
-
-Ripercorriamo brevemente i passi della sezione precedente, applicati questa volta a $E^{\ast p,q}_r$. Per ogni $p$ definiamo il complesso $J^\bullet_p=\Hom(J^p_\bullet, G)$ e i morfismi $\map{\varphi_p}{J^\bullet_p}{E^{\ast p,\bullet}_0}$, $\map{\psi_p}{E^{\ast p,\bullet}_0}{J^\bullet_p}$, trasposti di $\varphi^p$ e $\psi^p$. Naturalmente $\varphi_p$ è un'equivalenza omotopica e $\psi_p$ è una sua inversa omotopica, pertanto il morfismo indotto $\varphi_*$ è un isomorfismo fra $E^{\ast p,q}_1$ e $H^q(J^\bullet_p)$. Poiché $C_p(B)$ è un gruppo abeliano libero, vale
-$$
-H^q(J^\bullet_p)=H^q(\Hom(C_p(B),\Hom(C_\bullet(F),G)))=\Hom(C_p(B),H^q(F;G))=C^p(B;H^q(F;G)).
-$$
-Si mostra poi, in modo del tutto analogo a quanto fatto per la successione spettrale omologica, che le mappe di bordo $d^{\ast p,q}_1$ vengono mandate da $\psi^*$ nei morfismi di bordo standard di $C^\bullet(B;H^q(F;G))$, da cui si ottiene il risultato "duale" della \thref{spectral-sequence-of-fibration-E-2}.
-\begin{proposition}\thlabel{cohomological-spectral-sequence-of-fibration-E-2}
-Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coomologia di $F$. Allora $\psi^*$ induce un isomorfismo $E^{\ast p,q}_2\iso H^p(B;H^q(F;G))$.
-\end{proposition}
-Supponiamo ora che $G$ sia anche un anello. Allora i gruppi di coomologia di $E$ acquistano una struttura di $G$-algebra, e lo stesso accade per i gruppi $E^\ast_r$. Infatti il \cupproduct{} definisce una struttura di anello su $C^\bullet(E)$; si verifica facilmente che tale prodotto soddisfa la condizione $C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}$, dunque come mostrato in \missing{} i termini della successione spettrale $E^\ast_r$ ereditano una struttura di anello per la quale le mappe di bordo sono antiderivazioni. È naturale domandarsi come questa struttura si trasformi mediante l'isomorfismo della \thref{cohomological-spectral-sequence-of-fibration-E-2}.
-Definiamo
-$$
-H^*(B;H^*(F))=\Dirsum_{p,q}H^p(B;H^q(F)).
-$$
-La proposizione precedente ci dice che $\psi^*$ induce un isomorfismo $E^\ast_2\iso H^*(B;H^*(F))$ di gruppi abeliani.
-Osserviamo però che su $H^*(B;H^*(F))$ è definita anche una struttura di anello, data dal \cupproduct{} su $B$ e su $F$
-$$
-H^p(B;H^q(F))\times H^{p'}(B;H^{q'}(F))\longrightarrow H^{p+p'}(B;H^{q+q'}(F))
-$$
-Vedremo con la proposizione seguente che $\psi^*$ è anche un isomorfismo di $G$-algebre, a meno di un segno.
-
-\begin{proposition}\thlabel{cohomological-spectral-sequence-of-fibration-ring}
-Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coomologia di $F$. Siano $g\in E^{\ast p,q}_2,g'\in E^{\ast p',q'}_2$. Allora $\psi^*(g\cdot g')=(-1)^{p'q}\psi^*(g)\cdot\psi^*(g')$.
-\end{proposition}
-\begin{proof}
-Cerchiamo di studiare più approfonditamente la struttura di anello indotta dal \cupproduct{} su 
-$$
-C^\bullet(B;H^*(F;G))=\Dirsum_qC^\bullet(B;H^q(F;G))=H^*(J^\bullet_p).
-$$
-Siano dunque $\bar{f}\in H^q(J^\bullet_p),\bar{f}'\in H^{q'}(J^\bullet_{p'})$, e consideriamo $f\in J^q_p,f'\in J^{q'}_{p'}$ rappresentanti delle classi di coomologia rispettivamente di $\bar{f},\bar{f}'$. Possiamo interpretare $f$ come una funzione che a ogni coppia di cubi $u\in C_p(B),v\in C_q(F)$ associa un elemento $f(u,v)\in G$; inoltre $f(u,v)=0$ ogniqualvolta uno fra $u$ e $v$ è degenere. Allora il prodotto $f\cupp f'$ appartiene a $J^{q+q'}_{p+p'}$, e sviluppando il \cupproduct{} su $B$ e su $F$ si ottiene che
-$$
-(f\cupp f')(u,v)=\sum_{H,M}\rho_{H,L}\rho_{M,N}f(\lambda^0_Lu,\lambda^0_Nv)\cdot f'(\lambda^1_Hu,\lambda^1_Mv),
-$$
-dove $H$ varia fra i sottoinsiemi di $\{1,\ldots,p+q\}$ di cardinalità $p$, $M$ fra quelli di $\{1,\ldots,p'+q'\}$ di cardinalità $p'$, $L$ e $N$ sono i complementari di $H$ e $M$, e $\rho_{H,L},\rho_{M,N}$ sono stati definiti insieme al \cupproduct{} in \missing{}. Calcoliamo allora
-\begin{align*}
-\psi_{p+p'}(\varphi_p(f)\cupp\varphi_{p'}(f'))(u,v)&=(\varphi_p(f)\cupp\varphi_{p'}(f'))K(u,v)\\
-&=\sum_P\rho_{P,Q}\varphi_p(f)(\lambda^0_QK(u,v))\cdot\varphi_{p'}(f')(\lambda^1_PK(u,v)),
-\end{align*}
-dove $P$ varia fra i sottoinsiemi di $\{1,\ldots,p+p'+q+q'\}$ di cardinalità $p+q$ e $Q$ è il complementare di $P$. Ricordiamo che $\varphi_p(f)$, come ogni elemento di $E^{p,q}_0$, è una funzione che a ogni cubo di $Q^p_n$ associa un elemento di $G$, ed è nulla sui cubi degeneri e su quelli che appartengono a $Q^{p-1}_n$, dove al solito $n=p+q$. Poiché $K(u,v)\in Q^{p+p'}_{n+n'}$, se $P\cap\{1,\ldots,p+p'\}$ ha meno di $p$ elementi allora $\lambda^0_QK(u,v)\in Q^{p-1}_{n}$, dunque $\varphi_{p}(f)(\lambda^0_QK(u,v))=0$. Analogamente se $P\cap\{1,\ldots,p+p'\}$ ha più di $p$ elementi allora $\varphi_{p'}(f')(\lambda^1_PK(u,v))=0$. Pertanto possiamo limitarci a sommare sui $P$ della forma $P=H\cup(p+p'+M)$, dove $H\subs\{1,\ldots,p+p'\}$ ha cardinalità $p$ e $M\subs\{1,\ldots,q+q'\}$ ha cardinalità $q$. Denotiamo con $L,N$ i complementari di $H,M$. Le seguenti formule sono di verifica immediata ($w$ denota un qualunque cubo di $Q^{p+p'}_{n+n'}$):
-\begin{itemize}
-\item $B^p\lambda^0_Qw=\lambda^0_LB^{p+p'}w$;
-\item $B^{p'}\lambda^1_Pw=\lambda^1_HB^{p+p'}w$;
-\item $F^p\lambda^0_Qw=\lambda^0_NF^{p+p'}w$;
-\item $F^{p'}\lambda^1_Pw=\lambda^{0,1}_{L,H}\lambda^1_{p+p'+M}w$, dove l'operazione $\lambda^{0,1}_{L,H}$ consiste nel rimpiazzare le coordinate con indice in $L$ con $0$ e quelle con indice in $H$ con $1$.
-\end{itemize}
-Inoltre, osservando che
-\begin{align*}
-\rho_{P,Q}&=\rho_{H,L}\cdot\rho_{H,p+p'+N}\cdot\rho_{p+p'+M,L}\cdot\rho_{p+p'+M,p+p'+N}\\
-&=\rho_{H,L}\cdot (-1)^0\cdot(-1)^{qp'}\cdot\rho_{M,N}\\
-&=(-1)^{p'q}\rho_{H,L}\rho_{M,N} 
-\end{align*}
-Otteniamo dunque
-\begin{align*}
-&\phantomop\psi_{p+p'}(\varphi_p(f)\cupp\varphi_{p'}(f'))(u,v)\\
-&=\sum_{H,M}(-1)^{p'q}\rho_{H,L}\rho_{M,N} f(B^p\lambda^0_QK(u,v),F^p\lambda^0_QK(u,v))\cdot f'(B^{p'}\lambda^1_PK(u,v),F^{p'}\lambda^1_PK(u,v))\\
-&=\sum_{H,M}(-1)^{p'q}\rho_{H,L}\rho_{M,N}f(\lambda^0_Lu,\lambda^0_Nv)\cdot f'(\lambda^1_Hu,\lambda^{0,1}_{L,H}K(u,\lambda^1_Mv)).
-\end{align*}
-Consideriamo l'applicazione $T$ che a ogni cubo $w$ di $F$ di dimensione $q'$ associa un cubo $Tw$ di $E$ di dimensione $q'+1$ definito da
-$$
-Tw(t,x_1,\ldots,x_{q'})=K(u,w)(t\delta_1,\ldots,t\delta_{p+p'},x_1,\ldots,x_{q'})
-$$
-dove $\delta_i=0$ se $i\in L$ e $\delta_i=1$ se $i\in H$. Si vede facilmente che $T$ è una costruzione subordinata al cammino $t\mapsto u(t\delta_1,\ldots,t\delta_{p+p'})$ e che $S_Tw=\lambda^{0,1}_{L,H}K(u,w)$. Se denotiamo con $S_{H,u}$ il morfismo $S_T$ associamo all'applicazione $T$ determinata dai valori fissati di $H$ e $u$, possiamo scrivere
-$$
-\psi_{p+p'}(\varphi_p(f)\cupp\varphi_{p'}(f'))(u,v)=(-1)^{p'q}\sum_{H,M}\rho_{H,L}\rho_{M,N}f(\lambda^0_Lu,\lambda^0_Nv)\cdot f'(\lambda^1_Hu,S_{H,u}\lambda^1_Mv).
-$$
-Passando al quoziente, ricordando che $S_{H,u}$ induce l'identità in coomologia, otteniamo
-$$
-\bar{f}\cdot\bar{f}'=\psi^*(\varphi^*(\bar{f})\cdot\varphi^*(\bar{f}')),
-$$
-da cui, passando nuovamente al quoziente, si ha la tesi.
-\end{proof}
-
-\begin{corollary}\thlabel{cohomological-spectral-sequence-of-fibration-anticommutative}
-Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coomologia di $F$. Allora gli anelli $E^\ast_r$ con $r\ge 2$ sono anticommutativi rispetto al grado totale $n=p+q$.
-\end{corollary}
-\begin{proof}
-Sappiamo che $H^*(F;G)$ è anticommutativo rispetto al grado di $F$ e che $H^*(B;H^*(F;G))$ è anticommutativo rispetto al grado di $B$. Siano $g\in E^{\ast p,q}_2,g'\in E^{\ast p',q'}_2$. Allora
-\begin{align*}
-g\cdot g'&=\varphi^*(\psi^*(g\cdot g'))\\
-&=\varphi^*((-1)^{p'q}\psi^*(g)\cdot\psi^*(g'))\\
-&=(-1)^{p'q}\varphi^*((-1)^{pp'+qq'}\psi^*(g')\cdot\psi^*(g))\\
-&=(-1)^{p'q}(-1)^{pp'+qq'}(-1)^{pq'}\varphi^*(\psi^*(g'))\cdot\varphi^*(\psi^*(g))\\
-&=(-1)^{nn'}g'\cdot g,
-\end{align*}
-dove abbiamo sfruttato la \thref{cohomological-spectral-sequence-of-fibration-ring} e la proposizione analoga per $\varphi^*$. Dunque la tesi è vera per $r=2$. Ma allora è vera per ogni $r\ge 2$, poiché la struttura di anello di $E^\ast_r$ si ottiene per passaggio al quoziente da quella di $E^\ast_{r-1}$.
-\end{proof}
-
-Concludiamo la sezione con un risultato che permette di semplificare, sotto alcune ipotesi, il calcolo del termine $E^\ast_2$ della successione spettrale. Se $M$ e $N$ sono due $G$-algebre graduate, possiamo definire su $M\tensor N$ una struttura di $G$-algebra come segue: se $x,x'\in M$ e $y,y'\in N$ sono elementi omogenei di gradi, rispettivamente $p,p',q,q'$, allora
-$$
-(x\tensor y)(x'\tensor y')=(-1)^{p'q}(xx'\tensor yy').
-$$
-\begin{proposition}\thlabel{cohomological-spectral-sequence-of-fibration-tensor-product}
-Sia $G$ un PID. Supponiamo che sia soddisfatta una delle due condizioni seguenti:
-\begin{enumerate}
-\item $H_p(B;G)$ è un $G$-modulo libero finitamente generato per ogni $p\ge 0$;
-\item $H^q(F;G)$ è un $G$-modulo libero finitamente generato per ogni $q\ge 0$.
-\end{enumerate}
-Allora esiste un isomorfismo di $G$-algebre $H^*(B;G)\tensor H^*(F;G)\iso E^\ast_2$.
-\end{proposition}
-\begin{proof}
-Consideriamo l'applicazione
-\Map{i}{C^p(B;G)\tensor H^q(F;G)}{C^p(B;H^q(F;G))}{b\tensor f}{(u\mapsto b(u)\cdot f)}
-Per passaggio al quoziente otteniamo
-$$
-\map{i^*}{H^p(B;G)\tensor H^q(F;G)}{H^p(B;H^q(F;G))}
-$$
-È evidente che $\varphi^*\circ i^*$ preserva la struttura moltiplicativa, dunque è sufficiente mostrare che, sotto le ipotesi dell'enunciato, $i^*$ è un isomorfismo di $G$-moduli.
-\begin{enumerate}
-\item Per il teorema dei coefficienti universali abbiamo che
-$$
-H^p(B;H^q(F;G))\iso\Hom(H_p(B;G),H^q(F;G))
-$$
-e
-$$
-H^p(B;G)\iso\Hom(H_p(B;G),G),
-$$
-dunque possiamo interpretare $i^*$ come la mappa canonica
-$$
-\map{i^*}{\Hom(H_p(B;G),G)\tensor H^q(F;G)}{\Hom(H_p(B;G),H^q(F;G))}
-$$
-Per additività di $\Hom(-,-)$ e di $-\tensor-$, essendo $H_p(B;G)$ libero e finitamente generato, possiamo limitarci a considerare il caso $H_p(B;G)=G$, in cui $i^*$ è ovviamente un isomorfismo.
-\item Per additività di $-\tensor-$ e di $H^p(B;-)$, essendo $H^q(F;G)$ libero e finitamente generato, possiamo limitarci a considerare il caso $H^p(B;G)=G$, in cui $i^*$ è ovviamente un isomorfismo.
-\end{enumerate}
-\end{proof}
+I risultati principali che ricaveremo in seguito sugli spazi fibrati richiederanno che l'azione di $\pi_1(B)$ sui gruppi di omologia e coomologia di $F$ sia banale (con questa espressione intendiamo che per ogni costruzione $T$ subordinata a un qualche cammino il morfismo $S_T$ induce l'identità in omologia e in coomologia). Per questo motivo faremo spesso l'ipotesi semplificativa che $B$ sia semplicemente connesso, ipotesi che sarà comunque verificata nelle applicazioni che presenteremo.
