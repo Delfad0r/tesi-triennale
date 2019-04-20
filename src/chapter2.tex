@@ -130,33 +130,56 @@ Ci proponiamo ora di mostrare come il gruppo fondamentale di $B$ agisca sui grup
 Sia $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ un'applicazione che a ogni cubo $u$ di dimensione $n$ di $F$ associa un cubo $Tu$ di $E$ di dimensione $n+1$. $T$ si dice costruzione subordinata a $\gamma$ se soddisfa le seguenti proprietà per ogni cubo $u$ di dimensione $n$:
 \begin{enumerate}
 \item $\lambda^0_1 Tu=u$;
-\item $(p\circ Tu)(t,t_1,\ldots,t_n)=\gamma(t)$ per ogni $t_1,\ldots,t_n\in I$;
-\item $T\lambda^\epsilon_iu=\lambda^\epsilon_{i+1}Tu$ per $0\le i\le n,\epsilon\in\{0,1\}$;
+\item $(p\circ Tu)(t,x_1,\ldots,x_n)=\gamma(t)$;
+\item $T\lambda^\epsilon_iu=\lambda^\epsilon_{i+1}Tu$ per $1\le i\le n,\epsilon\in\{0,1\}$;
 \item se $u$ è degenere, allora anche $Tu$ lo è.
 \end{enumerate}
 \end{definition}
-Ogni costruzione $T$ induce un morfismo di complessi $\map{S_T}{C_\bullet(F)}{C_\bullet(F)}$ definito da 
-$$
-(S_Tu)(t_1,\ldots,t_n)=(Tu)(1,t_1,\ldots,t_n).
-$$
-Le proprietà delle costruzioni garantiscono che $S_Tu$ è effettivamente un cubo di $F$, che cubi degeneri vengono mandati in cubi degeneri e che $S_T$ commuta con la mappa di bordo. A sua volta, $S_T$ induce endomorfismi dei gruppi di omologia e coomologia di $F$.
+Ogni costruzione $T$ induce un morfismo di complessi $\map{S_T}{C_\bullet(F)}{C_\bullet(F)}$ definito da $S_Tu=\lambda^1_1Tu$. Le proprietà delle costruzioni garantiscono che $S_Tu$ è effettivamente un cubo di $F$, che cubi degeneri vengono mandati in cubi degeneri e che $S_T$ commuta con la mappa di bordo. A sua volta, $S_T$ induce endomorfismi dei gruppi di omologia e coomologia di $F$.
 \begin{proposition}\thlabel{subordinate-construction-homotopy-equivalence}
-Siano $\gamma_1,\gamma_2$ cammini chiusi in $B$ con estremi in $b$, $T_1,T_2$ costruzioni subordinate rispettivamente a $\gamma_1,\gamma_2$. Supponiamo che $\gamma_1,\gamma_2$ rappresentino lo stesso elemento del gruppo fondamentale. Allora i morfismi di complessi $S_{T_1}$ e $S_{T_2}$ sono omotopi.
+Siano $\gamma_0,\gamma_1$ cammini chiusi in $B$ con estremi in $b$, $T_0,T_1$ costruzioni subordinate rispettivamente a $\gamma_0,\gamma_1$. Supponiamo che $\gamma_0,\gamma_1$ rappresentino lo stesso elemento del gruppo fondamentale. Allora i morfismi di complessi $S_{T_0}$ e $S_{T_1}$ sono omotopi.
 \end{proposition}
+\begin{proof}
+Per costruire l'omotopia fra $S_{T_0}$ e $S_{T_1}$ faremo uso del seguente lemma.
+\begin{lemma}
+Esiste un'applicazione $H$ che associa a ogni cubo $u\in Q_n(F)$ un cubo $Hu\in Q_{n+2}(E)$ e che soddisfa le seguenti proprietà:
+\begin{enumerate}
+\item\label{subordinate-construction-homotopy-equivalence:pr1} $\lambda^\epsilon_2Hu=T_\epsilon u$ per $\epsilon\in\{0,1\}$;
+\item\label{subordinate-construction-homotopy-equivalence:pr2} $H\lambda^\epsilon_iu=\lambda^\epsilon_{i+2}Hu$ per $1\le i\le n,\epsilon\in\{0,1\}$;
+\item\label{subordinate-construction-homotopy-equivalence:pr3} se $u$ è degenere, allora anche $Hu$ lo è.
+\end{enumerate}
+\end{lemma}
 \begin{proof}
 
 \end{proof}
-Si potrebbe dimostrare che per ogni cammino $\gamma$ esiste una costruzione subordinata a $\gamma$, e che l'applicazione $\pi_1(B,b)\to\Aut(H_n(F))$ è un omomorfismo di gruppi, ma non utilizzeremo questi risultati. \todo{Serre lo fa però.} 
-Ci limitiamo a dimostrare quanto segue.
-\begin{proposition}\thlabel{trivial-path-trivial-action}
+Definiamo allora l'applicazione
+\Map{h}{C_n(F)}{C_{n+1}(F)}{u}{\lambda_1^1Hu}
+estesa per $\ZZ$-linearità. La proprietà \ref{subordinate-construction-homotopy-equivalence:pr3} garantisce che $h$ è ben definita (ossia è compatibile con il quoziente che definisce $C_n(F)$). Sfruttiamo le altre due proprietà per mostrare che $h$ è un'omotopia fra $S_{T_0}$ e $S_{T_1}$:
+\begin{align*}
+dhu+hdu&=\sum_{i=1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_i\lambda^1_1Hu+\sum_{i=1}^n\sum_\epsilon(-1)^{i+\epsilon}\lambda^1_1H\lambda^\epsilon_iu\\
+&=\sum_{i=1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_i\lambda^1_1Hu+\sum_{i=1}^n\sum_\epsilon(-1)^{i+\epsilon}\lambda^1_1\lambda^\epsilon_{i+2}Hu\\
+&=\sum_{i=1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_i\lambda^1_1Hu+\sum_{i=1}^n\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_{i+1}\lambda^1_1Hu\\
+&=\lambda^1_1\lambda^1_1Hu-\lambda^0_1\lambda^1_1Hu\\
+&=\lambda^1_1\lambda^1_2Hu-\lambda^1_1\lambda^0_2Hu\\
+&=\lambda^1_1T_1u-\lambda^1_1T_0u\\
+&=S_{T_1}u-S_{T_0}u.
+\end{align*}
+\end{proof}
+Si potrebbe dimostrare che per ogni cammino $\gamma$ esiste una costruzione subordinata a $\gamma$, e che l'applicazione $\pi_1(B,b)\to\Aut(H_n(F))$ è un omomorfismo di gruppi, ma non utilizzeremo questi risultati.
+Ci limitiamo a mostrare il seguente.
+\begin{corollary}\thlabel{trivial-path-trivial-action}
 Sia $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ una costruzione subordinata a $\gamma$. Supponiamo che $\gamma$ sia omotopicamente banale. Allora $S_T$ induce l'identità in omologia e in coomologia.
-\end{proposition}
+\end{corollary}
 \begin{proof}
-
+In virtù della \thref{subordinate-construction-homotopy-equivalence} è sufficiente dimostrare che esiste una costruzione $T$ subordinata al cammino che vale costantemente $b$ tale che $S_T$ induce l'identità in omologia e in coomologia. Per ogni cubo $u$ di $F$ di dimensione $n$ definiamo
+$$
+(Tu)(t,t_1,\ldots,t_n)=u(t_1,\ldots,t_n).
+$$
+È immediato verificare che $T$ è una costruzione subordinata al cammino costante, e che $S_T$ è l'identità, da cui la tesi.
 \end{proof}
+
+I risultati principali che ricaveremo in seguito sugli spazi fibrati richiederanno che l'azione del gruppo fondamentale di $B$ sui gruppi di omologia e coomologia di $F$ sia banale (con questa espressione intendiamo che per ogni costruzione $T$ subordinata a un qualche cammino il morfismo $S_T$ induce l'identità in omologia e in coomologia). Per questo motivo faremo spesso l'ipotesi semplificativa che $B$ sia semplicemente connesso, ipotesi che sarà sempre verificata nelle applicazioni che presenteremo.
 
 \begin{corollary}\thlabel{simply-connected-trivial-action}
 Se $B$ è semplicemente connesso, allora $\pi_1(B)$ agisce banalmente sui gruppi di omologia e coomologia di $F$.
 \end{corollary}
-
-I risultati principali che ricaveremo in seguito sugli spazi fibrati richiederanno che l'azione di $\pi_1(B)$ sui gruppi di omologia e coomologia di $F$ sia banale (con questa espressione intendiamo che per ogni costruzione $T$ subordinata a un qualche cammino il morfismo $S_T$ induce l'identità in omologia e in coomologia). Per questo motivo faremo spesso l'ipotesi semplificativa che $B$ sia semplicemente connesso, ipotesi che sarà comunque verificata nelle applicazioni che presenteremo.

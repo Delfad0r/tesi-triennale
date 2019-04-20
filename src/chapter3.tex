@@ -45,7 +45,7 @@ Le proprietà \ref{spectral-sequence-of-fibration:pr1} e \ref{spectral-sequence-
 Ci proponiamo di mostrare che $\varphi^p$ è in realtà un'equivalenza omotopica. Sfrutteremo il seguente lemma per costruire un'inversa omotopica.
 
 \begin{lemma}\thlabel{spectral-sequence-of-fibration-psi-construction}
-Esiste un'applicazione $K$ che associa a ogni coppia di cubi $(u,v)$ con $u\in Q_p(B)$ e $v\in Q_q(F)$ un cubo $K(u,v)\in Q^p_{p+q}(E)$ e che soddisfa le seguenti proprietà:
+Esiste un'applicazione $K$ che associa a ogni coppia di cubi $(u,v)$ con $u\in Q_p(B)$ e $v\in Q_q(F)$ un cubo $K(u,v)\in Q^p_{p+q}$ e che soddisfa le seguenti proprietà:
 \begin{enumerate}
 \item\label{spectral-sequence-of-fibration-psi-construction:pr1} $B^pK(u,v)=u$ e $F^pK(u,v)=v$;
 \item\label{spectral-sequence-of-fibration-psi-construction:pr2} per ogni $i\le q,\epsilon\in\{0,1\}$ vale $K(u,\lambda^\epsilon_iv)=\lambda^\epsilon_{i+p}K(u,v)$;
@@ -75,7 +75,7 @@ Per ogni $p$ la mappa $\map{\varphi^p}{E^{p,\bullet}_0}{J^p_\bullet}$ è un'equi
 \begin{proof}
 Si vede immediatamente che $\varphi^p\psi^p=\1$. Per dimostrare che $\psi^p\varphi^p$ è omotopo all'identità ci serviremo del seguente lemma.
 \begin{lemma}
-Esiste un'applicazione $S$ \todo{Forse $S$ non è il nome più adatto?} che associa a ogni cubo $u\in Q^p_n(E)$ un cubo $Su\in Q^p_{n+1}$ e che soddisfa le seguenti proprietà:
+Esiste un'applicazione $S$ \todo{Forse $S$ non è il nome più adatto?} che associa a ogni cubo $u\in Q^p_n$ un cubo $Su\in Q^p_{n+1}$ e che soddisfa le seguenti proprietà:
 \begin{enumerate}
 \item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr1} $B^pSu=B^pu$;
 \item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr2} $\lambda^0_{p+1}Su=u$ e $\lambda^1_{p+1}Su=K(B^pu,F^pu)$;
@@ -148,12 +148,12 @@ $$
 $$
 dove $\epsilon$ si trova in posizione $i$. Consideriamo l'applicazione $T$ che a ogni cubo $u$ di $F$ di dimensione $q$ associa un cubo $Tu$ di $E$ di dimensione $q+1$ definito da
 $$
-Tu(t,x_1,\ldots,x_q)=K(b,u)(0,\ldots,0,t\epsilon,0,\ldots,0,x_1,\ldots,x_q)
+(Tu)(t,x_1,\ldots,x_q)=K(b,u)(0,\ldots,0,t\epsilon,0,\ldots,0,x_1,\ldots,x_q)
 $$
 dove $t\epsilon$ si trova di nuovo in posizione $i$. Si verifica facilmente che $T$ è una costruzione subordinata al cammino $t\mapsto b(0,\ldots,0,t\epsilon,0,\ldots,0)$. È inoltre evidente che $S_Tu=F^{p-1}\lambda^\epsilon_iK(b,u)$. Se denotiamo con $S_{i,\epsilon,b}$ il morfismo $S_T$ associato all'applicazione $T$ determinata dai valori fissati di $i,\epsilon$ e $b$, possiamo scrivere
 \begin{align*}
-\varphi^{p-1}d\psi^p(b\tensor m)&=\sum_\alpha\sum_{i=1}^p(-1)^{i}g_\alpha(\lambda^0_ib\tensor S_{i,\epsilon,b}u_\alpha-\lambda^1_ib\tensor S_{i,\epsilon,b}u_\alpha)\\
-&=\sum_{i=1}^p(-1)^i(\lambda^0_ib\tensor S_{i,\epsilon,b}m-\lambda^1_ib\tensor S_{i,\epsilon,b}m).
+\varphi^{p-1}d\psi^p(b\tensor m)&=\sum_\alpha\sum_{i=1}^p(-1)^{i}g_\alpha(\lambda^0_ib\tensor S_{i,0,b}u_\alpha-\lambda^1_ib\tensor S_{i,1,b}u_\alpha)\\
+&=\sum_{i=1}^p(-1)^i(\lambda^0_ib\tensor S_{i,0,b}m-\lambda^1_ib\tensor S_{i,1,b}m).
 \end{align*}
 Passando al quoziente, ricordando che $S_{i,\epsilon, b}$ induce l'identità in omologia, otteniamo infine
 $$
