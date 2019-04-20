@@ -1,5 +1,4 @@
 \chapter{Omologia e coomologia degli spazi fibrati}
-\label{chapter-fibration}
 
 \section{Omologia singolare cubica}
 
@@ -78,9 +77,9 @@ X\rar{f}\ar[ru,dashed,"h"]&B
 \end{diagram}
 \end{proposition}
 \begin{proof}
-\begin{lemma}
+\begin{lemma*}
 La proposizione è vera se $X=A\times I^n$ per un qualche $n\ge 0$ e $i(x)=(x,0)$.
-\end{lemma}
+\end{lemma*}
 \begin{proof}
 
 \end{proof}
@@ -88,24 +87,24 @@ La proposizione è vera se $X=A\times I^n$ per un qualche $n\ge 0$ e $i(x)=(x,0)
 \begin{proposition}\thlabel{fibration-homotopy-exact-sequence}
 Sia $\map{p}{E}{B}$ una fibrazione, $e\in E,b=p(e),F=p^{-1}(e)$.
 \begin{enumerate}
-\item La mappa $p$ induce un isomorfismo $\map{p_*}{\pi_i(E,F,e)}{\pi_i(B,b)}$ per ogni $i\ge 1$.
-\item Esiste una successione esatta lunga di gruppi
+\item\label{fibration-homotopy-exact-sequence:1} La mappa $p$ induce un isomorfismo $\map{p_*}{\pi_i(E,F,e)}{\pi_i(B,b)}$ per ogni $i\ge 1$.
+\item\label{fibration-homotopy-exact-sequence:2} Esiste una successione esatta lunga di gruppi
 \begin{diagram}
 \ldots\rar&\pi_{i+1}(E,e)\rar&\pi_{i+1}(B,b)\rar&\pi_i(F,e)\rar&\pi_i(E,e)\rar&\ldots\rar&\pi_1(E,e)\rar&\pi_1(B,b)
 \end{diagram}
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-
+La successione esatta del punto \ref{fibration-homotopy-exact-sequence:2} segue immediatamente dalla successione esatta dei gruppi di omotopia della coppia $(E,F)$, una volta dimostrato il punto \ref{fibration-homotopy-exact-sequence:1}. Mostriamo dunque che $p_*$ è un isomorfismo di gruppi.
+\begin{itemize}
+\item Per verificare che $p_*$ è iniettiva, sia $\bar{f}\in\pi_i(E,F,e)$ tale che $p_*\bar{f}=0$. Consideriamo un rappresentante $\map{f}{(D^n,S^{n-1},s)}{(E,F,e)}$ della classe $\bar{f}$. Ricordiamo che $\bar{f}=0$ se e solo se $f$ è omotopa a un'applicazione con immagine in $F$ mediante un'omotopia che fissa $S^{n-1}$. Poiché $p_*\bar{f}=0$, esiste un'omotopia $\map{H}{I\times D^n}{B}$ stazionaria su $S^{n-1}$ tale che $H_0=pf$ e $H_1(D^n)\subs\{b\}$. Consideriamo il poliedro finito $A=(D^n\times\{0\})\cup(S^{n-1}\times I)\subs D^n\times I$. Definiamo un sollevamento di $H$
+\Map{\tilde{H}}{A}{E}{(x,t)}{f(x)}
+Per la \thref{homotopy-lifting-plus} $\tilde{H}$ si estende un'omotopia definita su tutto a tutto $D^n\times I$. Osserviamo che $\tilde{H}_0=f$, $\tilde{H}_1(D^n)\subs F$ e $\tilde{H}$ è stazionaria su $S^{n-1}$, dunque $\bar{f}=0$.
+\item Per verificare che $p_*$ è suriettiva, sia $\bar{g}\in\pi_i(B,b)$. Sia $\map{g}{(D^n,S^n)}{(B,b)}$ un rappresentante della classe $\bar{g}$. Consideriamo il poliedro finito $\{s\}\subs D^n$ e l'applicazione $\map{f}{\{s\}}{E}$ tale che $f(s)=e$. Per la \thref{homotopy-lifting-plus} $f$ si estende a tutto $D^n$ in modo che $pf=g$. Si vede immediatamente che la classe di omotopia di $f$ appartiene a $\pi_i(E,F,e)$, dunque $p_*\bar{f}=\bar{g}$.
+\end{itemize}
 \end{proof}
 
-\begin{proposition}\thlabel{fibration-path-connected-base-and-fiber}
-Sia $\map{p}{E}{B}$ una fibrazione, $e\in E,b=p(e),F=p^{-1}(e)$. Supponiamo che $B$ e $F$ siano connessi per archi. Allora anche $E$ e tutte le altre fibre sono connessi per archi.
-\end{proposition}
-\begin{proof}
-
-\end{proof}
-D'ora in poi considereremo solo fibrazioni con spazio base e fibre connessi per archi. Per la \thref{cubic-homology-single-vertex} possiamo limitarci a considerare cubi con vertici in un singolo punto fissato nello studio dell'omologia e della coomologia. Nel seguito supporremo dunque implicitamente che i cubi in $F$ ed $E$ abbiano tutti i vertici in un punto fissato $e$, e che i cubi in $B$ abbiano tutti i vertici in $b=p(e)$. Utilizzeremo inoltre la notazione $\fibration{F}{E}{B}$ per indicare una fibrazione $\map{p}{E}{B}$ di fibra $F$ (i punti $e$ e $b$ saranno spesso irrilevanti).
+D'ora in poi considereremo solo fibrazioni con spazio base, spazio totale e fibre connessi per archi. Per la \thref{cubic-homology-single-vertex} possiamo limitarci a considerare cubi con vertici in un singolo punto fissato nello studio dell'omologia e della coomologia. Nel seguito supporremo dunque implicitamente che i cubi in $F$ ed $E$ abbiano tutti i vertici in un punto fissato $e$, e che i cubi in $B$ abbiano tutti i vertici in $b=p(e)$. Utilizzeremo inoltre la notazione $\fibration{F}{E}{B}$ per indicare una fibrazione $\map{p}{E}{B}$ di fibra $F$ (i punti $e$ e $b$ saranno spesso irrilevanti).
 
 \section{Azione del gruppo fondamentale di \texorpdfstring{$B$}{B} sull'omologia della fibra}
 

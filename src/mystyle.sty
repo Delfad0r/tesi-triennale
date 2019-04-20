@@ -34,23 +34,15 @@
 }
 \usepackage{theoremref}
 
-% Unused labels
-\usepackage{etoolbox}
-\let\svlabel\thlabel
-\let\svref\thref
-\def\unusedlabels{}
-\renewcommand\thlabel[1]{\svlabel{#1}\global\edef\unusedlabels{\unusedlabels$<$#1$>$ }}
-\renewcommand\thref[1]{\svref{#1}%
-  \edef\teststring{$<$#1$>$}%
-  \edef\tmp{\unusedlabels}%
-  \def\unusedlabels{}%
-  \expandafter\refhelper\tmp\relax%
-}
-\def\refhelper#1 #2\relax{%
-  \edef\expandcase{#1}%
-  \ifdefstrequal{\teststring}{\expandcase}{}{\edef\unusedlabels{\unusedlabels#1 }}%
-  \if\relax#2\relax\else\refhelper#2\relax\fi
-}
+% Debug
+\usepackage[italian]{todonotes}
+\ifdefined\debug%
+    \newcommand*{\missing}{$\blacksquare$}%
+    % Unused labels
+    \usepackage{refcheck}%
+    \renewcommand*{\thlabel}[1]{\label{#1}}%
+    \renewcommand*{\thref}[1]{\ref{#1}}%
+\fi
 
 % Prescript
 \usepackage{tensor}
@@ -95,12 +87,15 @@
 #1:\;&&#2&\longrightarrow#3\\
 &&#4&\longmapsto#5
 \end{alignat*}
+}\newcommand*{\uMap}[4]{%
+\begin{align*}
+#1&\longrightarrow#2\\
+#3&\longmapsto#4
+\end{align*}
 }
 \newcommand*{\fibration}[3]{#1\hookrightarrow #2\to #3}
 
 % Mysterious terms
-\newcommand*{\missing}{$\blacksquare$}
-\newcommand*{\mistery}{\textbf{(?)}}
 \newcommand*{\cupproduct}{prodotto cup}
 
 % DeclareMathOperator
