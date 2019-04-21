@@ -141,20 +141,20 @@ Siano $\gamma_0,\gamma_1$ cammini chiusi in $B$ con estremi in $b$, $T_0,T_1$ co
 \end{proposition}
 \begin{proof}
 Per costruire l'omotopia fra $S_{T_0}$ e $S_{T_1}$ faremo uso del seguente lemma.
-\begin{lemma}
+\begin{restatable}{lemma}{fibrationHconstruction}\thlabel{fibration-H-construction}
 Esiste un'applicazione $H$ che associa a ogni cubo $u\in Q_n(F)$ un cubo $Hu\in Q_{n+2}(E)$ e che soddisfa le seguenti proprietà:
 \begin{enumerate}
-\item\label{subordinate-construction-homotopy-equivalence:pr1} $\lambda^\epsilon_2Hu=T_\epsilon u$ per $\epsilon\in\{0,1\}$;
-\item\label{subordinate-construction-homotopy-equivalence:pr2} $H\lambda^\epsilon_iu=\lambda^\epsilon_{i+2}Hu$ per $1\le i\le n,\epsilon\in\{0,1\}$;
-\item\label{subordinate-construction-homotopy-equivalence:pr3} se $u$ è degenere, allora anche $Hu$ lo è.
+\item\label{fibration-H-construction:pr1} $\lambda^\epsilon_2Hu=T_\epsilon u$ per $\epsilon\in\{0,1\}$;
+\item\label{fibration-H-construction:pr2} $H\lambda^\epsilon_iu=\lambda^\epsilon_{i+2}Hu$ per $1\le i\le n,\epsilon\in\{0,1\}$;
+\item\label{fibration-H-construction:pr3} se $u$ è degenere, allora anche $Hu$ lo è.
 \end{enumerate}
-\end{lemma}
+\end{restatable}
 \begin{proof}
-
+Per non allungare eccessivamente questa sezione, rimandiamo la dimostrazione alla fine del capitolo (sezione \ref{fibration:lemma-proof}).
 \end{proof}
 Definiamo allora l'applicazione
 \Map{h}{C_n(F)}{C_{n+1}(F)}{u}{\lambda_1^1Hu}
-estesa per $\ZZ$-linearità. La proprietà \ref{subordinate-construction-homotopy-equivalence:pr3} garantisce che $h$ è ben definita (ossia è compatibile con il quoziente che definisce $C_n(F)$). Sfruttiamo le altre due proprietà per mostrare che $h$ è un'omotopia fra $S_{T_0}$ e $S_{T_1}$:
+estesa per $\ZZ$-linearità. La proprietà \ref{fibration-H-construction:pr3} garantisce che $h$ è ben definita (ossia è compatibile con il quoziente che definisce $C_n(F)$). Sfruttiamo le altre due proprietà per mostrare che $h$ è un'omotopia fra $S_{T_0}$ e $S_{T_1}$:
 \begin{align*}
 dhu+hdu&=\sum_{i=1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_i\lambda^1_1Hu+\sum_{i=1}^n\sum_\epsilon(-1)^{i+\epsilon}\lambda^1_1H\lambda^\epsilon_iu\\
 &=\sum_{i=1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_i\lambda^1_1Hu+\sum_{i=1}^n\sum_\epsilon(-1)^{i+\epsilon}\lambda^1_1\lambda^\epsilon_{i+2}Hu\\
@@ -183,3 +183,119 @@ I risultati principali che ricaveremo in seguito sugli spazi fibrati richiederan
 \begin{corollary}\thlabel{simply-connected-trivial-action}
 Se $B$ è semplicemente connesso, allora $\pi_1(B)$ agisce banalmente sui gruppi di omologia e coomologia di $F$.
 \end{corollary}
+
+\section{Dimostrazione del \thref{fibration-H-construction}}
+\label{fibration:lemma-proof}
+Ricordiamo il contesto: abbiamo due cammini chiusi $\gamma_0,\gamma_1$ in $B$ con estremi in $b$ che rappresentano lo stesso elemento del gruppo fondamentale; $T_0$ e $T_1$ sono costruzioni subordinate rispettivamente a $\gamma_0$ e $\gamma_1$.
+\fibrationHconstruction*
+\begin{proof}
+Per ipotesi esiste un'omotopia $\map{h}{I\times I}{B}$ tale che $h_0=\gamma_0,h_1=\gamma_1$ e $h(0,s)=h(1,s)=b$ per ogni $s\in I$. Costruiamo $H$ per induzione su $n$, richiedendo in più che soddisfi anche le seguenti proprietà:
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item\label{fibration-H-construction:pr4} $(p\circ Hu)(t,s,x_1,\ldots,x_n)=h(t,s)$;
+\item\label{fibration-H-construction:pr5} $(Hu)(0,s,x_1,\ldots,x_n)=u(x_1,\ldots,x_n)$.
+\end{enumerate}
+\paragraph{Costruzione per $n=0$.}
+In tal caso $u$ è semplicemente il punto $e$. Consideriamo il diagramma
+\begin{diagram}
+A\dar{i}\rar{g}&E\dar{p}\\
+X\rar{f}\ar[ur,dashed,"v"]&B
+\end{diagram}
+dove
+\begin{itemize}
+\item $X=I\times I$;
+\item $A=(I\times\{0,1\})\cup(\{0\}\times I)\subs X$;
+\item $f=h$;
+\item $g$ è così definita
+$$
+\begin{cases}
+g(t,\epsilon)=(T_\epsilon u)(t)&\epsilon\in\{0,1\}\\
+g(0,s)=e
+\end{cases};
+$$
+\item l'esistenza di $v$ è garantita dalla \thref{homotopy-lifting-plus}.
+\end{itemize}
+Poniamo $Hu=v$; tutte le proprietà sono di verifica immediata.
+\paragraph{Costruzione per $n>0$ e $u$ degenere.}
+Se $u$ è degenere, poniamo
+$$
+(Hu)(t,s,x_1,\ldots,x_n)=(H\lambda^0_nu)(t,s,x_1,\ldots,x_{n-1}).
+$$
+Verifichiamo le proprietà.
+\begin{enumerate}
+\item
+\begin{align*}
+(\lambda^\epsilon_2Hu)(t,x_1,\ldots,x_n)&=(\lambda^\epsilon_2H\lambda^0_nu)(t,x_1,\ldots,x_{n-1})\\
+&=(T_\epsilon\lambda^0_nu)(t,x_1,\ldots,x_{n-1})\\
+&=(\lambda^0_{n+1}T_\epsilon u)(t,x_1,\ldots,x_{n-1})\\
+&=T_\epsilon u(t,x_1,\ldots,x_{n-1},x_n).
+\end{align*}
+\item Se $i<n$, allora
+\begin{align*}
+(\lambda^\epsilon_{i+2}Hu)(t,s,x_1,\ldots,x_{n-1})&=(\lambda^\epsilon_{i+2}H\lambda^0_nu)(t,s,x_1,\ldots,x_{n-2})\\
+&=(H\lambda^\epsilon_i\lambda^0_nu)(t,s,x_1,\ldots,x_{n-2})\\
+&=(H\lambda^0_{n-1}\lambda^i_\epsilon u)(t,s,x_1,\ldots,x_{n-2})\\
+&=(\lambda^0_{n+1}H\lambda^\epsilon_iu)(t,s,x_1,\ldots,x_{n-2})\\
+&=(H\lambda^\epsilon_iu)(t,s,x_1,\ldots,x_{n-1}).
+\end{align*}
+Se invece $i=n$, allora
+$$
+(\lambda^\epsilon_{n+2}Hu)(t,s,x_1,\ldots,x_{n-1})=(H\lambda^0_nu)(t,s,x_1,\ldots,x_{n-1}).
+$$
+\item È evidente che $Hu$ è degenere.
+\item
+$$
+(p\circ Hu)(t,s,x_1,\ldots,x_n)=(p\circ H\lambda^0_nu)(t,s,x_1,\ldots,x_{n-1})=h(t,s).
+$$
+\item
+\begin{align*}
+(Hu)(0,s,x_1,\ldots,x_{n-1})&=(H\lambda^0_nu)(0,s,x_1,\ldots,x_{n-1})\\
+&=(\lambda^0_nu)(x_1,\ldots,x_{n-1})\\
+&=u(x_1,\ldots,x_n).
+\end{align*}
+\end{enumerate}
+\paragraph{Costruzione per $n>0$ e $u$ non degenere.} Consideriamo il diagramma
+\begin{diagram}
+A\dar{i}\rar{g}&E\dar{p}\\
+X\rar{f}\ar[ur,dashed,"v"]&B
+\end{diagram}
+dove
+\begin{itemize}
+\item $X=I\times I\times I^n$;
+\item $A=(I\times\{0,1\}\times I^n)\cup(\{0\}\times I\times I^n)\cup(I\times I\times\del I^n)\subs X$;
+\item $f(t,s,x_1,\ldots,x_n)=h(t,s)$;
+\item $g$ è così definita
+$$
+\begin{cases}
+g(t,\epsilon,x_1,\ldots,x_n)=(T_\epsilon u)(t,x_1,\ldots,x_n)&\epsilon\in\{0,1\}\\
+g(0,s,x_1,\ldots,x_n)=u(x_1,\ldots,x_n)\\
+g(t,s,x_1,\ldots,x_{i-1},\epsilon,x_i,\ldots,x_{n-1})=(H\lambda^\epsilon_iu)(t,s,x_1,\ldots,x_{n-1})
+\end{cases};
+$$
+\item l'esistenza di $v$ è garantita dalla \thref{homotopy-lifting-plus}, a patto di dimostrare che $g$ è ben definita sulle intersezioni e che $pg=fi$; si tratta in entrambi i casi di facili verifiche, sfruttando l'ipotesi induttiva e le proprietà delle costruzioni subordinate.
+\end{itemize}
+Poniamo $Hu=v$, e mostriamo che le proprietà richieste sono soddisfatte.
+\begin{enumerate}
+\item
+\begin{align*}
+\lambda^\epsilon_2Hu(t,x_1,\ldots,x_n)&=(Hu)(t,\epsilon,x_1,\ldots,x_n)\\
+&=g(t,\epsilon,x_1,\ldots,x_n)\\
+&=(T_\epsilon u)(t,\epsilon,x_1,\ldots,x_n).
+\end{align*}
+\item
+\begin{align*}
+(\lambda^\epsilon_{i+2}Hu)(t,s,x_1,\ldots,x_{n-1})&=(Hu)(t,s,x_1,\ldots,x_{i-1},\epsilon,x_i,x_{n-1})\\
+&=g(t,s,x_1,\ldots,x_{i-1},\epsilon,x_i,x_{n-1})\\
+&=(H\lambda^\epsilon_iu)(t,s,x_1,\ldots,x_{n-1}).
+\end{align*}
+\item Per ipotesi $u$ non è degenere.
+\item
+$$
+(p\circ Hu)(t,s,x_1,\ldots,x_n)=f(t,s,x_1,\ldots,x_n)=h(t,s).
+$$
+\item
+$$
+(Hu)(0,s,x_1,\ldots,x_n)=g(0,s,x_1,\ldots,x_n)=u(0,s,x_1,\ldots,x_n).
+$$
+\end{enumerate}
+\end{proof}

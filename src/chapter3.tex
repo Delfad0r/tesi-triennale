@@ -1,7 +1,7 @@
 \chapter{Successione spettrale omologica di uno spazio fibrato}
 
 \section{Costruzione della successione spettrale}
-Consideriamo una fibrazione $\fibration{F}{E}{B}$. Il nostro obiettivo è mettere in relazione i gruppi di omologia di $B$, $E$ e $F$; lo strumento che adopereremo sono le successioni spettrali. In questa sezione ci capiterà più volte di richiedere l'esistenza di costruzioni che associno cubi ad altri cubi, soddisfacendo determinate proprietà. Dalle dimostrazioni dell'esistenza di tali applicazioni si evince finalmente la motivazione che ci ha spinto a dare la definizione di spazi fibrati. Tuttavia, per separare nettamente la parte algebrica da quella topologica, abbiamo preferito rimandare le suddette dimostrazioni alla fine del capitolo (sezione \ref{spectral-sequences-of-fibration:proofs}).
+Consideriamo una fibrazione $\fibration{F}{E}{B}$. Il nostro obiettivo è mettere in relazione i gruppi di omologia di $B$, $E$ e $F$; lo strumento che adopereremo sono le successioni spettrali. In questa sezione ci capiterà di richiedere l'esistenza di costruzioni (analoghe a quella del \thref{fibration-H-construction}) che associno cubi ad altri cubi, soddisfacendo determinate proprietà. Per separare nettamente la parte algebrica da quella topologica e per evitare di allungare eccessivamente le dimostrazioni, già piuttosto estese, abbiamo preferito rimandare le suddette dimostrazioni alla fine del capitolo (sezione \ref{spectral-sequence-of-fibration:proofs}).
 
 \subsection{Filtrazione del complesso singolare}
 Per applicare i risultati della sezione \ref{sec:spectral-sequence-filtered-complex}, è necessario definire una filtrazione crescente sul complesso singolare $C_\bullet(E)$ (d'ora in poi ometteremo la $E$ fra parentesi). Ciò che faremo sarà filtrare il complesso $Q_\bullet$ con dei sottocomplessi $Q^p_\bullet$ e prenderne le immagini nel quoziente $C_\bullet$.
@@ -44,21 +44,21 @@ Le proprietà \ref{spectral-sequence-of-fibration:pr1} e \ref{spectral-sequence-
 
 Ci proponiamo di mostrare che $\varphi^p$ è in realtà un'equivalenza omotopica. Sfrutteremo il seguente lemma per costruire un'inversa omotopica.
 
-\begin{lemma}\thlabel{spectral-sequence-of-fibration-psi-construction}
+\begin{restatable}{lemma}{spectralsequenceoffibrationKconstruction}\thlabel{spectral-sequence-of-fibration-K-construction}
 Esiste un'applicazione $K$ che associa a ogni coppia di cubi $(u,v)$ con $u\in Q_p(B)$ e $v\in Q_q(F)$ un cubo $K(u,v)\in Q^p_{p+q}$ e che soddisfa le seguenti proprietà:
 \begin{enumerate}
-\item\label{spectral-sequence-of-fibration-psi-construction:pr1} $B^pK(u,v)=u$ e $F^pK(u,v)=v$;
-\item\label{spectral-sequence-of-fibration-psi-construction:pr2} per ogni $i\le q,\epsilon\in\{0,1\}$ vale $K(u,\lambda^\epsilon_iv)=\lambda^\epsilon_{i+p}K(u,v)$;
-\item\label{spectral-sequence-of-fibration-psi-construction:pr3} se $v$ è degenere allora $K(u,v)$ è degenere.
+\item\label{spectral-sequence-of-fibration-K-construction:pr1} $B^pK(u,v)=u$ e $F^pK(u,v)=v$;
+\item\label{spectral-sequence-of-fibration-K-construction:pr2} per ogni $0<i\le q,\epsilon\in\{0,1\}$ vale $K(u,\lambda^\epsilon_iv)=\lambda^\epsilon_{i+p}K(u,v)$;
+\item\label{spectral-sequence-of-fibration-K-construction:pr3} se $v$ è degenere allora $K(u,v)$ è degenere.
 \end{enumerate}
-\end{lemma}
+\end{restatable}
 \begin{proof}
-
+La dimostrazione è rimandata alla fine del capitolo (sezione \ref{spectral-sequence-of-fibration:proofs}).
 \end{proof}
 
 Definiamo allora il morfismo di complessi
 \Map{\psi^p}{J^p_\bullet}{E^{p,\bullet}_0}{u\tensor v}{K(u,v)}
-Osserviamo che $\psi^p$ è ben definito (ossia è compatibile con i quozienti che definiscono $J^p_\bullet$): infatti se $u$ è degenere allora $B^pK(u,v)$ è degenere per la \ref{spectral-sequence-of-fibration-psi-construction:pr1}, dunque $K(u,v)\in Q^{p-1}_\bullet$. Se invece $v$ è degenere allora $K(u,v)$ è degenere per la \ref{spectral-sequence-of-fibration-psi-construction:pr3}. Inoltre $\psi^p$ è effettivamente un morfismo di complessi, come mostra un semplice verifica:
+Osserviamo che $\psi^p$ è ben definito (ossia è compatibile con i quozienti che definiscono $J^p_\bullet$): infatti se $u$ è degenere allora $B^pK(u,v)$ è degenere per la \ref{spectral-sequence-of-fibration-K-construction:pr1}, dunque $K(u,v)\in Q^{p-1}_\bullet$. Se invece $v$ è degenere allora $K(u,v)$ è degenere per la \ref{spectral-sequence-of-fibration-K-construction:pr3}. Inoltre $\psi^p$ è effettivamente un morfismo di complessi, come mostra un semplice verifica:
 \begin{align*}
 \psi^pd_J(u\tensor v)&=(-1)^p\psi^p(u\tensor dv)\\
 &=(-1)^p\psi^p\left(u\tensor\sum_{i=1}^q(-1)^i(\lambda^0_iv-\lambda^1_iv)\right)\\
@@ -74,29 +74,28 @@ Per ogni $p$ la mappa $\map{\varphi^p}{E^{p,\bullet}_0}{J^p_\bullet}$ è un'equi
 \end{proposition}
 \begin{proof}
 Si vede immediatamente che $\varphi^p\psi^p=\1$. Per dimostrare che $\psi^p\varphi^p$ è omotopo all'identità ci serviremo del seguente lemma.
-\begin{lemma}
-Esiste un'applicazione $S$ \todo{Forse $S$ non è il nome più adatto?} che associa a ogni cubo $u\in Q^p_n$ un cubo $Su\in Q^p_{n+1}$ e che soddisfa le seguenti proprietà:
+\begin{restatable}{lemma}{spectralsequenceoffibrationSconstruction}\thlabel{spectral-sequence-of-fibration-S-construction}
+Esiste un'applicazione $S$ che associa a ogni cubo $u\in Q^p_n$ un cubo $Su\in Q^p_{n+1}$ e che soddisfa le seguenti proprietà:
 \begin{enumerate}
-\item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr1} $B^pSu=B^pu$;
-\item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr2} $\lambda^0_{p+1}Su=u$ e $\lambda^1_{p+1}Su=K(B^pu,F^pu)$;
-\item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr3} se $i>p$ vale $S\lambda^\epsilon_iu=\lambda^\epsilon_{i+1}Su$;
-\item\label{spectral-sequence-of-fibration-homotopy-equivalence:pr4} se $q>0$ e $u$ è degenere, allora $Su$ è degenere.
-%\item $Su(0,\ldots,0,t,x_1,\ldots,x_q)=u(0,\ldots,0,x_1,\ldots,x_q)$.
+\item\label{spectral-sequence-of-fibration-S-construction:pr1} $B^pSu=B^pu$;
+\item\label{spectral-sequence-of-fibration-S-construction:pr2} $\lambda^0_{p+1}Su=u$ e $\lambda^1_{p+1}Su=K(B^pu,F^pu)$;
+\item\label{spectral-sequence-of-fibration-S-construction:pr3} se $i>p$ e $\epsilon\in\{0,1\}$ vale $S\lambda^\epsilon_iu=\lambda^\epsilon_{i+1}Su$;
+\item\label{spectral-sequence-of-fibration-S-construction:pr4} se $q>0$ e $u$ è degenere, allora $Su$ è degenere.
 \end{enumerate}
-\end{lemma}
+\end{restatable}
 \begin{proof}
 
 \end{proof}
 Dato un cubo $u\in E^{p,q}_0$, definiamo $hu=(-1)^pSu$, ed estendiamo $h$ a una mappa
-$\map{h}{E^{p,q}_0}{E^{p,q+1}_0}$ per $\ZZ$-linearità. Osserviamo che $h$ è ben definita (ossia è compatibile con il quoziente che definisce $E^{p,q}_0$): infatti se $u\in Q^{p-1}_n(E)$ allora $Su\in Q^{p-1}_{n+1}(E)$ per la proprietà \ref{spectral-sequence-of-fibration-homotopy-equivalence:pr1}; se $u$ è degenere e $q>0$ allora $Su$ è degenere (proprietà \ref{spectral-sequence-of-fibration-homotopy-equivalence:pr4}), mentre se $u$ è degenere e $q=0$ allora $B^pSu$ è degenere (proprietà \ref{spectral-sequence-of-fibration-homotopy-equivalence:pr1}), dunque $Su\in Q^{p-1}_{n+1}(E)$.
+$\map{h}{E^{p,q}_0}{E^{p,q+1}_0}$ per $\ZZ$-linearità. Osserviamo che $h$ è ben definita (ossia è compatibile con il quoziente che definisce $E^{p,q}_0$): infatti se $u\in Q^{p-1}_n(E)$ allora $Su\in Q^{p-1}_{n+1}(E)$ per la proprietà \ref{spectral-sequence-of-fibration-S-construction:pr1}; se $u$ è degenere e $q>0$ allora $Su$ è degenere (proprietà \ref{spectral-sequence-of-fibration-S-construction:pr4}), mentre se $u$ è degenere e $q=0$ allora $B^pSu$ è degenere (proprietà \ref{spectral-sequence-of-fibration-S-construction:pr1}), dunque $Su\in Q^{p-1}_{n+1}(E)$.
 
 Mostriamo ora che $h$ definisce un'omotopia fra $\psi^p\varphi^p$ e l'identità. Calcoliamo
 \begin{align*}
 d^p_0hu+hd^p_0u&=(-1)^p(d^p_0Su+Sd^p_0u)\\
-&=(-1)^p\left(\sum_{i=p+1}^{n+1}(-1)^i(\lambda^0_iSu-\lambda^1_iSu)+\sum_{i=p+1}^n(-1)^i(S\lambda^0_iu-\lambda^1_iu)\right)\\
+&=(-1)^p\left(\sum_{i=p+1}^{n+1}(-1)^i(\lambda^0_iSu-\lambda^1_iSu)+\sum_{i=p+1}^n(-1)^i(S\lambda^0_iu-S\lambda^1_iu)\right)\\
 &=(-1)^p(-1)^{p+1}(u-K(B^pu,F^pu))+\\
 &\phantomop(-1)^p\sum_{i=p+2}^{n+1}(-1)^i(S\lambda^0_{i-1}u-S\lambda^1_{i-1}u)+\\
-&\phantomop(-1)^p\sum_{i=p+1}^n(-1)^i(S\lambda^0_iu-\lambda^1_iu)\\
+&\phantomop(-1)^p\sum_{i=p+1}^n(-1)^i(S\lambda^0_iu-S\lambda^1_iu)\\
 &=K(B^pu,F^pu)-u\\
 &=\psi^p\varphi^pu-u.
 \end{align*}
@@ -191,4 +190,91 @@ $$
 da cui $E^{i,j}_2=0$ se $i,j>0$ e $i+j\le p+q-1$. Pertanto, se $1\le n\le p+q-1$, ci sono al più due termini $E^{i,j}_2$ non nulli con $i+j=n$ (ossia $(i,j)=(0,n)$ e $(i,j)=(n,0)$). Possiamo dunque applicare la \thref{spectral-sequence-exact-sequence} con $(a_n',b_n')=(0,n)$ e $(a_n'',b_n'')=(n,0)$ (si vede facilmente che le altre condizioni sono verificate). La successione esatta che otteniamo, ricordando che $E^{0,n}_2=H_n(F;G)$ e $E^{n,0}=H_n(B;G)$, è precisamente quella della tesi.
 \end{proof}
 
-\section{Dimostrazione dei lemmi}\label{spectral-sequences-of-fibration:proofs}
+\section{Dimostrazione dei Lemmi \ref{spectral-sequence-of-fibration-K-construction} e \ref{spectral-sequence-of-fibration-S-construction}}\label{spectral-sequence-of-fibration:proofs}
+Poiché le dimostrazioni dei due lemmi non si discostano molto da quella del \thref{fibration-H-construction} e le verifiche non presentano sostanziali difficoltà, ometteremo alcuni dettagli.
+
+\spectralsequenceoffibrationKconstruction*
+\begin{proof}
+Costruiamo $K$ per induzione su $q$.
+\paragraph{Costruzione per $q=0$.} In questo caso $v$ è semplicemente il punto $e$, e il problema si riduce a trovare un cubo $\map{w}{I^p}{E}$ avente tutti i vertici in $e$ tale che $pw=u$. Denotiamo con $s$ il punto $(0,\ldots,0)\in I^p$. Consideriamo il diagramma
+\begin{diagram}
+\{s\}\rar{g}\dar{i}&E\dar{p}\\
+I^p\rar{u}\ar[ru,dashed,"w'"]&B
+\end{diagram}
+dove $g(s)=e$, e l'esistenza di $w'$ è garantita dalla \thref{homotopy-lifting-plus}. Per ottenere un cubo $w$ con i vertici in $e$ procediamo come segue. Siano $\{s_\alpha\}_\alpha$ i vertici di $I^p$; sappiamo che $w'(s_\alpha)\in F$. Poiché $F$ è connesso per archi esistono cammini $\gamma_\alpha$ con $\gamma_\alpha(0)=w'(s_\alpha)$ e $\gamma_\alpha(1)=e$. Consideriamo allora il diagramma
+\begin{diagram}
+A\dar{i}\rar{g}&E\dar{p}\\
+X\rar{f}\ar[ur,dashed,"h"]&B
+\end{diagram}
+dove
+\begin{itemize}
+\item $X=I^p\times I$;
+\item $A=(I^p\times\{0\})\cup(\{s_\alpha\}\times I)$;
+\item $f(x_1,\ldots,x_p,t)=u(x_1,\ldots,x_p)$;
+\item $g$ è così definita:
+$$
+\begin{cases}
+g(x_1,\ldots,x_p,0)=w'(x_1,\ldots,x_p)\\
+g(s_\alpha,t)=\gamma_\alpha(t)
+\end{cases};
+$$
+\item l'esistenza di $h$ è garantita dalla \thref{homotopy-lifting-plus}.
+\end{itemize}
+Allora il cubo $w(x_1,\ldots,x_n)=h(1,x_1,\ldots,x_n)$ soddisfa le proprietà richieste.
+\paragraph{Costruzione per $q>0$ e $v$ degenere.} Se $v$ è degenere, poniamo
+$$
+K(u,v)(x_1,\ldots,x_n)=K(u,\lambda^0_q)(x_1,\ldots,x_{n-1}).
+$$
+Si verifica facilmente che $K(u,v)$ soddisfa le proprietà richieste.
+\paragraph{Costruzione per $q>0$ e $v$ non degenere.} Consideriamo il diagramma
+\begin{diagram}
+A\dar{i}\rar{g}&E\dar{p}\\
+X\rar{f}\ar[ur,dashed,"w"]&B
+\end{diagram}
+dove
+\begin{itemize}
+\item $X=I^p\times I^q$;
+\item $A=(\{s\}\times I^q)\cup(I^p\times\del I^q)$;
+\item $f(x_1,\ldots,x_p,y_1,\ldots,y_q)=u(x_1,\ldots,x_p)$;
+\item $g$ è così definita
+$$
+\begin{cases}
+g(0,\ldots,0,y_1,\ldots,y_q)=v(y_1,\ldots,y_q)\\
+g(x_1,\ldots,x_p,y_1,\ldots,y_{i-1},\epsilon,y_i,\ldots,y_{q-1})=K(u,\lambda^\epsilon_iv)(x_1,\ldots,x_p,y_1,\ldots,y_{q-1})&\epsilon\in\{0,1\}
+\end{cases};
+$$
+\item l'esistenza di $w$ è garantita dalla \thref{homotopy-lifting-plus}, a patto di dimostrare che $g$ è ben definita sulle intersezioni e che $pg=fi$; si tratta in entrambi i casi di facili verifiche, sfruttando l'ipotesi induttiva.
+\end{itemize}
+Poniamo $K(u,v)=w$; si verifica senza difficoltà alcuna che le proprietà richieste sono soddisfatte.
+\end{proof}
+
+\spectralsequenceoffibrationSconstruction*
+\begin{proof}
+Costruiamo $S$ per induzione su $q$, richiedendo inoltre che soddisfi la seguente proprietà:
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item $(Su)(0,\ldots,0,t,x_1,\ldots,x_n)=u(0,\ldots,0,x_1,\ldots,x_q)$.
+\end{enumerate}
+\paragraph{Costruzione per $q=0$.} Consideriamo il diagramma
+\begin{diagram}
+A\dar{i}\rar{g}&E\dar{p}\\
+X\rar{f}\ar[ur,dashed,"v"]&B
+\end{diagram}
+dove
+\begin{itemize}
+\item $X=I^p\times I$;
+\item $A=(I^p\times\{0,1\})\cup(\{s\}\times I)$ (continuiamo a denotare con $s$ il punto $(0,\ldots,0)\in I^p$);
+\item $f(x_1,\ldots,x_p,1)=pu(x)$;
+\item $g$ è così definita
+$$
+\begin{cases}
+g(x_1,\ldots,x_p,0)=u(x_1,\ldots,x_p)\\
+g(x_1,\ldots,x_p,1)=K(B^pu,F^pu)(x_1,\ldots,x_p)\\
+g(0,\ldots,0,t)=e
+\end{cases};
+$$
+\item l'esistenza di $w$ è garantita dalla \thref{homotopy-lifting-plus}.
+\end{itemize}
+Poniamo $Su=v$; si verifica facilmente che le proprierà richieste sono soddisfatte.
+\paragraph
+\end{proof}
