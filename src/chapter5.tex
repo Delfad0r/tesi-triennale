@@ -7,14 +7,14 @@ Sia $\Omega$ uno spazio topologico munito di un prodotto $\map{\vee}{\Omega\time
 Sia $\Omega$ un H-spazio connesso, $\map{p}{T}{\Omega}$ un rivestimento. Allora gli automorfismi di rivestimento di $T$ sono omotopi all'identità.
 \end{proposition}
 \begin{proof}
-Sia $\map{f}{T}{T}$ un automorfismo di rivestimento, $\tilde{e}$ un elemento della fibra di $e$, $\tilde{e}'=f(\tilde{e})$. Sia poi $\map{\gamma}{I}{\Omega}$ con $\gamma(0)=\gamma(1)=e$ il cui sollevamento $\tilde\gamma$ soddisfi $\tilde\gamma(0)=\tilde{e},\tilde\gamma(1)=\tilde{e}'$. Sia infine $\map{h}{I\times \Omega}{\Omega}$ un'omotopia con $h_0(x)=x$ e $h_1(x)=e\vee x$. Definiamo l'omotopia
-\Map{H}{I\times T}{\Omega}{(x,t)}{
+Sia $\map{f}{T}{T}$ un automorfismo di rivestimento, $\tilde{e}$ un elemento della fibra di $e$, $\tilde{e}'=f(\tilde{e})$. Sia poi $\map{\gamma}{I}{\Omega}$ con $\gamma(0)=\gamma(1)=e$ il cui sollevamento $\tilde\gamma$ soddisfi $\tilde\gamma(0)=\tilde{e},\tilde\gamma(1)=\tilde{e}'$. Sia infine $\map{h}{\Omega\times I}{\Omega}$ un'omotopia con $h_0(x)=x$ e $h_1(x)=e\vee x$. Definiamo l'omotopia
+\Map{H}{T\times I}{\Omega}{(x,t)}{
 \begin{cases}
 h_{3t}(p(x))&t\le\frac{1}{3}\\
 \gamma(3t-1)\vee p(x)&\frac{1}{3}\le t\le\frac{2}{3}\\
 h_{3-3t}(p(x))&\frac{2}{3}\le t
 \end{cases}}
-Per la proprietà di sollevamento dell'omotopia, esiste un'omotopia $\map{\tilde{H}}{I\times T}{T}$ con $\tilde{H}_0=\1$ e $p\tilde{H}=H$. Osserviamo che il cammino $t\mapsto H_t(\tilde{e})$ è omotopo a $\gamma$ e $\tilde{H}_0(\tilde{e})=\tilde{e}$, pertanto $\tilde{H}_1(\tilde{e})=\tilde{\gamma}(1)=\tilde{e}'$. Ma allora $\tilde{H}_1$ è un sollevamento dell'identità di $\Omega$ tale che $\tilde{H}_1(\tilde{e})=f(\tilde{e})$. Dalla connessione di $\Omega$ segue che $\tilde{H}_1=f$. Ma $\tilde{H}_1=f$ e $\tilde{H}_0=\1$ sono omotope mediante $\tilde H$, da cui la tesi.
+Per la proprietà di sollevamento dell'omotopia, esiste un'omotopia $\map{\tilde{H}}{T\times I}{T}$ con $\tilde{H}_0=\1$ e $p\tilde{H}=H$. Osserviamo che il cammino $t\mapsto H_t(\tilde{e})$ è omotopo a $\gamma$ e $\tilde{H}_0(\tilde{e})=\tilde{e}$, pertanto $\tilde{H}_1(\tilde{e})=\tilde{\gamma}(1)=\tilde{e}'$. Ma allora $\tilde{H}_1$ è un sollevamento dell'identità di $\Omega$ tale che $\tilde{H}_1(\tilde{e})=f(\tilde{e})$. Dalla connessione di $\Omega$ segue che $\tilde{H}_1=f$. Ma $\tilde{H}_1=f$ e $\tilde{H}_0=\1$ sono omotope mediante $\tilde H$, da cui la tesi.
 \end{proof}
 \begin{corollary}\thlabel{h-space-trivial-action}
 Sia $\Omega$ un H-spazio connesso, $T$ il suo rivestimento universale. Allora il gruppo fondamentale di $\Omega$ agisce banalmente sui moduli di omologia e di coomologia di $T$.
@@ -71,11 +71,11 @@ f((s+1)t)&t\le 1-\frac{s}{2}\\
 x&t\ge 1-\frac{s}{2}
 \end{cases}.
 $$
-Osserviamo che $\varphi_s(f)(0)=\varphi_s(f)(1)=x$, dunque $\varphi_s(f)\in\Omega_x$; inoltre $\varphi_0=\1$, $\varphi_1=(-\ast e)$ e $\varphi_s(e)=e$. Pertanto è sufficiente mostrare che $\map{\varphi}{I\times\Omega_x}{\Omega_x}$ è continua, ossia, per la \thref{compact-open-topology-properties}, che
-\Map{\Phi}{I\times\Omega_x\times I}{X}{(s,f, t)}{\varphi_s(f)(t)}
-è continua. Si vede però che $\Phi(s,f, t)=f(\theta(t,s))$, dove
+Osserviamo che $\varphi_s(f)(0)=\varphi_s(f)(1)=x$, dunque $\varphi_s(f)\in\Omega_x$; inoltre $\varphi_0=\1$, $\varphi_1=(-\ast e)$ e $\varphi_s(e)=e$. Pertanto è sufficiente mostrare che $\map{\varphi}{\Omega_x\times I}{\Omega_x}$ è continua, ossia, per la \thref{compact-open-topology-properties}, che
+\Map{\Phi}{\Omega_x\times I\times I}{X}{(f,s,t)}{\varphi_s(f)(t)}
+è continua. Si vede però che $\Phi(f,s,t)=f(\theta(s,t))$, dove
 $$
-\theta(t,s)=
+\theta(s,t)=
 \begin{cases}
 (s+1)t&t\le 1-\frac{s}{2}\\
 1&t\ge 1-\frac{s}{2}
@@ -93,8 +93,8 @@ Lo spazio $E_{x,X}$ è contrattile.
 \end{proposition}
 \begin{proof}
 Definiamo l'omotopia
-\Map{H}{I\times E_{x,X}}{E_{x,X}}{(s,f)}{H(s,f)}
-dove $H(s,f)(t)=f(st)$. Per la \thref{compact-open-topology-properties}, $H$ è continua. Inoltre $H_1$ è l'identità, mentre per ogni $f$ vale $H_0(f)=e$. Dunque l'identità su $E_{x,X}$ è omotopa a un'applicazione costante, ossia $E_{x,X}$ è contrattile.
+\Map{H}{E_{x,X}\times I}{E_{x,X}}{(f,s)}{H_s(f)}
+dove $H_s(f)(t)=f(st)$. Per la \thref{compact-open-topology-properties}, $H$ è continua. Inoltre $H_1$ è l'identità, mentre per ogni $f$ vale $H_0(f)=e$. Dunque l'identità su $E_{x,X}$ è omotopa a un'applicazione costante, ossia $E_{x,X}$ è contrattile.
 \end{proof}
 
 \begin{proposition}\thlabel{path-space-independent-of-point}
@@ -106,7 +106,7 @@ Sia $\gamma\in E_{x,y}$, e sia $\delta\in E_{y,x}$ il cammino inverso (ossia $\d
 Sia $\alpha\in\Omega_x$ un cammino omotopicamente banale (ossia omotopo a $e$ mediante un'omotopia che fissa gli estremi). Allora l'applicazione $\map{(\alpha\ast-)}{E_{x,B}}{E_{x,B}}$ è omotopa all'identità.
 \end{lemma}
 \begin{proof}
-Per ipotesi esiste un'omotopia $\map{H}{I\times I}{X}$ con $H_0=\alpha$ e $H_1=e$. Definiamo allora l'omotopia $\map{K}{I\times E_{x,B}}{E_{x,B}}$ come $K_t=(H_t\ast-)$. Si verifica immediatamente che $K$ è effettivamente un'omotopia fra $(\alpha\ast-)$ e $(e\ast-)$. Procedendo come nella dimostrazione della \thref{omega-h-space} si ottiene che $(e\ast-)$ è omotopa all'identità, da cui la tesi.
+Per ipotesi esiste un'omotopia $\map{H}{I\times I}{X}$ con $H_0=\alpha$ e $H_1=e$. Definiamo allora l'omotopia $\map{K}{E_{x,B}\times I}{E_{x,B}}$ come $K_t=(H_t\ast-)$. Si verifica immediatamente che $K$ è effettivamente un'omotopia fra $(\alpha\ast-)$ e $(e\ast-)$. Procedendo come nella dimostrazione della \thref{omega-h-space} si ottiene che $(e\ast-)$ è omotopa all'identità, da cui la tesi.
 \end{proof}
 Applicando il Lemma a $\alpha=\delta\ast\gamma$ otteniamo che $\delta\ast(\gamma\ast-)$ è omotopa all'identità. In modo del tutto analogo si mostra che $\gamma\ast(\delta\ast-)$ è omotopa all'identità.
 \end{proof}
@@ -122,13 +122,13 @@ Sia $X$ uno spazio topologico connesso per archi, e siano $A,B\subs X$ due sotto
 è una fibrazione (con fibra non necessariamente connessa).
 \end{proposition}
 \begin{proof}
-Notiamo subito che $p$ è suriettiva, in quanto $X$ è connesso per archi. Mostreremo ora che $p$ soddisfa la proprietà di sollevamento dell'omotopia per tutti gli spazi topologici (e non solo per i poliedri finiti). Sia $Y$ uno spazio topologico, $\map{f=(f_A,f_B)}{I\times Y}{A\times B}$ un'applicazione continua, $\map{g}{Y}{E_{A,B}}$ tale che $pg(y)=f(0,y)$ per ogni $y\in Y$. Per la \thref{compact-open-topology-properties}, l'applicazione
+Notiamo subito che $p$ è suriettiva, in quanto $X$ è connesso per archi. Mostreremo ora che $p$ soddisfa la proprietà di sollevamento dell'omotopia per tutti gli spazi topologici (e non solo per i poliedri finiti). Sia $Y$ uno spazio topologico, $\map{f=(f_A,f_B)}{Y\times I}{A\times B}$ un'applicazione continua, $\map{g}{Y}{E_{A,B}}$ tale che $pg(y)=f(y,0)$ per ogni $y\in Y$. Per la \thref{compact-open-topology-properties}, l'applicazione
 \Map{G}{Y\times I}{X}{(y,t)}{g(y)(t)}
-è continua. Dobbiamo trovare una mappa continua $\map{h}{I\times Y}{E_{A,B}}$ tale che $h(0,y)=g(y)$ e $ph=f$ o, equivalentemente, $\map{H}{I\times Y\times I}{X}$ tale che $H(0,y,t)=G(y,t),H(s,y,0)=f_A(s,y),H(s,y,1)=f_B(s,y)$. Dobbiamo dunque estendere a tutto $I\times Y\times I$ una funzione definita su
+è continua. Dobbiamo trovare una mappa continua $\map{h}{Y\times I}{E_{A,B}}$ tale che $h(y,0)=g(y)$ e $ph=f$ o, equivalentemente, $\map{H}{Y\times I\times I}{X}$ tale che $H(y,0,t)=G(y,t),H(y,s,0)=f_A(y,s)$ e $H(y,s,1)=f_B(y,s)$. Dobbiamo dunque estendere a tutto $Y\times I\times I$ una funzione definita su
 $$
-(\{0\}\times Y\times I)\cup(I\times Y\times \{0\})\cup(I\times Y\times \{1\}),
+(Y\times\{0\}\times I)\cup(Y\times I\times \{0,1\}),
 $$
-e ciò è reso possibile dal fatto che $(\{0\}\times I)\cup(I\times\{0\})\cup(I\times\{1\})$ è un retratto di $I\times I$.
+e ciò è reso possibile dal fatto che $(Y\times\{0\}\times I)\cup(Y\times I\times \{0,1\})$ è un retratto di $I\times I$.
 \end{proof}
 
 Consideriamo ora uno spazio topologico $X$ connesso per archi e semplicemente connesso.

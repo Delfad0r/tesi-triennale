@@ -60,10 +60,10 @@ Supponiamo che $X$ sia connesso per archi; sia $x\in X$ un punto fissato. Allora
 
 \section{Spazi fibrati}
 \begin{definition}
-Un'applicazione continua suriettiva $\map{p}{E}{B}$ si dice fibrazione se soddisfa la seguente proprietà (sollevamento dell'omotopia per poliedri finiti): dati un poliedro finito $P$ e due applicazioni continue $\map{f}{I\times P}{B},\map{g}{P}{E}$ tali che $pg=fi$ (dove $i$ denota l'inclusione $\map{i}{P}{I\times P}$ definita da $i(x)=(0,x)$), esiste un'applicazione continua $\map{h}{I\times P}{E}$ tale che $ph=f$ e $hi=g$.
+Un'applicazione continua suriettiva $\map{p}{E}{B}$ si dice fibrazione se soddisfa la seguente proprietà (sollevamento dell'omotopia per poliedri finiti): dati un poliedro finito $P$ e due applicazioni continue $\map{f}{P\times I}{B},\map{g}{P}{E}$ tali che $pg=fi$ (dove $i$ denota l'inclusione $\map{i}{P}{P\times I}$ definita da $i(x)=(0,x)$), esiste un'applicazione continua $\map{h}{P\times I}{E}$ tale che $ph=f$ e $hi=g$.
 \begin{diagram}
 P\rar{g}\dar{i}&E\dar{p}\\
-I\times P\rar{f}\ar[ru,dashed,"h"]&B
+P\times I\rar{f}\ar[ru,dashed,"h"]&B
 \end{diagram}
 \end{definition}
 Se $\map{p}{E}{B}$ è una fibrazione, chiameremo $E$ spazio totale e $B$ spazio base. Inoltre la terna $(p, E, B)$ è detta spazio fibrato; con tale espressione potremo anche indicare, con lieve abuso di notazione, il solo spazio $E$.
@@ -113,7 +113,7 @@ Sia $\map{p}{E}{B}$ una fibrazione, $e\in E,b=p(e),F=p^{-1}(e)$.
 \begin{proof}
 La successione esatta del punto \ref{fibration-homotopy-exact-sequence:2} segue immediatamente dalla successione esatta dei gruppi di omotopia della coppia $(E,F)$, una volta dimostrato il punto \ref{fibration-homotopy-exact-sequence:1}. Mostriamo dunque che $p_*$ è un isomorfismo di gruppi.
 \begin{itemize}
-\item Per verificare che $p_*$ è iniettiva, sia $\bar{f}\in\pi_i(E,F,e)$ tale che $p_*\bar{f}=0$. Consideriamo un rappresentante $\map{f}{(D^n,S^{n-1},s)}{(E,F,e)}$ della classe $\bar{f}$. Ricordiamo che $\bar{f}=0$ se e solo se $f$ è omotopa a un'applicazione con immagine in $F$ mediante un'omotopia che fissa $S^{n-1}$. Poiché $p_*\bar{f}=0$, esiste un'omotopia $\map{H}{I\times D^n}{B}$ stazionaria su $S^{n-1}$ tale che $H_0=pf$ e $H_1(D^n)\subs\{b\}$. Consideriamo il poliedro finito contrattile $A=(D^n\times\{0\})\cup(S^{n-1}\times I)\subs D^n\times I$. Definiamo un sollevamento di $H$
+\item Per verificare che $p_*$ è iniettiva, sia $\bar{f}\in\pi_i(E,F,e)$ tale che $p_*\bar{f}=0$. Consideriamo un rappresentante $\map{f}{(D^n,S^{n-1},s)}{(E,F,e)}$ della classe $\bar{f}$. Ricordiamo che $\bar{f}=0$ se e solo se $f$ è omotopa a un'applicazione con immagine in $F$ mediante un'omotopia che fissa $S^{n-1}$. Poiché $p_*\bar{f}=0$, esiste un'omotopia $\map{H}{D^n\times I}{B}$ stazionaria su $S^{n-1}$ tale che $H_0=pf$ e $H_1(D^n)\subs\{b\}$. Consideriamo il poliedro finito contrattile $A=(D^n\times\{0\})\cup(S^{n-1}\times I)\subs D^n\times I$. Definiamo un sollevamento di $H$
 \Map{\tilde{H}}{A}{E}{(x,t)}{f(x)}
 Per la \thref{homotopy-lifting-plus} $\tilde{H}$ si estende un'omotopia definita su tutto a tutto $D^n\times I$. Osserviamo che $\tilde{H}_0=f$, $\tilde{H}_1(D^n)\subs F$ e $\tilde{H}$ è stazionaria su $S^{n-1}$, dunque $\bar{f}=0$.
 \item Per verificare che $p_*$ è suriettiva, sia $\bar{g}\in\pi_i(B,b)$. Sia $\map{g}{(D^n,S^n)}{(B,b)}$ un rappresentante della classe $\bar{g}$. Consideriamo il poliedro finito contrattile $\{s\}\subs D^n$ e l'applicazione $\map{f}{\{s\}}{E}$ tale che $f(s)=e$. Per la \thref{homotopy-lifting-plus} $f$ si estende a tutto $D^n$ in modo che $pf=g$. Si vede immediatamente che la classe di omotopia di $f$ appartiene a $\pi_i(E,F,e)$, dunque $p_*\bar{f}=\bar{g}$.
