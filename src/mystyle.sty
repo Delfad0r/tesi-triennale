@@ -54,6 +54,11 @@
 \let\oldtensor\tensor
 \newcommand*{\pre}[2]{\oldtensor*[^{#1}]{#2}{}}
 
+% Equation item
+\newcommand\eqitem[1][]{%
+  \ifx\relax#1\relax  \item \else \item[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+
 % Theorem environments
 \theoremstyle{definition}
 \newtheorem{definition}{Definizione}[chapter]
