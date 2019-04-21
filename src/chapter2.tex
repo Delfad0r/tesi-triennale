@@ -18,7 +18,7 @@ $$
 $$
 Per snellire la notazione, se $H=\{i\}$ (ossia se $p=1$), scriviamo $\lambda^\epsilon_i$ in luogo di $\lambda^\epsilon_{\{i\}}$. Dato un cubo $u$ di dimensione $n$, definiamo dunque
 $$
-d_nu=\sum_{i=1}^n(\lambda^0_iu-\lambda^1_iu),
+d_nu=\sum_{i=1}^n\sum_{\epsilon=0}^1(-1)^{i+\epsilon}\lambda^\epsilon_iu,
 $$
 estendendola per $\ZZ$-linearità a tutto $Q_n(X)$. È immediato verificare che $\lambda^\epsilon_i\lambda^{\epsilon'}_j=\lambda^{\epsilon'}_{j-1}\lambda^\epsilon_i$; un semplice conto mostra allora che $d_nd_{n+1}=0$. Abbiamo così definito il complesso $Q_\bullet(X)$. Si vede inoltre che $D_\bullet(X)$ è un sottocomplesso di $Q_\bullet(X)$: se $u$ è un cubo degenere di dimensione $n$, allora anche $\lambda^\epsilon_iu$ è degenere per $0\le i<n$, mentre $\lambda^0_nu=\lambda^1_nu$, pertanto $du$ è degenere.
 \begin{definition}

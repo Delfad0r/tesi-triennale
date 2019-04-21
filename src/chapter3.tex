@@ -27,17 +27,17 @@ Le seguenti proprietà sono di verifica immediata.
 
 Ricordiamo che $E^{p,q}_0=C^p_{p+q}/C^{p-1}_{p+q}$ e che la mappa $\map{d^{p,q}_0}{E^{p,q}_0}{E^{p,q-1}_0}$ si ottiene dalla mappa di bordo di $C_\bullet$ per passaggio al quoziente. Possiamo dunque raggruppare i termini della successione spettrale aventi $r=0$ in complessi $E^{p,\bullet}_0$, con mappe di bordo $d^p_0$. Osserviamo che
 $$
-d^p_0u=\sum_{i>p}(-1)^i(\lambda^0_iu-\lambda^1_iu)
+d^p_0u=\sum_{i>p}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_iu,
 $$
-in quanto per $i\le p$ vale $\lambda^\epsilon_iu\in Q^p_\bullet$.
+in quanto per $i\le p$ vale $\lambda^\epsilon_iu\in Q^{p-1}_\bullet$.
 
 Consideriamo il complesso $J^p_\bullet=C_p(B)\tensor C_\bullet(F)$ con mappe di bordo $d_J(b\tensor f)=(-1)^pb\tensor df$, e sia $\varphi^p$ il morfismo di complessi
 \Map{\varphi^p}{E^{p,\bullet}_0}{J^p_\bullet}{u}{B^pu\tensor F^pu}
 Le proprietà \ref{spectral-sequence-of-fibration:pr1} e \ref{spectral-sequence-of-fibration:pr2} garantiscono che si tratta di una buona definizione (ossia che è compatibile con il quoziente che definisce $E^{p,\bullet}_0$), mentre dalla \ref{spectral-sequence-of-fibration:pr3} segue che $\varphi^p$ è effettivamente un morfismo di complessi:
 \begin{align*}
-\varphi^pd^p_0u&=\varphi^p\sum_{i>p}(-1)^i(\lambda^0_iu-\lambda^1_iu)\\
-&=\sum_{i>p}(-1)^i(B^p\lambda^0_iu\tensor F^p\lambda^0_iu-B^p\lambda^1_iu\tensor F^p\lambda^1_iu)\\
-&=\sum_{i>p}(-1)^pB^pu\tensor(-1)^{p-i}(\lambda^0_{i-p}F^pu-\lambda^1_{i-p}F^pu)\\
+\varphi^pd^p_0u&=\varphi^p\sum_{i>p}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_iu\\
+&=\sum_{i>p}\sum_\epsilon(-1)^{i+\epsilon}B^p\lambda^\epsilon_iu\tensor F^p\lambda^0_iu\\
+&=\sum_{i>p}\sum_\epsilon(-1)^pB^pu\tensor(-1)^{p-i+\epsilon}\lambda^\epsilon_{i-p}F^pu\\
 &=(-1)^pB^pu\tensor dF^pu\\
 &=d_J\varphi^pu.
 \end{align*}
@@ -61,9 +61,9 @@ Definiamo allora il morfismo di complessi
 Osserviamo che $\psi^p$ è ben definito (ossia è compatibile con i quozienti che definiscono $J^p_\bullet$): infatti se $u$ è degenere allora $B^pK(u,v)$ è degenere per la \ref{spectral-sequence-of-fibration-K-construction:pr1}, dunque $K(u,v)\in Q^{p-1}_\bullet$. Se invece $v$ è degenere allora $K(u,v)$ è degenere per la \ref{spectral-sequence-of-fibration-K-construction:pr3}. Inoltre $\psi^p$ è effettivamente un morfismo di complessi, come mostra un semplice verifica:
 \begin{align*}
 \psi^pd_J(u\tensor v)&=(-1)^p\psi^p(u\tensor dv)\\
-&=(-1)^p\psi^p\left(u\tensor\sum_{i=1}^q(-1)^i(\lambda^0_iv-\lambda^1_iv)\right)\\
-&=\sum_{i=1}^q(-1)^{p+i}(K(u,\lambda^0_iv)-K(u,\lambda^1_iv))\\
-&=\sum_{i=p+1}^n(-1)^i(\lambda^0_iK(u,v)-\lambda^1_iK(u,v))\\
+&=(-1)^p\psi^p\left(u\tensor\sum_{i=1}^q\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_iv\right)\\
+&=\sum_{i=1}^q\sum_\epsilon(-1)^{p+i+\epsilon}K(u,\lambda^\epsilon_iv)\\
+&=\sum_{i=p+1}^n\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_iK(u,v)\\
 &=d^p_0\psi^p(u\tensor v).
 \end{align*}
 
@@ -84,7 +84,7 @@ Esiste un'applicazione $S$ che associa a ogni cubo $u\in Q^p_n$ un cubo $Su\in Q
 \end{enumerate}
 \end{restatable}
 \begin{proof}
-
+La dimostrazione è rimandata alla fine del capitolo (sezione \ref{spectral-sequence-of-fibration:proofs}).
 \end{proof}
 Dato un cubo $u\in E^{p,q}_0$, definiamo $hu=(-1)^pSu$, ed estendiamo $h$ a una mappa
 $\map{h}{E^{p,q}_0}{E^{p,q+1}_0}$ per $\ZZ$-linearità. Osserviamo che $h$ è ben definita (ossia è compatibile con il quoziente che definisce $E^{p,q}_0$): infatti se $u\in Q^{p-1}_n(E)$ allora $Su\in Q^{p-1}_{n+1}(E)$ per la proprietà \ref{spectral-sequence-of-fibration-S-construction:pr1}; se $u$ è degenere e $q>0$ allora $Su$ è degenere (proprietà \ref{spectral-sequence-of-fibration-S-construction:pr4}), mentre se $u$ è degenere e $q=0$ allora $B^pSu$ è degenere (proprietà \ref{spectral-sequence-of-fibration-S-construction:pr1}), dunque $Su\in Q^{p-1}_{n+1}(E)$.
@@ -92,10 +92,10 @@ $\map{h}{E^{p,q}_0}{E^{p,q+1}_0}$ per $\ZZ$-linearità. Osserviamo che $h$ è be
 Mostriamo ora che $h$ definisce un'omotopia fra $\psi^p\varphi^p$ e l'identità. Calcoliamo
 \begin{align*}
 d^p_0hu+hd^p_0u&=(-1)^p(d^p_0Su+Sd^p_0u)\\
-&=(-1)^p\left(\sum_{i=p+1}^{n+1}(-1)^i(\lambda^0_iSu-\lambda^1_iSu)+\sum_{i=p+1}^n(-1)^i(S\lambda^0_iu-S\lambda^1_iu)\right)\\
+&=(-1)^p\left(\sum_{i=p+1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_iSu+\sum_{i=p+1}^n\sum_\epsilon(-1)^{i+\epsilon}S\lambda^\epsilon_iu\right)\\
 &=(-1)^p(-1)^{p+1}(u-K(B^pu,F^pu))+\\
-&\phantomop(-1)^p\sum_{i=p+2}^{n+1}(-1)^i(S\lambda^0_{i-1}u-S\lambda^1_{i-1}u)+\\
-&\phantomop(-1)^p\sum_{i=p+1}^n(-1)^i(S\lambda^0_iu-S\lambda^1_iu)\\
+&\phantomop(-1)^p\sum_{i=p+2}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}S\lambda^\epsilon_{i-1}u+\\
+&\phantomop(-1)^p\sum_{i=p+1}^n\sum_\epsilon(-1)^{i+\epsilon}S\lambda^\epsilon_iu\\
 &=K(B^pu,F^pu)-u\\
 &=\psi^p\varphi^pu-u.
 \end{align*}
@@ -124,22 +124,22 @@ dove abbiamo denotato con $d$ la mappa di bordo canonica del complesso singolare
 \begin{proof}
 Consideriamo un elemento $x=b\tensor h\in C_p(B;H_q(F))$, dove $b$ è un cubo di $B$ di dimensione $p$; sia $m\in C_q(F)$ un ciclo della classe di omologia di $h$. Ci proponiamo di calcolare $\varphi^{p-1}d\psi^p(b\tensor m)$; per passaggio al quoziente otterremo $\varphi_*d^{p,q}_1\varphi_*^{-1}x$. Scriviamo $m$ come somma di cubi: $m=\sum_{\alpha}g_\alpha u_\alpha$ con $g_\alpha\in\ZZ$. Calcoliamo
 $$
-d\psi^p(b\tensor m)=\sum_\alpha\sum_{i=1}^n(-1)^ig_\alpha(\lambda^0_iK(b,u_\alpha)-\lambda^1_iK(b,u_\alpha)).
+d\psi^p(b\tensor m)=\sum_\alpha\sum_{i=1}^n\sum_\epsilon(-1)^{i+\epsilon}g_\alpha\lambda^\epsilon_iK(b,u_\alpha).
 $$
 Osserviamo però che
 \begin{align*}
-\sum_{\alpha}\sum_{i=p+1}^n(-1)^ig_\alpha(\lambda^0_iK(b,u_\alpha)-\lambda^1_iK(b,u_\alpha))&=\sum_{\alpha}\sum_{i=p+1}^n(-1)^ig_\alpha(K(b,\lambda^0_{i-p}u_\alpha)-K(b,\lambda^1_{i-p}u_\alpha))\\
+\sum_\alpha\sum_{i=p+1}^n\sum_\epsilon(-1)^{i+\epsilon}g_\alpha\lambda^\epsilon_iK(b,u_\alpha)&=\sum_{\alpha}\sum_{i=p+1}^n\sum_\epsilon(-1)^{i+\epsilon}g_\alpha K(b,\lambda^\epsilon_{i-p}u_\alpha)\\
 &=\sum_\alpha(-1)^pg_\alpha\psi^p(b\tensor du_\alpha)\\
 &=(-1)^p\psi^p(b\tensor dm)\\
 &=0,
 \end{align*}
 da cui
 $$
-d\psi^p(b\tensor m)=\sum_\alpha\sum_{i=1}^p(-1)^ig_\alpha(\lambda^0_iK(b,u_\alpha)-\lambda^1_iK(b,u_\alpha)).
+d\psi^p(b\tensor m)=\sum_\alpha\sum_{i=1}^p\epsilon(-1)^{i+\epsilon}g_\alpha\lambda^\epsilon_iK(b,u_\alpha).
 $$
 Poiché $K(b,u_\alpha)\in Q^p_{p+q}$, abbiamo che $\lambda^\epsilon_iK(b,u_\alpha)\in Q^{p-1}_{p+q-1}$, dunque possiamo applicare $\varphi^{p-1}$ ai singoli termini della sommatoria, ottenendo
 $$
-\varphi^{p-1}d\psi^p(b\tensor m)=\sum_\alpha\sum_{i=1}^p\sum_{\epsilon=0}^1(-1)^{i+\epsilon}g_\alpha B^{p-1}\lambda^\epsilon_iK(b,u_\alpha)\tensor F^{p-1}\lambda^\epsilon_iK(b,u_\alpha).
+\varphi^{p-1}d\psi^p(b\tensor m)=\sum_\alpha\sum_{i=1}^p\sum_\epsilon(-1)^{i+\epsilon}g_\alpha B^{p-1}\lambda^\epsilon_iK(b,u_\alpha)\tensor F^{p-1}\lambda^\epsilon_iK(b,u_\alpha).
 $$
 Si vede facilmente che $B^{p-1}\lambda^{\epsilon}_iK(b,u_\alpha)=\lambda^\epsilon_i B^pK(b,u_\alpha)=\lambda^\epsilon_ib$. Per quanto riguarda $F^{p-1}\lambda^\epsilon_iK(b,u_\alpha)$ abbiamo invece
 $$
@@ -151,8 +151,8 @@ $$
 $$
 dove $t\epsilon$ si trova di nuovo in posizione $i$. Si verifica facilmente che $T$ è una costruzione subordinata al cammino $t\mapsto b(0,\ldots,0,t\epsilon,0,\ldots,0)$. È inoltre evidente che $S_Tu=F^{p-1}\lambda^\epsilon_iK(b,u)$. Se denotiamo con $S_{i,\epsilon,b}$ il morfismo $S_T$ associato all'applicazione $T$ determinata dai valori fissati di $i,\epsilon$ e $b$, possiamo scrivere
 \begin{align*}
-\varphi^{p-1}d\psi^p(b\tensor m)&=\sum_\alpha\sum_{i=1}^p(-1)^{i}g_\alpha(\lambda^0_ib\tensor S_{i,0,b}u_\alpha-\lambda^1_ib\tensor S_{i,1,b}u_\alpha)\\
-&=\sum_{i=1}^p(-1)^i(\lambda^0_ib\tensor S_{i,0,b}m-\lambda^1_ib\tensor S_{i,1,b}m).
+\varphi^{p-1}d\psi^p(b\tensor m)&=\sum_\alpha\sum_{i=1}^p\sum_\epsilon(-1)^{i+\epsilon}g_\alpha\lambda^\epsilon_ib\tensor S_{i,\epsilon,b}u_\alpha\\
+&=\sum_{i=1}^p\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_ib\tensor S_{i,\epsilon,b}m.
 \end{align*}
 Passando al quoziente, ricordando che $S_{i,\epsilon, b}$ induce l'identità in omologia, otteniamo infine
 $$
@@ -276,5 +276,31 @@ $$
 \item l'esistenza di $w$ è garantita dalla \thref{homotopy-lifting-plus}.
 \end{itemize}
 Poniamo $Su=v$; si verifica facilmente che le proprierà richieste sono soddisfatte.
-\paragraph
+\paragraph{Costruzione per $q>0$ e $u$ degenere.} Se $u$ è degenere, poniamo
+$$
+(Su)(x_1,\ldots,x_{n+1})=(S\lambda^0_nu)(x_1,\ldots,x_n).
+$$
+Si verifiche facilmente che $Su$ soddisfa le proprietà richieste.
+\paragraph{Costruzione per $q>0$ e $u$ non degenere.} Consideriamo il digramma
+\begin{diagram}
+A\dar{i}\rar{g}&E\dar{p}\\
+X\rar{f}\ar[ur,dashed,"v"]&B
+\end{diagram}
+dove
+\begin{itemize}
+\item $X=I^p\times I\times I^q$;
+\item $A=(I^p\times\{0,1\}\times I^q)\cup(I^p\times I\times\del I^q)\cup(\{s\}\times I\times I^q)$;
+\item $f(x_1,\ldots,x_p,t,y_1,\ldots,y_q)=(B^pu)(x_1,\ldots,x_p)$;
+\item $g$ è così definita
+$$
+\begin{cases}
+g(x_1,\ldots,x_p,0,y_1,\ldots,y_q)=u(x_1,\ldots,x_p,y_1,\ldots,y_q)\\
+g(x_1,\ldots,x_p,1,y_1,\ldots,y_q)=K(B^pu,F^pu)(x_1,\ldots,x_p,y_1,\ldots,y_q)\\
+g(x_1,\ldots,x_p,t,y_1,\ldots,y_{i-1},\epsilon,y_i,\ldots,y_{q-1})=(S\lambda^\epsilon_{p+i}u)(x_1,\ldots,x_p,t,y_1,\ldots,y_{q-1})\\
+g(0,\ldots,0,t,y_1,\ldots,y_q)=u(0,\ldots,0,y_1,\ldots,y_q)
+\end{cases};
+$$
+\item l'esistenza di $v$ è garantita dalla \thref{homotopy-lifting-plus}, a patto di dimostrare che $g$ è ben definita sulle intersezioni e che $pg=fi$; si tratta in entrambi i casi di facili verifiche, sfruttando l'ipotesi induttiva.
+\end{itemize}
+Poniamo $Su=v$; si verifica senza difficoltà alcuna che le proprietà richieste sono soddisfatte.
 \end{proof}
