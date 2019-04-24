@@ -1,10 +1,64 @@
 \chapter{Gruppi di omotopia delle sfere}
 
-\section{Metodo generale}
+\section{Spazi ULC}
+
+Introduciamo una classe di spazi topologici stabile per le costruzioni dello spazio di lacci e del rivestimento universale. Ne faremo uso nel resto del capitolo.
 
 \begin{definition}
 Uno spazio topologico $X$ si dice uniformemente localmente contrattile (ULC) se esiste un intorno $U$ della diagonale $\Delta\subs X\times X$ tale che le due applicazioni da $U$ in $X$ definite rispettivamente da $(x,y)\mapsto x$ e $(x,y)\mapsto y$ sono omotope mediante un'omotopia che fissa $\Delta$.
 \end{definition}
+
+\begin{lemma}\thlabel{ULC-locally-contractile}
+Siano $X$ uno spazio topologico ULC, $x_0\in X$ un punto, $U\subs X$ un intorno di $x_0$. Allora esistono un intorno $V\subs U$ di $x_0$ e un'omotopia $\map{F}{V\times I}{U}$ tale che $F_0(x)=x$, $F_1(x)=x_0$, $F_t(x_0)=x_0$.
+\end{lemma}
+\begin{proof}
+Sia $\map{H}{U\times I}{X}$ l'omotopia della definizione di ULC. Prendiamo come $V$ l'insieme dei punti $x$ tali che $H_t(x_0,x)\in U$ per ogni $t\in I$. Ovviamente $x_0\in V$, e un semplice argomento di continuità mostra che $V$ è un intorno di $x_0$. È ora sufficiente definire $F_t(x)=H_t(x_0,x)$ per concludere.
+\end{proof}
+
+\begin{proposition}\thlabel{ULC-universal-covering}
+Sia $X$ uno spazio topologico connesso, localmente connesso per archi e ULC. Allora $X$ ammette un rivestimento universale $\map{p}{T}{X}$ con $T$ ULC.
+\end{proposition}
+\begin{proof}
+Dal \thref{ULC-locally-contractile} si ottiene immediatamente che $X$ è semilocalmente semplicemente connesso. Essendo anche connesso e localmente connesso per archi, segue che $X$ ammette un rivestimento universale $\map{p}{T}{X}$. Mostriamo ora che $T$ è ULC.
+
+Consideriamo l'applicazione
+\Map{q}{T\times T}{X\times X}{(x,y)}{(p(x),p(y))}
+Sia $\tilde{U}$ la componente connessa di $q^{-1}(U)$ che contiene la diagonale $\tilde\Delta\subs T\times T$ (notiamo che si tratta di un intorno di $\tilde\Delta$). Sia $\map{H}{U\times I}{X}$ l'omotopia della definizione di ULC. Consideriamo il diagramma
+\begin{diagram}
+\tilde{U}\ar[rr,"\tilde{G}_0"]\ar[dd,"i"]&&T\ar[dd,"p"]\\
+\\
+\tilde{U}\times I\rar{q\times\1}\ar[uurr,dashed,"\tilde G"]\ar[rr,bend right,"G"]&U\times I\rar{H}&X
+\end{diagram}
+dove $i(x)=(x,0)$, $(q\times\1)(x,y,t)=(q(x,y),t)$,  $G=H\circ(q\times\1)$ e $\tilde{G}_0(x,y)=x$. Per la proprietà di sollevamento dell'omotopia dei rivestimenti, $G$ si solleva a un'omotopia $\map{\tilde{G}}{\tilde{U}\times I}{T}$. Per costruzione $\tilde{G}_0(x,y)=x$. Inoltre per ogni $x\in T$ il cammino $(t\mapsto \tilde{G}_t(x,x))$ è un sollevamento del cammino costante $(t\mapsto G_t(x,x)=p(x))$, dunque è costante; poiché $\tilde{G}_0(x,x)=x$, segue che $\tilde{G}_t(x,x)=x$ per ogni $t\in I$. Infine $\tilde{G}_1$ è un sollevamento di $G_1$ tale che $\tilde{G}_1(x,x)=x$; per connessione di $\tilde{U}$ esiste un solo sollevamento con questa proprietà, dunque $\tilde{G}_1(x,y)=y$. Abbiamo così dimostrato che l'omotopia $\tilde{G}$ soddisfa tutte le proprietà che sono richieste per rendere $T$ uno spazio ULC.
+\end{proof}
+
+\begin{proposition}
+Sia $X$ uno spazio topologico connesso, localmente connesso per archi, semplicemente connesso e ULC. Allora $\Omega X$ è connesso, localmente connesso per archi e ULC.
+\end{proposition}
+\begin{proof}
+Sia $\Omega=\Omega X$. Sappiamo già, essendo $X$ semplicemente connesso, che $\Omega$ è connesso (per archi).
+\end{proof}
+
+\begin{proposition}\thlabel{ULC-universal-covering}
+
+\end{proposition}
+
+\begin{proposition}\thlabel{ULC-loop-space}
+Siano $X$ uno spazio topologico ULC, $x_0\in X$ un punto. Allora $\Omega_{x_0}$ è ULC.
+\end{proposition}
+\begin{proof}
+Per semplicità di notazione, sia $\Omega=\Omega_{x_0}$. Sia inoltre $\map{H}{U\times I}{X}$ l'omotopia della definizione di ULC. Sia $\tilde{U}\subs\Omega\times\Omega$ l'insieme delle coppie $(f,g)$ tali che $(f(t),g(t))\in U$ per ogni $t\in I$. Sicuramente $\tilde\Delta\subs\tilde U$, dove $\tilde\Delta$ indica la diagonale di $\Omega\times\Omega$; mostriamo che $\tilde U$ è in realtà un intorno di $\tilde\Delta$. Sia $f\in\Omega$. Per compattezza di $I$ possiamo trovare $0=t_0\le t_1\le\ldots\le t_{n-1}\le t_n=1$ e $U_1,\ldots,U_n$ aperti di $X$ tali che $f([t_{i-1},t_i])\subs U_i$ e $U_i\times U_i\subs U$. Allora $(f,f)\in\tilde\Delta$ ammette l'intorno
+$$
+V=V([t_0,t_1],U_1)\cap\ldots\cap V([t_{n-1},t_n],U_n)
+$$
+tale che $V\times V\subs\tilde{U}$. Definiamo ora l'omotopia
+\Map{\tilde{H}}{\tilde{U}\times I}{\Omega}{(f,g,s)}{\tilde{H}_s(f,g)}
+dove $\tilde{H}_s(f,g)(t)=H_s(f(t),g(t))$. Si verifica facilmente che $\tilde{H}$ soddisfa tutte le proprietà che sono richieste per rendere $\Omega$ uno spazio ULC.
+\end{proof}
+
+\section{Metodo generale}
+
+
 
 Si può mostrare \todo{Farlo.} che, se $X$ è connesso per archi e ULC, allora $X$ ammette un rivestimento universale ULC; inoltre, se $X$ è ULC, allora anche $\Omega X$ (lo spazio dei cammini chiusi su $X$) è ULC.
 
