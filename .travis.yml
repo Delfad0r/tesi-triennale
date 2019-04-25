@@ -1,0 +1,18 @@
+sudo: required
+language: generic
+addons:
+  ssh_known_hosts: ssh.uz.sns.it
+  apt:
+    packages:
+    - sshpass
+script:
+- docker pull dxjoke/tectonic-docker
+- docker run --mount src=$TRAVIS_BUILD_DIR/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
+  /bin/sh -c "tectonic main.tex"
+after_success:
+  - export SSHPASS=$DEPLOY_PASSWORD
+  - mv $TRAVIS_BUILD_DIR/src/main.pdf tesi-triennale.pdf
+  - sshpass -e scp tesi-triennale.pdf Delfad0r@ssh.uz.sns.it:~/nobackup/public_html
+env:
+  global:
+    secure: CJaQOctRPy16Lfyb7AOIUaMWP7LHB2/k41/DEViSDCvGidh2zKNtsBOY2lcUPQWqG7fw7ZHCAqYue9w/f1qeVfV1LfSnh+O9XMZiuTvMeqYW84NdrVogLrd4y//rsXp2tF5DSGSvMDD3QmPW7qu+9hoqDtAHphqQlouXAFr0u/+sJgrUXDdfcuS1YoPNopy3RGgxoRC7L8pFftBm8BsQe0Y1QK90R8Cx7Pz6DTUXgmrOJJ10tBgDHJNBNkv2PAxD/9/yVO26xGIijytW5lc8EKMHQrGi9DKTG+EqJg4tSUve9riUElTg5AaGdLE89z8iS18OXAm5PsTw2qvcALZAA5P4WdT5LH71JjdZmgOSC+rzd5F/h/NENq6P1lQ4J+kTVYH/63IFEfRllKv9avr5IPvstiDo8mmMDQYHtpGvD1MDaZH8iK+4LHLzZUO9auD2701HWo55WOaFU4O1J3lUXi8nzMV043lP5oye0YO0316REeeSUQNG8YIpFecZ8rRBr4/H9bqEKrhE8BmNcM3X7nMPd7kqFxtABedJHrSJuXC0QDz+s2hz5+H22B8D7e5jbqfqVUPE2MpQsCsbabO9vJ7gzErUzXVKlalt44S/Q3mxGmNsLc2LCtygd8LLRJtZKgbTrCsc5TfhVA/h2ygBYJmh+ALAOucQKLldwizHfyI=

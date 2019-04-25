@@ -21,7 +21,7 @@ Ripercorriamo brevemente i passi della sezione precedente, applicati questa volt
 $$
 H^q(J^\bullet_p)=H^q(\Hom(C_p(B),\Hom(C_\bullet(F),G)))=\Hom(C_p(B),H^q(F;G))=C^p(B;H^q(F;G)).
 $$
-Si mostra poi, in modo del tutto analogo a quanto fatto per la successione spettrale omologica, che le mappe di bordo $d^{\ast p,q}_1$ vengono mandate da $\psi^*$ nei morfismi di bordo standard di $C^\bullet(B;H^q(F;G))$, da cui si ottiene il risultato "duale" della \thref{spectral-sequence-of-fibration-E-2}.
+Si mostra poi, in modo del tutto analogo a quanto fatto per la successione spettrale omologica, che le mappe di bordo $d^{\ast p,q}_1$ vengono mandate da $\psi^*$ nei morfismi di bordo standard di $C^\bullet(B;H^q(F;G))$, da cui si ottiene il risultato duale della \thref{spectral-sequence-of-fibration-E-2}.
 \begin{proposition}\thlabel{cohomological-spectral-sequence-of-fibration-E-2}
 Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coomologia di $F$. Allora $\psi^*$ induce un isomorfismo $E^{\ast p,q}_2\iso H^p(B;H^q(F;G))$.
 \end{proposition}
@@ -34,7 +34,7 @@ $$
 H^*(B;H^*(F))=\Dirsum_{p,q}H^p(B;H^q(F)).
 $$
 La proposizione precedente ci dice che $\psi^*$ induce un isomorfismo $E^\ast_2\iso H^*(B;H^*(F))$ di gruppi abeliani.
-Osserviamo però che su $H^*(B;H^*(F))$ è definita anche una struttura di anello, data dal \cupproduct{} su $B$ e su $F$
+Osserviamo però che su $H^*(B;H^*(F))$ è definita anche una struttura di anello, data dal \cupproduct{} su $B$ e su $F$:
 $$
 H^p(B;H^q(F))\times H^{p'}(B;H^{q'}(F))\longrightarrow H^{p+p'}(B;H^{q+q'}(F))
 $$
@@ -68,7 +68,7 @@ Inoltre, osservando che
 \begin{align*}
 \rho_{P,Q}&=\rho_{H,L}\cdot\rho_{H,p+p'+N}\cdot\rho_{p+p'+M,L}\cdot\rho_{p+p'+M,p+p'+N}\\
 &=\rho_{H,L}\cdot (-1)^0\cdot(-1)^{qp'}\cdot\rho_{M,N}\\
-&=(-1)^{p'q}\rho_{H,L}\rho_{M,N} 
+&=(-1)^{p'q}\rho_{H,L}\rho_{M,N}.
 \end{align*}
 Otteniamo dunque
 \begin{align*}
@@ -78,7 +78,7 @@ Otteniamo dunque
 \end{align*}
 Consideriamo l'applicazione $T$ che a ogni cubo $w$ di $F$ di dimensione $q'$ associa un cubo $Tw$ di $E$ di dimensione $q'+1$ definito da
 $$
-(Tw)(t,x_1,\ldots,x_{q'})=K(u,w)(t\delta_1,\ldots,t\delta_{p+p'},x_1,\ldots,x_{q'})
+(Tw)(t,x_1,\ldots,x_{q'})=K(u,w)(t\delta_1,\ldots,t\delta_{p+p'},x_1,\ldots,x_{q'}),
 $$
 dove $\delta_i=0$ se $i\in L$ e $\delta_i=1$ se $i\in H$. Si vede facilmente che $T$ è una costruzione subordinata al cammino $t\mapsto u(t\delta_1,\ldots,t\delta_{p+p'})$ e che $S_Tw=\lambda^{0,1}_{L,H}K(u,w)$. Se denotiamo con $S_{H,u}$ il morfismo $S_T$ associamo all'applicazione $T$ determinata dai valori fissati di $H$ e $u$, possiamo scrivere
 $$
@@ -141,12 +141,12 @@ $$
 \map{i^*}{\Hom(H_p(B;G),G)\tensor H^q(F;G)}{\Hom(H_p(B;G),H^q(F;G))}
 $$
 Per additività di $\Hom(-,-)$ e di $-\tensor-$, essendo $H_p(B;G)$ libero e finitamente generato, possiamo limitarci a considerare il caso $H_p(B;G)=G$, in cui $i^*$ è ovviamente un isomorfismo.
-\item Per additività di $-\tensor-$ e di $H^p(B;-)$, essendo $H^q(F;G)$ libero e finitamente generato, possiamo limitarci a considerare il caso $H^p(B;G)=G$, in cui $i^*$ è ovviamente un isomorfismo.
+\item Per additività di $-\tensor-$ e di $H^p(B;-)$, essendo $H^q(F;G)$ libero e finitamente generato, possiamo limitarci a considerare il caso $H^q(F;G)=G$, in cui $i^*$ è ovviamente un isomorfismo.
 \end{enumerate}
 \end{proof}
 
 \section{Applicazioni}
-Presentiamo innanzitutto il risultato "duale" della \thref{fibration-homology-exact-sequence}; omettiamo la dimostrazione, del tutto analoga.
+Presentiamo innanzitutto il risultato duale della \thref{fibration-homology-exact-sequence}; omettiamo la dimostrazione, del tutto analoga.
 \begin{proposition}\thlabel{fibration-cohomology-exact-sequence}
 Sia $G$ un PID, $\fibration{F}{E}{B}$ una fibrazione in cui il gruppo fondamentale di $B$ agisce banalmente sui moduli di coomologia di $F$. Supponiamo che $H^i(B;G)=0$ per $0<i<p$ e che $H^i(F;G)=0$ per $0<i<q$. Allora esiste una successione esatta
 \begin{diagram}
@@ -154,7 +154,7 @@ H^1(B;G)\rar&H^1(E;G)\rar&H^1(F;G)\rar{d_2}&H^2(B;G)\rar&\ldots\rar&H^{p+q-2}(F;
 \end{diagram}
 \end{proposition}
 
-Riportiamo ora un risultato noto come "Successione esatta di Wang".
+Riportiamo ora un risultato noto come \enquote{Successione esatta di Wang}.
 \begin{proposition}\thlabel{wang-exact-sequence}
 Sia $G$ un PID, $\fibration{F}{E}{B}$ una fibrazione in cui il gruppo fondamentale di $B$ agisce banalmente sui moduli di coomologia di $F$. Supponiamo che $B$ sia semplicemente connesso e abbia la stessa $G$-algebra di coomologia della sfera $S^k$ con $k\ge 2$.  Allora esiste una successione esatta
 \begin{diagram}
