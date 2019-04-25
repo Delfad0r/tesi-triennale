@@ -235,7 +235,7 @@ I gruppi $E^{p,q}_r$, insieme alle mappe di bordo $d^{p,q}_r$, formano una succe
 \subsection{Struttura moltiplicativa}\label{cohomological-spectral-sequence:multiplicative-structure}
 Se $C^\bullet$ è munito di una struttura di anello, come spesso accade nel contesto topologico, allora ne esiste anche una indotta sui termini della successione spettrale associata. Più precisamente, supponiamo che sia definito un prodotto bilineare $\map{\cupp}{C^n\times C^m}{C^{n+m}}$ che soddisfa le seguenti proprietà:
 \begin{enumerate}
-\item $d(x\cupp y)=dx\cupp y+(-1)^nx\cupp dy$, dove $n$ è il grado di $x$ (in altre parole, $d$ è un'antiderivazione);
+\item $d(x\cupp y)=dx\cupp y+(-1)^{\deg x}x\cupp dy$ (in altre parole, $d$ è un'antiderivazione);
 \item $C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}$.
 \end{enumerate}
 Si verifica \todo{Farlo a un certo punto.} allora che $\cupp$ passa al quoziente, inducendo un prodotto $E^{p,q}_r\times E^{p',q'}_r\to E^{p+p',q+q'}_r$; inoltre le mappe di bordo $d^{p,q}_r$ risultano essere antiderivazioni rispetto al grado totale. È dunque conveniente definire $E_r=\Dirsum_{p,q}E^{p,q}_r$, che sotto queste ipotesi diventa un anello bigraduato (da $p$ e da $q$).
