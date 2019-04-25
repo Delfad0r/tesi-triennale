@@ -8,7 +8,7 @@ addons:
     - pgf
     - latexmk
 before_install:
-- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-italian
+- sudo apt-get -qq update && sudo apt-get install -y texlive-full texlive-lang-italian
 script:
 - cd src
 - latexmk -pdf -interaction=nonstopmode -halt-on-error -jobname=tesi-triennale main.tex
