@@ -1,17 +1,19 @@
 sudo: required
-language: generic
+dist: trusty
 addons:
   ssh_known_hosts: ssh.uz.sns.it
   apt:
     packages:
     - sshpass
+    - pgf
+    - latexmk
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-italian
 script:
-- docker pull dxjoke/tectonic-docker
-- docker run --mount src=$TRAVIS_BUILD_DIR/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
-  /bin/sh -c "tectonic main.tex"
+- cd src
+- latexmk -pdf -interaction=nonstopmode -halt-on-error -jobname=tesi-triennale main.tex
 after_success:
   - export SSHPASS=$DEPLOY_PASSWORD
-  - mv $TRAVIS_BUILD_DIR/src/main.pdf tesi-triennale.pdf
   - sshpass -e scp tesi-triennale.pdf Delfad0r@ssh.uz.sns.it:~/nobackup/public_html
 env:
   global:
