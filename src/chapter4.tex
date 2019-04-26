@@ -41,14 +41,14 @@ $$
 Vedremo con la proposizione seguente che $\psi^*$ è anche un isomorfismo di $G$-algebre, a meno di un segno.
 
 \begin{proposition}\thlabel{cohomological-spectral-sequence-of-fibration-ring}
-Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coomologia di $F$. Siano $g\in E^{\ast p,q}_2,g'\in E^{\ast p',q'}_2$. Allora $\psi^*(g\cdot g')=(-1)^{p'q}\psi^*(g)\cdot\psi^*(g')$.
+Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coomologia di $F$. Siano $g\in E^{\ast p,q}_2$, $g'\in E^{\ast p',q'}_2$. Allora $\psi^*(g\cdot g')=(-1)^{p'q}\psi^*(g)\cdot\psi^*(g')$.
 \end{proposition}
 \begin{proof}
 Cerchiamo di studiare più approfonditamente la struttura di anello indotta dal \cupproduct{} su 
 $$
 C^\bullet(B;H^*(F;G))=\Dirsum_qC^\bullet(B;H^q(F;G))=H^*(J^\bullet_p).
 $$
-Siano dunque $\bar{f}\in H^q(J^\bullet_p),\bar{f}'\in H^{q'}(J^\bullet_{p'})$, e consideriamo $f\in J^q_p,f'\in J^{q'}_{p'}$ rappresentanti delle classi di coomologia rispettivamente di $\bar{f},\bar{f}'$. Possiamo interpretare $f$ come una funzione che a ogni coppia di cubi $u\in C_p(B),v\in C_q(F)$ associa un elemento $f(u,v)\in G$; inoltre $f(u,v)=0$ ogniqualvolta uno fra $u$ e $v$ è degenere. Allora il prodotto $f\cupp f'$ appartiene a $J^{q+q'}_{p+p'}$, e sviluppando il \cupproduct{} su $B$ e su $F$ si ottiene che
+Siano dunque $\bar{f}\in H^q(J^\bullet_p)$, $\bar{f}'\in H^{q'}(J^\bullet_{p'})$, e consideriamo $f\in J^q_p$, $f'\in J^{q'}_{p'}$ rappresentanti delle classi di coomologia rispettivamente di $\bar{f}$, $\bar{f}'$. Possiamo interpretare $f$ come una funzione che a ogni coppia di cubi $u\in C_p(B)$, $v\in C_q(F)$ associa un elemento $f(u,v)\in G$; inoltre $f(u,v)=0$ ogniqualvolta uno fra $u$ e $v$ è degenere. Allora il prodotto $f\cupp f'$ appartiene a $J^{q+q'}_{p+p'}$, e sviluppando il \cupproduct{} su $B$ e su $F$ si ottiene che
 $$
 (f\cupp f')(u,v)=\sum_{H,M}\rho_{H,L}\rho_{M,N}f(\lambda^0_Lu,\lambda^0_Nv)\cdot f'(\lambda^1_Hu,\lambda^1_Mv),
 $$
@@ -64,7 +64,7 @@ dove $P$ varia fra i sottoinsiemi di $\{1,\ldots,p+p'+q+q'\}$ di cardinalità $p
 \item $F^p\lambda^0_Qw=\lambda^0_NF^{p+p'}w$;
 \item $F^{p'}\lambda^1_Pw=\lambda^{0,1}_{L,H}\lambda^1_{p+p'+M}w$, dove l'operazione $\lambda^{0,1}_{L,H}$ consiste nel rimpiazzare le coordinate con indice in $L$ con $0$ e quelle con indice in $H$ con $1$.
 \end{itemize}
-Inoltre, osservando che
+Osserviamo inoltre che
 \begin{align*}
 \rho_{P,Q}&=\rho_{H,L}\cdot\rho_{H,p+p'+N}\cdot\rho_{p+p'+M,L}\cdot\rho_{p+p'+M,p+p'+N}\\
 &=\rho_{H,L}\cdot (-1)^0\cdot(-1)^{qp'}\cdot\rho_{M,N}\\
@@ -95,7 +95,7 @@ da cui, passando nuovamente al quoziente, si ha la tesi.
 Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coomologia di $F$. Allora gli anelli $E^\ast_r$ con $r\ge 2$ sono anticommutativi rispetto al grado totale $n=p+q$.
 \end{corollary}
 \begin{proof}
-Sappiamo che $H^*(F;G)$ è anticommutativo rispetto al grado di $F$ e che $H^*(B;H^*(F;G))$ è anticommutativo rispetto al grado di $B$. Siano $g\in E^{\ast p,q}_2,g'\in E^{\ast p',q'}_2$. Allora
+Sappiamo che l'anello $H^*(F;-)$ è anticommutativo rispetto al grado di $F$ e che l'anello $H^*(B;-)$ è anticommutativo rispetto al grado di $B$. Siano $g\in E^{\ast p,q}_2,g'\in E^{\ast p',q'}_2$. Allora
 \begin{align*}
 g\cdot g'&=\varphi^*(\psi^*(g\cdot g'))\\
 &=\varphi^*((-1)^{p'q}\psi^*(g)\cdot\psi^*(g'))\\

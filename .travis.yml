@@ -7,8 +7,7 @@ addons:
     - sshpass
     - pgf
     - latexmk
-before_install:
-- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-math-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-italian
+    - texlive-full
 script:
 - cd src
 - latexmk -pdf -interaction=nonstopmode -halt-on-error -jobname=tesi-triennale main.tex

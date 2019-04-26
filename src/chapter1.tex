@@ -1,7 +1,7 @@
 \chapter{Successioni spettrali}
 \section{Definizioni}
 \begin{definition}
-Si dice successione spettrale (omologica) una famiglia di gruppi abeliani $E^{p,q}_r$ indicizzata da $p,q\in\ZZ,r\in\NN$ dotata di omomorfismi $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}_r}$ (detti mappe di bordo) che soddisfa le seguenti proprietà:
+Si dice successione spettrale (omologica) una famiglia di gruppi abeliani $E^{p,q}_r$ indicizzata da $p,q\in\ZZ$, $r\in\NN$ dotata di omomorfismi $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}_r}$ (detti mappe di bordo) che soddisfa le seguenti proprietà:
 \begin{enumerate}
 \item $E^{p,q}_r=0$ per $p<0$ o $q<0$;
 \item $d^{p-r,q+r-1}_r\circ d^{p,q}_r=0$;
@@ -20,13 +20,13 @@ tali che $E^{p,q}_\infty=H^p_{p+q}/H^{p-1}_{p+q}$.
 
 \section{Una successione esatta}
 \begin{proposition}\thlabel{spectral-sequence-exact-sequence}
-Sia $E^{p,q}_r\converges H_{p+q}$ una successione spettrale, $i,j,r>0$ con $i\le j$. Per ogni $i\le n\le j$ siano date due coppie di interi $(a'_n,b'_n),(a''_n,b''_n)$ con $a'_n+b'_n=a''_n+b''_n=n$ e $a'_n<a''_n$. Supponiamo che per ogni $i\le n\le j$ valga $E^{p,q}_r=0$ ogniqualvolta:
+Sia $E^{p,q}_r\converges H_{p+q}$ una successione spettrale, $i,j,r>0$ con $i\le j$. Per ogni $i\le n\le j$ siano date due coppie di interi $(a'_n,b'_n)$, $(a''_n,b''_n)$ con $a'_n+b'_n=a''_n+b''_n=n$ e $a'_n<a''_n$. Supponiamo che per ogni $i\le n\le j$ valga $E^{p,q}_r=0$ ogniqualvolta:
 \begin{itemize}
 \item $p+q=n$ e $(p,q)\neq(a'_n,b'_n),(a''_n,b''_n)$;
 \item $p+q=n-1$ e $p\le a'_n-r$;
 \item $p+q=n+1$ e $p\ge a''_n+r$.
 \end{itemize}
-Denotiamo con $\pre{n}{E}'_r$ il gruppo $E^{p,q}_r$ con $p=a'_n,q=b'_n$, e analogamente sia $\pre{n}{E}''_r$ il gruppo $E^{p,q}_r$ con $p=a''_n,q=b''_n$. Denotiamo inoltre con $\pre{n}{d}$ l'applicazione $\map{d^{p,q}_s}{\pre{n}{E}''_r}{\pre{n-1}{E}'_r}$ corrispondente a $p=a''_n,q=b''_n,s=a''_n-a'_{n-1}$ oppure l'applicazione nulla se $s<r$. Allora $\pre{n}{d}$ è ben definita per ogni $i\le n<j$ ed esiste una successione esatta
+Denotiamo con $\pre{n}{E}'_r$ il gruppo $E^{p,q}_r$ con $p=a'_n$, $q=b'_n$, e analogamente sia $\pre{n}{E}''_r$ il gruppo $E^{p,q}_r$ con $p=a''_n$, $q=b''_n$. Denotiamo inoltre con $\pre{n}{d}$ l'applicazione $\map{d^{p,q}_s}{\pre{n}{E}''_r}{\pre{n-1}{E}'_r}$ corrispondente a $p=a''_n$, $q=b''_n$, $s=a''_n-a'_{n-1}$ oppure l'applicazione nulla se $s<r$. Allora $\pre{n}{d}$ è ben definita per ogni $i\le n<j$ ed esiste una successione esatta
 \begin{diagram}
 \pre{j}{E}'_r\rar&H_j\rar&\pre{j}{E}''_r\rar{\pre{j}{d}}&\pre{j-1}E'_r\rar&\ldots\rar{\pre{i+1}{d}}&\pre{i}{E}'_r\rar&H_i\rar&\pre{i}{E}''_r
 \end{diagram}
@@ -38,10 +38,10 @@ Siano $i\le n\le j$, $p,q$ interi con $p+q=n$ e $p\neq a'_n,a''_n$. Poiché $E^{
 \end{diagram}
 Mostriamo ora i seguenti fatti.
 \begin{itemize}
-\item Per $i\le n\le j$ e $s\ge r$ le mappe di bordo $\map{d^{p,q}_s}{\pre{n}{E}'_s}{E^{p-s,q+s-1}_s}$ sono nulle, dove $p=a'_n,q=b'_n$. Infatti $E^{p-s,q+s-1}_r$ è nullo per ipotesi, dunque anche $E^{p-s,q+s-1}_s$ è nullo.
-\item Per $i\le n\le j$ e $s\ge r$ le mappe di bordo $\map{d^{p+s,q-s+1}_s}{E^{p+s,q-s+1}_s}{\pre{n}{E}''_s}$ sono nulle, dove $p=a''_n,q=b''_n$. Infatti $E^{p+s,q-s+1}_r$ è nullo per ipotesi, dunque anche $E^{p+s,q-s+1}_s$ è nullo.
-\item Per $i\le n<j$ e $s\ge r$ le mappe di bordo $\map{d^{p+s,q-s+1}_s}{E^{p+s,q-s+1}_s}{\pre{n}{E}'_s}$ sono nulle, dove $p=a'_n,q=b'_n$, con l'unica eventuale eccezione di $s=a''_{n+1}-a'_n$ (almeno se questo valore è $\ge r$). Infatti gli unici valori di $s$ per cui la mappa di bordo può essere non nulla sono $s=a'_{n+1}-a'_n$ e $s=a''_{n+1}-a'_n$, ma abbiamo già visto che le mappe di bordo uscenti da $\pre{n+1}E'_s$ sono nulle per ogni $s\ge r$, dunque l'unica possibilità è $s=a''_{n+1}-a'_n$.
-\item Per $i<n\le j$ e $s\ge r$ le mappe di bordo $\map{d^{p,q}_s}{\pre{n}{E}''_s}{E^{p-s,q+s-1}}$ sono nulle, dove $p=a''_n,q=b''_n$, con l'unica eventuale eccezione di $s=a''_n-a'_{n-1}$. La dimostrazione è analoga a quella del punto precedente.
+\item Per $i\le n\le j$ e $s\ge r$ le mappe di bordo $\map{d^{p,q}_s}{\pre{n}{E}'_s}{E^{p-s,q+s-1}_s}$ sono nulle, dove $p=a'_n$, $q=b'_n$. Infatti $E^{p-s,q+s-1}_r$ è nullo per ipotesi, dunque anche $E^{p-s,q+s-1}_s$ è nullo.
+\item Per $i\le n\le j$ e $s\ge r$ le mappe di bordo $\map{d^{p+s,q-s+1}_s}{E^{p+s,q-s+1}_s}{\pre{n}{E}''_s}$ sono nulle, dove $p=a''_n$, $q=b''_n$. Infatti $E^{p+s,q-s+1}_r$ è nullo per ipotesi, dunque anche $E^{p+s,q-s+1}_s$ è nullo.
+\item Per $i\le n<j$ e $s\ge r$ le mappe di bordo $\map{d^{p+s,q-s+1}_s}{E^{p+s,q-s+1}_s}{\pre{n}{E}'_s}$ sono nulle, dove $p=a'_n$, $q=b'_n$, con l'unica eventuale eccezione di $s=a''_{n+1}-a'_n$ (almeno se questo valore è $\ge r$). Infatti gli unici valori di $s$ per cui la mappa di bordo può essere non nulla sono $s=a'_{n+1}-a'_n$ e $s=a''_{n+1}-a'_n$, ma abbiamo già visto che le mappe di bordo uscenti da $\pre{n+1}E'_s$ sono nulle per ogni $s\ge r$, dunque l'unica possibilità è $s=a''_{n+1}-a'_n$.
+\item Per $i<n\le j$ e $s\ge r$ le mappe di bordo $\map{d^{p,q}_s}{\pre{n}{E}''_s}{E^{p-s,q+s-1}}$ sono nulle, dove $p=a''_n$, $q=b''_n$, con l'unica eventuale eccezione di $s=a''_n-a'_{n-1}$. La dimostrazione è analoga a quella del punto precedente.
 \end{itemize}
 Risulta evidente da questi fatti che, fissato $i<n\le j$, l'applicazione $\pre{n}{d}$ dell'enunciato è ben definita: infatti se $s=a''_n-a_{n-1}\ge r$ vale
 \begin{align*}
@@ -69,7 +69,7 @@ Sia $C_\bullet$ un complesso di gruppi abeliani con $C_n=0$ per $n<0$. Si dice f
 \item $C^p_p=C_p$.
 \end{enumerate}
 \end{definition}
-Dati un complesso $(C_\bullet,d)$ e una filtrazione $C^p_\bullet$ è possibile costruire una successione spettrale. Per ogni $p,q,r\in\ZZ$, posto $n=p+q$ (notazione che adotteremo implicitamente anche nel seguito), definiamo:
+Dati un complesso $C_\bullet$ con mappe di bordo $d$ e una filtrazione $C^p_\bullet$ è possibile costruire una successione spettrale. Per ogni $p,q,r\in\ZZ$, posto $n=p+q$ (notazione che adotteremo implicitamente anche nel seguito), definiamo:
 \begin{itemize}
 \item $Z^{p,q}_r=C^p_n\cap d_n^{-1}(C^{p-r}_{n-1})$;
 \item $Z^{p,q}_\infty=C^p_n\cap d_n^{-1}(0)$;
@@ -178,7 +178,7 @@ da cui la tesi.
 Esiste una nozione di successione spettrale coomologica, duale rispetto a quella introdotta all'inizio del capitolo.
 
 \begin{definition}
-Si dice successione spettrale coomologica una famiglia di gruppi abeliani $E^{p,q}_r$ indicizzata da $p,q\in\ZZ,r\in\NN$ dotata di omomorfismi $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}$ (detti mappe di bordo) che soddisfa le seguenti proprietà:
+Si dice successione spettrale coomologica una famiglia di gruppi abeliani $E^{p,q}_r$ indicizzata da $p,q\in\ZZ$, $r\in\NN$ dotata di omomorfismi $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}$ (detti mappe di bordo) che soddisfa le seguenti proprietà:
 \begin{enumerate}
 \item $E^{p,q}_r=0$ per $p<0$ o $q<0$;
 \item $d^{p+r,q-r+1}_r\circ d^{p,q}_r=0$;
@@ -196,14 +196,14 @@ tali che $E^{p,q}_\infty=H^{p+q}_p/H^{p+q}_{p+1}$.
 I risultati visti finora relativamente alle successioni spettrali omologiche presentano varianti del tutto analoghe per le successioni spettrali coomologiche.
 \subsection{Una successione esatta}
 \begin{proposition}\thlabel{cohomological-spectral-exact-sequence}
-Sia $E^{p,q}_r\converges H^{p+q}$ una successione spettrale coomologica, $i,j,r>0$ con $i\le j$. Per ogni $i\le n\le j$ siano date due coppie di interi $(a'_n,b'_n),(a''_n,b''_n)$ con $a'_n+b'_n=a''_n+b''_n=n$ e $a'_n<a''_n$. Supponiamo che per ogni $i\le n\le j$ valga $E^{p,q}_r=0$ ogniqualvolta:
+Sia $E^{p,q}_r\converges H^{p+q}$ una successione spettrale coomologica, $i,j,r>0$ con $i\le j$. Per ogni $i\le n\le j$ siano date due coppie di interi $(a'_n,b'_n)$, $(a''_n,b''_n)$ con $a'_n+b'_n=a''_n+b''_n=n$ e $a'_n<a''_n$. Supponiamo che per ogni $i\le n\le j$ valga $E^{p,q}_r=0$ ogniqualvolta:
 \begin{itemize}
 \item $p+q=n$ e $(p,q)\neq(a'_n,b'_n),(a''_n,b''_n)$;
 \item $p+q=n-1$ e $p\le a'_n-r$;
 \item $p+q=n+1$ e $p\ge a''_n+r$.
 \todo{Controllare che le condizioni siano giuste.}
 \end{itemize}
-Denotiamo con $\pre{n}{E}'_r$ il gruppo $E^{p,q}_r$ con $p=a'_n,q=b'_n$, e analogamente sia $\pre{n}{E}''_r$ il gruppo $E^{p,q}_r$ con $p=a''_n,q=b''_n$. Denotiamo inoltre con $\pre{n}{d}$ l'applicazione $\map{d^{p,q}_s}{\pre{n}{E}'_r}{\pre{n+1}{E}''_r}$ corrispondente a $p=a'_n,q=b'_n,s=a''_n-a'_{n+1}$ oppure l'applicazione nulla se $s<r$. Allora $\pre{n}{d}$ è ben definita per ogni $i\le n<j$ ed esiste una successione esatta
+Denotiamo con $\pre{n}{E}'_r$ il gruppo $E^{p,q}_r$ con $p=a'_n,q=b'_n$, e analogamente sia $\pre{n}{E}''_r$ il gruppo $E^{p,q}_r$ con $p=a''_n,q=b''_n$. Denotiamo inoltre con $\pre{n}{d}$ l'applicazione $\map{d^{p,q}_s}{\pre{n}{E}'_r}{\pre{n+1}{E}''_r}$ corrispondente a $p=a'_n$, $q=b'_n$, $s=a''_n-a'_{n+1}$ oppure l'applicazione nulla se $s<r$. Allora $\pre{n}{d}$ è ben definita per ogni $i\le n<j$ ed esiste una successione esatta
 \begin{diagram}
 \pre{i}{E}''_r\rar&H^i\rar&\pre{i}{E}'_r\rar{\pre{i}{d}}&\pre{i+1}E''_r\rar&\ldots\rar{\pre{j-1}{d}}&\pre{j}{E}''_r\rar&H^j\rar&\pre{j}{E}'_r
 \end{diagram}
@@ -241,7 +241,7 @@ Se $C^\bullet$ è munito di una struttura di anello, come spesso accade nel cont
 Si verifica \todo{Farlo a un certo punto.} allora che $\cupp$ passa al quoziente, inducendo un prodotto $E^{p,q}_r\times E^{p',q'}_r\to E^{p+p',q+q'}_r$; inoltre le mappe di bordo $d^{p,q}_r$ risultano essere antiderivazioni rispetto al grado totale. È dunque conveniente definire $E_r=\Dirsum_{p,q}E^{p,q}_r$, che sotto queste ipotesi diventa un anello bigraduato (da $p$ e da $q$).
 
 \subsection{Duale di un complesso filtrato}\label{cohomological-spectral-sequence:dual-complex}
-Esibiamo ora una costruzione che permette di associare una successione spettrale coomologica a un complesso filtrato $(C_\bullet, d)$. Sia $G$ un gruppo abeliano. Consideriamo il cocomplesso $C^\bullet=\Hom(C_\bullet,G)$ con mappe di bordo $-\circ d$. Il cocomplesso $C^\bullet$ eredita una filtrazione decrescente $C^n_p=\Ann C_n^{p-1}$ (le proprietà richieste si verificano facilmente), a partire dalla quale possiamo costruire una successione spettrale coomologica $E^{p,q}_r\converges H^{p+q}(C_\bullet;G)$.
+Esibiamo ora una costruzione che permette di associare una successione spettrale coomologica a un complesso filtrato $C_\bullet$ con mappe di bordo $d$. Sia $G$ un gruppo abeliano. Consideriamo il cocomplesso $C^\bullet=\Hom(C_\bullet,G)$ con mappe di bordo $-\circ d$. Il cocomplesso $C^\bullet$ eredita una filtrazione decrescente $C^n_p=\Ann C_n^{p-1}$ (le proprietà richieste si verificano facilmente), a partire dalla quale possiamo costruire una successione spettrale coomologica $E^{p,q}_r\converges H^{p+q}(C_\bullet;G)$.
 
 \section{Successione spettrale di un rivestimento universale}
 \todo{Breve introduzione.}
