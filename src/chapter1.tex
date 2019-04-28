@@ -11,7 +11,7 @@ Si dice successione spettrale (omologica) una famiglia di gruppi abeliani $E^{p,
 \todo{Utile disegnino illustrativo e descrizione a parole.}
 L'intero $p$ è detto grado filtrante, $q$ è detto grado complementare e $n=p+q$ è detto grado totale. Fissati $p,q\ge 0$, per $r$ sufficientemente grande le mappe di bordo entranti e uscenti da $E^{p,q}_r$ sono nulle: in particolare per $r>p$ il codominio di $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}}$ è nullo, mentre per $r>q+1$ il dominio di $\map{d^{p+r,q-r+1}_r}{E^{p+r,q-r+1}}{E^{p,q}_r}$ è nullo. Pertanto $E^{p,q}_r$ è definitivamente uguale a un certo gruppo abeliano $E^{p,q}_\infty$, detto gruppo terminale.
 \begin{definition}
-Si dice che una successione spettrale $E^{p,q}_r$ converge a una famiglia di gruppi abeliani $H_n$ (e si scrive $E^{p,q}_r\converges H_{p+q}$) se esistono filtrazioni
+Sia $H_n$ una famiglia di gruppi abeliani indicizzata da $n\in\ZZ$. Si dice che una successione spettrale $E^{p,q}_r$ converge ai gruppi $H_n$ (e si scrive $E^{p,q}_r\converges H_{p+q}$) se esistono filtrazioni
 $$
 0=H^{-1}_n\subs H^0_n\subs H^1_n\subs\ldots\subs H^{n-2}_n\subs H^{n-1}_n\subs H^n_n=H_n
 $$
@@ -20,7 +20,7 @@ tali che $E^{p,q}_\infty=H^p_{p+q}/H^{p-1}_{p+q}$.
 
 \section{Una successione esatta}
 \begin{proposition}\thlabel{spectral-sequence-exact-sequence}
-Sia $E^{p,q}_r\converges H_{p+q}$ una successione spettrale, $i,j,r>0$ con $i\le j$. Per ogni $i\le n\le j$ siano date due coppie di interi $(a'_n,b'_n)$, $(a''_n,b''_n)$ con $a'_n+b'_n=a''_n+b''_n=n$ e $a'_n<a''_n$. Supponiamo che per ogni $i\le n\le j$ valga $E^{p,q}_r=0$ ogniqualvolta:
+Siano $E^{p,q}_r\converges H_{p+q}$ una successione spettrale, $i,j,r>0$ interi con $i\le j$. Per ogni $i\le n\le j$ siano date due coppie di interi $(a'_n,b'_n)$, $(a''_n,b''_n)$ con $a'_n+b'_n=a''_n+b''_n=n$ e $a'_n<a''_n$. Supponiamo che per ogni $i\le n\le j$ valga $E^{p,q}_r=0$ ogniqualvolta:
 \begin{itemize}
 \item $p+q=n$ e $(p,q)\neq(a'_n,b'_n),(a''_n,b''_n)$;
 \item $p+q=n-1$ e $p\le a'_n-r$;
@@ -187,7 +187,8 @@ Si dice successione spettrale coomologica una famiglia di gruppi abeliani $E^{p,
 \end{definition}
 Come nel caso omologico, per $p,q$ fissati esiste un gruppo abeliano $E^{p,q}_\infty$ (detto gruppo terminale) tale che per $r$ sufficientemente grande vale $E^{p,q}_r=E^{p,q}_\infty$.
 \begin{definition}
-Si dice che una successione spettrale coomologica $E^{p,q}_r$ converge a una famiglia di gruppi abeliani $H^n$ (e si scrive $E^{p,q}_r\converges H^{p+q}$) se esistono filtrazioni
+Sia $H^n$ una famiglia di gruppi abeliani indicizzata da $n\in\ZZ$.
+Si dice che una successione spettrale coomologica $E^{p,q}_r$ converge ai gruppi $H^n$ (e si scrive $E^{p,q}_r\converges H^{p+q}$) se esistono filtrazioni
 $$
 0=H^^n_{n+1}\subs H^n_n\subs H^n_{n-1}\subs\ldots\subs H^n_2\subs H^n_1\subs H^n_0=H^n
 $$
@@ -196,7 +197,7 @@ tali che $E^{p,q}_\infty=H^{p+q}_p/H^{p+q}_{p+1}$.
 I risultati visti finora relativamente alle successioni spettrali omologiche presentano varianti del tutto analoghe per le successioni spettrali coomologiche.
 \subsection{Una successione esatta}
 \begin{proposition}\thlabel{cohomological-spectral-exact-sequence}
-Sia $E^{p,q}_r\converges H^{p+q}$ una successione spettrale coomologica, $i,j,r>0$ con $i\le j$. Per ogni $i\le n\le j$ siano date due coppie di interi $(a'_n,b'_n)$, $(a''_n,b''_n)$ con $a'_n+b'_n=a''_n+b''_n=n$ e $a'_n<a''_n$. Supponiamo che per ogni $i\le n\le j$ valga $E^{p,q}_r=0$ ogniqualvolta:
+Siano $E^{p,q}_r\converges H^{p+q}$ una successione spettrale coomologica, $i,j,r>0$ interi con $i\le j$. Per ogni $i\le n\le j$ siano date due coppie di interi $(a'_n,b'_n)$, $(a''_n,b''_n)$ con $a'_n+b'_n=a''_n+b''_n=n$ e $a'_n<a''_n$. Supponiamo che per ogni $i\le n\le j$ valga $E^{p,q}_r=0$ ogniqualvolta:
 \begin{itemize}
 \item $p+q=n$ e $(p,q)\neq(a'_n,b'_n),(a''_n,b''_n)$;
 \item $p+q=n-1$ e $p\le a'_n-r$;
@@ -257,7 +258,7 @@ $$
 per ogni $i$.
 \end{corollary}
 \begin{proof}
-Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. È ben noto che, se l'azione di $\ZZ$ su $H_q(T;G)$ è banale, allora
+Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. È ben noto \cite{} che, se l'azione di $\ZZ$ su $H_q(T;G)$ è banale, allora
 $$
 E^{p,q}_2=H_p(\ZZ;H_q(T;G))=H_p(S^1;H_q(T;G))=
 \begin{cases}
@@ -274,7 +275,7 @@ $$
 Supponiamo che $\pi$ sia finito e che $G$ sia un campo la cui caratteristica non divide l'ordine di $\pi$. Allora $H_i(X;G)=H_i(T;G)$ per ogni $i$.
 \end{corollary}
 \begin{proof}
-Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. È ben noto che, con le ipotesi fatte, vale
+Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. È ben noto \cite[] che, con le ipotesi fatte, vale
 $$
 H_p(\pi;H_q(T;G))=
 \begin{cases}
@@ -296,5 +297,5 @@ Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-seq
 $$
 E^{p,j}_2=H_p(\pi;H_j(T))=(H_p(\pi)\tensor H_j(T))\dirsum\Tor(H_{p-1}(\pi),H_j(T));
 $$
-com'è ben noto, essendo $\pi$ abeliano e finitamente generato, i gruppi di omologia di $\pi$ sono finitamente generati; inoltre $H_j(T)$ è finitamente generato per ipotesi induttiva, e prodotto tensore e $\Tor$ di gruppi finitamente generati sono finitamente generati. Notiamo poi che anche i gruppi $E^{p,j}_r$ con $r>2$ sono finitamente generati, in quanto $E^{p,j}_r$ è quoziente di un sottogruppo di $E^{p,j}_{r-1}$. Se $E^{0,i}_2$ non fosse finitamente generato, allora nemmeno $E^{0,i}_3$ lo sarebbe, in quanto quoziente di $E^{0,i}_2$ per l'immagine di $\map{d^{2,i-1}_2}{E^{2,i-1}_2}{E^{0,i}_2}$, che è finitamente generata. Procedendo allo stesso modo si ricava che $E^{0,i}_r$ non sarebbe finitamente generato per alcun $r\ge 2$, e dunque nemmeno $E^{0,i}_\infty$ sarebbe finitamente generato. Ma $E^{0,i}_\infty$ è un quoziente di un sottogruppo di $H_i(X)$, che per ipotesi è finitamente generato.
+com'è ben noto, essendo $\pi$ abeliano e finitamente generato, i gruppi di omologia di $\pi$ sono finitamente generati\footnote{Per il teorema di Kunneth, è sufficiente verificarlo per i gruppi ciclici\ldots}; inoltre $H_j(T)$ è finitamente generato per ipotesi induttiva, e prodotto tensore e $\Tor$ di gruppi finitamente generati sono finitamente generati. Notiamo poi che anche i gruppi $E^{p,j}_r$ con $r>2$ sono finitamente generati, in quanto $E^{p,j}_r$ è quoziente di un sottogruppo di $E^{p,j}_{r-1}$. Se $E^{0,i}_2$ non fosse finitamente generato, allora nemmeno $E^{0,i}_3$ lo sarebbe, in quanto quoziente di $E^{0,i}_2$ per l'immagine di $\map{d^{2,i-1}_2}{E^{2,i-1}_2}{E^{0,i}_2}$, che è finitamente generata. Procedendo allo stesso modo si ricava che $E^{0,i}_r$ non sarebbe finitamente generato per alcun $r\ge 2$, e dunque nemmeno $E^{0,i}_\infty$ sarebbe finitamente generato. Ma $E^{0,i}_\infty$ è un quoziente di un sottogruppo di $H_i(X)$, che per ipotesi è finitamente generato.
 \end{proof}

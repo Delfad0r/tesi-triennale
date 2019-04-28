@@ -5,7 +5,13 @@
 \usepackage[italian=quotes]{csquotes}
 \usepackage{geometry}
 
-%pdflatex -synctex=1 -interaction=nonstopmode %.tex
+% Bibliography
+\usepackage[backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+\nocite{*}
+\newcommand*{\citechapter}[2]{\cite[Capitolo #2]{#1}}
+\newcommand*{\citenumber}[3]{\cite[Capitolo #2, n$^\circ$ #3]{#1}}
+
 % Math packages
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -65,9 +71,12 @@
 % Theorem environments
 \theoremstyle{definition}
 \newtheorem{definition}{Definizione}[chapter]
+\newtheorem*{definition*}{Definizione}
+\newtheorem*{notation*}{Notazione}
 \theoremstyle{plain}
 \newtheorem{theorem}{Teorema}[chapter]
 \newtheorem{proposition}[theorem]{Proposizione}
+\newtheorem*{proposition*}{Proposizione}
 \newtheorem{corollary}[theorem]{Corollario}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem*{lemma*}{Lemma}

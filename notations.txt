@@ -5,3 +5,16 @@ I: [0,1]
 omotopia e omologia relative
 (co)complessi di moduli
 omotopie (f_t)
+
+# Preliminari generali
+N, Z, \1
+
+# Topologia generale
+Rivestimenti, azione del p1
+Omotopie
+
+#Topologia algebrica
+Gruppi di omotopia, omotopia relativa, successione esatta lunga
+Complessi di gruppi abeliani, Hom, prodotto tensore
+Omologia e coomologia a coefficienti interi e in un gruppo abeliano
+Teoremi dei coefficienti universali (su PID)

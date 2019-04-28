@@ -5,7 +5,7 @@
 Introduciamo una classe di spazi topologici chiusa per le operazioni di rivestimento universale e di spazio dei cammini chiusi. Ne faremo uso per giustificare la costruzione della prossima sezione.
 
 \begin{definition}
-Uno spazio topologico $X$ si dice uniformemente localmente contrattile (ULC)\todo{La definizione è diversa da quella di Serre.} se esistono un intorno $U$ della diagonale $\Delta\subs X\times X$ e un'omotopia $\map{H}{U\times I}{X}$ tale che
+Uno spazio topologico $X$ si dice uniformemente localmente contrattile (ULC)\footnote{La definizione che proponiamo è più esigente di quella comunemente utilizzata in letteratura (ad esempio in \citenumber{serre1951}{5}{1}) al fine di facilitare le dimostrazioni.} se esistono un intorno $U$ della diagonale $\Delta\subs X\times X$ e un'omotopia $\map{H}{U\times I}{X}$ tale che
 \begin{enumerate}
 \item\label{ULC:pr1} $H_0(x,y)=x$;
 \item\label{ULC:pr2} $H_1(x,y)=y$;
@@ -18,7 +18,7 @@ Uno spazio topologico $X$ si dice uniformemente localmente contrattile (ULC)\tod
 Siano $X$ uno spazio topologico ULC, $x_0\in X$ un punto. Allora $\Omega_{x_0}$ è ULC.
 \end{proposition}
 \begin{proof}
-Per semplicità di notazione, sia $\Omega=\Omega_{x_0}$. Sia inoltre $\map{H}{U\times I}{X}$ l'omotopia della definizione di ULC. Sia $\tilde{U}\subs\Omega\times\Omega$ l'insieme delle coppie $(f,g)$ tali che $(f(t),g(t))\in U$ per ogni $t\in I$. Sicuramente $\tilde\Delta\subs\tilde U$, dove $\tilde\Delta$ indica la diagonale di $\Omega\times\Omega$; mostriamo che $\tilde U$ è in realtà un intorno di $\tilde\Delta$. Sia $f\in\Omega$. Per compattezza di $I$ possiamo trovare $0=t_0\le t_1\le\ldots\le t_{n-1}\le t_n=1$ e $U_1,\ldots,U_n$ aperti di $X$ tali che $f([t_{i-1},t_i])\subs U_i$ e $U_i\times U_i\subs U$. Allora $f$ ammette l'intorno
+Per semplicità di notazione, sia $\Omega=\Omega_{x_0}$. Sia inoltre $\map{H}{U\times I}{X}$ l'omotopia della definizione di ULC. Denotiamo con $\tilde{U}\subs\Omega\times\Omega$ l'insieme delle coppie $(f,g)$ tali che $(f(t),g(t))\in U$ per ogni $t\in I$. Sicuramente $\tilde\Delta\subs\tilde U$, dove $\tilde\Delta$ indica la diagonale di $\Omega\times\Omega$; mostriamo che $\tilde U$ è in realtà un intorno di $\tilde\Delta$. Sia $f\in\Omega$. Per compattezza di $I$ possiamo trovare $0=t_0\le t_1\le\ldots\le t_{n-1}\le t_n=1$ e $U_1,\ldots,U_n$ aperti di $X$ tali che $f([t_{i-1},t_i])\subs U_i$ e $U_i\times U_i\subs U$. Allora $f$ ammette l'intorno
 $$
 V=V([t_0,t_1],U_1)\cap\ldots\cap V([t_{n-1},t_n],U_n)
 $$
@@ -35,7 +35,7 @@ con $0=t_0\le t_1\le\ldots\le t_{n-1}\le t_n=1$ e $U_1,\ldots,U_n$ aperti di $X$
 Sia $X$ uno spazio topologico ULC. Allora $X$ è localmente contrattile\todo{Serve un glossario}.
 \end{proposition}
 \begin{proof}
-Sia $\map{H}{U\times I}{X}$ l'omotopia della definizione di ULC. Sia $x_0\in X$ un punto, $V\subs X$ un suo intorno. Consideriamo l'intorno $V'\subs V$ di $x_0$ dato dalla \ref{ULC:pr4}. Definiamo l'omotopia
+Sia $\map{H}{U\times I}{X}$ l'omotopia della definizione di ULC. Siano $x_0\in X$ un punto, $V\subs X$ un suo intorno. Consideriamo l'intorno $V'\subs V$ di $x_0$ dato dalla \ref{ULC:pr4}. Definiamo l'omotopia
 \Map{F}{V'\times I}{V'}{(x,t)}{H_t(x_0,x)}
 che risulta essere una contrazione di $V'$ su $x_0$.
 \end{proof}
@@ -62,7 +62,7 @@ dove $i(x)=(x,0)$, $(q\times\1)(x,y,t)=(q(x,y),t)$,  $F=H\circ(q\times\1)$ e $\t
 \setcounter{enumi}{1}
 \item $\tilde{F}_1$ è un sollevamento di $F_1$ tale che $\tilde{F}_1(x,x)=x$; per connessione di $\tilde{U}$ esiste un solo sollevamento con questa proprietà, dunque $\tilde{F}_1(x,y)=y$
 \setcounter{enumi}{3}
-\item Sia $x\in T$ un punto, $V\subs T$ un suo intorno. Scegliamo un intorno $W\subs p(V)$ di $p(x)$ in modo che $W$ sia aperto, ben rivestito \todo{Che vuol dire? Glossario!}, e inoltre $W\times W\subs U$ e $H_t(W\times W)\subs W$. Osserviamo che quest'ultima condizione implica che $W$ è contrattile, dunque in particolare connesso. Sia $V'$ la componente connessa di $p^{-1}(W)$ che contiene $x$. Notiamo innanzitutto che $V'\times V'\subs q^{-1}(U)$ e $(x,x)\in V'\times V'$, dunque $V'\times V'\subs\tilde{U}$, in quanto $V'\times V'$ è connesso. Inoltre $q(V'\times V')\subs W\times W$, pertanto $p\tilde{F}_t(V'\times V')\subs H_t(W\times W)\subs W$; essendo $\tilde{F}_t(V'\times V')$ connesso segue che $\tilde{F}_t(V'\times V')\subs V'$.
+\item Siano $x\in T$ un punto, $V\subs T$ un suo intorno. Scegliamo un intorno $W\subs p(V)$ di $p(x)$ in modo che $W$ sia ben rivestito \todo{Che vuol dire? Glossario!} e soddisfi $W\times W\subs U$ e $H_t(W\times W)\subs W$. Osserviamo che quest'ultima condizione implica che $W$ è contrattile, dunque in particolare connesso. Sia $V'$ la componente connessa di $p^{-1}(W)$ che contiene $x$. Notiamo innanzitutto che $V'\times V'\subs q^{-1}(U)$ e $(x,x)\in V'\times V'$, dunque $V'\times V'\subs\tilde{U}$, in quanto $V'\times V'$ è connesso. Inoltre $q(V'\times V')\subs W\times W$, pertanto $p\tilde{F}_t(V'\times V')\subs H_t(W\times W)\subs W$; essendo $\tilde{F}_t(V'\times V')$ connesso segue che $\tilde{F}_t(V'\times V')\subs V'$.
 \end{enumerate}
 Abbiamo così dimostrato che $T$ è ULC.
 \end{proof}

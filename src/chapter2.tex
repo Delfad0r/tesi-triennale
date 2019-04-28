@@ -2,7 +2,7 @@
 
 \section{Omologia singolare cubica}
 
-L'omologia singolare classica utilizza i simplessi singolari come oggetti fondamentali. Per la teoria degli spazi fibrati dovremo introdurre la nozione di omologia singolare cubica, che impiega cubi in luogo dei simplessi. Come è lecito aspettarsi, i cubi si prestano meglio allo studio degli spazi prodotto, e anche a quello degli spazi fibrati, che ne sono, in un certo senso, una generalizzazione.
+L'omologia singolare classica utilizza i simplessi singolari come oggetti fondamentali. Per la teoria degli spazi fibrati dovremo introdurre la nozione di omologia singolare cubica, che impiega cubi in luogo dei simplessi. Tuttavia, come vedremo nel paragrafo \ref{cubic-homology:comparison}, dal punto di vista dell'omologia e della coomologia non vi è alcuna differenza.
 
 Consideriamo uno spazio topologico $X$.
 
@@ -45,7 +45,7 @@ $$
 da cui segue che il \cupproduct{} passa al quoziente, definendo un prodotto in coomologia $H^*(X)\times H^*(X)\to H^*(X)$.
 
 \subsection{Confronto con l'omologia singolare classica}\label{cubic-homology:comparison}
-Si può dimostrare che l'approccio dell'omologia cubica conduce ai medesimi risultati dell'omologia singolare classica.
+Come mostrato in \citechapter{eilenberg-maclane1953}{8} l'approccio dell'omologia cubica conduce ai medesimi risultati dell'omologia singolare classica.
 
 \begin{proposition}\thlabel{cubic-homology-isomorphic-classical-homology}
 Denotiamo con $H_*^\Delta(X;G)$ e $H^*_\Delta(X;G)$ l'omologia e la coomologia singolare classiche. Allora $H_i(X;G)\iso H_i^\Delta(X;G)$ e $H^i(X;G)\iso H_\Delta^i(X;G)$. Inoltre, se $G$ è anche un anello, allora l'isomorfismo in coomologia preserva la struttura moltiplicativa.
@@ -69,7 +69,7 @@ P\times I\rar{f}\ar[ru,dashed,"h"]&B
 Se $\map{p}{E}{B}$ è una fibrazione, chiameremo $E$ spazio totale e $B$ spazio base. Inoltre la terna $(p, E, B)$ è detta spazio fibrato.
 
 \begin{proposition}\thlabel{homotopy-lifting-plus}
-Sia $\map{p}{E}{B}$ una fibrazione, $A\subs X$ due poliedri finiti contrattili; indichiamo con $\map{i}{A}{X}$ l'inclusione. Siano $\map{f}{X}{B}$, $\map{g}{A}{E}$ applicazioni continue tali che $pg=fi$. Allora esiste un'applicazione continua $\map{h}{X}{E}$ tale che $ph=f$ e $hi=g$.
+Siano $\map{p}{E}{B}$ una fibrazione, $A\subs X$ due poliedri finiti contrattili; indichiamo con $\map{i}{A}{X}$ l'inclusione. Siano $\map{f}{X}{B}$, $\map{g}{A}{E}$ applicazioni continue tali che $pg=fi$. Allora esiste un'applicazione continua $\map{h}{X}{E}$ tale che $ph=f$ e $hi=g$.
 \begin{diagram}
 A\rar{g}\dar{i}&E\dar{p}\\
 X\rar{f}\ar[ru,dashed,"h"]&B
@@ -100,7 +100,7 @@ X\rar{f}\ar[dr,"l"]\ar[ru,"h",dashed]&B\\
 Poiché $li(x)=(x,s)$ per ogni $x\in A$, l'esistenza di $\tilde{h}$ segue dal Lemma. È ora evidente che $h=\tilde{h}l$ soddisfa la tesi.
 \end{proof}
 \begin{proposition}\thlabel{fibration-homotopy-exact-sequence}
-Sia $\map{p}{E}{B}$ una fibrazione, $e\in E$, $b=p(e)$, $F=p^{-1}(e)$.
+Siano $\map{p}{E}{B}$ una fibrazione, $e\in E$, $b=p(e)$, $F=p^{-1}(e)$.
 \begin{enumerate}
 \item\label{fibration-homotopy-exact-sequence:1} La mappa $p$ induce un isomorfismo $\map{p_*}{\pi_i(E,F,e)}{\pi_i(B,b)}$ per ogni $i\ge 1$.
 \item\label{fibration-homotopy-exact-sequence:2} Esiste una successione esatta lunga di gruppi
@@ -130,7 +130,7 @@ D'ora in poi considereremo solo fibrazioni con spazio base, spazio totale e fibr
 Ci proponiamo ora di mostrare come il gruppo fondamentale di $B$ agisca sui gruppi di omologia e coomologia di $F$.
 
 \begin{definition}
-Sia $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ un'applicazione che a ogni cubo $u$ di dimensione $n$ di $F$ associa un cubo $Tu$ di $E$ di dimensione $n+1$. $T$ si dice costruzione subordinata a $\gamma$ se soddisfa le seguenti proprietà per ogni cubo $u$ di dimensione $n$:
+Siano $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ un'applicazione che a ogni cubo $u$ di dimensione $n$ di $F$ associa un cubo $Tu$ di $E$ di dimensione $n+1$. $T$ si dice costruzione subordinata a $\gamma$ se soddisfa le seguenti proprietà per ogni cubo $u$ di dimensione $n$:
 \begin{enumerate}
 \item $\lambda^0_1 Tu=u$;
 \item $(p\circ Tu)(t,x_1,\ldots,x_n)=\gamma(t)$;
@@ -173,7 +173,7 @@ dhu+hdu&=\sum_{i=1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_i\lambda
 Si potrebbe dimostrare che per ogni cammino $\gamma$ esiste una costruzione subordinata a $\gamma$, e che l'applicazione $\pi_1(B,b)\to\Aut(H_n(F))$ è un omomorfismo di gruppi, ma non utilizzeremo questi risultati.
 Ci limitiamo a mostrare il seguente.
 \begin{corollary}\thlabel{trivial-path-trivial-action}
-Sia $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ una costruzione subordinata a $\gamma$. Supponiamo che $\gamma$ sia omotopicamente banale. Allora $S_T$ induce l'identità in omologia e in coomologia.
+Siano $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ una costruzione subordinata a $\gamma$. Supponiamo che $\gamma$ sia omotopicamente banale. Allora $S_T$ induce l'identità in omologia e in coomologia.
 \end{corollary}
 \begin{proof}
 In virtù della \thref{subordinate-construction-homotopy-equivalence} è sufficiente dimostrare che esiste una costruzione $T$ subordinata al cammino che vale costantemente $b$ tale che $S_T$ induce l'identità in omologia e in coomologia. Per ogni cubo $u$ di $F$ di dimensione $n$ definiamo
