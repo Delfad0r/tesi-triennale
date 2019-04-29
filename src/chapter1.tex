@@ -258,7 +258,7 @@ $$
 per ogni $i$.
 \end{corollary}
 \begin{proof}
-Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. È ben noto \cite{} che, se l'azione di $\ZZ$ su $H_q(T;G)$ è banale, allora
+Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. Poiché l'azione di $\ZZ$ su $H_q(T;G)$ è banale vale
 $$
 E^{p,q}_2=H_p(\ZZ;H_q(T;G))=H_p(S^1;H_q(T;G))=
 \begin{cases}
@@ -275,7 +275,7 @@ $$
 Supponiamo che $\pi$ sia finito e che $G$ sia un campo la cui caratteristica non divide l'ordine di $\pi$. Allora $H_i(X;G)=H_i(T;G)$ per ogni $i$.
 \end{corollary}
 \begin{proof}
-Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. È ben noto \cite[] che, con le ipotesi fatte, vale
+Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. È ben noto che, con le ipotesi fatte, vale\footnote{Per il teorema di Künneth è sufficiente verificarlo nel caso in cui $\pi$ è ciclico; sotto questa ipotesi il risultato segue immediatamente dal teorema dei coefficienti universali e dal fatto che $H_p(\ZZ/m)$ è $0$ o $\ZZ/m$ per $p>0$.}
 $$
 H_p(\pi;H_q(T;G))=
 \begin{cases}
@@ -297,5 +297,5 @@ Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-seq
 $$
 E^{p,j}_2=H_p(\pi;H_j(T))=(H_p(\pi)\tensor H_j(T))\dirsum\Tor(H_{p-1}(\pi),H_j(T));
 $$
-com'è ben noto, essendo $\pi$ abeliano e finitamente generato, i gruppi di omologia di $\pi$ sono finitamente generati\footnote{Per il teorema di Kunneth, è sufficiente verificarlo per i gruppi ciclici\ldots}; inoltre $H_j(T)$ è finitamente generato per ipotesi induttiva, e prodotto tensore e $\Tor$ di gruppi finitamente generati sono finitamente generati. Notiamo poi che anche i gruppi $E^{p,j}_r$ con $r>2$ sono finitamente generati, in quanto $E^{p,j}_r$ è quoziente di un sottogruppo di $E^{p,j}_{r-1}$. Se $E^{0,i}_2$ non fosse finitamente generato, allora nemmeno $E^{0,i}_3$ lo sarebbe, in quanto quoziente di $E^{0,i}_2$ per l'immagine di $\map{d^{2,i-1}_2}{E^{2,i-1}_2}{E^{0,i}_2}$, che è finitamente generata. Procedendo allo stesso modo si ricava che $E^{0,i}_r$ non sarebbe finitamente generato per alcun $r\ge 2$, e dunque nemmeno $E^{0,i}_\infty$ sarebbe finitamente generato. Ma $E^{0,i}_\infty$ è un quoziente di un sottogruppo di $H_i(X)$, che per ipotesi è finitamente generato.
+essendo $\pi$ abeliano e finitamente generato, i gruppi di omologia di $\pi$ sono finitamente generati\footnote{Per il teorema di Künneth è sufficiente verificarlo per i gruppi ciclici, dei quali l'omologia è ben nota.}; inoltre $H_j(T)$ è finitamente generato per ipotesi induttiva, e prodotto tensore e $\Tor$ di gruppi finitamente generati sono finitamente generati. Notiamo poi che anche i gruppi $E^{p,j}_r$ con $r>2$ sono finitamente generati, in quanto $E^{p,j}_r$ è quoziente di un sottogruppo di $E^{p,j}_{r-1}$. Se $E^{0,i}_2$ non fosse finitamente generato, allora nemmeno $E^{0,i}_3$ lo sarebbe, in quanto quoziente di $E^{0,i}_2$ per l'immagine di $\map{d^{2,i-1}_2}{E^{2,i-1}_2}{E^{0,i}_2}$, che è finitamente generata. Procedendo allo stesso modo si ricava che $E^{0,i}_r$ non sarebbe finitamente generato per alcun $r\ge 2$, e dunque nemmeno $E^{0,i}_\infty$ sarebbe finitamente generato. Ma $E^{0,i}_\infty$ è un quoziente di un sottogruppo di $H_i(X)$, che per ipotesi è finitamente generato.
 \end{proof}
