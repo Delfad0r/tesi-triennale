@@ -34,7 +34,7 @@ H^n(X;G)&=H^n(C^\bullet(X;G)).
 Osserviamo che $C^n(X;G)$ può essere interpretato come il gruppo abeliano delle funzioni dai cubi di dimensione $n$ in $G$ che sono nulle sui cubi degeneri. Definiamo inoltre $H_*(X;G)=\Dirsum_{n\ge 0}H_n(X;G)$, $H^*(X;G)=\Dirsum_{n\ge 0}H^n(X;G)$.
 
 \subsection{Prodotto cup}\label{cubic-homology:cup-product}
-Esattamente come nel caso della teoria singolare classica, se $G$ è un anello $H^*(X)$ acquisisce una struttura di $G$-algebra graduata. Si definisce il \cupproduct{} come segue: se $u$ è un cubo di dimensione $p+q$ e $f,g$ sono cocatene di dimensione $p,q$ rispettivamente, allora
+Esattamente come nel caso della teoria singolare classica, se $G$ è un anello $H^*(X;G)$ acquisisce una struttura di $G$-algebra graduata. Si definisce il \cupproduct{} come segue: se $u$ è un cubo di dimensione $p+q$ e $f,g$ sono cocatene di dimensione $p,q$ rispettivamente, allora
 $$
 (f\cupp g)u=\sum_H\rho_{H,K}f(\lambda^0_Ku)\cdot g(\lambda^1_Hu),
 $$
@@ -42,7 +42,7 @@ dove $H$ varia fra i sottoinsiemi di $\{1,\ldots,p+q\}$ di cardinalità $p$, $K$
 $$
 d(f\cupp g)=df\cupp g+(-1)^pf\cupp dg,
 $$
-da cui segue che il \cupproduct{} passa al quoziente, definendo un prodotto in coomologia $H^*(X)\times H^*(X)\to H^*(X)$.
+da cui segue che il \cupproduct{} passa al quoziente, definendo un prodotto in coomologia $H^*(X;G)\times H^*(X;G)\to H^*(X;G)$.
 
 \subsection{Confronto con l'omologia singolare classica}\label{cubic-homology:comparison}
 Come mostrato in \citechapter{eilenberg-maclane1953}{8} l'approccio dell'omologia cubica conduce ai medesimi risultati dell'omologia singolare classica.
@@ -170,7 +170,7 @@ dhu+hdu&=\sum_{i=1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_i\lambda
 &=S_{T_1}u-S_{T_0}u.
 \end{align*}
 \end{proof}
-Si potrebbe dimostrare che per ogni cammino $\gamma$ esiste una costruzione subordinata a $\gamma$, e che l'applicazione $\pi_1(B,b)\to\Aut(H_n(F))$ è un omomorfismo di gruppi, ma non utilizzeremo questi risultati.
+Si potrebbe dimostrare (si veda \citenumber{serre}{2}{3}) che per ogni cammino $\gamma$ esiste una costruzione subordinata a $\gamma$, e che l'applicazione $\pi_1(B,b)\to\Aut(H_n(F))$ è un omomorfismo di gruppi, ma non utilizzeremo questi risultati.
 Ci limitiamo a mostrare il seguente.
 \begin{corollary}\thlabel{trivial-path-trivial-action}
 Siano $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ una costruzione subordinata a $\gamma$. Supponiamo che $\gamma$ sia omotopicamente banale. Allora $S_T$ induce l'identità in omologia e in coomologia.

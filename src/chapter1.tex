@@ -246,7 +246,7 @@ Esibiamo ora una costruzione che permette di associare una successione spettrale
 
 \section{Successione spettrale di un rivestimento universale}
 \todo{Breve introduzione.}
-Consideriamo uno spazio topologico $X$ che ammette un rivestimento universale $\map{p}{T}{X}$. Sia $\pi$ il gruppo fondamentale di $X$, e supponiamo che $\pi$ agisca banalmente sui gruppi di omologia di $T$. Sia inoltre $G$ un gruppo abeliano. Riportiamo il risultato fondamentale di \cite{cartan}, riformulato
+Riportiamo il risultato presentato in \citetheorem{seminaire-cartan}{2}, riformulato usando le notazioni che abbiamo introdotto. Consideriamo uno spazio topologico $X$ che ammette un rivestimento universale $\map{p}{T}{X}$. Sia $\pi$ il gruppo fondamentale di $X$, e supponiamo che $\pi$ agisca banalmente sui gruppi di omologia di $T$. Sia inoltre $G$ un gruppo abeliano.
 \begin{proposition}\thlabel{spectral-sequence-of-universal-covering}
 Denotiamo con $H_p(\pi;H_q(T;G)))$ il $p$-esimo gruppo di omologia di $\pi$ a coefficienti nel $\pi$-modulo (banale) $H_q(T;G)$. Allora esiste una successione spettrale $E^{p,q}_r\converges H_{p+q}(X;G)$ tale che $E^{p,q}_2=H_p(\pi;H_q(T;G))$.
 \end{proposition}
@@ -293,7 +293,7 @@ $$
 Supponiamo che $\pi$ sia abeliano e finitamente generato, e che i gruppi $H_i(X)$ siano finitamente generati. Allora anche i gruppi $H_i(T)$ lo sono.
 \end{proposition}
 \begin{proof}
-Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. Mostriamo per induzione su $i$ che $H_i(T)$ è finitamente generato. Per $i=0$ è ovvio, essendo $T$ connesso per archi. Sia ora $i>0$; supponiamo per assurdo che $H_i(T)=E^{0,i}_2$ non sia finitamente generato. Osserviamo che per $j<i$ i gruppi $E^{p,j}_2$ sono finitamente generati per ogni $p$: infatti dal teorema dei coefficienti universali segue che
+Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. Mostriamo per induzione su $i$ che $H_i(T)$ è finitamente generato. Per $i=0$ è ovvio, essendo $T$ connesso per archi. Sia ora $i>0$; supponiamo per assurdo che $H_i(T)=E^{0,i}_2$ non sia finitamente generato. Osserviamo che per $j<i$ e per $p$ qualunque i gruppi $E^{p,j}_2$ sono finitamente generati: infatti dal teorema dei coefficienti universali segue che
 $$
 E^{p,j}_2=H_p(\pi;H_j(T))=(H_p(\pi)\tensor H_j(T))\dirsum\Tor(H_{p-1}(\pi),H_j(T));
 $$
