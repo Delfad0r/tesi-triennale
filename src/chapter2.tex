@@ -2,7 +2,7 @@
 
 \section{Omologia singolare cubica}
 
-L'omologia singolare classica utilizza i simplessi singolari come oggetti fondamentali. Per la teoria degli spazi fibrati dovremo introdurre la nozione di omologia singolare cubica, che impiega cubi in luogo dei simplessi. Tuttavia, come vedremo nel paragrafo \ref{cubic-homology:comparison}, dal punto di vista dell'omologia e della coomologia non vi è alcuna differenza.
+L'omologia singolare classica utilizza i simplessi singolari come oggetti fondamentali. Per la teoria degli spazi fibrati dovremo introdurre la nozione di omologia singolare cubica, che impiega cubi in luogo dei simplessi. Tuttavia, come vedremo nel paragrafo \ref{cubic-homology:comparison}, dal punto di vista dell'omologia e della coomologia non vi è alcuna differenza. Per una trattazione completa della teoria dell'omologia singolare cubica, senza alcun riferimento a quella singolare classica, si veda \cite{massey}.
 
 Consideriamo uno spazio topologico $X$.
 
@@ -44,19 +44,32 @@ d(f\cupp g)=df\cupp g+(-1)^pf\cupp dg,
 $$
 da cui segue che il \cupproduct{} passa al quoziente, definendo un prodotto in coomologia $H^*(X;G)\times H^*(X;G)\to H^*(X;G)$.
 
-\subsection{Confronto con l'omologia singolare classica}\label{cubic-homology:comparison}
+\subsection{Confronto con altre teorie omologiche}\label{cubic-homology:comparison}
 Come mostrato in \citechapter{eilenberg-maclane1953}{8} l'approccio dell'omologia cubica conduce ai medesimi risultati dell'omologia singolare classica.
 
 \begin{proposition}\thlabel{cubic-homology-isomorphic-classical-homology}
-Denotiamo con $H_*^\Delta(X;G)$ e $H^*_\Delta(X;G)$ l'omologia e la coomologia singolare classiche. Allora $H_i(X;G)\iso H_i^\Delta(X;G)$ e $H^i(X;G)\iso H_\Delta^i(X;G)$. Inoltre, se $G$ è anche un anello, allora l'isomorfismo in coomologia preserva la struttura moltiplicativa.
+Denotiamo con $H_i^\Delta(X;G)$ e $H^i_\Delta(X;G)$ i gruppi di omologia e coomologia singolare classiche. Allora $H_i(X;G)\iso H_i^\Delta(X;G)$ e $H^i(X;G)\iso H_\Delta^i(X;G)$. Inoltre, se $G$ è anche un anello, allora l'isomorfismo in coomologia preserva la struttura moltiplicativa.
 \end{proposition}
-\begin{corollary}\thlabel{cohomology-ring-anticommutative}
-Supponiamo che $G$ sia un anello. Siano $f,g\in H^*(X;G)$ rispettivamente di grado $p$ e $q$. Allora $f\cdot g=(-1)^{pq}g\cdot f$.
-\end{corollary}
-Studiando più esplicitamente l'isomorfismo fra l'omologia (e la coomologia) cubica e quella singolare classica si può dimostrare quanto segue.
+%\begin{corollary}\thlabel{cohomology-ring-anticommutative}
+%Supponiamo che $G$ sia un anello. Siano $f,g\in H^*(X;G)$ rispettivamente di grado $p$ e $q$. Allora $f\cdot g=(-1)^{pq}g\cdot f$.
+%\end{corollary}
+
+Concludiamo con una precisazione tecnica. Per motivi che risulteranno chiari in seguito, nello studio dell'omologia degli spazi fibrati sarà conveniente considerare esclusivamente cubi singolari aventi tutti in vertici in uno stesso punto fissato.
+
+Dato un punto $x_0\in X$, denotiamo con $Q_\bullet(X/x_0)$ il sottocomplesso di $Q_\bullet(X)$ generato dai cubi singolari aventi tutti i vertici in $x_0$, o più precisamente dai cubi $\map{u}{I^n}{X}$ tali che
+$$
+u_(\epsilon_1,\ldots,\epsilon_n)=x_0
+$$
+per ogni $\epsilon_1,\ldots,\epsilon_n\in\{0,1\}$. Seguono in modo naturale le definizioni di $D_\bullet(X/x_0)$, $C_\bullet(X/x_0)$, $H_n(X/x_0)$, $H^n(X/x_0)$ (eventualmente a coefficienti in un gruppo abeliano $G$). La dimostrazione della seguente proposizione si può trovare in \citepage{massey}{71}.
 \begin{proposition}\thlabel{cubic-homology-single-vertex}
-Supponiamo che $X$ sia connesso per archi; sia $x\in X$ un punto fissato. Allora i gruppi di omologia e coomologia (cubica)  di $X$ rimangono inalterati se ci si limita a considerare cubi singolari aventi tutti i vertici in $x$.
+Supponiamo che $X$ sia connesso per archi. Allora l'inclusione di complessi $C_\bullet(X/x_0)\subs C_\bullet(X)$ induce isomorfismi $H_i(X/x_0)\iso H_i(X)$ e $H^i(X/x_0)\iso H^i(X)$ in omologia e in coomologia.
 \end{proposition}
+
+Alla luce di questa proposizione, nel seguito utilizzeremo sempre (almeno quando $X$ sarà connesso per archi) l'abbreviazione $Q_\bullet(X)$ in luogo di $Q_\bullet(X/x_0)$, e analogamente per $D_\bullet(X)$, $C_\bullet(X)$, $H_i(X)$, $H^i(X)$.
+%Studiando più esplicitamente l'isomorfismo fra l'omologia (e la coomologia) cubica e quella singolare classica si può dimostrare quanto segue.
+%\begin{proposition}\thlabel{cubic-homology-single-vertex}
+%Supponiamo che $X$ sia connesso per archi; sia $x\in X$ un punto fissato. Allora i gruppi di omologia e coomologia (cubica)  di $X$ rimangono inalterati se ci si limita a considerare cubi singolari aventi tutti i vertici in $x$.
+%\end{proposition}
 
 \section{Spazi fibrati}
 \begin{definition}
@@ -89,7 +102,7 @@ X'\ar[dr,"i'"]\rar{f'}\ar[ru,"g'"]&B\\
 \end{diagram}
 dove $X'=A\times I^{n-1}$, $j(x)=(x,s_1\ldots,s_{n-1})$, $i'(x)=(x,s_n)$ e $f'=fi'$; L'esistenza di $g'$ è garantita dall'ipotesi induttiva, e l'esistenza di $g$ deriva dalla definizione di fibrazione (infatti $X=X'\times I$, e si vede facilmente che non serve richiedere $s_n=0$). Poiché $i=i'j$ e il diagramma commuta, si ottiene immediatamente che $ph=f$ e $hi=g$.
 \end{proof}
-Sia $Y$ il poliedro $X/A$; denotiamo con $\map{q}{X}{Y}$ la proiezione. Consideriamo un'immersione $\map{j}{Y}{I^n}$ per un qualche $n\ge 0$. Sia $s$ il punto di $I^n$ tale che $jq(A)=\{s\}$. Poiché $A$ è contrattile, esiste una retrazione $\map{r}{X}{A}$. Definiamo l'immersione
+Sia $Y$ il poliedro $X/A$; denotiamo con $\map{q}{X}{Y}$ la proiezione. Consideriamo un'immersione $\map{j}{Y}{I^n}$ per un qualche $n\ge 0$. Sia $s$ il punto di $I^n$ tale che $jq(A)=\{s\}$. Poiché $A$ è contrattile, esiste una retrazione\footnote{Questo si può vedere, ad esempio, applicando il lemma di estensione (\cite[lemma 4.7]{hatcher}) all'identità $\map{\1}{A}{A}$.} $\map{r}{X}{A}$. Definiamo l'immersione
 \Map{l}{X}{A\times I^n}{x}{(r(x),jq(x))}
 Poiché $l(X)$ è un poliedro contrattile, esiste una retrazione $A\times I^n\to l(X)$, che permette di estendere $\map{fl^{-1}}{l(X)}{B}$ a $\map{\tilde{f}}{A\times I^n}{B}$. Abbiamo così il diagramma commutativo
 \begin{diagram}
@@ -97,7 +110,7 @@ A\rar{g}\dar{i}&E\dar{p}\\
 X\rar{f}\ar[dr,"l"]\ar[ru,"h",dashed]&B\\
 &A\times I^n\uar{\tilde{f}}\ar[uu,bend right=60,"\tilde{h}"]
 \end{diagram}
-Poiché $li(x)=(x,s)$ per ogni $x\in A$, l'esistenza di $\tilde{h}$ segue dal Lemma. È ora evidente che $h=\tilde{h}l$ soddisfa la tesi.
+Poiché $li(x)=(x,s)$ per ogni $x\in A$, l'esistenza di $\tilde{h}$ segue dal lemma. È ora evidente che $h=\tilde{h}l$ soddisfa la tesi.
 \end{proof}
 \begin{proposition}\thlabel{fibration-homotopy-exact-sequence}
 Siano $\map{p}{E}{B}$ una fibrazione, $e\in E$, $b=p(e)$, $F=p^{-1}(e)$.
@@ -110,7 +123,7 @@ Siano $\map{p}{E}{B}$ una fibrazione, $e\in E$, $b=p(e)$, $F=p^{-1}(e)$.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-La successione esatta del punto \ref{fibration-homotopy-exact-sequence:2} segue immediatamente dalla successione esatta dei gruppi di omotopia della coppia $(E,F)$, una volta dimostrato il punto \ref{fibration-homotopy-exact-sequence:1}. Mostriamo dunque che $p_*$ è un isomorfismo di gruppi.
+La successione esatta del punto \ref{fibration-homotopy-exact-sequence:2} segue immediatamente dalla successione esatta lunga dei gruppi di omotopia della coppia $(E,F)$, una volta dimostrato il punto \ref{fibration-homotopy-exact-sequence:1}. Mostriamo dunque che $p_*$ è un isomorfismo di gruppi.
 \begin{itemize}
 \item Per verificare che $p_*$ è iniettiva, sia $\bar{f}\in\pi_i(E,F,e)$ tale che $p_*\bar{f}=0$. Consideriamo un rappresentante $\map{f}{(D^n,S^{n-1},s)}{(E,F,e)}$ della classe $\bar{f}$. Ricordiamo che $\bar{f}=0$ se e solo se $f$ è omotopa a un'applicazione con immagine in $F$ mediante un'omotopia che fissa $S^{n-1}$. Poiché $p_*\bar{f}=0$, esiste un'omotopia $\map{H}{D^n\times I}{B}$ stazionaria su $S^{n-1}$ tale che $H_0=pf$ e $H_1(D^n)\subs\{b\}$. Consideriamo il poliedro finito contrattile 
 $$
@@ -171,12 +184,12 @@ dhu+hdu&=\sum_{i=1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_i\lambda
 \end{align*}
 \end{proof}
 Si potrebbe dimostrare (si veda \citenumber{serre}{2}{3}) che per ogni cammino $\gamma$ esiste una costruzione subordinata a $\gamma$, e che l'applicazione $\pi_1(B,b)\to\Aut(H_n(F))$ è un omomorfismo di gruppi, ma non utilizzeremo questi risultati.
-Ci limitiamo a mostrare il seguente.
+Ci limitiamo a mostrare il seguente corollario.
 \begin{corollary}\thlabel{trivial-path-trivial-action}
 Siano $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ una costruzione subordinata a $\gamma$. Supponiamo che $\gamma$ sia omotopicamente banale. Allora $S_T$ induce l'identità in omologia e in coomologia.
 \end{corollary}
 \begin{proof}
-In virtù della \thref{subordinate-construction-homotopy-equivalence} è sufficiente dimostrare che esiste una costruzione $T$ subordinata al cammino che vale costantemente $b$ tale che $S_T$ induce l'identità in omologia e in coomologia. Per ogni cubo $u$ di $F$ di dimensione $n$ definiamo
+In virtù della \thref{subordinate-construction-homotopy-equivalence} è sufficiente dimostrare che esiste una costruzione $T$ subordinata al cammino che vale costantemente $b$ tale che $S_T$ induca l'identità in omologia e in coomologia. Per ogni cubo $u$ di $F$ di dimensione $n$ definiamo
 $$
 (Tu)(t,t_1,\ldots,t_n)=u(t_1,\ldots,t_n).
 $$

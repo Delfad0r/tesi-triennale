@@ -1,12 +1,12 @@
 \chapter{Successione spettrale omologica di uno spazio fibrato}
 
 \section{Costruzione della successione spettrale}
-Consideriamo una fibrazione $\fibration{F}{E}{B}$. Il nostro obiettivo è mettere in relazione i gruppi di omologia di $B$, $E$ e $F$; lo strumento che adopereremo sono le successioni spettrali. In questa sezione ci capiterà di richiedere l'esistenza di costruzioni (analoghe a quella del \thref{fibration-H-construction}) che associno cubi ad altri cubi, soddisfacendo determinate proprietà. Per separare nettamente la parte algebrica da quella topologica e per evitare di allungare eccessivamente le dimostrazioni, già piuttosto estese, abbiamo preferito rimandare le verifiche relative alle suddette costruzioni alla fine del capitolo (sezione \ref{spectral-sequence-of-fibration:proofs}).
+Consideriamo una fibrazione $\fibration{F}{E}{B}$. Continueremo a supporre che $B$, $E$ e $F$ siano connessi per archi. Il nostro obiettivo è mettere in relazione i gruppi di omologia di $B$, $E$ e $F$; lo strumento che adopereremo sono le successioni spettrali. In questa sezione ci capiterà di richiedere l'esistenza di costruzioni (analoghe a quella del \thref{fibration-H-construction}) che associno cubi ad altri cubi, soddisfacendo determinate proprietà. Per separare nettamente la parte algebrica da quella topologica e per evitare di allungare eccessivamente le dimostrazioni, già piuttosto estese, abbiamo preferito rimandare le verifiche relative alle suddette costruzioni alla fine del capitolo (sezione \ref{spectral-sequence-of-fibration:proofs}).
 
 \subsection{Filtrazione del complesso singolare}
 Per applicare i risultati della sezione \ref{sec:spectral-sequence-filtered-complex}, è necessario definire una filtrazione crescente sul complesso singolare $C_\bullet(E)$ (d'ora in poi ometteremo la $E$ fra parentesi). Ciò che faremo sarà filtrare il complesso $Q_\bullet$ con dei sottocomplessi $Q^p_\bullet$ e prenderne le immagini nel quoziente $C_\bullet$.
 
-Sia dunque $Q^p_n$ il sottogruppo di $Q_n$ generato dai cubi $u\in Q_n$ tali che $p\circ u$ dipende solo dalle prime $p$ coordinate (e $Q^p_n=Q_n$ se $p>n$). Si vede immediatamente che i $Q^p_\bullet$ sono sottocomplessi di $Q_\bullet$ e che soddisfano le proprietà di una filtrazione crescente. Dunque lo stesso vale per $C^p_\bullet=(Q^p_\bullet+D_\bullet)/D_\bullet$, che definiscono una filtrazione crescente per $C_\bullet$. Applicando la \thref{spectral-sequence-of-filtered-complex} otteniamo una successione spettrale $E^{p,q}_r\converges H_{p+q}(E)$. Come vedremo, è possibile calcolare esplicitamente i termini $E^{p,q}_2$ della successione spettrale in funzione dei gruppi di omologia di $B$ e di $F$.
+Sia dunque $Q^p_n$ il sottogruppo di $Q_n$ generato dai cubi $u\in Q_n$ tali che $p\circ u$ dipenda solo dalle prime $p$ coordinate (e $Q^p_n=Q_n$ se $p>n$). Si vede immediatamente che i $Q^p_\bullet$ sono sottocomplessi di $Q_\bullet$ e che soddisfano le proprietà di una filtrazione crescente. Dunque lo stesso vale per $C^p_\bullet=(Q^p_\bullet+D_\bullet)/D_\bullet$, che definiscono una filtrazione crescente per $C_\bullet$. Applicando la \thref{spectral-sequence-of-filtered-complex} otteniamo una successione spettrale $E^{p,q}_r\converges H_{p+q}(E)$. Come vedremo, è possibile calcolare esplicitamente i termini $E^{p,q}_2$ della successione spettrale in funzione dei gruppi di omologia di $B$ e di $F$.
 
 \section{Il termine \texorpdfstring{$E_0$}{E0}}
 Costruiamo due applicazioni $B^p$ e $F^p$ definite sui cubi di $Q^p_\bullet$ (ed estese per $\ZZ$-linearità a tutto $Q^p_\bullet$). Se $u\in\ Q^p_n$ è un cubo di dimensione $n$ con $n\ge p$, posto $q=n-p$, definiamo
@@ -106,7 +106,7 @@ Da questa proposizione segue che le mappe indotte in omologia $\map{\varphi_*}{H
 $$
 H_q(J^p_\bullet)=H_q(C_p(B)\tensor C_\bullet(F))=C_p(B)\tensor H_q(F)=C_p(B;H_q(F)).
 $$
-Abbiamo dunque dimostrato la seguente.
+Abbiamo dunque dimostrato la seguente proposizione.
 \begin{proposition}\thlabel{spectral-sequence-of-fibration-E-1}
 I morfismi di complessi $\varphi^p$ inducono isomorfismi $\map{\varphi_*}{E^{p,q}_1}{C_p(B;H_q(F))}$.
 \end{proposition}
@@ -190,7 +190,7 @@ $$
 da cui $E^{i,j}_2=0$ se $i,j>0$ e $i+j\le p+q-1$. Pertanto, se $1\le n\le p+q-1$, ci sono al più due termini $E^{i,j}_2$ non nulli con $i+j=n$ (ossia $(i,j)=(0,n)$ e $(i,j)=(n,0)$). Possiamo dunque applicare la \thref{spectral-sequence-exact-sequence} con $(a_n',b_n')=(0,n)$ e $(a_n'',b_n'')=(n,0)$ (si vede facilmente che le altre condizioni sono verificate). La successione esatta che otteniamo, ricordando che $E^{0,n}_2=H_n(F;G)$ e $E^{n,0}=H_n(B;G)$, è proprio quella della tesi.
 \end{proof}
 
-\section{Dimostrazione dei Lemmi \ref{spectral-sequence-of-fibration-K-construction} e \ref{spectral-sequence-of-fibration-S-construction}}\label{spectral-sequence-of-fibration:proofs}
+\section{Dimostrazione dei lemmi \ref{spectral-sequence-of-fibration-K-construction} e \ref{spectral-sequence-of-fibration-S-construction}}\label{spectral-sequence-of-fibration:proofs}
 Poiché le dimostrazioni dei due lemmi non si discostano molto da quella del \thref{fibration-H-construction} e le verifiche non presentano sostanziali difficoltà, ometteremo alcuni dettagli.
 
 \spectralsequenceoffibrationKconstruction*

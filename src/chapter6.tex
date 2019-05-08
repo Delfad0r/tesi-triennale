@@ -5,7 +5,7 @@
 Introduciamo una classe di spazi topologici chiusa per le operazioni di rivestimento universale e di spazio dei cammini chiusi. Ne faremo uso per giustificare la costruzione della prossima sezione.
 
 \begin{definition}
-Uno spazio topologico $X$ si dice uniformemente localmente contrattile (ULC)\footnote{La definizione che proponiamo è più restrittiva di quella comunemente utilizzata in letteratura (ad esempio in \citenumber{serre}{5}{1}) al fine di facilitare alcune dimostrazioni.} se esistono un intorno $U$ della diagonale $\Delta\subs X\times X$ e un'omotopia $\map{H}{U\times I}{X}$ tale che
+Uno spazio topologico $X$ si dice uniformemente localmente contrattile (ULC)\footnote{La definizione che proponiamo è più restrittiva di quella comunemente utilizzata in letteratura (ad esempio in \citenumber{serre}{5}{1}) al fine di semplificare alcune dimostrazioni.} se esistono un intorno $U$ della diagonale $\Delta\subs X\times X$ e un'omotopia $\map{H}{U\times I}{X}$ tale che
 \begin{enumerate}
 \item\label{ULC:pr1} $H_0(x,y)=x$;
 \item\label{ULC:pr2} $H_1(x,y)=y$;
@@ -171,7 +171,7 @@ K&\text{se $i\equiv 0\pmod{n-1}$}\\
 0&\text{altrimenti}
 \end{cases}.
 $$
-Definiamo per ogni $i\ge 0$ un elemento $e_i\in H^{(n-1)i}(\Omega;K)$ per ricorsione: $e_0=1\in H^0(\Omega;K)$ e $e_i=i\theta^{-1}e_{i-1}$. È evidente che gli $e_i$ formano una base di $H^*(\Omega;K)$ come $K$-modulo; basta allora dimostrare che $e_i\cdot e_j=e_{i+j}$ per concludere che $H^*(\Omega;K)$ è l'algebra di polinomi generata da $e_1$. Dalla successione esatta di Wang sappiamo che $\theta$ è una derivazione, in quanto $n$ è dispari. Per induzione su $i+j$ si vede (supponendi $i,j>0$) che
+Definiamo per ogni $i\ge 0$ un elemento $e_i\in H^{(n-1)i}(\Omega;K)$ per ricorsione: $e_0=1\in H^0(\Omega;K)$ e $e_i=i\theta^{-1}e_{i-1}$. È evidente che gli $e_i$ formano una base di $H^*(\Omega;K)$ come $K$-modulo; basta allora dimostrare che $e_i\cdot e_j=e_{i+j}$ per concludere che $H^*(\Omega;K)$ è l'algebra di polinomi generata da $e_1$. Dalla successione esatta di Wang sappiamo che $\theta$ è una derivazione, in quanto $n$ è dispari. Per induzione su $i+j$ si vede (supponendo $i,j>0$) che
 \begin{align*}
 \theta(e_i\cdot e_j)&=\theta e_i\cdot e_j+e_i\cdot\theta e_j\\
 &=i e_{i-1}\cdot e_j+e_i\cdot je_{j-1}\\
