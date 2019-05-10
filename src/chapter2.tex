@@ -4,13 +4,13 @@
 
 L'omologia singolare classica utilizza i simplessi singolari come oggetti fondamentali. Per la teoria degli spazi fibrati dovremo introdurre la nozione di omologia singolare cubica, che impiega cubi in luogo dei simplessi. Tuttavia, come vedremo nel paragrafo \ref{cubic-homology:comparison}, dal punto di vista dell'omologia e della coomologia non vi è alcuna differenza. Per una trattazione completa della teoria dell'omologia singolare cubica, senza alcun riferimento a quella singolare classica, si veda \cite{massey}.
 
-Consideriamo uno spazio topologico $X$.
+Denoteremo con $I$ l'intervallo chiuso $[0,1]$ munito dell'usuale topologia euclidea. Consideriamo uno spazio topologico $X$.
 
 \begin{definition}
-Sia $n\in\NN$. Si dice cubo singolare (o più semplicemente cubo) di dimensione $n$ un'applicazione continua $\map{u}{I^n}{X}$. Un cubo di dimensione $n\ge 1$ si dice degenere se non dipende dall'ultima coordinata, ossia se $u(x_1,\ldots,x_{n-1},x_n)=u(x_1,\ldots,x_{n-1},x_n')$ per ogni $x_1,\ldots,x_n,x_n'\in I$.
+Sia $n\in\NN$. Si dice \defterm{cubo singolare} (o più semplicemente \defterm{cubo}) di dimensione $n$ un'applicazione continua $\map{u}{I^n}{X}$. Un cubo di dimensione $n\ge 1$ si dice \defterm{degenere} se non dipende dall'ultima coordinata, ossia se $u(x_1,\ldots,x_{n-1},x_n)=u(x_1,\ldots,x_{n-1},x_n')$ per ogni $x_1,\ldots,x_n,x_n'\in I$.
 \end{definition}
 
-Denotiamo con $Q_n(X)$ il gruppo abeliano libero avente per base l'insieme dei cubi singolari di dimensione $n$, con $D_n(X)\subs Q_n(X)$ il sottogruppo generato dai cubi degeneri di dimensione $n$. Per definire il complesso $Q_\bullet(X)$ è necessario costruire mappe di bordo $\map{d_n}{Q_n(X)}{Q_{n-1}(X)}$.
+Denotiamo con $Q_n(X)$ il gruppo abeliano libero avente per base l'insieme dei cubi singolari di dimensione $n$, e con $D_n(X)\subs Q_n(X)$ il sottogruppo generato dai cubi degeneri di dimensione $n$. Per definire il complesso $Q_\bullet(X)$ è necessario costruire mappe di bordo $\map{d_n}{Q_n(X)}{Q_{n-1}(X)}$.
 
 Siano $u$ un cubo di dimensione $n$, $p,q\in\NN$ con $p+q=n$, $H$ un sottoinsieme di $\{1,\ldots,n\}$ di cardinalità $p$, $K$ il complementare di $H$, $\varphi_K$ l'unica applicazione strettamente crescente da $K$ in $\{1,\ldots,q\}$; sia inoltre $\epsilon\in\{0,1\}$. Definiamo allora il cubo singolare $\lambda^\epsilon_Hu$ di dimensione $q$:
 $$
@@ -22,7 +22,7 @@ d_nu=\sum_{i=1}^n\sum_{\epsilon=0}^1(-1)^{i+\epsilon}\lambda^\epsilon_iu,
 $$
 estendendola per $\ZZ$-linearità a tutto $Q_n(X)$. È immediato verificare che $\lambda^\epsilon_i\lambda^{\epsilon'}_j=\lambda^{\epsilon'}_{j-1}\lambda^\epsilon_i$; un semplice conto mostra allora che $d_nd_{n+1}=0$. Abbiamo così definito il complesso $Q_\bullet(X)$. Si vede inoltre che $D_\bullet(X)$ è un sottocomplesso di $Q_\bullet(X)$: se $u$ è un cubo degenere di dimensione $n$, allora anche $\lambda^\epsilon_iu$ è degenere per $0\le i<n$, mentre $\lambda^0_nu=\lambda^1_nu$, pertanto $du$ è degenere.
 \begin{definition}
-Si dice complesso singolare (cubico) di $X$ il complesso $C_\bullet(X)=Q_\bullet(X)/D_\bullet(X)$. I suoi gruppi di omologia e coomologia a coefficienti in un gruppo abeliano $G$ si dicono gruppi di omologia e coomologia singolare (cubica) di $X$ a coefficienti in $G$.
+Si dice \defterm{complesso singolare (cubico)} di $X$ il complesso $C_\bullet(X)=Q_\bullet(X)/D_\bullet(X)$. I suoi gruppi di omologia e coomologia a coefficienti in un gruppo abeliano $G$ si dicono \defterm{gruppi di omologia e coomologia singolare (cubica)} di $X$ a coefficienti in $G$.
 \end{definition}
 Poiché nel seguito faremo uso esclusivamente dell'omologia singolare cubica, impiegheremo le notazioni classiche dell'omologia singolare: 
 \begin{align*}
@@ -73,7 +73,7 @@ Alla luce di questa proposizione, nel seguito utilizzeremo sempre (almeno quando
 
 \section{Spazi fibrati}
 \begin{definition}
-Un'applicazione continua suriettiva $\map{p}{E}{B}$ si dice fibrazione se soddisfa la seguente proprietà (sollevamento dell'omotopia per poliedri finiti): dati un poliedro finito $P$ e due applicazioni continue $\map{f}{P\times I}{B}$, $\map{g}{P}{E}$ tali che $pg=fi$ (dove $i$ denota l'inclusione $\map{i}{P}{P\times I}$ definita da $i(x)=(0,x)$), esiste un'applicazione continua $\map{h}{P\times I}{E}$ tale che $ph=f$ e $hi=g$.
+Un'applicazione continua suriettiva $\map{p}{E}{B}$ si dice \defterm{fibrazione} se soddisfa la seguente proprietà (sollevamento dell'omotopia per poliedri finiti): dati un poliedro finito $P$ e due applicazioni continue $\map{f}{P\times I}{B}$, $\map{g}{P}{E}$ tali che $pg=fi$ (dove $i$ denota l'inclusione $\map{i}{P}{P\times I}$ definita da $i(x)=(0,x)$), esiste un'applicazione continua $\map{h}{P\times I}{E}$ tale che $ph=f$ e $hi=g$.
 \begin{diagram}
 P\rar{g}\dar{i}&E\dar{p}\\
 P\times I\rar{f}\ar[ru,dashed,"h"]&B
@@ -143,7 +143,7 @@ D'ora in poi considereremo solo fibrazioni con spazio base, spazio totale e fibr
 Ci proponiamo ora di mostrare come il gruppo fondamentale di $B$ agisca sui gruppi di omologia e coomologia di $F$.
 
 \begin{definition}
-Siano $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ un'applicazione che a ogni cubo $u$ di dimensione $n$ di $F$ associa un cubo $Tu$ di $E$ di dimensione $n+1$. $T$ si dice costruzione subordinata a $\gamma$ se soddisfa le seguenti proprietà per ogni cubo $u$ di dimensione $n$:
+Siano $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ un'applicazione che a ogni cubo $u$ di dimensione $n$ di $F$ associa un cubo $Tu$ di $E$ di dimensione $n+1$. $T$ si dice \defterm{costruzione subordinata} a $\gamma$ se soddisfa le seguenti proprietà per ogni cubo $u$ di dimensione $n$:
 \begin{enumerate}
 \item $\lambda^0_1 Tu=u$;
 \item $(p\circ Tu)(t,x_1,\ldots,x_n)=\gamma(t)$;
