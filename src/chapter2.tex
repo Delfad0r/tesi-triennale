@@ -1,5 +1,5 @@
 \chapter{Omologia e coomologia degli spazi fibrati}
-
+\label{ch:homology-and-cohomology-of-fibrations}
 \section{Omologia singolare cubica}
 
 L'omologia singolare classica utilizza i simplessi singolari come oggetti fondamentali. Per la teoria degli spazi fibrati dovremo introdurre la nozione di omologia singolare cubica, che impiega cubi in luogo dei simplessi. Tuttavia, come vedremo nel paragrafo \ref{cubic-homology:comparison}, dal punto di vista dell'omologia e della coomologia non vi è alcuna differenza. Per una trattazione completa della teoria dell'omologia singolare cubica, senza alcun riferimento a quella singolare classica, si veda \cite{massey}.
@@ -65,7 +65,7 @@ per ogni $\epsilon_1,\ldots,\epsilon_n\in\{0,1\}$. Seguono in modo naturale le d
 Supponiamo che $X$ sia connesso per archi. Allora l'inclusione di complessi $C_\bullet(X/x_0)\subs C_\bullet(X)$ induce isomorfismi $H_i(X/x_0)\iso H_i(X)$ e $H^i(X/x_0)\iso H^i(X)$ in omologia e in coomologia.
 \end{proposition}
 
-Alla luce di questa proposizione, nel seguito utilizzeremo sempre (almeno quando $X$ sarà connesso per archi) l'abbreviazione $Q_\bullet(X)$ in luogo di $Q_\bullet(X/x_0)$, e analogamente per $D_\bullet(X)$, $C_\bullet(X)$, $H_i(X)$, $H^i(X)$.
+Alla luce di questa proposizione, nel seguito utilizzeremo sempre (almeno quando $X$ sarà connesso per archi) l'abbreviazione $Q_\bullet(X)$ in luogo di $Q_\bullet(X/x_0)$, e analogamente per $D_\bullet(X)$, $C_\bullet(X)$, $H_i(X)$, $H^i(X)$. In altre parole, quando considereremo un cubo singolare di uno spazio connesso per archi, supporremo sempre implicitamente che abbia tutti i vertici in un punto fissato.
 %Studiando più esplicitamente l'isomorfismo fra l'omologia (e la coomologia) cubica e quella singolare classica si può dimostrare quanto segue.
 %\begin{proposition}\thlabel{cubic-homology-single-vertex}
 %Supponiamo che $X$ sia connesso per archi; sia $x\in X$ un punto fissato. Allora i gruppi di omologia e coomologia (cubica)  di $X$ rimangono inalterati se ci si limita a considerare cubi singolari aventi tutti i vertici in $x$.
@@ -125,7 +125,7 @@ Siano $\map{p}{E}{B}$ una fibrazione, $e\in E$, $b=p(e)$, $F=p^{-1}(e)$.
 \begin{proof}
 La successione esatta del punto \ref{fibration-homotopy-exact-sequence:2} segue immediatamente dalla successione esatta lunga dei gruppi di omotopia della coppia $(E,F)$, una volta dimostrato il punto \ref{fibration-homotopy-exact-sequence:1}. Mostriamo dunque che $p_*$ è un isomorfismo di gruppi.
 \begin{itemize}
-\item Per verificare che $p_*$ è iniettiva, sia $\bar{f}\in\pi_i(E,F,e)$ tale che $p_*\bar{f}=0$. Consideriamo un rappresentante $\map{f}{(D^n,S^{n-1},s)}{(E,F,e)}$ della classe $\bar{f}$. Ricordiamo che $\bar{f}=0$ se e solo se $f$ è omotopa a un'applicazione con immagine in $F$ mediante un'omotopia che fissa $S^{n-1}$. Poiché $p_*\bar{f}=0$, esiste un'omotopia $\map{H}{D^n\times I}{B}$ stazionaria su $S^{n-1}$ tale che $H_0=pf$ e $H_1(D^n)\subs\{b\}$. Consideriamo il poliedro finito contrattile 
+\item Per verificare che $p_*$ è iniettiva, sia $\bar{f}\in\pi_i(E,F,e)$ tale che $p_*\bar{f}=0$. Consideriamo un rappresentante $\map{f}{(D^n,S^{n-1},s)}{(E,F,e)}$ della classe $\bar{f}$. Ricordiamo che $\bar{f}=0$ se e solo se $f$ è omotopa a un'applicazione con immagine in $F$ mediante un'omotopia che fissa $S^{n-1}$ (si veda \citepage{hatcher}{343}). Poiché $p_*\bar{f}=0$, esiste un'omotopia $\map{H}{D^n\times I}{B}$ stazionaria su $S^{n-1}$ tale che $H_0=pf$ e $H_1(D^n)\subs\{b\}$. Consideriamo il poliedro finito contrattile 
 $$
 A=(D^n\times\{0\})\cup(S^{n-1}\times I)\subs D^n\times I.
 $$
