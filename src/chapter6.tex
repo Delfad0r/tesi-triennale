@@ -82,8 +82,7 @@ $$
 U=\{(x,y)\in S^n\times S^n:\langle x,y\rangle>0\}
 $$
 e l'omotopia
-\Map{H}{U\times I}{S^n}{(x,y,t)}{\frac{(1-t)x+ty}{\norm{(1-t)x+ty}}}
-\end{proof}
+\Map{H}{U\times I}{S^n}{(x,y,t)}{\frac{(1-t)x+ty}{\norm{(1-t)x+ty}}.}
 Evidentemente $H$ soddisfa le proprietà \ref{ULC:pr1}, \ref{ULC:pr2} e \ref{ULC:pr3}. Per quanto riguarda la proprietà \ref{ULC:pr4}, siano $x_0\in S^n$ un punto e $V\subs S^n$ un suo intorno aperto. Sia
 $$
 \lambda=\max\left\{\frac{1}{\sqrt{2}},\max\{\langle x_0,x\rangle:x\in S^n\setminus V\}\right\}<1.
@@ -93,6 +92,7 @@ $$
 V'=\{x\in S^n:\langle x_0,x\rangle>\lambda\}\subs V.
 $$
 Si verifica facilmente che $V'\times V'\subs U$ e che $H_t(V'\times V')\subs V'$, dunque $H$ soddisfa anche la proprietà \ref{ULC:pr4}.
+\end{proof}
 
 \section{Metodo generale}
 
@@ -112,7 +112,7 @@ Per ogni $n\ge 0,i\ge 1$ vale $\pi_i(X_n)=\pi_{i+n}(X)$.
 \begin{proof}
 La relazione è banalmente vera per $n=0$. Ragionando per induzione, possiamo supporre che sia vera per $n-1$. Poiché $T_{n-1}$ è il rivestimento universale di $X_{n-1}$, vale $\pi_1(T_{n-1})=0$ e $\pi_i(T_{n-1})=\pi_i(X_{n-1})=\pi_{i+n-1}(X)$ per $i\ge 2$. Consideriamo la fibrazione $\fibration{X_n}{E}{T_{n-1}}$ del \thref{loop-space-fibration} e la successione esatta lunga dei gruppi di omotopia associata:
 \begin{diagram}
-\ldots\rar&\pi_{i+1}(E)\rar&\pi_{i+1}(T_{n-1})\rar&\pi_i(X_n)\rar&\pi_i(E)\rar&\ldots
+\pi_{i+1}(E)\rar&\pi_{i+1}(T_{n-1})\rar&\pi_i(X_n)\rar&\pi_i(E).
 \end{diagram}
 Ma $E$ è contrattile, pertanto per ogni $i\ge 1$ vale $\pi_i(X_n)=\pi_{i+1}(T_{n-1})=\pi_{i+n}(X)$.
 \end{proof}
@@ -161,7 +161,7 @@ Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso; sia i
 \begin{proof}
 Consideriamo la fibrazione $\fibration{\Omega}{E}{X}$ del \thref{loop-space-fibration}. Osserviamo che $X$ ha la stessa algebra di coomologia della sfera $S^n$, dunque possiamo scrivere la successione esatta di Wang (\thref{wang-exact-sequence}) associata alla suddetta fibrazione:
 \begin{diagram}
-H^i(E;K)\rar&H^i(\Omega;K)\rar{\theta}&H^{i-n+1}(\Omega; K)\rar&H^{i+1}(E;K)
+H^i(E;K)\rar&H^i(\Omega;K)\rar{\theta}&H^{i-n+1}(\Omega; K)\rar&H^{i+1}(E;K).
 \end{diagram}
 Poiché $E$ è contrattile, $\theta$ è un isomorfismo e $H^i(\Omega;K)=H^{i-(n-1)}(\Omega;K)$ per ogni $i>0$, ossia
 $$

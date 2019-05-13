@@ -1,7 +1,8 @@
 \chapter{Successione spettrale omologica di uno spazio fibrato}
 \label{ch:homological-spectral-sequence-of-fibration}
 \section{Costruzione della successione spettrale}
-Consideriamo una fibrazione $\fibration{F}{E}{B}$. Continueremo a supporre che $B$, $E$ e $F$ siano connessi per archi. Il nostro obiettivo è mettere in relazione i gruppi di omologia di $B$, $E$ e $F$; lo strumento che adopereremo sono le successioni spettrali. In questa sezione ci capiterà di richiedere l'esistenza di costruzioni (analoghe a quella del \thref{fibration-H-construction}) che associno cubi ad altri cubi, soddisfacendo determinate proprietà. Per separare nettamente la parte algebrica da quella topologica e per evitare di allungare eccessivamente le dimostrazioni, già piuttosto estese, abbiamo preferito rimandare le verifiche relative alle suddette costruzioni alla fine del capitolo (sezione \ref{spectral-sequence-of-fibration:proofs}).
+\todo{Questa sezione è troppo corta, e si vede!}
+Consideriamo una fibrazione $\fibration{F}{E}{B}$. Continueremo a supporre che $B$, $E$ e $F$ siano connessi per archi. Il nostro obiettivo è mettere in relazione i gruppi di omologia di $B$, $E$ e $F$; lo strumento che adopereremo sono le successioni spettrali. In questa sezione ci capiterà di richiedere l'esistenza di costruzioni (analoghe a quella del lemma \ref{fibration-H-construction}) che associno cubi ad altri cubi, soddisfacendo determinate proprietà. Per separare nettamente la parte algebrica da quella topologica e per evitare di allungare eccessivamente le dimostrazioni, già piuttosto estese, abbiamo preferito rimandare le verifiche relative alle suddette costruzioni alla fine del capitolo (sezione \ref{spectral-sequence-of-fibration:proofs}).
 
 \subsection{Filtrazione del complesso singolare}
 Per applicare i risultati della sezione \ref{sec:spectral-sequence-filtered-complex}, è necessario definire una filtrazione crescente sul complesso singolare $C_\bullet(E)$ (d'ora in poi ometteremo la $E$ fra parentesi). Ciò che faremo sarà filtrare il complesso $Q_\bullet$ con dei sottocomplessi $Q^p_\bullet$ e prenderne le immagini nel quoziente $C_\bullet$.
@@ -32,7 +33,7 @@ $$
 in quanto per $i\le p$ vale $\lambda^\epsilon_iu\in Q^{p-1}_\bullet$.
 
 Consideriamo il complesso $J^p_\bullet=C_p(B)\tensor C_\bullet(F)$ con mappe di bordo $d_J(b\tensor f)=(-1)^pb\tensor df$, e sia $\varphi^p$ il morfismo di complessi
-\Map{\varphi^p}{E^{p,\bullet}_0}{J^p_\bullet}{u}{B^pu\tensor F^pu}
+\Map{\varphi^p}{E^{p,\bullet}_0}{J^p_\bullet}{u}{B^pu\tensor F^pu.}
 Le proprietà \ref{spectral-sequence-of-fibration:pr1} e \ref{spectral-sequence-of-fibration:pr2} garantiscono che si tratta di una buona definizione (ossia che è compatibile con il quoziente che definisce $E^{p,\bullet}_0$), mentre dalla \ref{spectral-sequence-of-fibration:pr3} segue che $\varphi^p$ è effettivamente un morfismo di complessi:
 \begin{align*}
 \varphi^pd^p_0u&=\varphi^p\sum_{i>p}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_iu\\
@@ -44,7 +45,7 @@ Le proprietà \ref{spectral-sequence-of-fibration:pr1} e \ref{spectral-sequence-
 
 Ci proponiamo di mostrare che $\varphi^p$ è in realtà un'equivalenza omotopica. Sfrutteremo il seguente lemma per costruire un'inversa omotopica.
 
-\begin{restatable}{lemma}{spectralsequenceoffibrationKconstruction}\thlabel{spectral-sequence-of-fibration-K-construction}
+\begin{restatable}{lemma}{spectralsequenceoffibrationKconstruction}\label{spectral-sequence-of-fibration-K-construction}
 Esiste un'applicazione $K$ che associa a ogni coppia di cubi $(u,v)$ con $u\in Q_p(B)$ e $v\in Q_q(F)$ un cubo $K(u,v)\in Q^p_{p+q}$ e che soddisfa le seguenti proprietà:
 \begin{enumerate}
 \item\label{spectral-sequence-of-fibration-K-construction:pr1} $B^pK(u,v)=u$ e $F^pK(u,v)=v$;
@@ -57,7 +58,7 @@ La dimostrazione è rimandata alla fine del capitolo (sezione \ref{spectral-sequ
 \end{proof}
 
 Definiamo allora il morfismo di complessi
-\Map{\psi^p}{J^p_\bullet}{E^{p,\bullet}_0}{u\tensor v}{K(u,v)}
+\Map{\psi^p}{J^p_\bullet}{E^{p,\bullet}_0}{u\tensor v}{K(u,v).}
 Osserviamo che $\psi^p$ è ben definito (ossia è compatibile con i quozienti che definiscono $J^p_\bullet$): infatti se $u$ è degenere allora $B^pK(u,v)$ è degenere per la \ref{spectral-sequence-of-fibration-K-construction:pr1}, dunque $K(u,v)\in Q^{p-1}_\bullet$. Se invece $v$ è degenere allora $K(u,v)$ è degenere per la \ref{spectral-sequence-of-fibration-K-construction:pr3}. Inoltre $\psi^p$ è effettivamente un morfismo di complessi, come mostra un semplice verifica:
 \begin{align*}
 \psi^pd_J(u\tensor v)&=(-1)^p\psi^p(u\tensor dv)\\
@@ -74,7 +75,7 @@ Per ogni $p$ la mappa $\map{\varphi^p}{E^{p,\bullet}_0}{J^p_\bullet}$ è un'equi
 \end{proposition}
 \begin{proof}
 Si vede immediatamente che $\varphi^p\psi^p=\1$. Per dimostrare che $\psi^p\varphi^p$ è omotopo all'identità ci serviremo del seguente lemma.
-\begin{restatable}{lemma}{spectralsequenceoffibrationSconstruction}\thlabel{spectral-sequence-of-fibration-S-construction}
+\begin{restatable}{lemma}{spectralsequenceoffibrationSconstruction}\label{spectral-sequence-of-fibration-S-construction}
 Esiste un'applicazione $S$ che associa a ogni cubo $u\in Q^p_n$ un cubo $Su\in Q^p_{n+1}$ e che soddisfa le seguenti proprietà:
 \begin{enumerate}
 \item\label{spectral-sequence-of-fibration-S-construction:pr1} $B^pSu=B^pu$;
@@ -179,7 +180,7 @@ La dimostrazione segue esattamente lo schema di quella della \thref{homology-of-
 \begin{proposition}\thlabel{fibration-homology-exact-sequence}
 Siano $G$ un PID, $\fibration{F}{E}{B}$ una fibrazione in cui il gruppo fondamentale di $B$ agisce banalmente sui moduli di omologia di $F$. Supponiamo che $H_i(B;G)=0$ per $0<i<p$ e che $H_i(F;G)=0$ per $0<i<q$. Allora esiste una successione esatta
 \begin{diagram}
-H_{p+q-1}(F;G)\rar&H_{p+q-1}(E;G)\rar&H_{p+q-1}(B;G)\rar{d_{p+q-1}}&H_{p+q-2}(F;G)\rar&\ldots\rar&H_2(B;G)\rar{d_2}&H_1(F;G)\rar&H_1(E;G)\rar&H_1(B;G)\rar&0
+H_{p+q-1}(F;G)\rar&H_{p+q-1}(E;G)\rar&H_{p+q-1}(B;G)\rar{d_{p+q-1}}&H_{p+q-2}(F;G)\rar&\ldots\rar&H_2(B;G)\rar{d_2}&H_1(F;G)\rar&H_1(E;G)\rar&H_1(B;G).
 \end{diagram}
 \end{proposition}
 \begin{proof}
@@ -191,7 +192,7 @@ da cui $E^{i,j}_2=0$ se $i,j>0$ e $i+j\le p+q-1$. Pertanto, se $1\le n\le p+q-1$
 \end{proof}
 
 \section{Dimostrazione dei lemmi \ref{spectral-sequence-of-fibration-K-construction} e \ref{spectral-sequence-of-fibration-S-construction}}\label{spectral-sequence-of-fibration:proofs}
-Poiché le dimostrazioni dei due lemmi non si discostano molto da quella del \thref{fibration-H-construction} e le verifiche non presentano sostanziali difficoltà, ometteremo alcuni dettagli.
+Poiché le dimostrazioni dei due lemmi non si discostano molto da quella del lemma \ref{fibration-H-construction} e le verifiche non presentano sostanziali difficoltà, ometteremo alcuni dettagli.
 
 \spectralsequenceoffibrationKconstruction*
 \begin{proof}

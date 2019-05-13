@@ -29,13 +29,13 @@ Siano $E^{p,q}_r\converges H_{p+q}$ una successione spettrale, $i,j,r>0$ interi 
 \end{itemize}
 Denotiamo con $\pre{n}{E}'_r$ il gruppo $E^{p,q}_r$ con $p=a'_n$, $q=b'_n$, e analogamente sia $\pre{n}{E}''_r$ il gruppo $E^{p,q}_r$ con $p=a''_n$, $q=b''_n$. Denotiamo inoltre con $\pre{n}{d}$ l'applicazione $\map{d^{p,q}_s}{\pre{n}{E}''_r}{\pre{n-1}{E}'_r}$ corrispondente a $p=a''_n$, $q=b''_n$, $s=a''_n-a'_{n-1}$ oppure l'applicazione nulla se $s<r$. Allora $\pre{n}{d}$ è ben definita per ogni $i\le n<j$ ed esiste una successione esatta
 \begin{diagram}
-\pre{j}{E}'_r\rar&H_j\rar&\pre{j}{E}''_r\rar{\pre{j}{d}}&\pre{j-1}E'_r\rar&\ldots\rar{\pre{i+1}{d}}&\pre{i}{E}'_r\rar&H_i\rar&\pre{i}{E}''_r
+\pre{j}{E}'_r\rar&H_j\rar&\pre{j}{E}''_r\rar{\pre{j}{d}}&\pre{j-1}E'_r\rar&\ldots\rar{\pre{i+1}{d}}&\pre{i}{E}'_r\rar&H_i\rar&\pre{i}{E}''_r.
 \end{diagram}
 \end{proposition}
 \begin{proof}
 Siano $i\le n\le j$, $p,q$ interi con $p+q=n$ e $p\neq a'_n,a''_n$. Poiché $E^{p,q}_r=0$, anche $E^{p,q}_s=0$ per $s\ge r$, e dunque $E^{p,q}_\infty=0$. Dalla definizione di convergenza segue che $\pre{n}{E}'_\infty=H_n'$ e $\pre{n}{E}''_\infty=H_n''/H_n'=H_n/\pre{n}{E}'_\infty$, dove $H_n'$ è il termine della filtrazione $H^p_n$ corrispondente a $p=a'_n$ e $H_n''$ quello corrispondente a $p=a''_n$. Abbiamo dunque la successione esatta
 \begin{diagram}\label{spectral-exact-sequence:first-exact-sequence}\tag{$\star$}
-0\rar&\pre{n}{E}'_\infty\rar&H_n\rar&\pre{n}{E}''_\infty\rar&0
+0\rar&\pre{n}{E}'_\infty\rar&H_n\rar&\pre{n}{E}''_\infty\rar&0.
 \end{diagram}
 Mostriamo ora i seguenti fatti.
 \begin{itemize}
@@ -55,7 +55,7 @@ Inoltre vale in ogni caso
 Partendo dalla \eqref{spectral-exact-sequence:first-exact-sequence} possiamo così scrivere le successioni esatte
 \begin{diagram}
 \pre{n+1}{E}''_r\rar{\pre{n+1}{d}}&\pre{n}{E}'_r\rar&H_n\rar&\pre{n}{E}''_r\\
-\pre{n}{E}'_r\rar&H_n\rar&\pre{n}{E}''_r\rar{\pre{n}{d}}&\pre{n-1}{E}'_r
+\pre{n}{E}'_r\rar&H_n\rar&\pre{n}{E}''_r\rar{\pre{n}{d}}&\pre{n-1}{E}'_r,
 \end{diagram}
 la prima valida per $i\le n<j$ e la seconda per $i<n\le j$. Sovrapponendole si ottiene la successione esatta della tesi.
 \end{proof}
@@ -101,7 +101,7 @@ I gruppi $E^{p,q}_r$, insieme alle mappe di bordo $d^{p,q}_r$, formano una succe
 \begin{proof}
 Mostriamo preliminarmente un semplice lemma che utilizzeremo più volte nel corso della dimostrazione.
 \begin{lemma*}
-$d(Z^{p,q}_r)=B^{p-r,q+r-1}_r$
+$d(Z^{p,q}_r)=B^{p-r,q+r-1}_r$.
 \end{lemma*}
 \begin{proof}
 Mostriamo le due inclusioni.
@@ -119,7 +119,7 @@ Verifichiamo le tre proprietà che caratterizzano una successione spettrale.
 \item La composizione $d^{p-r,q+r-1}_r\circ d^{p,q}_r$ è nulla poiché le mappe di bordo sono definite a partire dalle mappe di bordo del complesso $C_\bullet$ per passaggio al quoziente, e $d_{n-1}\circ d_n=0$.
 \item Dobbiamo verificare che $E^{p,q}_{r+1}=\ker d^{p,q}_r/\im d^{p+r,q-r+1}_r$. Ricordiamo che $d^{p,q}_r$ è definita a partire da $d$ per passaggio al quoziente:
 $$
-\map{d^{p,q}_r}{\frac{Z^{p,q}_r}{Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1}}}{\frac{Z^{p-r,q+r-1}_r}{Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1}}}
+\map{d^{p,q}_r}{\frac{Z^{p,q}_r}{Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1}}}{\frac{Z^{p-r,q+r-1}_r}{Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1}}}.
 $$
 Mostriamo che 
 $$
@@ -129,7 +129,7 @@ $$
 \item[($\subs$)] Sia $x\in d^{-1}(Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1})$. Ciò significa che esiste un $y\in B^{p-r,q+r-1}_{r-1}$ tale che $dx-y\in Z^{p-r-1,q+r}_{r-1}$. Inoltre esiste un $y'\in Z^{p-1,q+1}_{r-1}$ tale che $dy'=y$. Segue che $d(x-y')\in C^{p-r-1}_{n-1}$, da cui $x-y'\in C^p_n\cap d^{-1}(C^{p-r-1}_{n-1})=Z^{p,q}_{r+1}$. Ma allora $x\in Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1}$.
 \item[($\sups$)] Per il lemma abbiamo
 $$
-d(Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1})\subs B^{p-r,q+r-1}_{r-1}+B^{p-r-1,q+r}_{r-1}\subs B^{p-r,q+r-1}_{r-1}+Z^{p-r-1,q+r}_{r-1}
+d(Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1})\subs B^{p-r,q+r-1}_{r-1}+B^{p-r-1,q+r}_{r-1}\subs B^{p-r,q+r-1}_{r-1}+Z^{p-r-1,q+r}_{r-1}.
 $$
 \end{itemize}
 Dall'uguaglianza appena dimostrata segue che
@@ -138,7 +138,7 @@ $$
 $$
 Consideriamo ora la mappa
 $$
-\map{d^{p+r,q-r+1}_r}{\frac{Z^{p+r,q-r+1}_r}{Z^{p+r-1,q-r+2}_{r-1}+B^{p+r,q-r+1}_{r-1}}}{\frac{Z^{p,q}_r}{Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1}}}
+\map{d^{p+r,q-r+1}_r}{\frac{Z^{p+r,q-r+1}_r}{Z^{p+r-1,q-r+2}_{r-1}+B^{p+r,q-r+1}_{r-1}}}{\frac{Z^{p,q}_r}{Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1}}}.
 $$
 Dal lemma segue immediatamente che
 $$
@@ -207,7 +207,7 @@ Siano $E^{p,q}_r\converges H^{p+q}$ una successione spettrale coomologica, $i,j,
 \end{itemize}
 Denotiamo con $\pre{n}{E}'_r$ il gruppo $E^{p,q}_r$ con $p=a'_n,q=b'_n$, e analogamente sia $\pre{n}{E}''_r$ il gruppo $E^{p,q}_r$ con $p=a''_n,q=b''_n$. Denotiamo inoltre con $\pre{n}{d}$ l'applicazione $\map{d^{p,q}_s}{\pre{n}{E}'_r}{\pre{n+1}{E}''_r}$ corrispondente a $p=a'_n$, $q=b'_n$, $s=a''_n-a'_{n+1}$ oppure l'applicazione nulla se $s<r$. Allora $\pre{n}{d}$ è ben definita per ogni $i\le n<j$ ed esiste una successione esatta
 \begin{diagram}
-\pre{i}{E}''_r\rar&H^i\rar&\pre{i}{E}'_r\rar{\pre{i}{d}}&\pre{i+1}E''_r\rar&\ldots\rar{\pre{j-1}{d}}&\pre{j}{E}''_r\rar&H^j\rar&\pre{j}{E}'_r
+\pre{i}{E}''_r\rar&H^i\rar&\pre{i}{E}'_r\rar{\pre{i}{d}}&\pre{i+1}E''_r\rar&\ldots\rar{\pre{j-1}{d}}&\pre{j}{E}''_r\rar&H^j\rar&\pre{j}{E}'_r.
 \end{diagram}
 \end{proposition}
 
@@ -220,7 +220,7 @@ Sia $C^\bullet$ un cocomplesso di gruppi abeliani con $C^n=0$ per $n<0$. Si dice
 \item $C^p_{p+1}=0$.
 \end{enumerate}
 \end{definition}
-In modo del tutto analogo a quanto visto per le filtrazioni crescenti, è possibile costruire una successione spettrale coomologica associata a un cocomplesso filtrato. Riportiamo per completezza i passi fondamentali. Definiamo
+In modo del tutto analogo a quanto visto per le filtrazioni crescenti di complessi, è possibile costruire una successione spettrale coomologica associata a un cocomplesso filtrato. Riportiamo per completezza i passi fondamentali. Definiamo
 \begin{itemize}
 \item $Z^{p,q}_r=C_p^n\cap (d^n)^{-1}(C_{p+r}^{n+1})$;
 \item $Z^{p,q}_\infty=C_p^n\cap(d^n)^{-1}(0)$;

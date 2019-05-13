@@ -42,10 +42,13 @@ dove $H$ varia fra i sottoinsiemi di $\{1,\ldots,p+q\}$ di cardinalità $p$, $K$
 $$
 d(f\cupp g)=df\cupp g+(-1)^pf\cupp dg,
 $$
-da cui segue che il \cupproduct{} passa al quoziente, definendo un prodotto in coomologia $H^*(X;G)\times H^*(X;G)\to H^*(X;G)$.
+da cui segue che il \cupproduct{} passa al quoziente, definendo un prodotto in coomologia 
+$$
+H^*(X;G)\times H^*(X;G)\longrightarrow H^*(X;G).
+$$
 
 \subsection{Confronto con altre teorie omologiche}\label{cubic-homology:comparison}
-Come mostrato in \citechapter{eilenberg-maclane1953}{8} l'approccio dell'omologia cubica conduce ai medesimi risultati dell'omologia singolare classica.
+Come mostrato in \citechapter{eilenberg-maclane1953}{8}, l'approccio dell'omologia cubica conduce ai medesimi risultati dell'omologia singolare classica.
 
 \begin{proposition}\thlabel{cubic-homology-isomorphic-classical-homology}
 Denotiamo con $H_i^\Delta(X;G)$ e $H^i_\Delta(X;G)$ i gruppi di omologia e coomologia singolare classiche. Allora $H_i(X;G)\iso H_i^\Delta(X;G)$ e $H^i(X;G)\iso H_\Delta^i(X;G)$. Inoltre, se $G$ è anche un anello, allora l'isomorfismo in coomologia preserva la struttura moltiplicativa.
@@ -103,7 +106,7 @@ X'\ar[dr,"i'"]\rar{f'}\ar[ru,"g'"]&B\\
 dove $X'=A\times I^{n-1}$, $j(x)=(x,s_1\ldots,s_{n-1})$, $i'(x)=(x,s_n)$ e $f'=fi'$; L'esistenza di $g'$ è garantita dall'ipotesi induttiva, e l'esistenza di $g$ deriva dalla definizione di fibrazione (infatti $X=X'\times I$, e si vede facilmente che non serve richiedere $s_n=0$). Poiché $i=i'j$ e il diagramma commuta, si ottiene immediatamente che $ph=f$ e $hi=g$.
 \end{proof}
 Sia $Y$ il poliedro $X/A$; denotiamo con $\map{q}{X}{Y}$ la proiezione. Consideriamo un'immersione $\map{j}{Y}{I^n}$ per un qualche $n\ge 0$. Sia $s$ il punto di $I^n$ tale che $jq(A)=\{s\}$. Poiché $A$ è contrattile, esiste una retrazione\footnote{Questo si può vedere, ad esempio, applicando il lemma di estensione (\cite[lemma 4.7]{hatcher}) all'identità $\map{\1}{A}{A}$.} $\map{r}{X}{A}$. Definiamo l'immersione
-\Map{l}{X}{A\times I^n}{x}{(r(x),jq(x))}
+\Map{l}{X}{A\times I^n}{x}{(r(x),jq(x)).}
 Poiché $l(X)$ è un poliedro contrattile, esiste una retrazione $A\times I^n\to l(X)$, che permette di estendere $\map{fl^{-1}}{l(X)}{B}$ a $\map{\tilde{f}}{A\times I^n}{B}$. Abbiamo così il diagramma commutativo
 \begin{diagram}
 A\rar{g}\dar{i}&E\dar{p}\\
@@ -118,7 +121,7 @@ Siano $\map{p}{E}{B}$ una fibrazione, $e\in E$, $b=p(e)$, $F=p^{-1}(e)$.
 \item\label{fibration-homotopy-exact-sequence:1} La mappa $p$ induce un isomorfismo $\map{p_*}{\pi_i(E,F,e)}{\pi_i(B,b)}$ per ogni $i\ge 1$.
 \item\label{fibration-homotopy-exact-sequence:2} Esiste una successione esatta lunga di gruppi
 \begin{diagram}
-\ldots\rar&\pi_{i+1}(E,e)\rar&\pi_{i+1}(B,b)\rar&\pi_i(F,e)\rar&\pi_i(E,e)\rar&\ldots\rar&\pi_1(E,e)\rar&\pi_1(B,b)
+\ldots\rar&\pi_{i+1}(E,e)\rar&\pi_{i+1}(B,b)\rar&\pi_i(F,e)\rar&\pi_i(E,e)\rar&\ldots\rar&\pi_1(E,e)\rar&\pi_1(B,b).
 \end{diagram}
 \end{enumerate}
 \end{proposition}
@@ -130,7 +133,7 @@ $$
 A=(D^n\times\{0\})\cup(S^{n-1}\times I)\subs D^n\times I.
 $$
 Definiamo un sollevamento di $H$
-\Map{\tilde{H}}{A}{E}{(x,t)}{f(x)}
+\Map{\tilde{H}}{A}{E}{(x,t)}{f(x).}
 Per la \thref{homotopy-lifting-plus} $\tilde{H}$ si estende un'omotopia definita su tutto a tutto $D^n\times I$. Osserviamo che $\tilde{H}_0=f$, $\tilde{H}_1(D^n)\subs F$ e $\tilde{H}$ è stazionaria su $S^{n-1}$, dunque $\bar{f}=0$.
 \item Per verificare che $p_*$ è suriettiva, sia $\bar{g}\in\pi_i(B,b)$. Sia $\map{g}{(D^n,S^n)}{(B,b)}$ un rappresentante della classe $\bar{g}$. Consideriamo il poliedro finito contrattile $\{s\}\subs D^n$ e l'applicazione $\map{f}{\{s\}}{E}$ tale che $f(s)=e$. Per la \thref{homotopy-lifting-plus} $f$ si estende a tutto $D^n$ in modo che $pf=g$. Si vede immediatamente che la classe di omotopia di $f$ appartiene a $\pi_i(E,F,e)$, dunque $p_*\bar{f}=\bar{g}$.
 \end{itemize}
@@ -152,14 +155,14 @@ Siano $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ un'applicazione 
 \end{enumerate}
 \end{definition}
 Ogni costruzione $T$ induce un morfismo di complessi
-\Map{S_T}{C_\bullet(F)}{C_\bullet(F)}{u}{\lambda^1_1Tu}
+\Map{S_T}{C_\bullet(F)}{C_\bullet(F)}{u}{\lambda^1_1Tu.}
 Le proprietà delle costruzioni garantiscono che $S_Tu$ è effettivamente un cubo di $F$, che cubi degeneri vengono mandati in cubi degeneri e che $S_T$ commuta con la mappa di bordo. A sua volta, $S_T$ induce endomorfismi dei gruppi di omologia e coomologia di $F$.
 \begin{proposition}\thlabel{subordinate-construction-homotopy-equivalence}
 Siano $\gamma_0,\gamma_1$ cammini chiusi in $B$ con estremi in $b$, $T_0,T_1$ costruzioni subordinate rispettivamente a $\gamma_0,\gamma_1$. Supponiamo che $\gamma_0,\gamma_1$ siano omotopi mediante un'omotopia che fissa gli estremi. Allora i morfismi di complessi $S_{T_0}$ e $S_{T_1}$ sono omotopi.
 \end{proposition}
 \begin{proof}
 Per costruire l'omotopia fra $S_{T_0}$ e $S_{T_1}$ faremo uso del seguente lemma.
-\begin{restatable}{lemma}{fibrationHconstruction}\thlabel{fibration-H-construction}
+\begin{restatable}{lemma}{fibrationHconstruction}\label{fibration-H-construction}
 Esiste un'applicazione $H$ che associa a ogni cubo $u\in Q_n(F)$ un cubo $Hu\in Q_{n+2}(E)$ e che soddisfa le seguenti proprietà:
 \begin{enumerate}
 \item\label{fibration-H-construction:pr1} $\lambda^\epsilon_2Hu=T_\epsilon u$ per $\epsilon\in\{0,1\}$;
@@ -171,7 +174,7 @@ Esiste un'applicazione $H$ che associa a ogni cubo $u\in Q_n(F)$ un cubo $Hu\in 
 Per non allungare eccessivamente questa sezione, rimandiamo la dimostrazione alla fine del capitolo (sezione \ref{fibration:lemma-proof}).
 \end{proof}
 Definiamo allora l'applicazione
-\Map{h}{C_n(F)}{C_{n+1}(F)}{u}{\lambda_1^1Hu}
+\Map{h}{C_n(F)}{C_{n+1}(F)}{u}{\lambda_1^1Hu.}
 estesa per $\ZZ$-linearità. La proprietà \ref{fibration-H-construction:pr3} garantisce che $h$ è ben definita (ossia è compatibile con il quoziente che definisce $C_n(F)$). Sfruttiamo le altre due proprietà per mostrare che $h$ è un'omotopia fra $S_{T_0}$ e $S_{T_1}$:
 \begin{align*}
 dhu+hdu&=\sum_{i=1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_i\lambda^1_1Hu+\sum_{i=1}^n\sum_\epsilon(-1)^{i+\epsilon}\lambda^1_1H\lambda^\epsilon_iu\\
@@ -202,7 +205,7 @@ I risultati principali che ricaveremo in seguito sugli spazi fibrati richiederan
 Se $B$ è semplicemente connesso, allora $\pi_1(B)$ agisce banalmente sui gruppi di omologia e coomologia di $F$.
 \end{corollary}
 
-\section{Dimostrazione del \thref{fibration-H-construction}}
+\section{Dimostrazione del lemma \ref{fibration-H-construction}}
 \label{fibration:lemma-proof}
 Ricordiamo il contesto: abbiamo due cammini chiusi $\gamma_0,\gamma_1$ in $B$ con estremi in $b$ che sono omotopi mediante un'omotopia che fissa gli estremi; $T_0$ e $T_1$ sono costruzioni subordinate rispettivamente a $\gamma_0$ e $\gamma_1$.
 \fibrationHconstruction*

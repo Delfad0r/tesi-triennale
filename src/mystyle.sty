@@ -16,6 +16,11 @@
 \newcommand*{\citepage}[2]{\cite[p.\ #2]{#1}}
 \newcommand*{\citetheorem}[2]{\cite[th.\ #2]{#1}}
 
+% Lists
+\usepackage[shortlabels]{enumitem}
+\setlist[enumerate,1]{label={(\roman*)}}
+\setlist[itemize,1]{label=\tiny$\blacksquare$}
+
 % Math packages
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -110,7 +115,7 @@
 \newcommand*{\phantomop}{\phantom{{}={}}}
 
 % Maps
-\newcommand*{\map}[3]{#1\colon#2\to#3}
+\newcommand*{\map}[3]{#1\colon#2\mathchoice{\longrightarrow}{\to}{\to}{\to}#3}
 \newcommand*{\Map}[5]{%
 \begin{alignat*}{2}
 #1:\;&&#2&\longrightarrow#3\\

@@ -36,7 +36,7 @@ $$
 La proposizione precedente ci dice che $\psi^*$ induce un isomorfismo $E^\ast_2\iso H^*(B;H^*(F))$ di gruppi abeliani.
 Osserviamo però che su $H^*(B;H^*(F))$ è definita anche una struttura di anello, data dal \cupproduct{} su $B$ e su $F$:
 $$
-H^p(B;H^q(F))\times H^{p'}(B;H^{q'}(F))\longrightarrow H^{p+p'}(B;H^{q+q'}(F))
+H^p(B;H^q(F))\times H^{p'}(B;H^{q'}(F))\longrightarrow H^{p+p'}(B;H^{q+q'}(F)).
 $$
 Vedremo con la proposizione seguente che $\psi^*$ è anche un isomorfismo di $G$-algebre, a meno di un segno.
 
@@ -121,10 +121,10 @@ Allora esiste un isomorfismo di $G$-algebre $H^*(B;G)\tensor H^*(F;G)\iso E^\ast
 \end{proposition}
 \begin{proof}
 Consideriamo l'applicazione
-\Map{i}{C^p(B;G)\tensor H^q(F;G)}{C^p(B;H^q(F;G))}{b\tensor f}{(u\mapsto b(u)\cdot f)}
+\Map{i}{C^p(B;G)\tensor H^q(F;G)}{C^p(B;H^q(F;G))}{b\tensor f}{(u\mapsto b(u)\cdot f).}
 Per passaggio al quoziente otteniamo
 $$
-\map{i^*}{H^p(B;G)\tensor H^q(F;G)}{H^p(B;H^q(F;G))}
+\map{i^*}{H^p(B;G)\tensor H^q(F;G)}{H^p(B;H^q(F;G))}.
 $$
 È evidente che $\varphi^*\circ i^*$ preserva la struttura moltiplicativa (ricordiamo la \thref{cohomological-spectral-sequence-of-fibration-ring}), dunque è sufficiente mostrare che, sotto le ipotesi dell'enunciato, $i^*$ è un isomorfismo di $G$-moduli.
 \begin{enumerate}
@@ -138,7 +138,7 @@ H^p(B;G)\iso\Hom(H_p(B;G),G),
 $$
 dunque possiamo interpretare $i^*$ come la mappa canonica
 $$
-\map{i^*}{\Hom(H_p(B;G),G)\tensor H^q(F;G)}{\Hom(H_p(B;G),H^q(F;G))}
+\map{i^*}{\Hom(H_p(B;G),G)\tensor H^q(F;G)}{\Hom(H_p(B;G),H^q(F;G))}.
 $$
 Per additività di $\Hom(-,-)$ e di $-\tensor-$, essendo $H_p(B;G)$ libero e finitamente generato, possiamo limitarci a considerare il caso $H_p(B;G)=G$, in cui $i^*$ è ovviamente un isomorfismo.
 \item Per additività di $-\tensor-$ e di $H^p(B;-)$, essendo $H^q(F;G)$ libero e finitamente generato, possiamo limitarci a considerare il caso $H^q(F;G)=G$, in cui $i^*$ è ovviamente un isomorfismo.
@@ -150,7 +150,7 @@ Presentiamo innanzitutto il risultato duale della \thref{fibration-homology-exac
 \begin{proposition}\thlabel{fibration-cohomology-exact-sequence}
 Siano $G$ un PID, $\fibration{F}{E}{B}$ una fibrazione in cui il gruppo fondamentale di $B$ agisce banalmente sui moduli di coomologia di $F$. Supponiamo che $H^i(B;G)=0$ per $0<i<p$ e che $H^i(F;G)=0$ per $0<i<q$. Allora esiste una successione esatta
 \begin{diagram}
-H^1(B;G)\rar&H^1(E;G)\rar&H^1(F;G)\rar{d_2}&H^2(B;G)\rar&\ldots\rar&H^{p+q-2}(F;G)\rar{d_{p+q-1}}&H^{p+q-1}(B;G)\rar&H^{p+q-1}(E;G)\rar&H^{p+q-1}(F;G)
+H^1(B;G)\rar&H^1(E;G)\rar&H^1(F;G)\rar{d_2}&H^2(B;G)\rar&\ldots\rar&H^{p+q-2}(F;G)\rar{d_{p+q-1}}&H^{p+q-1}(B;G)\rar&H^{p+q-1}(E;G)\rar&H^{p+q-1}(F;G).
 \end{diagram}
 \end{proposition}
 
@@ -172,7 +172,7 @@ Denotiamo con $E^{p,q}_r$ la successione spettrale coomologica associata alla fi
 \end{diagram}
 Ricordiamo che $E^{0,n}_2=H^n(F;G)$ e che $E^{k,n-k+1}_2=H^k(B;G)\tensor H^{n-k+1}(F;G)$.
 Sia $s$ un generatore di $H^k(B;G)$; consideriamo l'isomorfismo
-\Map{g}{H^{n-k+1}(F;G)}{H^k(B;G)\tensor H^{n-k+1}(F;G)}{x}{s\tensor x}
+\Map{g}{H^{n-k+1}(F;G)}{H^k(B;G)\tensor H^{n-k+1}(F;G)}{x}{s\tensor x.}
 Posto $\theta=g^{-1}d_k$, otteniamo la successione esatta della tesi. Per mostrare la seconda parte, calcoliamo
 \begin{align*}
 d_k(x\cdot y)&=d_kx\cdot y+(-1)^{\deg x}x\cdot d_ky\\
