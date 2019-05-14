@@ -2,7 +2,9 @@
 \label{ch:homological-spectral-sequence-of-fibration}
 \section{Costruzione della successione spettrale}
 \todo{Questa sezione è troppo corta, e si vede!}
-Consideriamo una fibrazione $\fibration{F}{E}{B}$. Continueremo a supporre che $B$, $E$ e $F$ siano connessi per archi. Il nostro obiettivo è mettere in relazione i gruppi di omologia di $B$, $E$ e $F$; lo strumento che adopereremo sono le successioni spettrali. In questa sezione ci capiterà di richiedere l'esistenza di costruzioni (analoghe a quella del lemma \ref{fibration-H-construction}) che associno cubi ad altri cubi, soddisfacendo determinate proprietà. Per separare nettamente la parte algebrica da quella topologica e per evitare di allungare eccessivamente le dimostrazioni, già piuttosto estese, abbiamo preferito rimandare le verifiche relative alle suddette costruzioni alla fine del capitolo (sezione \ref{spectral-sequence-of-fibration:proofs}).
+Consideriamo una fibrazione $\fibration{F}{E}{B}$. Continueremo a supporre che $B$, $E$ e $F$ siano connessi per archi. Il nostro obiettivo è mettere in relazione i gruppi di omologia di $B$, $E$ e $F$; lo strumento che adopereremo sono le successioni spettrali.
+
+In questa sezione ci capiterà di richiedere l'esistenza di costruzioni (analoghe a quella del lemma \ref{fibration-H-construction}) che associno cubi ad altri cubi, soddisfacendo determinate proprietà. Per separare nettamente la parte algebrica da quella topologica e per evitare di allungare eccessivamente le dimostrazioni, già piuttosto estese, abbiamo preferito rimandare le verifiche relative alle suddette costruzioni alla fine del capitolo (sezione \ref{spectral-sequence-of-fibration:proofs}).
 
 \subsection{Filtrazione del complesso singolare}
 Per applicare i risultati della sezione \ref{sec:spectral-sequence-filtered-complex}, è necessario definire una filtrazione crescente sul complesso singolare $C_\bullet(E)$ (d'ora in poi ometteremo la $E$ fra parentesi). Ciò che faremo sarà filtrare il complesso $Q_\bullet$ con dei sottocomplessi $Q^p_\bullet$ e prenderne le immagini nel quoziente $C_\bullet$.
@@ -10,9 +12,16 @@ Per applicare i risultati della sezione \ref{sec:spectral-sequence-filtered-comp
 Sia dunque $Q^p_n$ il sottogruppo di $Q_n$ generato dai cubi $u\in Q_n$ tali che $p\circ u$ dipenda solo dalle prime $p$ coordinate (e $Q^p_n=Q_n$ se $p>n$). Si vede immediatamente che i $Q^p_\bullet$ sono sottocomplessi di $Q_\bullet$ e che soddisfano le proprietà di una filtrazione crescente. Dunque lo stesso vale per $C^p_\bullet=(Q^p_\bullet+D_\bullet)/D_\bullet$, che definiscono una filtrazione crescente per $C_\bullet$. Applicando la \thref{spectral-sequence-of-filtered-complex} otteniamo una successione spettrale $E^{p,q}_r\converges H_{p+q}(E)$. Come vedremo, è possibile calcolare esplicitamente i termini $E^{p,q}_2$ della successione spettrale in funzione dei gruppi di omologia di $B$ e di $F$.
 
 \section{Il termine \texorpdfstring{$E_0$}{E0}}
+Ricordiamo che $E^{p,q}_0=C^p_{p+q}/C^{p-1}_{p+q}$ e che la mappa $\map{d^{p,q}_0}{E^{p,q}_0}{E^{p,q-1}_0}$ si ottiene dalla mappa di bordo di $C_\bullet$ per passaggio al quoziente. Possiamo dunque raggruppare i termini della successione spettrale aventi $r=0$ in complessi $E^{p,\bullet}_0$, con mappe di bordo $d^p_0$. Osserviamo che
+$$
+d^p_0u=\sum_{i>p}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_iu,
+$$
+in quanto per $i\le p$ vale $\lambda^\epsilon_iu\in Q^{p-1}_\bullet$.
+
+
 Costruiamo due applicazioni $B^p$ e $F^p$ definite sui cubi di $Q^p_\bullet$ (ed estese per $\ZZ$-linearità a tutto $Q^p_\bullet$). Se $u\in\ Q^p_n$ è un cubo di dimensione $n$ con $n\ge p$, posto $q=n-p$, definiamo
 \begin{align*}
-(B^pu)(t_1,\ldots,t_p)&=pu(t_1,\ldots,t_p,0,\ldots,0);\\
+(B^pu)(t_1,\ldots,t_p)&=pu(t_1,\ldots,t_p,0,\ldots,0)\\
 (F^pu)(t_1,\ldots,t_q)&=u(0,\ldots,0,t_1,\ldots,t_q).
 \end{align*}
 $B^pu$ è un cubo di $B$ di dimensione $p$; notiamo che, poiché $u\in Q^p_n$, possiamo sostituire gli zeri nella definizione con qualunque altra $q$-upla di reali fra $0$ e $1$. $F^pu$ è invece un cubo di $F$ di dimensione $q$; la sua immagine è contenuta in $F$ poiché
@@ -25,12 +34,6 @@ Le seguenti proprietà sono di verifica immediata.
 \item\label{spectral-sequence-of-fibration:pr2} Se $u$ è degenere e $q>0$ allora $F^pu$ è degenere; se $u$ è degenere e $q=0$ allora $B^pu$ è degenere.
 \item\label{spectral-sequence-of-fibration:pr3} Se $i>p$, $\epsilon\in\{0,1\}$ allora $B^p\lambda^\epsilon_iu=B^pu$ e $F^p\lambda^\epsilon_iu=\lambda^\epsilon_{i-p}F^pu$.
 \end{enumerate}
-
-Ricordiamo che $E^{p,q}_0=C^p_{p+q}/C^{p-1}_{p+q}$ e che la mappa $\map{d^{p,q}_0}{E^{p,q}_0}{E^{p,q-1}_0}$ si ottiene dalla mappa di bordo di $C_\bullet$ per passaggio al quoziente. Possiamo dunque raggruppare i termini della successione spettrale aventi $r=0$ in complessi $E^{p,\bullet}_0$, con mappe di bordo $d^p_0$. Osserviamo che
-$$
-d^p_0u=\sum_{i>p}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_iu,
-$$
-in quanto per $i\le p$ vale $\lambda^\epsilon_iu\in Q^{p-1}_\bullet$.
 
 Consideriamo il complesso $J^p_\bullet=C_p(B)\tensor C_\bullet(F)$ con mappe di bordo $d_J(b\tensor f)=(-1)^pb\tensor df$, e sia $\varphi^p$ il morfismo di complessi
 \Map{\varphi^p}{E^{p,\bullet}_0}{J^p_\bullet}{u}{B^pu\tensor F^pu.}
@@ -156,9 +159,9 @@ dove $t\epsilon$ si trova di nuovo in posizione $i$. Si verifica facilmente che 
 &=\sum_{i=1}^p\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_ib\tensor S_{i,\epsilon,b}m.
 \end{align*}
 Passando al quoziente, ricordando che $S_{i,\epsilon, b}$ induce l'identità in omologia, otteniamo infine
-$$
-\varphi_*d^{p,q}_1\varphi_*^{-1}x=\varphi_*d^{p,q}_1\varphi_*^{-1}(b\tensor h)=db\tensor h.
-$$
+\[
+\varphi_*d^{p,q}_1\varphi_*^{-1}x=\varphi_*d^{p,q}_1\varphi_*^{-1}(b\tensor h)=db\tensor h.\qedhere
+\]
 \end{proof}
 Da questa proposizione segue immediatamente il risultato conclusivo della sezione.
 \begin{proposition}\thlabel{spectral-sequence-of-fibration-E-2}
@@ -179,9 +182,11 @@ La dimostrazione segue esattamente lo schema di quella della \thref{homology-of-
 
 \begin{proposition}\thlabel{fibration-homology-exact-sequence}
 Siano $G$ un PID, $\fibration{F}{E}{B}$ una fibrazione in cui il gruppo fondamentale di $B$ agisce banalmente sui moduli di omologia di $F$. Supponiamo che $H_i(B;G)=0$ per $0<i<p$ e che $H_i(F;G)=0$ per $0<i<q$. Allora esiste una successione esatta
-\begin{diagram}
-H_{p+q-1}(F;G)\rar&H_{p+q-1}(E;G)\rar&H_{p+q-1}(B;G)\rar{d_{p+q-1}}&H_{p+q-2}(F;G)\rar&\ldots\rar&H_2(B;G)\rar{d_2}&H_1(F;G)\rar&H_1(E;G)\rar&H_1(B;G).
-\end{diagram}
+\longexactsequence{H_{p+q-1}(F;G)\rar\&H_{p+q-1}(E;G)\rar\&H_{p+q-1}(B;G)\rar{d_{p+q-1}}\&H_{p+q-2}(F;G)\rar\&\ldots}{\ldots\rar\&H_2(B;G)\rar{d_2}\&H_1(F;G)\rar\&H_1(E;G)\rar\&H_1(B;G).}
+%\begin{diagram}
+%H_{p+q-1}(F;G)\rar&H_{p+q-1}(E;G)\rar&H_{p+q-1}(B;G)\rar{d_{p+q-1}}&H_{p+q-2}(F;G)\rar&\ldots\\
+%\ldots\rar&H_2(B;G)\rar{d_2}&H_1(F;G)\rar&H_1(E;G)\rar&H_1(B;G).
+%\end{diagram}
 \end{proposition}
 \begin{proof}
 Consideriamo la successione spettrale $E^{p,q}_r$ associata alla fibrazione. Per il teorema dei coefficienti universali vale

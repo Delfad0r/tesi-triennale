@@ -110,7 +110,7 @@ Mostriamo le due inclusioni.
 $$
 d(Z^{p,q}_r)=d(C^p_n\cap d^{-1}(C^{p-r}_{n-1}))\subs d(C^p_n)\cap C^{p-r}_{n-1}=B^{p-r,q+r-1}_r.
 $$
-\item[($\sups$)] Sia $x\in B^{p-r,q+r-1}_r$. Allora esiste $x'\in C^p_n$ tale che $dx'=x$. Poiché $dx'\in C^{p-r}_{n-1}$, allora $x'\in Z^{p,q}_r$.
+\item[($\sups$)] Sia $x\in B^{p-r,q+r-1}_r$. Allora esiste $x'\in C^p_n$ tale che $dx'=x$. Poiché $dx'\in C^{p-r}_{n-1}$, allora $x'\in Z^{p,q}_r$.\qedhere
 \end{itemize}
 \end{proof}
 Verifichiamo le tre proprietà che caratterizzano una successione spettrale.
@@ -268,9 +268,9 @@ H_q(T;G)&p=0,1\\
 \end{cases}.
 $$
 Abbiamo quindi che tutte le mappe di bordo $d^{p,q}_r$ con $r\ge 2$ sono nulle, pertanto $E^{p,q}_2=E^{p,q}_\infty$. Essendo $G$ un campo, per definizione di convergenza vale
-$$
-H_i(X;G)=\Dirsum_{p+q=i}E^{p,q}_\infty=E^{0,i}_2\dirsum E^{1,i-1}_2=H_i(T;G)\dirsum H_{i-1}(T;G).
-$$
+\[
+H_i(X;G)=\Dirsum_{p+q=i}E^{p,q}_\infty=E^{0,i}_2\dirsum E^{1,i-1}_2=H_i(T;G)\dirsum H_{i-1}(T;G).\qedhere
+\]
 \end{proof}
 \begin{corollary}\thlabel{homology-of-universal-covering-finite-fundamental-group}
 Supponiamo che $\pi$ sia finito e che $G$ sia un campo la cui caratteristica non divide l'ordine di $\pi$. Allora $H_i(X;G)=H_i(T;G)$ per ogni $i$.
@@ -285,9 +285,9 @@ H_q(T;G)&p=0\\
 \end{cases}.
 $$
 Abbiamo quindi che tutte le mappe di bordo $d^{p,q}_r$ con $r\ge 2$ sono nulle, pertanto $E^{p,q}_2=E^{p,q}_\infty$. Essendo $G$ un campo, per definizione di convergenza vale
-$$
-H_i(X;G)=\Dirsum_{p+q=i}E^{p,q}_\infty=E^{0,i}_2=H_i(T;G).
-$$
+\[
+H_i(X;G)=\Dirsum_{p+q=i}E^{p,q}_\infty=E^{0,i}_2=H_i(T;G).\qedhere
+\]
 \end{proof}
 
 \begin{proposition}\thlabel{homology-of-universal-covering-finitely-generated}

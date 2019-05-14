@@ -120,9 +120,11 @@ Siano $\map{p}{E}{B}$ una fibrazione, $e\in E$, $b=p(e)$, $F=p^{-1}(e)$.
 \begin{enumerate}
 \item\label{fibration-homotopy-exact-sequence:1} La mappa $p$ induce un isomorfismo $\map{p_*}{\pi_i(E,F,e)}{\pi_i(B,b)}$ per ogni $i\ge 1$.
 \item\label{fibration-homotopy-exact-sequence:2} Esiste una successione esatta lunga di gruppi
-\begin{diagram}
-\ldots\rar&\pi_{i+1}(E,e)\rar&\pi_{i+1}(B,b)\rar&\pi_i(F,e)\rar&\pi_i(E,e)\rar&\ldots\rar&\pi_1(E,e)\rar&\pi_1(B,b).
-\end{diagram}
+\longexactsequence{\ldots\rar\&\pi_{i+1}(E,e)\rar\&\pi_{i+1}(B,b)\rar\&\pi_i(F,e)\rar\&\pi_i(E,e)\rar\&\ldots}{\ldots\rar\&\pi_1(F)\rar\&\pi_1(E,e)\rar\&\pi_1(B,b).}
+%\begin{diagram}
+%\ldots\rar&\pi_{i+1}(E,e)\rar&\pi_{i+1}(B,b)\rar&\pi_i(F,e)\rar&\pi_i(E,e)\rar&\ldots\\
+%&\ldots\rar&\pi_1(F)\rar&\pi_1(E,e)\rar&\pi_1(B,b).
+%\end{diagram}
 \end{enumerate}
 \end{proposition}
 \begin{proof}
@@ -135,7 +137,7 @@ $$
 Definiamo un sollevamento di $H$
 \Map{\tilde{H}}{A}{E}{(x,t)}{f(x).}
 Per la \thref{homotopy-lifting-plus} $\tilde{H}$ si estende un'omotopia definita su tutto a tutto $D^n\times I$. Osserviamo che $\tilde{H}_0=f$, $\tilde{H}_1(D^n)\subs F$ e $\tilde{H}$ è stazionaria su $S^{n-1}$, dunque $\bar{f}=0$.
-\item Per verificare che $p_*$ è suriettiva, sia $\bar{g}\in\pi_i(B,b)$. Sia $\map{g}{(D^n,S^n)}{(B,b)}$ un rappresentante della classe $\bar{g}$. Consideriamo il poliedro finito contrattile $\{s\}\subs D^n$ e l'applicazione $\map{f}{\{s\}}{E}$ tale che $f(s)=e$. Per la \thref{homotopy-lifting-plus} $f$ si estende a tutto $D^n$ in modo che $pf=g$. Si vede immediatamente che la classe di omotopia di $f$ appartiene a $\pi_i(E,F,e)$, dunque $p_*\bar{f}=\bar{g}$.
+\item Per verificare che $p_*$ è suriettiva, sia $\bar{g}\in\pi_i(B,b)$. Sia $\map{g}{(D^n,S^n)}{(B,b)}$ un rappresentante della classe $\bar{g}$. Consideriamo il poliedro finito contrattile $\{s\}\subs D^n$ e l'applicazione $\map{f}{\{s\}}{E}$ tale che $f(s)=e$. Per la \thref{homotopy-lifting-plus} $f$ si estende a tutto $D^n$ in modo che $pf=g$. Si vede immediatamente che la classe di omotopia di $f$ appartiene a $\pi_i(E,F,e)$, dunque $p_*\bar{f}=\bar{g}$.\qedhere
 \end{itemize}
 \end{proof}
 
@@ -183,7 +185,7 @@ dhu+hdu&=\sum_{i=1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_i\lambda
 &=\lambda^1_1\lambda^1_1Hu-\lambda^0_1\lambda^1_1Hu\\
 &=\lambda^1_1\lambda^1_2Hu-\lambda^1_1\lambda^0_2Hu\\
 &=\lambda^1_1T_1u-\lambda^1_1T_0u\\
-&=S_{T_1}u-S_{T_0}u.
+&=S_{T_1}u-S_{T_0}u.\qedhere
 \end{align*}
 \end{proof}
 Si potrebbe dimostrare (si veda \citenumber{serre}{2}{3}) che per ogni cammino $\gamma$ esiste una costruzione subordinata a $\gamma$, e che l'applicazione $\pi_1(B,b)\to\Aut(H_n(F))$ è un omomorfismo di gruppi, ma non utilizzeremo questi risultati.
@@ -315,8 +317,8 @@ $$
 (p\circ Hu)(t,s,x_1,\ldots,x_n)=f(t,s,x_1,\ldots,x_n)=h(t,s).
 $$
 \eqitem
-$$
-(Hu)(0,s,x_1,\ldots,x_n)=g(0,s,x_1,\ldots,x_n)=u(0,s,x_1,\ldots,x_n).
-$$
+\[
+(Hu)(0,s,x_1,\ldots,x_n)=g(0,s,x_1,\ldots,x_n)=u(0,s,x_1,\ldots,x_n).\qedhere
+\]
 \end{enumerate}
 \end{proof}

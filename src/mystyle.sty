@@ -42,6 +42,11 @@
   }
 }
 \newenvironment*{diagram}[1][]{\begin{equation*}\begin{tikzcd}[#1]}{\end{tikzcd}\end{equation*}}
+\newcommand*{\longexactsequence}[2]{%
+\begin{flalign*}\begin{tikzcd}[ampersand replacement=\&]#1\end{tikzcd}&&\end{flalign*}%
+\vspace{-0.4cm}%
+\begin{flalign*}&&\begin{tikzcd}[ampersand replacement=\&]#2\end{tikzcd}\end{flalign*}%
+}
 
 % References
 \usepackage{hyperref}
