@@ -27,7 +27,6 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{bbm}
-\usepackage{spectralsequences}
 \usepackage{thmtools}
 \usepackage{thm-restate}
 
@@ -46,6 +45,25 @@
 \begin{flalign*}\begin{tikzcd}[ampersand replacement=\&]#1\end{tikzcd}&&\end{flalign*}%
 \vspace{-0.4cm}%
 \begin{flalign*}&&\begin{tikzcd}[ampersand replacement=\&]#2\end{tikzcd}\end{flalign*}%
+}
+
+% Spectral sequences
+\usepackage{spectralsequences}
+\newcommand*{\drawsseq}[2]{%
+\begin{sseqpage}[run off=...-...,classes={circle,fill},#1 Serre grading,x range={0}{3},y range={0}{3},xscale=0.8,yscale=0.8,title={$r=#2$},differentials={-stealth}]
+\begin{scope}[background]
+\node at (\xmax+1,-1) {p};
+\node at (-1,\ymax+1) {q};
+\end{scope}
+\foreach \i in {\the\numexpr-#2\relax,...,\the\numexpr3+#2\relax}
+\foreach \j in {\the\numexpr-#2-1\relax,...,\the\numexpr4+#2\relax}{
+\class(\i,\j)
+}
+\foreach \i in {0,...,\the\numexpr3+#2\relax}
+\foreach \j in {\the\numexpr-#2\relax,...,\the\numexpr4\relax}{
+\d#2(\i,\j)
+}
+\end{sseqpage}
 }
 
 % References

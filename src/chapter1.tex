@@ -10,13 +10,20 @@ Si dice \defterm{successione spettrale (omologica)} una famiglia di gruppi abeli
 \end{enumerate}
 \end{definition}
 \todo{Utile disegnino illustrativo e descrizione a parole.}
-L'intero \(p\) è detto grado filtrante, \(q\) è detto grado complementare e \(n=p+q\) è detto grado totale. Fissati \(p,q\ge 0\), per \(r\) sufficientemente grande le mappe di bordo entranti e uscenti da \(E^{p,q}_r\) sono nulle: in particolare per \(r>p\) il codominio di \(\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}}\) è nullo, mentre per \(r>q+1\) il dominio di \(\map{d^{p+r,q-r+1}_r}{E^{p+r,q-r+1}}{E^{p,q}_r}\) è nullo. Pertanto \(E^{p,q}_r\) è definitivamente uguale a un certo gruppo abeliano \(E^{p,q}_\infty\), detto gruppo terminale.
+L'intero \(p\) è detto grado filtrante, \(q\) è detto grado complementare e \(n=p+q\) è detto grado totale.
+Fissato un valore di \(r\), possiamo disporre i gruppi \(E^{p,q}_r\) su un reticolo bidimensionale con \(p\) e \(q\) come coordinate.
+
+\drawsseq{homological}{0}
+\drawsseq{homological}{1}
+\drawsseq{homological}{2}
+
+Fissati \(p,q\ge 0\), per \(r\) sufficientemente grande le mappe di bordo entranti e uscenti da \(E^{p,q}_r\) sono nulle: in particolare per \(r>p\) il codominio di \(\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}}\) è nullo, mentre per \(r>q+1\) il dominio di \(\map{d^{p+r,q-r+1}_r}{E^{p+r,q-r+1}}{E^{p,q}_r}\) è nullo. Pertanto \(E^{p,q}_r\) è definitivamente uguale a un certo gruppo abeliano \(E^{p,q}_\infty\), detto gruppo terminale.
 \begin{definition}
 Sia \(H_n\) una famiglia di gruppi abeliani indicizzata da \(n\in\ZZ\). Si dice che una successione spettrale \(E^{p,q}_r\) \defterm{converge} ai gruppi \(H_n\) (e si scrive \(E^{p,q}_r\converges H_{p+q}\)) se esistono filtrazioni
 \[
 0=H^{-1}_n\subs H^0_n\subs H^1_n\subs\ldots\subs H^{n-2}_n\subs H^{n-1}_n\subs H^n_n=H_n
 \]
-tali che \(E^{p,q}_\infty=H^p_{p+q}/H^{p-1}_{p+q}\).
+tali che \(E^{p,q}_\infty=H^p_{p+q}/H^{p-1}_{p+q}\) (dove intendiamo che \(H^p_n\) è \(0\) per \(p<0\) e \(H_n\) per \(p\ge n\)).
 \end{definition}
 
 \section{Una successione esatta}
@@ -33,7 +40,7 @@ Denotiamo con \(\pre{n}{E}'_r\) il gruppo \(E^{p,q}_r\) con \(p=a'_n\), \(q=b'_n
 \end{diagram}
 \end{proposition}
 \begin{proof}
-Siano \(i\le n\le j\), \(p,q\) interi con \(p+q=n\) e \(p\neq a'_n,a''_n\). Poiché \(E^{p,q}_r=0\), anche \(E^{p,q}_s=0\) per \(s\ge r\), e dunque \(E^{p,q}_\infty=0\). Dalla definizione di convergenza segue che \(\pre{n}{E}'_\infty=H_n'\) e \(\pre{n}{E}''_\infty=H_n''/H_n'=H_n/\pre{n}{E}'_\infty\), dove \(H_n'\) è il termine della filtrazione \(H^p_n\) corrispondente a \(p=a'_n\) e \(H_n''\) quello corrispondente a \(p=a''_n\). Abbiamo dunque la successione esatta
+Siano \(i\le n\le j\), \(p\), \(q\) interi con \(p+q=n\) e \(p\neq a'_n,a''_n\). Poiché \(E^{p,q}_r=0\), anche \(E^{p,q}_s=0\) per \(s\ge r\), e dunque \(E^{p,q}_\infty=0\). Dalla definizione di convergenza segue che \(\pre{n}{E}'_\infty=H_n'\) e \(\pre{n}{E}''_\infty=H_n''/H_n'=H_n/\pre{n}{E}'_\infty\), dove \(H_n'\) è il termine della filtrazione \(H^p_n\) corrispondente a \(p=a'_n\) e \(H_n''\) quello corrispondente a \(p=a''_n\). Abbiamo dunque la successione esatta
 \begin{diagram}\label{spectral-exact-sequence:first-exact-sequence}\tag{\(\star\)}
 0\rar&\pre{n}{E}'_\infty\rar&H_n\rar&\pre{n}{E}''_\infty\rar&0.
 \end{diagram}
@@ -193,7 +200,7 @@ Si dice che una successione spettrale coomologica \(E^{p,q}_r\) \defterm{converg
 \[
 0=H^n_{n+1}\subs H^n_n\subs H^n_{n-1}\subs\ldots\subs H^n_2\subs H^n_1\subs H^n_0=H^n
 \]
-tali che \(E^{p,q}_\infty=H^{p+q}_p/H^{p+q}_{p+1}\).
+tali che \(E^{p,q}_\infty=H^{p+q}_p/H^{p+q}_{p+1}\) (dove intendiamo che \(H_p^n\) è \(0\) per \(p>n\) e \(H^n\) per \(p\le 0\)).
 \end{definition}
 I risultati visti finora relativamente alle successioni spettrali omologiche presentano varianti del tutto analoghe per le successioni spettrali coomologiche.
 \subsection{Una successione esatta}
