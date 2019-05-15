@@ -2,49 +2,49 @@
 \label{ch:spectral-sequences}
 \section{Definizioni}
 \begin{definition}
-Si dice \defterm{successione spettrale (omologica)} una famiglia di gruppi abeliani $E^{p,q}_r$ indicizzata da $p,q\in\ZZ$, $r\in\NN$ dotata di omomorfismi $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}_r}$ (detti mappe di bordo) che soddisfa le seguenti proprietà:
+Si dice \defterm{successione spettrale (omologica)} una famiglia di gruppi abeliani \(E^{p,q}_r\) indicizzata da \(p,q\in\ZZ\), \(r\in\NN\) dotata di omomorfismi \(\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}_r}\) (detti mappe di bordo) che soddisfa le seguenti proprietà:
 \begin{enumerate}
-\item $E^{p,q}_r=0$ per $p<0$ o $q<0$;
-\item $d^{p-r,q+r-1}_r\circ d^{p,q}_r=0$;
-\item $E^{p,q}_{r+1}=\ker d^{p,q}_r/\im d^{p+r,q-r+1}_r$.
+\item \(E^{p,q}_r=0\) per \(p<0\) o \(q<0\);
+\item \(d^{p-r,q+r-1}_r\circ d^{p,q}_r=0\);
+\item \(E^{p,q}_{r+1}=\ker d^{p,q}_r/\im d^{p+r,q-r+1}_r\).
 \end{enumerate}
 \end{definition}
 \todo{Utile disegnino illustrativo e descrizione a parole.}
-L'intero $p$ è detto grado filtrante, $q$ è detto grado complementare e $n=p+q$ è detto grado totale. Fissati $p,q\ge 0$, per $r$ sufficientemente grande le mappe di bordo entranti e uscenti da $E^{p,q}_r$ sono nulle: in particolare per $r>p$ il codominio di $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}}$ è nullo, mentre per $r>q+1$ il dominio di $\map{d^{p+r,q-r+1}_r}{E^{p+r,q-r+1}}{E^{p,q}_r}$ è nullo. Pertanto $E^{p,q}_r$ è definitivamente uguale a un certo gruppo abeliano $E^{p,q}_\infty$, detto gruppo terminale.
+L'intero \(p\) è detto grado filtrante, \(q\) è detto grado complementare e \(n=p+q\) è detto grado totale. Fissati \(p,q\ge 0\), per \(r\) sufficientemente grande le mappe di bordo entranti e uscenti da \(E^{p,q}_r\) sono nulle: in particolare per \(r>p\) il codominio di \(\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}}\) è nullo, mentre per \(r>q+1\) il dominio di \(\map{d^{p+r,q-r+1}_r}{E^{p+r,q-r+1}}{E^{p,q}_r}\) è nullo. Pertanto \(E^{p,q}_r\) è definitivamente uguale a un certo gruppo abeliano \(E^{p,q}_\infty\), detto gruppo terminale.
 \begin{definition}
-Sia $H_n$ una famiglia di gruppi abeliani indicizzata da $n\in\ZZ$. Si dice che una successione spettrale $E^{p,q}_r$ \defterm{converge} ai gruppi $H_n$ (e si scrive $E^{p,q}_r\converges H_{p+q}$) se esistono filtrazioni
-$$
+Sia \(H_n\) una famiglia di gruppi abeliani indicizzata da \(n\in\ZZ\). Si dice che una successione spettrale \(E^{p,q}_r\) \defterm{converge} ai gruppi \(H_n\) (e si scrive \(E^{p,q}_r\converges H_{p+q}\)) se esistono filtrazioni
+\[
 0=H^{-1}_n\subs H^0_n\subs H^1_n\subs\ldots\subs H^{n-2}_n\subs H^{n-1}_n\subs H^n_n=H_n
-$$
-tali che $E^{p,q}_\infty=H^p_{p+q}/H^{p-1}_{p+q}$.
+\]
+tali che \(E^{p,q}_\infty=H^p_{p+q}/H^{p-1}_{p+q}\).
 \end{definition}
 
 \section{Una successione esatta}
 \begin{proposition}\thlabel{spectral-sequence-exact-sequence}
-Siano $E^{p,q}_r\converges H_{p+q}$ una successione spettrale, $i,j,r>0$ interi con $i\le j$. Per ogni $i\le n\le j$ siano date due coppie di interi $(a'_n,b'_n)$, $(a''_n,b''_n)$ con $a'_n+b'_n=a''_n+b''_n=n$ e $a'_n<a''_n$. Supponiamo che per ogni $i\le n\le j$ valga $E^{p,q}_r=0$ ogniqualvolta:
+Siano \(E^{p,q}_r\converges H_{p+q}\) una successione spettrale, \(i,j,r>0\) interi con \(i\le j\). Per ogni \(i\le n\le j\) siano date due coppie di interi \((a'_n,b'_n)\), \((a''_n,b''_n)\) con \(a'_n+b'_n=a''_n+b''_n=n\) e \(a'_n<a''_n\). Supponiamo che per ogni \(i\le n\le j\) valga \(E^{p,q}_r=0\) ogniqualvolta:
 \begin{itemize}
-\item $p+q=n$ e $(p,q)\neq(a'_n,b'_n),(a''_n,b''_n)$;
-\item $p+q=n-1$ e $p\le a'_n-r$;
-\item $p+q=n+1$ e $p\ge a''_n+r$.
+\item \(p+q=n\) e \((p,q)\neq(a'_n,b'_n),(a''_n,b''_n)\);
+\item \(p+q=n-1\) e \(p\le a'_n-r\);
+\item \(p+q=n+1\) e \(p\ge a''_n+r\).
 \end{itemize}
-Denotiamo con $\pre{n}{E}'_r$ il gruppo $E^{p,q}_r$ con $p=a'_n$, $q=b'_n$, e analogamente sia $\pre{n}{E}''_r$ il gruppo $E^{p,q}_r$ con $p=a''_n$, $q=b''_n$. Denotiamo inoltre con $\pre{n}{d}$ l'applicazione $\map{d^{p,q}_s}{\pre{n}{E}''_r}{\pre{n-1}{E}'_r}$ corrispondente a $p=a''_n$, $q=b''_n$, $s=a''_n-a'_{n-1}$ oppure l'applicazione nulla se $s<r$. Allora $\pre{n}{d}$ è ben definita per ogni $i\le n<j$ ed esiste una successione esatta
+Denotiamo con \(\pre{n}{E}'_r\) il gruppo \(E^{p,q}_r\) con \(p=a'_n\), \(q=b'_n\), e analogamente sia \(\pre{n}{E}''_r\) il gruppo \(E^{p,q}_r\) con \(p=a''_n\), \(q=b''_n\). Denotiamo inoltre con \(\pre{n}{d}\) l'applicazione \(\map{d^{p,q}_s}{\pre{n}{E}''_r}{\pre{n-1}{E}'_r}\) corrispondente a \(p=a''_n\), \(q=b''_n\), \(s=a''_n-a'_{n-1}\) oppure l'applicazione nulla se \(s<r\). Allora \(\pre{n}{d}\) è ben definita per ogni \(i\le n<j\) ed esiste una successione esatta
 \begin{diagram}
 \pre{j}{E}'_r\rar&H_j\rar&\pre{j}{E}''_r\rar{\pre{j}{d}}&\pre{j-1}E'_r\rar&\ldots\rar{\pre{i+1}{d}}&\pre{i}{E}'_r\rar&H_i\rar&\pre{i}{E}''_r.
 \end{diagram}
 \end{proposition}
 \begin{proof}
-Siano $i\le n\le j$, $p,q$ interi con $p+q=n$ e $p\neq a'_n,a''_n$. Poiché $E^{p,q}_r=0$, anche $E^{p,q}_s=0$ per $s\ge r$, e dunque $E^{p,q}_\infty=0$. Dalla definizione di convergenza segue che $\pre{n}{E}'_\infty=H_n'$ e $\pre{n}{E}''_\infty=H_n''/H_n'=H_n/\pre{n}{E}'_\infty$, dove $H_n'$ è il termine della filtrazione $H^p_n$ corrispondente a $p=a'_n$ e $H_n''$ quello corrispondente a $p=a''_n$. Abbiamo dunque la successione esatta
-\begin{diagram}\label{spectral-exact-sequence:first-exact-sequence}\tag{$\star$}
+Siano \(i\le n\le j\), \(p,q\) interi con \(p+q=n\) e \(p\neq a'_n,a''_n\). Poiché \(E^{p,q}_r=0\), anche \(E^{p,q}_s=0\) per \(s\ge r\), e dunque \(E^{p,q}_\infty=0\). Dalla definizione di convergenza segue che \(\pre{n}{E}'_\infty=H_n'\) e \(\pre{n}{E}''_\infty=H_n''/H_n'=H_n/\pre{n}{E}'_\infty\), dove \(H_n'\) è il termine della filtrazione \(H^p_n\) corrispondente a \(p=a'_n\) e \(H_n''\) quello corrispondente a \(p=a''_n\). Abbiamo dunque la successione esatta
+\begin{diagram}\label{spectral-exact-sequence:first-exact-sequence}\tag{\(\star\)}
 0\rar&\pre{n}{E}'_\infty\rar&H_n\rar&\pre{n}{E}''_\infty\rar&0.
 \end{diagram}
 Mostriamo ora i seguenti fatti.
 \begin{itemize}
-\item Per $i\le n\le j$ e $s\ge r$ le mappe di bordo $\map{d^{p,q}_s}{\pre{n}{E}'_s}{E^{p-s,q+s-1}_s}$ sono nulle, dove $p=a'_n$, $q=b'_n$. Infatti $E^{p-s,q+s-1}_r$ è nullo per ipotesi, dunque anche $E^{p-s,q+s-1}_s$ è nullo.
-\item Per $i\le n\le j$ e $s\ge r$ le mappe di bordo $\map{d^{p+s,q-s+1}_s}{E^{p+s,q-s+1}_s}{\pre{n}{E}''_s}$ sono nulle, dove $p=a''_n$, $q=b''_n$. Infatti $E^{p+s,q-s+1}_r$ è nullo per ipotesi, dunque anche $E^{p+s,q-s+1}_s$ è nullo.
-\item Per $i\le n<j$ e $s\ge r$ le mappe di bordo $\map{d^{p+s,q-s+1}_s}{E^{p+s,q-s+1}_s}{\pre{n}{E}'_s}$ sono nulle, dove $p=a'_n$, $q=b'_n$, con l'unica eventuale eccezione di $s=a''_{n+1}-a'_n$ (almeno se questo valore è $\ge r$). Infatti gli unici valori di $s$ per cui la mappa di bordo può essere non nulla sono $s=a'_{n+1}-a'_n$ e $s=a''_{n+1}-a'_n$, ma abbiamo già visto che le mappe di bordo uscenti da $\pre{n+1}E'_s$ sono nulle per ogni $s\ge r$, dunque l'unica possibilità è $s=a''_{n+1}-a'_n$.
-\item Per $i<n\le j$ e $s\ge r$ le mappe di bordo $\map{d^{p,q}_s}{\pre{n}{E}''_s}{E^{p-s,q+s-1}}$ sono nulle, dove $p=a''_n$, $q=b''_n$, con l'unica eventuale eccezione di $s=a''_n-a'_{n-1}$. La dimostrazione è analoga a quella del punto precedente.
+\item Per \(i\le n\le j\) e \(s\ge r\) le mappe di bordo \(\map{d^{p,q}_s}{\pre{n}{E}'_s}{E^{p-s,q+s-1}_s}\) sono nulle, dove \(p=a'_n\), \(q=b'_n\). Infatti \(E^{p-s,q+s-1}_r\) è nullo per ipotesi, dunque anche \(E^{p-s,q+s-1}_s\) è nullo.
+\item Per \(i\le n\le j\) e \(s\ge r\) le mappe di bordo \(\map{d^{p+s,q-s+1}_s}{E^{p+s,q-s+1}_s}{\pre{n}{E}''_s}\) sono nulle, dove \(p=a''_n\), \(q=b''_n\). Infatti \(E^{p+s,q-s+1}_r\) è nullo per ipotesi, dunque anche \(E^{p+s,q-s+1}_s\) è nullo.
+\item Per \(i\le n<j\) e \(s\ge r\) le mappe di bordo \(\map{d^{p+s,q-s+1}_s}{E^{p+s,q-s+1}_s}{\pre{n}{E}'_s}\) sono nulle, dove \(p=a'_n\), \(q=b'_n\), con l'unica eventuale eccezione di \(s=a''_{n+1}-a'_n\) (almeno se questo valore è \(\ge r\)). Infatti gli unici valori di \(s\) per cui la mappa di bordo può essere non nulla sono \(s=a'_{n+1}-a'_n\) e \(s=a''_{n+1}-a'_n\), ma abbiamo già visto che le mappe di bordo uscenti da \(\pre{n+1}E'_s\) sono nulle per ogni \(s\ge r\), dunque l'unica possibilità è \(s=a''_{n+1}-a'_n\).
+\item Per \(i<n\le j\) e \(s\ge r\) le mappe di bordo \(\map{d^{p,q}_s}{\pre{n}{E}''_s}{E^{p-s,q+s-1}}\) sono nulle, dove \(p=a''_n\), \(q=b''_n\), con l'unica eventuale eccezione di \(s=a''_n-a'_{n-1}\). La dimostrazione è analoga a quella del punto precedente.
 \end{itemize}
-Risulta evidente da questi fatti che, fissato $i<n\le j$, l'applicazione $\pre{n}{d}$ dell'enunciato è ben definita: infatti se $s=a''_n-a_{n-1}\ge r$ vale
+Risulta evidente da questi fatti che, fissato \(i<n\le j\), l'applicazione \(\pre{n}{d}\) dell'enunciato è ben definita: infatti se \(s=a''_n-a_{n-1}\ge r\) vale
 \begin{align*}
 \pre{n}{E}''_r=\pre{n}{E}''_{r+1}=\ldots=\pre{n}{E}''_s,&&\pre{n-1}{E}'_r=\pre{n-1}{E}'_{r+1}=\ldots=\pre{n-1}{E}'_s.
 \end{align*}
@@ -57,25 +57,25 @@ Partendo dalla \eqref{spectral-exact-sequence:first-exact-sequence} possiamo cos
 \pre{n+1}{E}''_r\rar{\pre{n+1}{d}}&\pre{n}{E}'_r\rar&H_n\rar&\pre{n}{E}''_r\\
 \pre{n}{E}'_r\rar&H_n\rar&\pre{n}{E}''_r\rar{\pre{n}{d}}&\pre{n-1}{E}'_r,
 \end{diagram}
-la prima valida per $i\le n<j$ e la seconda per $i<n\le j$. Sovrapponendole si ottiene la successione esatta della tesi.
+la prima valida per \(i\le n<j\) e la seconda per \(i<n\le j\). Sovrapponendole si ottiene la successione esatta della tesi.
 \end{proof}
 
 \section{Successione spettrale di un complesso filtrato}
 \label{sec:spectral-sequence-filtered-complex}
 \begin{definition}
-Sia $C_\bullet$ un complesso di gruppi abeliani con $C_n=0$ per $n<0$. Si dice \defterm{filtrazione} (crescente) di $C_\bullet$ una successione di sottocomplessi $C^p_\bullet\subs C_\bullet$ indicizzati da $p\in\ZZ$ che soddisfa le seguenti proprietà:
+Sia \(C_\bullet\) un complesso di gruppi abeliani con \(C_n=0\) per \(n<0\). Si dice \defterm{filtrazione} (crescente) di \(C_\bullet\) una successione di sottocomplessi \(C^p_\bullet\subs C_\bullet\) indicizzati da \(p\in\ZZ\) che soddisfa le seguenti proprietà:
 \begin{enumerate}
-\item $C^p_\bullet=0$ per $p<0$;
-\item $C^p_\bullet\subs C^{p+1}_\bullet$;
-\item $C^p_p=C_p$.
+\item \(C^p_\bullet=0\) per \(p<0\);
+\item \(C^p_\bullet\subs C^{p+1}_\bullet\);
+\item \(C^p_p=C_p\).
 \end{enumerate}
 \end{definition}
-Dati un complesso $C_\bullet$ con mappe di bordo $d$ e una filtrazione $C^p_\bullet$ è possibile costruire una successione spettrale. Per ogni $p,q,r\in\ZZ$, posto $n=p+q$ (notazione che adotteremo implicitamente anche nel seguito), definiamo:
+Dati un complesso \(C_\bullet\) con mappe di bordo \(d\) e una filtrazione \(C^p_\bullet\) è possibile costruire una successione spettrale. Per ogni \(p,q,r\in\ZZ\), posto \(n=p+q\) (notazione che adotteremo implicitamente anche nel seguito), definiamo:
 \begin{itemize}
-\item $Z^{p,q}_r=C^p_n\cap d_n^{-1}(C^{p-r}_{n-1})$;
-\item $Z^{p,q}_\infty=C^p_n\cap d_n^{-1}(0)$;
-\item $B^{p,q}_r=C^p_n\cap d_{n+1}(C^{p+r}_{n+1})$;
-\item $B^{p,q}_\infty=C^p_n\cap d_{n+1}(C_{n+1})$.
+\item \(Z^{p,q}_r=C^p_n\cap d_n^{-1}(C^{p-r}_{n-1})\);
+\item \(Z^{p,q}_\infty=C^p_n\cap d_n^{-1}(0)\);
+\item \(B^{p,q}_r=C^p_n\cap d_{n+1}(C^{p+r}_{n+1})\);
+\item \(B^{p,q}_\infty=C^p_n\cap d_{n+1}(C_{n+1})\).
 \end{itemize}
 Osserviamo che valgono le seguenti relazioni di inclusione:
 \begin{diagram}[column sep=small]
@@ -86,64 +86,64 @@ Pertanto possiamo definire i gruppi
 \begin{align*}
 E^{p,q}_r=\frac{Z^{p,q}_r}{Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1}},&&E^{p,q}_\infty=\frac{Z^{p,q}_\infty}{Z^{p-1,q+1}_\infty+B^{p,q}_\infty}.
 \end{align*}
-Notiamo in particolare che $E^{p,q}_0=C^p_n/C^{p-1}_n$. È immediato verificare che
+Notiamo in particolare che \(E^{p,q}_0=C^p_n/C^{p-1}_n\). È immediato verificare che
 \begin{align*}
 d(Z^{p,q}_r)&\subs Z^{p-r,q+r-1}_r\\
 d(Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1})&\subs Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1},
 \end{align*}
 dunque la mappa di bordo passa al quoziente
-$$
+\[
 \map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}_r}.
-$$
+\]
 \begin{proposition}\thlabel{spectral-sequence-of-filtered-complex}
-I gruppi $E^{p,q}_r$, insieme alle mappe di bordo $d^{p,q}_r$, formano una successione spettrale con gruppo terminale $E^{p,q}_\infty$. Inoltre $E^{p,q}_r\converges H_{p+q}(C_\bullet)$.
+I gruppi \(E^{p,q}_r\), insieme alle mappe di bordo \(d^{p,q}_r\), formano una successione spettrale con gruppo terminale \(E^{p,q}_\infty\). Inoltre \(E^{p,q}_r\converges H_{p+q}(C_\bullet)\).
 \end{proposition}
 \begin{proof}
 Mostriamo preliminarmente un semplice lemma che utilizzeremo più volte nel corso della dimostrazione.
 \begin{lemma*}
-$d(Z^{p,q}_r)=B^{p-r,q+r-1}_r$.
+\(d(Z^{p,q}_r)=B^{p-r,q+r-1}_r\).
 \end{lemma*}
 \begin{proof}
 Mostriamo le due inclusioni.
 \begin{itemize}
-\item[($\subs$)] Vale
-$$
+\item[(\(\subs\))] Vale
+\[
 d(Z^{p,q}_r)=d(C^p_n\cap d^{-1}(C^{p-r}_{n-1}))\subs d(C^p_n)\cap C^{p-r}_{n-1}=B^{p-r,q+r-1}_r.
-$$
-\item[($\sups$)] Sia $x\in B^{p-r,q+r-1}_r$. Allora esiste $x'\in C^p_n$ tale che $dx'=x$. Poiché $dx'\in C^{p-r}_{n-1}$, allora $x'\in Z^{p,q}_r$.\qedhere
+\]
+\item[(\(\sups\))] Sia \(x\in B^{p-r,q+r-1}_r\). Allora esiste \(x'\in C^p_n\) tale che \(dx'=x\). Poiché \(dx'\in C^{p-r}_{n-1}\), allora \(x'\in Z^{p,q}_r\).\qedhere
 \end{itemize}
 \end{proof}
 Verifichiamo le tre proprietà che caratterizzano una successione spettrale.
 \begin{enumerate}
-\item Se $p<0$ è evidente che $Z^{p,q}_r=0$, dunque $E^{p,q}_r=0$. Se invece $q<0$ vale $Z^{p,q}_r=C^p_n\cap d_n^{-1}(C^{p-r}_{n-1})$ e $Z^{p-1,q+1}_{r-1}=C^{p-1}_n\cap d_n^{-1}(C^{p-r}_{n-1})$, ma per definizione di filtrazione $C^p_n=C^{p-1}_n=C_n$, dunque $Z^{p,q}_r=Z^{p-1,q+1}_{r-1}$, da cui $E^{p,q}_r=0$.
-\item La composizione $d^{p-r,q+r-1}_r\circ d^{p,q}_r$ è nulla poiché le mappe di bordo sono definite a partire dalle mappe di bordo del complesso $C_\bullet$ per passaggio al quoziente, e $d_{n-1}\circ d_n=0$.
-\item Dobbiamo verificare che $E^{p,q}_{r+1}=\ker d^{p,q}_r/\im d^{p+r,q-r+1}_r$. Ricordiamo che $d^{p,q}_r$ è definita a partire da $d$ per passaggio al quoziente:
-$$
+\item Se \(p<0\) è evidente che \(Z^{p,q}_r=0\), dunque \(E^{p,q}_r=0\). Se invece \(q<0\) vale \(Z^{p,q}_r=C^p_n\cap d_n^{-1}(C^{p-r}_{n-1})\) e \(Z^{p-1,q+1}_{r-1}=C^{p-1}_n\cap d_n^{-1}(C^{p-r}_{n-1})\), ma per definizione di filtrazione \(C^p_n=C^{p-1}_n=C_n\), dunque \(Z^{p,q}_r=Z^{p-1,q+1}_{r-1}\), da cui \(E^{p,q}_r=0\).
+\item La composizione \(d^{p-r,q+r-1}_r\circ d^{p,q}_r\) è nulla poiché le mappe di bordo sono definite a partire dalle mappe di bordo del complesso \(C_\bullet\) per passaggio al quoziente, e \(d_{n-1}\circ d_n=0\).
+\item Dobbiamo verificare che \(E^{p,q}_{r+1}=\ker d^{p,q}_r/\im d^{p+r,q-r+1}_r\). Ricordiamo che \(d^{p,q}_r\) è definita a partire da \(d\) per passaggio al quoziente:
+\[
 \map{d^{p,q}_r}{\frac{Z^{p,q}_r}{Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1}}}{\frac{Z^{p-r,q+r-1}_r}{Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1}}}.
-$$
+\]
 Mostriamo che 
-$$
+\[
 d^{-1}(Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1})=Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1}.
-$$
+\]
 \begin{itemize}
-\item[($\subs$)] Sia $x\in d^{-1}(Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1})$. Ciò significa che esiste un $y\in B^{p-r,q+r-1}_{r-1}$ tale che $dx-y\in Z^{p-r-1,q+r}_{r-1}$. Inoltre esiste un $y'\in Z^{p-1,q+1}_{r-1}$ tale che $dy'=y$. Segue che $d(x-y')\in C^{p-r-1}_{n-1}$, da cui $x-y'\in C^p_n\cap d^{-1}(C^{p-r-1}_{n-1})=Z^{p,q}_{r+1}$. Ma allora $x\in Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1}$.
-\item[($\sups$)] Per il lemma abbiamo
-$$
+\item[(\(\subs\))] Sia \(x\in d^{-1}(Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1})\). Ciò significa che esiste un \(y\in B^{p-r,q+r-1}_{r-1}\) tale che \(dx-y\in Z^{p-r-1,q+r}_{r-1}\). Inoltre esiste un \(y'\in Z^{p-1,q+1}_{r-1}\) tale che \(dy'=y\). Segue che \(d(x-y')\in C^{p-r-1}_{n-1}\), da cui \(x-y'\in C^p_n\cap d^{-1}(C^{p-r-1}_{n-1})=Z^{p,q}_{r+1}\). Ma allora \(x\in Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1}\).
+\item[(\(\sups\))] Per il lemma abbiamo
+\[
 d(Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1})\subs B^{p-r,q+r-1}_{r-1}+B^{p-r-1,q+r}_{r-1}\subs B^{p-r,q+r-1}_{r-1}+Z^{p-r-1,q+r}_{r-1}.
-$$
+\]
 \end{itemize}
 Dall'uguaglianza appena dimostrata segue che
-$$
+\[
 \ker d^{p,q}_r=\frac{Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1}}{Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1}}.
-$$
+\]
 Consideriamo ora la mappa
-$$
+\[
 \map{d^{p+r,q-r+1}_r}{\frac{Z^{p+r,q-r+1}_r}{Z^{p+r-1,q-r+2}_{r-1}+B^{p+r,q-r+1}_{r-1}}}{\frac{Z^{p,q}_r}{Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1}}}.
-$$
+\]
 Dal lemma segue immediatamente che
-$$
+\[
 \im d^{p+r,q-r+1}_r=\frac{Z^{p-1,q+1}_{r-1}+B^{p,q}_r}{Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1}}.
-$$
+\]
 Possiamo infine calcolare
 \begin{align*}
 \frac{\ker d^{p,q}_r}{\im d^{p+r,q-r+1}_r}&=\frac{Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1}}{Z^{p-1,q+1}_{r-1}+B^{p,q}_r}\\
@@ -153,18 +153,18 @@ Possiamo infine calcolare
 &=E^{p,q}_{r+1}.
 \end{align*}
 \end{enumerate}
-Dunque i gruppi $E^{p,q}_r$ formano una successione spettrale. Verifichiamo ora che $E^{p,q}_\infty$ sono effettivamente i gruppi terminali di tale successione. Osserviamo che per $p>r$ vale $Z^{p,q}_r=Z^{p,q}_\infty$, mentre per $r\ge q+1$ vale $B^{p,q}_r=B^{p,q}_\infty$. Dunque per $r$ sufficientemente grande vale
-$$
+Dunque i gruppi \(E^{p,q}_r\) formano una successione spettrale. Verifichiamo ora che \(E^{p,q}_\infty\) sono effettivamente i gruppi terminali di tale successione. Osserviamo che per \(p>r\) vale \(Z^{p,q}_r=Z^{p,q}_\infty\), mentre per \(r\ge q+1\) vale \(B^{p,q}_r=B^{p,q}_\infty\). Dunque per \(r\) sufficientemente grande vale
+\[
 E^{p,q}_r=\frac{Z^{p,q}_r}{Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1}}=\frac{Z^{p,q}_\infty}{Z^{p-1,q+1}_{\infty}+B^{p,q}_\infty}=E^{p,q}_\infty.
-$$
-Mostriamo infine che $E^{p,q}_r\converges H_{p+q}(C_\bullet)$. Definiamo $H^p_n$ come l'immagine di $H_n(C^p_\bullet)$ in $H_n(C_\bullet)$ mediante la mappa indotta dall'inclusione $C^p_\bullet\subs C_\bullet$. Concretamente,
-$$
+\]
+Mostriamo infine che \(E^{p,q}_r\converges H_{p+q}(C_\bullet)\). Definiamo \(H^p_n\) come l'immagine di \(H_n(C^p_\bullet)\) in \(H_n(C_\bullet)\) mediante la mappa indotta dall'inclusione \(C^p_\bullet\subs C_\bullet\). Concretamente,
+\[
 H^p_n=\frac{(\ker d_n\cap C^p)+\im d_{n+1}}{\im d_{n+1}}=\frac{Z^{p,q}_\infty+\im d_{n+1}}{\im d_{n+1}}.
-$$
+\]
 È evidente che
-$$
+\[
 0=H^{-1}_n\subs H^0_n\subs H^1_n\subs\ldots\subs H^{n-2}_n\subs H^{n-1}_n\subs H^n_n=H_n.
-$$
+\]
 Calcoliamo
 \begin{align*}
 \frac{H^p_n}{H^{p-1}_n}&=\frac{Z^{p,q}_\infty+\im d_{n+1}}{Z^{p-1,q+1}_\infty+\im d_{n+1}}\\
@@ -179,33 +179,33 @@ da cui la tesi.
 Esiste una nozione di successione spettrale coomologica, duale rispetto a quella introdotta all'inizio del capitolo.
 
 \begin{definition}
-Si dice \defterm{successione spettrale coomologica} una famiglia di gruppi abeliani $E^{p,q}_r$ indicizzata da $p,q\in\ZZ$, $r\in\NN$ dotata di omomorfismi $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}$ (detti mappe di bordo) che soddisfa le seguenti proprietà:
+Si dice \defterm{successione spettrale coomologica} una famiglia di gruppi abeliani \(E^{p,q}_r\) indicizzata da \(p,q\in\ZZ\), \(r\in\NN\) dotata di omomorfismi \(\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}\) (detti mappe di bordo) che soddisfa le seguenti proprietà:
 \begin{enumerate}
-\item $E^{p,q}_r=0$ per $p<0$ o $q<0$;
-\item $d^{p+r,q-r+1}_r\circ d^{p,q}_r=0$;
-\item $E^{p,q}_{r+1}=\ker d^{p,q}_r/\im d^{p-r,q+r-1}_r$.
+\item \(E^{p,q}_r=0\) per \(p<0\) o \(q<0\);
+\item \(d^{p+r,q-r+1}_r\circ d^{p,q}_r=0\);
+\item \(E^{p,q}_{r+1}=\ker d^{p,q}_r/\im d^{p-r,q+r-1}_r\).
 \end{enumerate}
 \end{definition}
-Come nel caso omologico, per $p,q$ fissati esiste un gruppo abeliano $E^{p,q}_\infty$ (detto gruppo terminale) tale che per $r$ sufficientemente grande valga $E^{p,q}_r=E^{p,q}_\infty$.
+Come nel caso omologico, per \(p,q\) fissati esiste un gruppo abeliano \(E^{p,q}_\infty\) (detto gruppo terminale) tale che per \(r\) sufficientemente grande valga \(E^{p,q}_r=E^{p,q}_\infty\).
 \begin{definition}
-Sia $H^n$ una famiglia di gruppi abeliani indicizzata da $n\in\ZZ$.
-Si dice che una successione spettrale coomologica $E^{p,q}_r$ \defterm{converge} ai gruppi $H^n$ (e si scrive $E^{p,q}_r\converges H^{p+q}$) se esistono filtrazioni
-$$
+Sia \(H^n\) una famiglia di gruppi abeliani indicizzata da \(n\in\ZZ\).
+Si dice che una successione spettrale coomologica \(E^{p,q}_r\) \defterm{converge} ai gruppi \(H^n\) (e si scrive \(E^{p,q}_r\converges H^{p+q}\)) se esistono filtrazioni
+\[
 0=H^n_{n+1}\subs H^n_n\subs H^n_{n-1}\subs\ldots\subs H^n_2\subs H^n_1\subs H^n_0=H^n
-$$
-tali che $E^{p,q}_\infty=H^{p+q}_p/H^{p+q}_{p+1}$.
+\]
+tali che \(E^{p,q}_\infty=H^{p+q}_p/H^{p+q}_{p+1}\).
 \end{definition}
 I risultati visti finora relativamente alle successioni spettrali omologiche presentano varianti del tutto analoghe per le successioni spettrali coomologiche.
 \subsection{Una successione esatta}
 \begin{proposition}\thlabel{cohomological-spectral-exact-sequence}
-Siano $E^{p,q}_r\converges H^{p+q}$ una successione spettrale coomologica, $i,j,r>0$ interi con $i\le j$. Per ogni $i\le n\le j$ siano date due coppie di interi $(a'_n,b'_n)$, $(a''_n,b''_n)$ con $a'_n+b'_n=a''_n+b''_n=n$ e $a'_n<a''_n$. Supponiamo che per ogni $i\le n\le j$ valga $E^{p,q}_r=0$ ogniqualvolta:
+Siano \(E^{p,q}_r\converges H^{p+q}\) una successione spettrale coomologica, \(i,j,r>0\) interi con \(i\le j\). Per ogni \(i\le n\le j\) siano date due coppie di interi \((a'_n,b'_n)\), \((a''_n,b''_n)\) con \(a'_n+b'_n=a''_n+b''_n=n\) e \(a'_n<a''_n\). Supponiamo che per ogni \(i\le n\le j\) valga \(E^{p,q}_r=0\) ogniqualvolta:
 \begin{itemize}
-\item $p+q=n$ e $(p,q)\neq(a'_n,b'_n),(a''_n,b''_n)$;
-\item $p+q=n-1$ e $p\le a'_n-r$;
-\item $p+q=n+1$ e $p\ge a''_n+r$.
+\item \(p+q=n\) e \((p,q)\neq(a'_n,b'_n),(a''_n,b''_n)\);
+\item \(p+q=n-1\) e \(p\le a'_n-r\);
+\item \(p+q=n+1\) e \(p\ge a''_n+r\).
 \todo{Controllare che le condizioni siano giuste.}
 \end{itemize}
-Denotiamo con $\pre{n}{E}'_r$ il gruppo $E^{p,q}_r$ con $p=a'_n,q=b'_n$, e analogamente sia $\pre{n}{E}''_r$ il gruppo $E^{p,q}_r$ con $p=a''_n,q=b''_n$. Denotiamo inoltre con $\pre{n}{d}$ l'applicazione $\map{d^{p,q}_s}{\pre{n}{E}'_r}{\pre{n+1}{E}''_r}$ corrispondente a $p=a'_n$, $q=b'_n$, $s=a''_n-a'_{n+1}$ oppure l'applicazione nulla se $s<r$. Allora $\pre{n}{d}$ è ben definita per ogni $i\le n<j$ ed esiste una successione esatta
+Denotiamo con \(\pre{n}{E}'_r\) il gruppo \(E^{p,q}_r\) con \(p=a'_n,q=b'_n\), e analogamente sia \(\pre{n}{E}''_r\) il gruppo \(E^{p,q}_r\) con \(p=a''_n,q=b''_n\). Denotiamo inoltre con \(\pre{n}{d}\) l'applicazione \(\map{d^{p,q}_s}{\pre{n}{E}'_r}{\pre{n+1}{E}''_r}\) corrispondente a \(p=a'_n\), \(q=b'_n\), \(s=a''_n-a'_{n+1}\) oppure l'applicazione nulla se \(s<r\). Allora \(\pre{n}{d}\) è ben definita per ogni \(i\le n<j\) ed esiste una successione esatta
 \begin{diagram}
 \pre{i}{E}''_r\rar&H^i\rar&\pre{i}{E}'_r\rar{\pre{i}{d}}&\pre{i+1}E''_r\rar&\ldots\rar{\pre{j-1}{d}}&\pre{j}{E}''_r\rar&H^j\rar&\pre{j}{E}'_r.
 \end{diagram}
@@ -213,90 +213,90 @@ Denotiamo con $\pre{n}{E}'_r$ il gruppo $E^{p,q}_r$ con $p=a'_n,q=b'_n$, e analo
 
 \subsection{Cocomplessi filtrati}
 \begin{definition}
-Sia $C^\bullet$ un cocomplesso di gruppi abeliani con $C^n=0$ per $n<0$. Si dice \defterm{filtrazione (decrescente)} di $C^\bullet$ una successione di sottocomplessi $C_p^\bullet\subs C^\bullet$ indicizzati da $p\in\ZZ$ che soddisfa le seguenti proprietà:
+Sia \(C^\bullet\) un cocomplesso di gruppi abeliani con \(C^n=0\) per \(n<0\). Si dice \defterm{filtrazione (decrescente)} di \(C^\bullet\) una successione di sottocomplessi \(C_p^\bullet\subs C^\bullet\) indicizzati da \(p\in\ZZ\) che soddisfa le seguenti proprietà:
 \begin{enumerate}
-\item $C_p^\bullet=C^\bullet$ per $p\le 0$;
-\item $C_{p+1}^\bullet\subs C_p^\bullet$;
-\item $C^p_{p+1}=0$.
+\item \(C_p^\bullet=C^\bullet\) per \(p\le 0\);
+\item \(C_{p+1}^\bullet\subs C_p^\bullet\);
+\item \(C^p_{p+1}=0\).
 \end{enumerate}
 \end{definition}
 In modo del tutto analogo a quanto visto per le filtrazioni crescenti di complessi, è possibile costruire una successione spettrale coomologica associata a un cocomplesso filtrato. Riportiamo per completezza i passi fondamentali. Definiamo
 \begin{itemize}
-\item $Z^{p,q}_r=C_p^n\cap (d^n)^{-1}(C_{p+r}^{n+1})$;
-\item $Z^{p,q}_\infty=C_p^n\cap(d^n)^{-1}(0)$;
-\item $B^{p,q}_r=C_p^n\cap d^{n-1}(C_{p-r}^{n-1})$;
-\item $B^{p,q}_\infty=C_p^n\cap d^{n-1}(C^{n-1})$;
-\item $E^{p,q}_r=Z^{p,q}_r/(Z^{p+1,q-1}_{r-1}+B^{p,q}_{r-1})$;
-\item $E^{p,q}_\infty=Z^{p,q}_\infty/(Z^{p+1,q-1}_{\infty}+B^{p,q}_\infty)$.
+\item \(Z^{p,q}_r=C_p^n\cap (d^n)^{-1}(C_{p+r}^{n+1})\);
+\item \(Z^{p,q}_\infty=C_p^n\cap(d^n)^{-1}(0)\);
+\item \(B^{p,q}_r=C_p^n\cap d^{n-1}(C_{p-r}^{n-1})\);
+\item \(B^{p,q}_\infty=C_p^n\cap d^{n-1}(C^{n-1})\);
+\item \(E^{p,q}_r=Z^{p,q}_r/(Z^{p+1,q-1}_{r-1}+B^{p,q}_{r-1})\);
+\item \(E^{p,q}_\infty=Z^{p,q}_\infty/(Z^{p+1,q-1}_{\infty}+B^{p,q}_\infty)\).
 \end{itemize}
-La mappa di bordo passa al quoziente $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}$.
+La mappa di bordo passa al quoziente \(\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}\).
 \begin{proposition}\thlabel{spectral-sequence-of-filtered-cocomplex}
-I gruppi $E^{p,q}_r$, insieme alle mappe di bordo $d^{p,q}_r$, formano una successione spettrale coomologica con gruppo terminale $E^{p,q}_\infty$. Inoltre $E^{p,q}_r\converges H^{p+q}(C^\bullet)$.
+I gruppi \(E^{p,q}_r\), insieme alle mappe di bordo \(d^{p,q}_r\), formano una successione spettrale coomologica con gruppo terminale \(E^{p,q}_\infty\). Inoltre \(E^{p,q}_r\converges H^{p+q}(C^\bullet)\).
 \end{proposition}
 
 \subsection{Struttura moltiplicativa}\label{cohomological-spectral-sequence:multiplicative-structure}
-Se $C^\bullet$ è munito di una struttura di anello, come spesso accade nel contesto topologico, allora ne esiste anche una indotta sui termini della successione spettrale associata. Più precisamente, supponiamo che sia definito un prodotto bilineare $\map{\cupp}{C^n\times C^m}{C^{n+m}}$ che soddisfa le seguenti proprietà:
+Se \(C^\bullet\) è munito di una struttura di anello, come spesso accade nel contesto topologico, allora ne esiste anche una indotta sui termini della successione spettrale associata. Più precisamente, supponiamo che sia definito un prodotto bilineare \(\map{\cupp}{C^n\times C^m}{C^{n+m}}\) che soddisfa le seguenti proprietà:
 \begin{enumerate}
-\item $d(x\cupp y)=dx\cupp y+(-1)^{\deg x}x\cupp dy$ (in altre parole, $d$ è un'antiderivazione);
-\item $C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}$.
+\item \(d(x\cupp y)=dx\cupp y+(-1)^{\deg x}x\cupp dy\) (in altre parole, \(d\) è un'antiderivazione);
+\item \(C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}\).
 \end{enumerate}
-Si verifica \todo{Farlo a un certo punto.} allora che $\cupp$ passa al quoziente, inducendo un prodotto $E^{p,q}_r\times E^{p',q'}_r\to E^{p+p',q+q'}_r$; inoltre le mappe di bordo $d^{p,q}_r$ risultano essere antiderivazioni rispetto al grado totale. È dunque conveniente definire $E_r=\Dirsum_{p,q}E^{p,q}_r$, che sotto queste ipotesi diventa un anello bigraduato (da $p$ e da $q$).
+Si verifica \todo{Farlo a un certo punto.} allora che \(\cupp\) passa al quoziente, inducendo un prodotto \(E^{p,q}_r\times E^{p',q'}_r\to E^{p+p',q+q'}_r\); inoltre le mappe di bordo \(d^{p,q}_r\) risultano essere antiderivazioni rispetto al grado totale. È dunque conveniente definire \(E_r=\Dirsum_{p,q}E^{p,q}_r\), che sotto queste ipotesi diventa un anello bigraduato (da \(p\) e da \(q\)).
 
 \subsection{Duale di un complesso filtrato}\label{cohomological-spectral-sequence:dual-complex}
-Esibiamo ora una costruzione che permette di associare una successione spettrale coomologica a un complesso filtrato $C_\bullet$ con mappe di bordo $d$. Sia $G$ un gruppo abeliano. Consideriamo il cocomplesso $C^\bullet=\Hom(C_\bullet,G)$ con mappe di bordo $-\circ d$. Il cocomplesso $C^\bullet$ eredita una filtrazione decrescente $C^n_p=\Ann C_n^{p-1}$ (le proprietà richieste si verificano facilmente), a partire dalla quale possiamo costruire una successione spettrale coomologica $E^{p,q}_r\converges H^{p+q}(C_\bullet;G)$.
+Esibiamo ora una costruzione che permette di associare una successione spettrale coomologica a un complesso filtrato \(C_\bullet\) con mappe di bordo \(d\). Sia \(G\) un gruppo abeliano. Consideriamo il cocomplesso \(C^\bullet=\Hom(C_\bullet,G)\) con mappe di bordo \(-\circ d\). Il cocomplesso \(C^\bullet\) eredita una filtrazione decrescente \(C^n_p=\Ann C_n^{p-1}\) (le proprietà richieste si verificano facilmente), a partire dalla quale possiamo costruire una successione spettrale coomologica \(E^{p,q}_r\converges H^{p+q}(C_\bullet;G)\).
 
 \section{Successione spettrale di un rivestimento universale}
 \todo{Breve introduzione.}
-Riportiamo il risultato presentato in \citetheorem{seminaire-cartan}{2}, riformulato usando le notazioni che abbiamo introdotto. Consideriamo uno spazio topologico $X$ che ammette un rivestimento universale $\map{p}{T}{X}$. Sia $\pi$ il gruppo fondamentale di $X$, e supponiamo che $\pi$ agisca banalmente sui gruppi di omologia di $T$. Sia inoltre $G$ un gruppo abeliano.
-\begin{proposition}\thlabel{spectral-sequence-of-universal-covering}
-Denotiamo con $H_p(\pi;H_q(T;G)))$ il $p$-esimo gruppo di omologia di $\pi$ a coefficienti nel $\pi$-modulo (banale) $H_q(T;G)$. Allora esiste una successione spettrale $E^{p,q}_r\converges H_{p+q}(X;G)$ tale che $E^{p,q}_2=H_p(\pi;H_q(T;G))$.
-\end{proposition}
+Riportiamo il risultato presentato in \citetheorem{seminaire-cartan}{2}, riformulato usando le notazioni che abbiamo introdotto. Consideriamo uno spazio topologico \(X\) che ammette un rivestimento universale \(\map{p}{T}{X}\). Sia \(\pi\) il gruppo fondamentale di \(X\), e supponiamo che \(\pi\) agisca banalmente sui gruppi di omologia di \(T\). Sia inoltre \(G\) un gruppo abeliano. Denotiamo con \(H_p(\pi;H_q(T;G)))\) il \(p\)-esimo gruppo di omologia di \(\pi\) a coefficienti nel \(\pi\)-modulo (banale) \(H_q(T;G)\).
+\begin{theorem}\thlabel{spectral-sequence-of-universal-covering}
+Esiste una successione spettrale \(E^{p,q}_r\converges H_{p+q}(X;G)\) tale che \(E^{p,q}_2=H_p(\pi;H_q(T;G))\).
+\end{theorem}
 \begin{corollary}\thlabel{homology-of-universal-covering-Z-fundamental-group}
-Supponiamo che $G$ sia un campo; supponiamo inoltre che il gruppo fondamentale $\pi$ sia il gruppo additivo $\ZZ$. Allora
-$$
+Supponiamo che \(G\) sia un campo; supponiamo inoltre che il gruppo fondamentale \(\pi\) sia il gruppo additivo \(\ZZ\). Allora
+\[
 H_i(X;G)=H_i(T;G)\dirsum H_{i-1}(T;G)
-$$
-per ogni $i$.
+\]
+per ogni \(i\).
 \end{corollary}
 \begin{proof}
-Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. Poiché l'azione di $\ZZ$ su $H_q(T;G)$ è banale vale
-$$
+Consideriamo la successione spettrale \(E^{p,q}_r\) data dal \thref{spectral-sequence-of-universal-covering}. Poiché l'azione di \(\ZZ\) su \(H_q(T;G)\) è banale vale
+\[
 E^{p,q}_2=H_p(\ZZ;H_q(T;G))=H_p(S^1;H_q(T;G))=
 \begin{cases}
 H_q(T;G)&p=0,1\\
 0&p\ge 2
 \end{cases}.
-$$
-Abbiamo quindi che tutte le mappe di bordo $d^{p,q}_r$ con $r\ge 2$ sono nulle, pertanto $E^{p,q}_2=E^{p,q}_\infty$. Essendo $G$ un campo, per definizione di convergenza vale
+\]
+Abbiamo quindi che tutte le mappe di bordo \(d^{p,q}_r\) con \(r\ge 2\) sono nulle, pertanto \(E^{p,q}_2=E^{p,q}_\infty\). Essendo \(G\) un campo, per definizione di convergenza vale
 \[
 H_i(X;G)=\Dirsum_{p+q=i}E^{p,q}_\infty=E^{0,i}_2\dirsum E^{1,i-1}_2=H_i(T;G)\dirsum H_{i-1}(T;G).\qedhere
 \]
 \end{proof}
 \begin{corollary}\thlabel{homology-of-universal-covering-finite-fundamental-group}
-Supponiamo che $\pi$ sia finito e che $G$ sia un campo la cui caratteristica non divide l'ordine di $\pi$. Allora $H_i(X;G)=H_i(T;G)$ per ogni $i$.
+Supponiamo che \(\pi\) sia finito e che \(G\) sia un campo la cui caratteristica non divide l'ordine di \(\pi\). Allora \(H_i(X;G)=H_i(T;G)\) per ogni \(i\).
 \end{corollary}
 \begin{proof}
-Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. È ben noto che, con le ipotesi fatte, vale\footnote{Per il teorema di Künneth è sufficiente verificarlo nel caso in cui $\pi$ è ciclico; sotto questa ipotesi il risultato segue immediatamente dal teorema dei coefficienti universali e dal fatto che $H_p(\ZZ/m)$ è $0$ o $\ZZ/m$ per $p>0$.}
-$$
+Consideriamo la successione spettrale \(E^{p,q}_r\) data dal \thref{spectral-sequence-of-universal-covering}. È ben noto che, con le ipotesi fatte, vale\footnote{Per il teorema di Künneth è sufficiente verificarlo nel caso in cui \(\pi\) è ciclico; sotto questa ipotesi il risultato segue immediatamente dal teorema dei coefficienti universali e dal fatto che \(H_p(\ZZ/m)\) è \(0\) o \(\ZZ/m\) per \(p>0\).}
+\[
 H_p(\pi;H_q(T;G))=
 \begin{cases}
 H_q(T;G)&p=0\\
 0&p>0
 \end{cases}.
-$$
-Abbiamo quindi che tutte le mappe di bordo $d^{p,q}_r$ con $r\ge 2$ sono nulle, pertanto $E^{p,q}_2=E^{p,q}_\infty$. Essendo $G$ un campo, per definizione di convergenza vale
+\]
+Abbiamo quindi che tutte le mappe di bordo \(d^{p,q}_r\) con \(r\ge 2\) sono nulle, pertanto \(E^{p,q}_2=E^{p,q}_\infty\). Essendo \(G\) un campo, per definizione di convergenza vale
 \[
 H_i(X;G)=\Dirsum_{p+q=i}E^{p,q}_\infty=E^{0,i}_2=H_i(T;G).\qedhere
 \]
 \end{proof}
 
 \begin{proposition}\thlabel{homology-of-universal-covering-finitely-generated}
-Supponiamo che $\pi$ sia abeliano e finitamente generato, e che i gruppi $H_i(X)$ siano finitamente generati. Allora anche i gruppi $H_i(T)$ lo sono.
+Supponiamo che \(\pi\) sia abeliano e finitamente generato, e che i gruppi \(H_i(X)\) siano finitamente generati. Allora anche i gruppi \(H_i(T)\) lo sono.
 \end{proposition}
 \begin{proof}
-Consideriamo la successione spettrale $E^{p,q}_r$ data dalla \thref{spectral-sequence-of-universal-covering}. Mostriamo per induzione su $i$ che $H_i(T)$ è finitamente generato. Per $i=0$ è ovvio, essendo $T$ connesso per archi. Sia ora $i>0$; supponiamo per assurdo che $H_i(T)=E^{0,i}_2$ non sia finitamente generato. Osserviamo che per $j<i$ e per $p$ qualunque i gruppi $E^{p,j}_2$ sono finitamente generati: infatti dal teorema dei coefficienti universali segue che
-$$
+Consideriamo la successione spettrale \(E^{p,q}_r\) data dal \thref{spectral-sequence-of-universal-covering}. Mostriamo per induzione su \(i\) che \(H_i(T)\) è finitamente generato. Per \(i=0\) è ovvio, essendo \(T\) connesso per archi. Sia ora \(i>0\); supponiamo per assurdo che \(H_i(T)=E^{0,i}_2\) non sia finitamente generato. Osserviamo che per \(j<i\) e per \(p\) qualunque i gruppi \(E^{p,j}_2\) sono finitamente generati: infatti dal teorema dei coefficienti universali segue che
+\[
 E^{p,j}_2=H_p(\pi;H_j(T))=(H_p(\pi)\tensor H_j(T))\dirsum\Tor(H_{p-1}(\pi),H_j(T));
-$$
-essendo $\pi$ abeliano e finitamente generato, i gruppi di omologia di $\pi$ sono finitamente generati\footnote{Per il teorema di Künneth è sufficiente verificarlo per i gruppi ciclici, dei quali l'omologia a coefficienti interi è ben nota.}; inoltre $H_j(T)$ è finitamente generato per ipotesi induttiva, e prodotto tensore e $\Tor$ di gruppi finitamente generati sono finitamente generati. Notiamo poi che anche i gruppi $E^{p,j}_r$ con $r>2$ sono finitamente generati, in quanto $E^{p,j}_r$ è quoziente di un sottogruppo di $E^{p,j}_{r-1}$. Se $E^{0,i}_2$ non fosse finitamente generato, allora nemmeno $E^{0,i}_3$ lo sarebbe, in quanto quoziente di $E^{0,i}_2$ per l'immagine di $\map{d^{2,i-1}_2}{E^{2,i-1}_2}{E^{0,i}_2}$, che è finitamente generata. Procedendo allo stesso modo si ricava che $E^{0,i}_r$ non sarebbe finitamente generato per alcun $r\ge 2$, e dunque nemmeno $E^{0,i}_\infty$ sarebbe finitamente generato. Ma $E^{0,i}_\infty$ è un quoziente di un sottogruppo di $H_i(X)$, che per ipotesi è finitamente generato.
+\]
+essendo \(\pi\) abeliano e finitamente generato, i gruppi di omologia di \(\pi\) sono finitamente generati\footnote{Per il teorema di Künneth è sufficiente verificarlo per i gruppi ciclici, dei quali l'omologia a coefficienti interi è ben nota.}; inoltre \(H_j(T)\) è finitamente generato per ipotesi induttiva, e prodotto tensore e \(\Tor\) di gruppi finitamente generati sono finitamente generati. Notiamo poi che anche i gruppi \(E^{p,j}_r\) con \(r>2\) sono finitamente generati, in quanto \(E^{p,j}_r\) è quoziente di un sottogruppo di \(E^{p,j}_{r-1}\). Se \(E^{0,i}_2\) non fosse finitamente generato, allora nemmeno \(E^{0,i}_3\) lo sarebbe, in quanto quoziente di \(E^{0,i}_2\) per l'immagine di \(\map{d^{2,i-1}_2}{E^{2,i-1}_2}{E^{0,i}_2}\), che è finitamente generata. Procedendo allo stesso modo si ricava che \(E^{0,i}_r\) non sarebbe finitamente generato per alcun \(r\ge 2\), e dunque nemmeno \(E^{0,i}_\infty\) sarebbe finitamente generato. Ma \(E^{0,i}_\infty\) è un quoziente di un sottogruppo di \(H_i(X)\), che per ipotesi è finitamente generato.
 \end{proof}

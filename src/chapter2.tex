@@ -4,25 +4,25 @@
 
 L'omologia singolare classica utilizza i simplessi singolari come oggetti fondamentali. Per la teoria degli spazi fibrati dovremo introdurre la nozione di omologia singolare cubica, che impiega cubi in luogo dei simplessi. Tuttavia, come vedremo nel paragrafo \ref{cubic-homology:comparison}, dal punto di vista dell'omologia e della coomologia non vi è alcuna differenza. Per una trattazione completa della teoria dell'omologia singolare cubica, senza alcun riferimento a quella singolare classica, si veda \cite{massey}.
 
-Denoteremo con $I$ l'intervallo chiuso $[0,1]$ munito dell'usuale topologia euclidea. Consideriamo uno spazio topologico $X$.
+Denoteremo con \(I\) l'intervallo chiuso \([0,1]\) munito dell'usuale topologia euclidea. Consideriamo uno spazio topologico \(X\).
 
 \begin{definition}
-Sia $n\in\NN$. Si dice \defterm{cubo singolare} (o più semplicemente \defterm{cubo}) di dimensione $n$ un'applicazione continua $\map{u}{I^n}{X}$. Un cubo di dimensione $n\ge 1$ si dice \defterm{degenere} se non dipende dall'ultima coordinata, ossia se $u(x_1,\ldots,x_{n-1},x_n)=u(x_1,\ldots,x_{n-1},x_n')$ per ogni $x_1,\ldots,x_n,x_n'\in I$.
+Sia \(n\in\NN\). Si dice \defterm{cubo singolare} (o più semplicemente \defterm{cubo}) di dimensione \(n\) un'applicazione continua \(\map{u}{I^n}{X}\). Un cubo di dimensione \(n\ge 1\) si dice \defterm{degenere} se non dipende dall'ultima coordinata, ossia se \(u(x_1,\ldots,x_{n-1},x_n)=u(x_1,\ldots,x_{n-1},x_n')\) per ogni \(x_1,\ldots,x_n,x_n'\in I\).
 \end{definition}
 
-Denotiamo con $Q_n(X)$ il gruppo abeliano libero avente per base l'insieme dei cubi singolari di dimensione $n$, e con $D_n(X)\subs Q_n(X)$ il sottogruppo generato dai cubi degeneri di dimensione $n$. Per definire il complesso $Q_\bullet(X)$ è necessario costruire mappe di bordo $\map{d_n}{Q_n(X)}{Q_{n-1}(X)}$.
+Denotiamo con \(Q_n(X)\) il gruppo abeliano libero avente per base l'insieme dei cubi singolari di dimensione \(n\), e con \(D_n(X)\subs Q_n(X)\) il sottogruppo generato dai cubi degeneri di dimensione \(n\). Per definire il complesso \(Q_\bullet(X)\) è necessario costruire mappe di bordo \(\map{d_n}{Q_n(X)}{Q_{n-1}(X)}\).
 
-Siano $u$ un cubo di dimensione $n$, $p,q\in\NN$ con $p+q=n$, $H$ un sottoinsieme di $\{1,\ldots,n\}$ di cardinalità $p$, $K$ il complementare di $H$, $\varphi_K$ l'unica applicazione strettamente crescente da $K$ in $\{1,\ldots,q\}$; sia inoltre $\epsilon\in\{0,1\}$. Definiamo allora il cubo singolare $\lambda^\epsilon_Hu$ di dimensione $q$:
-$$
+Siano \(u\) un cubo di dimensione \(n\), \(p,q\in\NN\) con \(p+q=n\), \(H\) un sottoinsieme di \(\{1,\ldots,n\}\) di cardinalità \(p\), \(K\) il complementare di \(H\), \(\varphi_K\) l'unica applicazione strettamente crescente da \(K\) in \(\{1,\ldots,q\}\); sia inoltre \(\epsilon\in\{0,1\}\). Definiamo allora il cubo singolare \(\lambda^\epsilon_Hu\) di dimensione \(q\):
+\[
 \lambda^\epsilon_Hu(x_1,\ldots,x_n)=u(y_1,\ldots,y_n)\qquad\text{, dove }y_i=\begin{cases}\epsilon&i\in H\\x_{\varphi_K(i)}&i\in K\end{cases}.
-$$
-Per snellire la notazione, se $H=\{i\}$ (ossia se $p=1$), scriviamo $\lambda^\epsilon_i$ in luogo di $\lambda^\epsilon_{\{i\}}$. Dato un cubo $u$ di dimensione $n$, definiamo dunque
-$$
+\]
+Per snellire la notazione, se \(H=\{i\}\) (ossia se \(p=1\)), scriviamo \(\lambda^\epsilon_i\) in luogo di \(\lambda^\epsilon_{\{i\}}\). Dato un cubo \(u\) di dimensione \(n\), definiamo dunque
+\[
 d_nu=\sum_{i=1}^n\sum_{\epsilon=0}^1(-1)^{i+\epsilon}\lambda^\epsilon_iu,
-$$
-estendendola per $\ZZ$-linearità a tutto $Q_n(X)$. È immediato verificare che $\lambda^\epsilon_i\lambda^{\epsilon'}_j=\lambda^{\epsilon'}_{j-1}\lambda^\epsilon_i$; un semplice conto mostra allora che $d_nd_{n+1}=0$. Abbiamo così definito il complesso $Q_\bullet(X)$. Si vede inoltre che $D_\bullet(X)$ è un sottocomplesso di $Q_\bullet(X)$: se $u$ è un cubo degenere di dimensione $n$, allora anche $\lambda^\epsilon_iu$ è degenere per $0\le i<n$, mentre $\lambda^0_nu=\lambda^1_nu$, pertanto $du$ è degenere.
+\]
+estendendola per \(\ZZ\)-linearità a tutto \(Q_n(X)\). È immediato verificare che \(\lambda^\epsilon_i\lambda^{\epsilon'}_j=\lambda^{\epsilon'}_{j-1}\lambda^\epsilon_i\); un semplice conto mostra allora che \(d_nd_{n+1}=0\). Abbiamo così definito il complesso \(Q_\bullet(X)\). Si vede inoltre che \(D_\bullet(X)\) è un sottocomplesso di \(Q_\bullet(X)\): se \(u\) è un cubo degenere di dimensione \(n\), allora anche \(\lambda^\epsilon_iu\) è degenere per \(0\le i<n\), mentre \(\lambda^0_nu=\lambda^1_nu\), pertanto \(du\) è degenere.
 \begin{definition}
-Si dice \defterm{complesso singolare (cubico)} di $X$ il complesso $C_\bullet(X)=Q_\bullet(X)/D_\bullet(X)$. I suoi gruppi di omologia e coomologia a coefficienti in un gruppo abeliano $G$ si dicono \defterm{gruppi di omologia e coomologia singolare (cubica)} di $X$ a coefficienti in $G$.
+Si dice \defterm{complesso singolare (cubico)} di \(X\) il complesso \(C_\bullet(X)=Q_\bullet(X)/D_\bullet(X)\). I suoi gruppi di omologia e coomologia a coefficienti in un gruppo abeliano \(G\) si dicono \defterm{gruppi di omologia e coomologia singolare (cubica)} di \(X\) a coefficienti in \(G\).
 \end{definition}
 Poiché nel seguito faremo uso esclusivamente dell'omologia singolare cubica, impiegheremo le notazioni classiche dell'omologia singolare: 
 \begin{align*}
@@ -31,61 +31,61 @@ H_n(X;G)&=H_n(C_\bullet(X;G))\\
 C^\bullet(X;G)&=\Hom(C_\bullet(X),G)\\
 H^n(X;G)&=H^n(C^\bullet(X;G)).
 \end{align*}
-Osserviamo che $C^n(X;G)$ può essere interpretato come il gruppo abeliano delle funzioni dai cubi di dimensione $n$ in $G$ che sono nulle sui cubi degeneri. Definiamo inoltre $H_*(X;G)=\Dirsum_{n\ge 0}H_n(X;G)$, $H^*(X;G)=\Dirsum_{n\ge 0}H^n(X;G)$.
+Osserviamo che \(C^n(X;G)\) può essere interpretato come il gruppo abeliano delle funzioni dai cubi di dimensione \(n\) in \(G\) che sono nulle sui cubi degeneri. Definiamo inoltre \(H_*(X;G)=\Dirsum_{n\ge 0}H_n(X;G)\), \(H^*(X;G)=\Dirsum_{n\ge 0}H^n(X;G)\).
 
 \subsection{Prodotto cup}\label{cubic-homology:cup-product}
-Esattamente come nel caso della teoria singolare classica, se $G$ è un anello $H^*(X;G)$ acquisisce una struttura di $G$-algebra graduata. Si definisce il \cupproduct{} come segue: se $u$ è un cubo di dimensione $p+q$ e $f,g$ sono cocatene di dimensione $p,q$ rispettivamente, allora
-$$
+Esattamente come nel caso della teoria singolare classica, se \(G\) è un anello \(H^*(X;G)\) acquisisce una struttura di \(G\)-algebra graduata. Si definisce il \cupproduct{} come segue: se \(u\) è un cubo di dimensione \(p+q\) e \(f,g\) sono cocatene di dimensione \(p,q\) rispettivamente, allora
+\[
 (f\cupp g)u=\sum_H\rho_{H,K}f(\lambda^0_Ku)\cdot g(\lambda^1_Hu),
-$$
-dove $H$ varia fra i sottoinsiemi di $\{1,\ldots,p+q\}$ di cardinalità $p$, $K$ è il complementare di $H$ e $\rho_{H,K}=(-1)^\nu$ ($\nu$ indica il numero di coppie $(i,j)\in H\times K$ con $j<i$). Il \cupproduct{} è ben definito: poiché $f$ e $g$ sono nulle sui cubi degeneri, si vede anche $f\cupp g$ soddisfa la stessa proprietà (se $u$ è degenere, allora anche uno fra $\lambda^0_Ku$ e $\lambda^1_Hu$ lo è). Si verifica poi che $\cupp$ è associativo, e che
-$$
+\]
+dove \(H\) varia fra i sottoinsiemi di \(\{1,\ldots,p+q\}\) di cardinalità \(p\), \(K\) è il complementare di \(H\) e \(\rho_{H,K}=(-1)^\nu\) (\(\nu\) indica il numero di coppie \((i,j)\in H\times K\) con \(j<i\)). Il \cupproduct{} è ben definito: poiché \(f\) e \(g\) sono nulle sui cubi degeneri, si vede anche \(f\cupp g\) soddisfa la stessa proprietà (se \(u\) è degenere, allora anche uno fra \(\lambda^0_Ku\) e \(\lambda^1_Hu\) lo è). Si verifica poi che \(\cupp\) è associativo, e che
+\[
 d(f\cupp g)=df\cupp g+(-1)^pf\cupp dg,
-$$
+\]
 da cui segue che il \cupproduct{} passa al quoziente, definendo un prodotto in coomologia 
-$$
+\[
 H^*(X;G)\times H^*(X;G)\longrightarrow H^*(X;G).
-$$
+\]
 
 \subsection{Confronto con altre teorie omologiche}\label{cubic-homology:comparison}
 Come mostrato in \citechapter{eilenberg-maclane1953}{8}, l'approccio dell'omologia cubica conduce ai medesimi risultati dell'omologia singolare classica.
 
-\begin{proposition}\thlabel{cubic-homology-isomorphic-classical-homology}
-Denotiamo con $H_i^\Delta(X;G)$ e $H^i_\Delta(X;G)$ i gruppi di omologia e coomologia singolare classiche. Allora $H_i(X;G)\iso H_i^\Delta(X;G)$ e $H^i(X;G)\iso H_\Delta^i(X;G)$. Inoltre, se $G$ è anche un anello, allora l'isomorfismo in coomologia preserva la struttura moltiplicativa.
-\end{proposition}
+\begin{theorem}\thlabel{cubic-homology-isomorphic-classical-homology}
+Denotiamo con \(H_i^\Delta(X;G)\) e \(H^i_\Delta(X;G)\) i gruppi di omologia e coomologia singolare classiche. Allora \(H_i(X;G)\iso H_i^\Delta(X;G)\) e \(H^i(X;G)\iso H_\Delta^i(X;G)\). Inoltre, se \(G\) è anche un anello, allora l'isomorfismo in coomologia preserva la struttura moltiplicativa.
+\end{theorem}
 %\begin{corollary}\thlabel{cohomology-ring-anticommutative}
-%Supponiamo che $G$ sia un anello. Siano $f,g\in H^*(X;G)$ rispettivamente di grado $p$ e $q$. Allora $f\cdot g=(-1)^{pq}g\cdot f$.
+%Supponiamo che \(G\) sia un anello. Siano \(f,g\in H^*(X;G)\) rispettivamente di grado \(p\) e \(q\). Allora \(f\cdot g=(-1)^{pq}g\cdot f\).
 %\end{corollary}
 
 Concludiamo con una precisazione tecnica. Per motivi che risulteranno chiari in seguito, nello studio dell'omologia degli spazi fibrati sarà conveniente considerare esclusivamente cubi singolari aventi tutti in vertici in uno stesso punto fissato.
 
-Dato un punto $x_0\in X$, denotiamo con $Q_\bullet(X/x_0)$ il sottocomplesso di $Q_\bullet(X)$ generato dai cubi singolari aventi tutti i vertici in $x_0$, o più precisamente dai cubi $\map{u}{I^n}{X}$ tali che
-$$
+Dato un punto \(x_0\in X\), denotiamo con \(Q_\bullet(X/x_0)\) il sottocomplesso di \(Q_\bullet(X)\) generato dai cubi singolari aventi tutti i vertici in \(x_0\), o più precisamente dai cubi \(\map{u}{I^n}{X}\) tali che
+\[
 u_(\epsilon_1,\ldots,\epsilon_n)=x_0
-$$
-per ogni $\epsilon_1,\ldots,\epsilon_n\in\{0,1\}$. Seguono in modo naturale le definizioni di $D_\bullet(X/x_0)$, $C_\bullet(X/x_0)$, $H_n(X/x_0)$, $H^n(X/x_0)$ (eventualmente a coefficienti in un gruppo abeliano $G$). La dimostrazione della seguente proposizione si può trovare in \citepage{massey}{71}.
+\]
+per ogni \(\epsilon_1,\ldots,\epsilon_n\in\{0,1\}\). Seguono in modo naturale le definizioni di \(D_\bullet(X/x_0)\), \(C_\bullet(X/x_0)\), \(H_n(X/x_0)\), \(H^n(X/x_0)\) (eventualmente a coefficienti in un gruppo abeliano \(G\)). La dimostrazione della seguente proposizione si può trovare in \citepage{massey}{71}.
 \begin{proposition}\thlabel{cubic-homology-single-vertex}
-Supponiamo che $X$ sia connesso per archi. Allora l'inclusione di complessi $C_\bullet(X/x_0)\subs C_\bullet(X)$ induce isomorfismi $H_i(X/x_0)\iso H_i(X)$ e $H^i(X/x_0)\iso H^i(X)$ in omologia e in coomologia.
+Supponiamo che \(X\) sia connesso per archi. Allora l'inclusione di complessi \(C_\bullet(X/x_0)\subs C_\bullet(X)\) induce isomorfismi \(H_i(X/x_0)\iso H_i(X)\) e \(H^i(X/x_0)\iso H^i(X)\) in omologia e in coomologia.
 \end{proposition}
 
-Alla luce di questa proposizione, nel seguito utilizzeremo sempre (almeno quando $X$ sarà connesso per archi) l'abbreviazione $Q_\bullet(X)$ in luogo di $Q_\bullet(X/x_0)$, e analogamente per $D_\bullet(X)$, $C_\bullet(X)$, $H_i(X)$, $H^i(X)$. In altre parole, quando considereremo un cubo singolare di uno spazio connesso per archi, supporremo sempre implicitamente che abbia tutti i vertici in un punto fissato.
+Alla luce di questa proposizione, nel seguito utilizzeremo sempre (almeno quando \(X\) sarà connesso per archi) l'abbreviazione \(Q_\bullet(X)\) in luogo di \(Q_\bullet(X/x_0)\), e analogamente per \(D_\bullet(X)\), \(C_\bullet(X)\), \(H_i(X)\), \(H^i(X)\). In altre parole, quando considereremo un cubo singolare di uno spazio connesso per archi, supporremo sempre implicitamente che abbia tutti i vertici in un punto fissato.
 %Studiando più esplicitamente l'isomorfismo fra l'omologia (e la coomologia) cubica e quella singolare classica si può dimostrare quanto segue.
 %\begin{proposition}\thlabel{cubic-homology-single-vertex}
-%Supponiamo che $X$ sia connesso per archi; sia $x\in X$ un punto fissato. Allora i gruppi di omologia e coomologia (cubica)  di $X$ rimangono inalterati se ci si limita a considerare cubi singolari aventi tutti i vertici in $x$.
+%Supponiamo che \(X\) sia connesso per archi; sia \(x\in X\) un punto fissato. Allora i gruppi di omologia e coomologia (cubica)  di \(X\) rimangono inalterati se ci si limita a considerare cubi singolari aventi tutti i vertici in \(x\).
 %\end{proposition}
 
 \section{Spazi fibrati}
 \begin{definition}
-Un'applicazione continua suriettiva $\map{p}{E}{B}$ si dice \defterm{fibrazione} se soddisfa la seguente proprietà (sollevamento dell'omotopia per poliedri finiti): dati un poliedro finito $P$ e due applicazioni continue $\map{f}{P\times I}{B}$, $\map{g}{P}{E}$ tali che $pg=fi$ (dove $i$ denota l'inclusione $\map{i}{P}{P\times I}$ definita da $i(x)=(0,x)$), esiste un'applicazione continua $\map{h}{P\times I}{E}$ tale che $ph=f$ e $hi=g$.
+Un'applicazione continua suriettiva \(\map{p}{E}{B}\) si dice \defterm{fibrazione} se soddisfa la seguente proprietà (sollevamento dell'omotopia per poliedri finiti): dati un poliedro finito \(P\) e due applicazioni continue \(\map{f}{P\times I}{B}\), \(\map{g}{P}{E}\) tali che \(pg=fi\) (dove \(i\) denota l'inclusione \(\map{i}{P}{P\times I}\) definita da \(i(x)=(0,x)\)), esiste un'applicazione continua \(\map{h}{P\times I}{E}\) tale che \(ph=f\) e \(hi=g\).
 \begin{diagram}
 P\rar{g}\dar{i}&E\dar{p}\\
 P\times I\rar{f}\ar[ru,dashed,"h"]&B
 \end{diagram}
 \end{definition}
-Se $\map{p}{E}{B}$ è una fibrazione, chiameremo $E$ spazio totale e $B$ spazio base. Inoltre la terna $(p, E, B)$ è detta spazio fibrato.
+Se \(\map{p}{E}{B}\) è una fibrazione, chiameremo \(E\) spazio totale e \(B\) spazio base. Inoltre la terna \((p, E, B)\) è detta spazio fibrato.
 
 \begin{proposition}\thlabel{homotopy-lifting-plus}
-Siano $\map{p}{E}{B}$ una fibrazione, $A\subs X$ due poliedri finiti contrattili; indichiamo con $\map{i}{A}{X}$ l'inclusione. Siano $\map{f}{X}{B}$, $\map{g}{A}{E}$ applicazioni continue tali che $pg=fi$. Allora esiste un'applicazione continua $\map{h}{X}{E}$ tale che $ph=f$ e $hi=g$.
+Siano \(\map{p}{E}{B}\) una fibrazione, \(A\subs X\) due poliedri finiti contrattili; indichiamo con \(\map{i}{A}{X}\) l'inclusione. Siano \(\map{f}{X}{B}\), \(\map{g}{A}{E}\) applicazioni continue tali che \(pg=fi\). Allora esiste un'applicazione continua \(\map{h}{X}{E}\) tale che \(ph=f\) e \(hi=g\).
 \begin{diagram}
 A\rar{g}\dar{i}&E\dar{p}\\
 X\rar{f}\ar[ru,dashed,"h"]&B
@@ -94,31 +94,31 @@ X\rar{f}\ar[ru,dashed,"h"]&B
 \begin{proof}
 Mostriamo innanzitutto un lemma preliminare.
 \begin{lemma*}
-La proposizione è vera se $X=A\times I^n$ per un qualche $n\ge 0$ e $i(x)=(x,s_1,\ldots,s_n)$ per un qualche $(s_1,\ldots,s_n)\in I^n$.
+La proposizione è vera se \(X=A\times I^n\) per un qualche \(n\ge 0\) e \(i(x)=(x,s_1,\ldots,s_n)\) per un qualche \((s_1,\ldots,s_n)\in I^n\).
 \end{lemma*}
 \begin{proof}
-La tesi è ovviamente vera per $n=0$. Procediamo per induzione; sia $n>0$. Consideriamo il diagramma
+La tesi è ovviamente vera per \(n=0\). Procediamo per induzione; sia \(n>0\). Consideriamo il diagramma
 \begin{diagram}
 A\rar{g}\dar{j}&E\dar{p}\\
 X'\ar[dr,"i'"]\rar{f'}\ar[ru,"g'"]&B\\
 &X\ar[u,"f"]\ar[uu,bend right=60,dashed,"h"]
 \end{diagram}
-dove $X'=A\times I^{n-1}$, $j(x)=(x,s_1\ldots,s_{n-1})$, $i'(x)=(x,s_n)$ e $f'=fi'$; L'esistenza di $g'$ è garantita dall'ipotesi induttiva, e l'esistenza di $g$ deriva dalla definizione di fibrazione (infatti $X=X'\times I$, e si vede facilmente che non serve richiedere $s_n=0$). Poiché $i=i'j$ e il diagramma commuta, si ottiene immediatamente che $ph=f$ e $hi=g$.
+dove \(X'=A\times I^{n-1}\), \(j(x)=(x,s_1\ldots,s_{n-1})\), \(i'(x)=(x,s_n)\) e \(f'=fi'\); L'esistenza di \(g'\) è garantita dall'ipotesi induttiva, e l'esistenza di \(g\) deriva dalla definizione di fibrazione (infatti \(X=X'\times I\), e si vede facilmente che non serve richiedere \(s_n=0\)). Poiché \(i=i'j\) e il diagramma commuta, si ottiene immediatamente che \(ph=f\) e \(hi=g\).
 \end{proof}
-Sia $Y$ il poliedro $X/A$; denotiamo con $\map{q}{X}{Y}$ la proiezione. Consideriamo un'immersione $\map{j}{Y}{I^n}$ per un qualche $n\ge 0$. Sia $s$ il punto di $I^n$ tale che $jq(A)=\{s\}$. Poiché $A$ è contrattile, esiste una retrazione\footnote{Questo si può vedere, ad esempio, applicando il lemma di estensione (\cite[lemma 4.7]{hatcher}) all'identità $\map{\1}{A}{A}$.} $\map{r}{X}{A}$. Definiamo l'immersione
+Sia \(Y\) il poliedro \(X/A\); denotiamo con \(\map{q}{X}{Y}\) la proiezione. Consideriamo un'immersione \(\map{j}{Y}{I^n}\) per un qualche \(n\ge 0\). Sia \(s\) il punto di \(I^n\) tale che \(jq(A)=\{s\}\). Poiché \(A\) è contrattile, esiste una retrazione\footnote{Questo si può vedere, ad esempio, applicando il lemma di estensione (\cite[lemma 4.7]{hatcher}) all'identità \(\map{\1}{A}{A}\).} \(\map{r}{X}{A}\). Definiamo l'immersione
 \Map{l}{X}{A\times I^n}{x}{(r(x),jq(x)).}
-Poiché $l(X)$ è un poliedro contrattile, esiste una retrazione $A\times I^n\to l(X)$, che permette di estendere $\map{fl^{-1}}{l(X)}{B}$ a $\map{\tilde{f}}{A\times I^n}{B}$. Abbiamo così il diagramma commutativo
+Poiché \(l(X)\) è un poliedro contrattile, esiste una retrazione \(A\times I^n\to l(X)\), che permette di estendere \(\map{fl^{-1}}{l(X)}{B}\) a \(\map{\tilde{f}}{A\times I^n}{B}\). Abbiamo così il diagramma commutativo
 \begin{diagram}
 A\rar{g}\dar{i}&E\dar{p}\\
 X\rar{f}\ar[dr,"l"]\ar[ru,"h",dashed]&B\\
 &A\times I^n\uar{\tilde{f}}\ar[uu,bend right=60,"\tilde{h}"]
 \end{diagram}
-Poiché $li(x)=(x,s)$ per ogni $x\in A$, l'esistenza di $\tilde{h}$ segue dal lemma. È ora evidente che $h=\tilde{h}l$ soddisfa la tesi.
+Poiché \(li(x)=(x,s)\) per ogni \(x\in A\), l'esistenza di \(\tilde{h}\) segue dal lemma. È ora evidente che \(h=\tilde{h}l\) soddisfa la tesi.
 \end{proof}
 \begin{proposition}\thlabel{fibration-homotopy-exact-sequence}
-Siano $\map{p}{E}{B}$ una fibrazione, $e\in E$, $b=p(e)$, $F=p^{-1}(e)$.
+Siano \(\map{p}{E}{B}\) una fibrazione, \(e\in E\), \(b=p(e)\), \(F=p^{-1}(e)\).
 \begin{enumerate}
-\item\label{fibration-homotopy-exact-sequence:1} La mappa $p$ induce un isomorfismo $\map{p_*}{\pi_i(E,F,e)}{\pi_i(B,b)}$ per ogni $i\ge 1$.
+\item\label{fibration-homotopy-exact-sequence:1} La mappa \(p\) induce un isomorfismo \(\map{p_*}{\pi_i(E,F,e)}{\pi_i(B,b)}\) per ogni \(i\ge 1\).
 \item\label{fibration-homotopy-exact-sequence:2} Esiste una successione esatta lunga di gruppi
 \longexactsequence{\ldots\rar\&\pi_{i+1}(E,e)\rar\&\pi_{i+1}(B,b)\rar\&\pi_i(F,e)\rar\&\pi_i(E,e)\rar\&\ldots}{\ldots\rar\&\pi_1(F)\rar\&\pi_1(E,e)\rar\&\pi_1(B,b).}
 %\begin{diagram}
@@ -128,48 +128,48 @@ Siano $\map{p}{E}{B}$ una fibrazione, $e\in E$, $b=p(e)$, $F=p^{-1}(e)$.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-La successione esatta del punto \ref{fibration-homotopy-exact-sequence:2} segue immediatamente dalla successione esatta lunga dei gruppi di omotopia della coppia $(E,F)$, una volta dimostrato il punto \ref{fibration-homotopy-exact-sequence:1}. Mostriamo dunque che $p_*$ è un isomorfismo di gruppi.
+La successione esatta del punto \ref{fibration-homotopy-exact-sequence:2} segue immediatamente dalla successione esatta lunga dei gruppi di omotopia della coppia \((E,F)\), una volta dimostrato il punto \ref{fibration-homotopy-exact-sequence:1}. Mostriamo dunque che \(p_*\) è un isomorfismo di gruppi.
 \begin{itemize}
-\item Per verificare che $p_*$ è iniettiva, sia $\bar{f}\in\pi_i(E,F,e)$ tale che $p_*\bar{f}=0$. Consideriamo un rappresentante $\map{f}{(D^n,S^{n-1},s)}{(E,F,e)}$ della classe $\bar{f}$. Ricordiamo che $\bar{f}=0$ se e solo se $f$ è omotopa a un'applicazione con immagine in $F$ mediante un'omotopia che fissa $S^{n-1}$ (si veda \citepage{hatcher}{343}). Poiché $p_*\bar{f}=0$, esiste un'omotopia $\map{H}{D^n\times I}{B}$ stazionaria su $S^{n-1}$ tale che $H_0=pf$ e $H_1(D^n)\subs\{b\}$. Consideriamo il poliedro finito contrattile 
-$$
+\item Per verificare che \(p_*\) è iniettiva, sia \(\bar{f}\in\pi_i(E,F,e)\) tale che \(p_*\bar{f}=0\). Consideriamo un rappresentante \(\map{f}{(D^n,S^{n-1},s)}{(E,F,e)}\) della classe \(\bar{f}\). Ricordiamo che \(\bar{f}=0\) se e solo se \(f\) è omotopa a un'applicazione con immagine in \(F\) mediante un'omotopia che fissa \(S^{n-1}\) (si veda \citepage{hatcher}{343}). Poiché \(p_*\bar{f}=0\), esiste un'omotopia \(\map{H}{D^n\times I}{B}\) stazionaria su \(S^{n-1}\) tale che \(H_0=pf\) e \(H_1(D^n)\subs\{b\}\). Consideriamo il poliedro finito contrattile 
+\[
 A=(D^n\times\{0\})\cup(S^{n-1}\times I)\subs D^n\times I.
-$$
-Definiamo un sollevamento di $H$
+\]
+Definiamo un sollevamento di \(H\)
 \Map{\tilde{H}}{A}{E}{(x,t)}{f(x).}
-Per la \thref{homotopy-lifting-plus} $\tilde{H}$ si estende un'omotopia definita su tutto a tutto $D^n\times I$. Osserviamo che $\tilde{H}_0=f$, $\tilde{H}_1(D^n)\subs F$ e $\tilde{H}$ è stazionaria su $S^{n-1}$, dunque $\bar{f}=0$.
-\item Per verificare che $p_*$ è suriettiva, sia $\bar{g}\in\pi_i(B,b)$. Sia $\map{g}{(D^n,S^n)}{(B,b)}$ un rappresentante della classe $\bar{g}$. Consideriamo il poliedro finito contrattile $\{s\}\subs D^n$ e l'applicazione $\map{f}{\{s\}}{E}$ tale che $f(s)=e$. Per la \thref{homotopy-lifting-plus} $f$ si estende a tutto $D^n$ in modo che $pf=g$. Si vede immediatamente che la classe di omotopia di $f$ appartiene a $\pi_i(E,F,e)$, dunque $p_*\bar{f}=\bar{g}$.\qedhere
+Per la \thref{homotopy-lifting-plus} \(\tilde{H}\) si estende un'omotopia definita su tutto a tutto \(D^n\times I\). Osserviamo che \(\tilde{H}_0=f\), \(\tilde{H}_1(D^n)\subs F\) e \(\tilde{H}\) è stazionaria su \(S^{n-1}\), dunque \(\bar{f}=0\).
+\item Per verificare che \(p_*\) è suriettiva, sia \(\bar{g}\in\pi_i(B,b)\). Sia \(\map{g}{(D^n,S^n)}{(B,b)}\) un rappresentante della classe \(\bar{g}\). Consideriamo il poliedro finito contrattile \(\{s\}\subs D^n\) e l'applicazione \(\map{f}{\{s\}}{E}\) tale che \(f(s)=e\). Per la \thref{homotopy-lifting-plus} \(f\) si estende a tutto \(D^n\) in modo che \(pf=g\). Si vede immediatamente che la classe di omotopia di \(f\) appartiene a \(\pi_i(E,F,e)\), dunque \(p_*\bar{f}=\bar{g}\).\qedhere
 \end{itemize}
 \end{proof}
 
-D'ora in poi considereremo solo fibrazioni con spazio base, spazio totale e fibre connessi per archi. Per la \thref{cubic-homology-single-vertex} possiamo limitarci a considerare cubi con vertici in un singolo punto fissato nello studio dell'omologia e della coomologia. Nel seguito supporremo dunque implicitamente che i cubi in $F$ ed $E$ abbiano tutti i vertici in un punto fissato $e$, e che i cubi in $B$ abbiano tutti i vertici in $b=p(e)$. Utilizzeremo inoltre la notazione $\fibration{F}{E}{B}$ per indicare una fibrazione $\map{p}{E}{B}$ di fibra $F$ (i punti $e$ e $b$ saranno spesso irrilevanti).
+D'ora in poi considereremo solo fibrazioni con spazio base, spazio totale e fibre connessi per archi. Per la \thref{cubic-homology-single-vertex} possiamo limitarci a considerare cubi con vertici in un singolo punto fissato nello studio dell'omologia e della coomologia. Nel seguito supporremo dunque implicitamente che i cubi in \(F\) ed \(E\) abbiano tutti i vertici in un punto fissato \(e\), e che i cubi in \(B\) abbiano tutti i vertici in \(b=p(e)\). Utilizzeremo inoltre la notazione \(\fibration{F}{E}{B}\) per indicare una fibrazione \(\map{p}{E}{B}\) di fibra \(F\) (i punti \(e\) e \(b\) saranno spesso irrilevanti).
 
-\section{Azione del gruppo fondamentale di \texorpdfstring{$B$}{B} sull'omologia della fibra}
+\section{Azione del gruppo fondamentale di \texorpdfstring{\(B\)}{B} sull'omologia della fibra}
 
-Ci proponiamo ora di mostrare come il gruppo fondamentale di $B$ agisca sui gruppi di omologia e coomologia di $F$.
+Ci proponiamo ora di mostrare come il gruppo fondamentale di \(B\) agisca sui gruppi di omologia e coomologia di \(F\).
 
 \begin{definition}
-Siano $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ un'applicazione che a ogni cubo $u$ di dimensione $n$ di $F$ associa un cubo $Tu$ di $E$ di dimensione $n+1$. $T$ si dice \defterm{costruzione subordinata} a $\gamma$ se soddisfa le seguenti proprietà per ogni cubo $u$ di dimensione $n$:
+Siano \(\gamma\) un cammino chiuso in \(B\) con estremi in \(b\), \(T\) un'applicazione che a ogni cubo \(u\) di dimensione \(n\) di \(F\) associa un cubo \(Tu\) di \(E\) di dimensione \(n+1\). \(T\) si dice \defterm{costruzione subordinata} a \(\gamma\) se soddisfa le seguenti proprietà per ogni cubo \(u\) di dimensione \(n\):
 \begin{enumerate}
-\item $\lambda^0_1 Tu=u$;
-\item $(p\circ Tu)(t,x_1,\ldots,x_n)=\gamma(t)$;
-\item $T\lambda^\epsilon_iu=\lambda^\epsilon_{i+1}Tu$ per $1\le i\le n,\epsilon\in\{0,1\}$;
-\item se $u$ è degenere, allora anche $Tu$ lo è.
+\item \(\lambda^0_1 Tu=u\);
+\item \((p\circ Tu)(t,x_1,\ldots,x_n)=\gamma(t)\);
+\item \(T\lambda^\epsilon_iu=\lambda^\epsilon_{i+1}Tu\) per \(1\le i\le n,\epsilon\in\{0,1\}\);
+\item se \(u\) è degenere, allora anche \(Tu\) lo è.
 \end{enumerate}
 \end{definition}
-Ogni costruzione $T$ induce un morfismo di complessi
+Ogni costruzione \(T\) induce un morfismo di complessi
 \Map{S_T}{C_\bullet(F)}{C_\bullet(F)}{u}{\lambda^1_1Tu.}
-Le proprietà delle costruzioni garantiscono che $S_Tu$ è effettivamente un cubo di $F$, che cubi degeneri vengono mandati in cubi degeneri e che $S_T$ commuta con la mappa di bordo. A sua volta, $S_T$ induce endomorfismi dei gruppi di omologia e coomologia di $F$.
+Le proprietà delle costruzioni garantiscono che \(S_Tu\) è effettivamente un cubo di \(F\), che cubi degeneri vengono mandati in cubi degeneri e che \(S_T\) commuta con la mappa di bordo. A sua volta, \(S_T\) induce endomorfismi dei gruppi di omologia e coomologia di \(F\).
 \begin{proposition}\thlabel{subordinate-construction-homotopy-equivalence}
-Siano $\gamma_0,\gamma_1$ cammini chiusi in $B$ con estremi in $b$, $T_0,T_1$ costruzioni subordinate rispettivamente a $\gamma_0,\gamma_1$. Supponiamo che $\gamma_0,\gamma_1$ siano omotopi mediante un'omotopia che fissa gli estremi. Allora i morfismi di complessi $S_{T_0}$ e $S_{T_1}$ sono omotopi.
+Siano \(\gamma_0,\gamma_1\) cammini chiusi in \(B\) con estremi in \(b\), \(T_0,T_1\) costruzioni subordinate rispettivamente a \(\gamma_0,\gamma_1\). Supponiamo che \(\gamma_0,\gamma_1\) siano omotopi mediante un'omotopia che fissa gli estremi. Allora i morfismi di complessi \(S_{T_0}\) e \(S_{T_1}\) sono omotopi.
 \end{proposition}
 \begin{proof}
-Per costruire l'omotopia fra $S_{T_0}$ e $S_{T_1}$ faremo uso del seguente lemma.
+Per costruire l'omotopia fra \(S_{T_0}\) e \(S_{T_1}\) faremo uso del seguente lemma.
 \begin{restatable}{lemma}{fibrationHconstruction}\label{fibration-H-construction}
-Esiste un'applicazione $H$ che associa a ogni cubo $u\in Q_n(F)$ un cubo $Hu\in Q_{n+2}(E)$ e che soddisfa le seguenti proprietà:
+Esiste un'applicazione \(H\) che associa a ogni cubo \(u\in Q_n(F)\) un cubo \(Hu\in Q_{n+2}(E)\) e che soddisfa le seguenti proprietà:
 \begin{enumerate}
-\item\label{fibration-H-construction:pr1} $\lambda^\epsilon_2Hu=T_\epsilon u$ per $\epsilon\in\{0,1\}$;
-\item\label{fibration-H-construction:pr2} $H\lambda^\epsilon_iu=\lambda^\epsilon_{i+2}Hu$ per $1\le i\le n,\epsilon\in\{0,1\}$;
-\item\label{fibration-H-construction:pr3} se $u$ è degenere, allora anche $Hu$ lo è.
+\item\label{fibration-H-construction:pr1} \(\lambda^\epsilon_2Hu=T_\epsilon u\) per \(\epsilon\in\{0,1\}\);
+\item\label{fibration-H-construction:pr2} \(H\lambda^\epsilon_iu=\lambda^\epsilon_{i+2}Hu\) per \(1\le i\le n,\epsilon\in\{0,1\}\);
+\item\label{fibration-H-construction:pr3} se \(u\) è degenere, allora anche \(Hu\) lo è.
 \end{enumerate}
 \end{restatable}
 \begin{proof}
@@ -177,7 +177,7 @@ Per non allungare eccessivamente questa sezione, rimandiamo la dimostrazione all
 \end{proof}
 Definiamo allora l'applicazione
 \Map{h}{C_n(F)}{C_{n+1}(F)}{u}{\lambda_1^1Hu.}
-estesa per $\ZZ$-linearità. La proprietà \ref{fibration-H-construction:pr3} garantisce che $h$ è ben definita (ossia è compatibile con il quoziente che definisce $C_n(F)$). Sfruttiamo le altre due proprietà per mostrare che $h$ è un'omotopia fra $S_{T_0}$ e $S_{T_1}$:
+estesa per \(\ZZ\)-linearità. La proprietà \ref{fibration-H-construction:pr3} garantisce che \(h\) è ben definita (ossia è compatibile con il quoziente che definisce \(C_n(F)\)). Sfruttiamo le altre due proprietà per mostrare che \(h\) è un'omotopia fra \(S_{T_0}\) e \(S_{T_1}\):
 \begin{align*}
 dhu+hdu&=\sum_{i=1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_i\lambda^1_1Hu+\sum_{i=1}^n\sum_\epsilon(-1)^{i+\epsilon}\lambda^1_1H\lambda^\epsilon_iu\\
 &=\sum_{i=1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_i\lambda^1_1Hu+\sum_{i=1}^n\sum_\epsilon(-1)^{i+\epsilon}\lambda^1_1\lambda^\epsilon_{i+2}Hu\\
@@ -188,62 +188,62 @@ dhu+hdu&=\sum_{i=1}^{n+1}\sum_\epsilon(-1)^{i+\epsilon}\lambda^\epsilon_i\lambda
 &=S_{T_1}u-S_{T_0}u.\qedhere
 \end{align*}
 \end{proof}
-Si potrebbe dimostrare (si veda \citenumber{serre}{2}{3}) che per ogni cammino $\gamma$ esiste una costruzione subordinata a $\gamma$, e che l'applicazione $\pi_1(B,b)\to\Aut(H_n(F))$ è un omomorfismo di gruppi, ma non utilizzeremo questi risultati.
+Si potrebbe dimostrare (si veda \citenumber{serre}{2}{3}) che per ogni cammino \(\gamma\) esiste una costruzione subordinata a \(\gamma\), e che l'applicazione \(\pi_1(B,b)\to\Aut(H_n(F))\) è un omomorfismo di gruppi, ma non utilizzeremo questi risultati.
 Ci limitiamo a mostrare il seguente corollario.
 \begin{corollary}\thlabel{trivial-path-trivial-action}
-Siano $\gamma$ un cammino chiuso in $B$ con estremi in $b$, $T$ una costruzione subordinata a $\gamma$. Supponiamo che $\gamma$ sia omotopicamente banale. Allora $S_T$ induce l'identità in omologia e in coomologia.
+Siano \(\gamma\) un cammino chiuso in \(B\) con estremi in \(b\), \(T\) una costruzione subordinata a \(\gamma\). Supponiamo che \(\gamma\) sia omotopicamente banale. Allora \(S_T\) induce l'identità in omologia e in coomologia.
 \end{corollary}
 \begin{proof}
-In virtù della \thref{subordinate-construction-homotopy-equivalence} è sufficiente dimostrare che esiste una costruzione $T$ subordinata al cammino che vale costantemente $b$ tale che $S_T$ induca l'identità in omologia e in coomologia. Per ogni cubo $u$ di $F$ di dimensione $n$ definiamo
-$$
+In virtù della \thref{subordinate-construction-homotopy-equivalence} è sufficiente dimostrare che esiste una costruzione \(T\) subordinata al cammino che vale costantemente \(b\) tale che \(S_T\) induca l'identità in omologia e in coomologia. Per ogni cubo \(u\) di \(F\) di dimensione \(n\) definiamo
+\[
 (Tu)(t,t_1,\ldots,t_n)=u(t_1,\ldots,t_n).
-$$
-È immediato verificare che $T$ è una costruzione subordinata al cammino costante, e che $S_T$ è l'identità, da cui la tesi.
+\]
+È immediato verificare che \(T\) è una costruzione subordinata al cammino costante, e che \(S_T\) è l'identità, da cui la tesi.
 \end{proof}
 
-I risultati principali che ricaveremo in seguito sugli spazi fibrati richiederanno che l'azione del gruppo fondamentale di $B$ sui gruppi di omologia e coomologia di $F$ sia banale (con questa espressione intendiamo che per ogni costruzione $T$ subordinata a un qualche cammino il morfismo $S_T$ induce l'identità in omologia e in coomologia). Per questo motivo faremo spesso l'ipotesi semplificativa che $B$ sia semplicemente connesso, ipotesi che sarà sempre verificata nelle applicazioni che presenteremo.
+I risultati principali che ricaveremo in seguito sugli spazi fibrati richiederanno che l'azione del gruppo fondamentale di \(B\) sui gruppi di omologia e coomologia di \(F\) sia banale (con questa espressione intendiamo che per ogni costruzione \(T\) subordinata a un qualche cammino il morfismo \(S_T\) induce l'identità in omologia e in coomologia). Per questo motivo faremo spesso l'ipotesi semplificativa che \(B\) sia semplicemente connesso, ipotesi che sarà sempre verificata nelle applicazioni che presenteremo.
 
 \begin{corollary}\thlabel{simply-connected-trivial-action}
-Se $B$ è semplicemente connesso, allora $\pi_1(B)$ agisce banalmente sui gruppi di omologia e coomologia di $F$.
+Se \(B\) è semplicemente connesso, allora \(\pi_1(B)\) agisce banalmente sui gruppi di omologia e coomologia di \(F\).
 \end{corollary}
 
 \section{Dimostrazione del lemma \ref{fibration-H-construction}}
 \label{fibration:lemma-proof}
-Ricordiamo il contesto: abbiamo due cammini chiusi $\gamma_0,\gamma_1$ in $B$ con estremi in $b$ che sono omotopi mediante un'omotopia che fissa gli estremi; $T_0$ e $T_1$ sono costruzioni subordinate rispettivamente a $\gamma_0$ e $\gamma_1$.
+Ricordiamo il contesto: abbiamo due cammini chiusi \(\gamma_0,\gamma_1\) in \(B\) con estremi in \(b\) che sono omotopi mediante un'omotopia che fissa gli estremi; \(T_0\) e \(T_1\) sono costruzioni subordinate rispettivamente a \(\gamma_0\) e \(\gamma_1\).
 \fibrationHconstruction*
 \begin{proof}
-Per ipotesi esiste un'omotopia $\map{h}{I\times I}{B}$ tale che $h_0=\gamma_0$, $h_1=\gamma_1$ e $h(0,s)=h(1,s)=b$ per ogni $s\in I$. Costruiamo $H$ per induzione su $n$, richiedendo in più che soddisfi anche le seguenti proprietà:
+Per ipotesi esiste un'omotopia \(\map{h}{I\times I}{B}\) tale che \(h_0=\gamma_0\), \(h_1=\gamma_1\) e \(h(0,s)=h(1,s)=b\) per ogni \(s\in I\). Costruiamo \(H\) per induzione su \(n\), richiedendo in più che soddisfi anche le seguenti proprietà:
 \begin{enumerate}
 \setcounter{enumi}{3}
-\item\label{fibration-H-construction:pr4} $(p\circ Hu)(t,s,x_1,\ldots,x_n)=h(t,s)$;
-\item\label{fibration-H-construction:pr5} $(Hu)(0,s,x_1,\ldots,x_n)=u(x_1,\ldots,x_n)$.
+\item\label{fibration-H-construction:pr4} \((p\circ Hu)(t,s,x_1,\ldots,x_n)=h(t,s)\);
+\item\label{fibration-H-construction:pr5} \((Hu)(0,s,x_1,\ldots,x_n)=u(x_1,\ldots,x_n)\).
 \end{enumerate}
-\paragraph{Costruzione per $n=0$.}
-In tal caso $u$ è semplicemente il punto $e$. Consideriamo il diagramma
+\paragraph{Costruzione per \(n=0\).}
+In tal caso \(u\) è semplicemente il punto \(e\). Consideriamo il diagramma
 \begin{diagram}
 A\dar{i}\rar{g}&E\dar{p}\\
 X\rar{f}\ar[ur,dashed,"v"]&B
 \end{diagram}
 dove
 \begin{itemize}
-\item $X=I\times I$;
-\item $A=(I\times\{0,1\})\cup(\{0\}\times I)\subs X$;
-\item $f=h$;
-\item $g$ è così definita
-$$
+\item \(X=I\times I\);
+\item \(A=(I\times\{0,1\})\cup(\{0\}\times I)\subs X\);
+\item \(f=h\);
+\item \(g\) è così definita
+\[
 \begin{cases}
 g(t,\epsilon)=(T_\epsilon u)(t)&\epsilon\in\{0,1\}\\
 g(0,s)=e
 \end{cases};
-$$
-\item l'esistenza di $v$ è garantita dalla \thref{homotopy-lifting-plus}.
+\]
+\item l'esistenza di \(v\) è garantita dalla \thref{homotopy-lifting-plus}.
 \end{itemize}
-Poniamo $Hu=v$; tutte le proprietà sono di verifica immediata.
-\paragraph{Costruzione per $n>0$ e $u$ degenere.}
-Se $u$ è degenere, poniamo
-$$
+Poniamo \(Hu=v\); tutte le proprietà sono di verifica immediata.
+\paragraph{Costruzione per \(n>0\) e \(u\) degenere.}
+Se \(u\) è degenere, poniamo
+\[
 (Hu)(t,s,x_1,\ldots,x_n)=(H\lambda^0_nu)(t,s,x_1,\ldots,x_{n-1}).
-$$
+\]
 Verifichiamo le proprietà.
 \begin{enumerate}
 \eqitem
@@ -253,7 +253,7 @@ Verifichiamo le proprietà.
 &=(\lambda^0_{n+1}T_\epsilon u)(t,x_1,\ldots,x_{n-1})\\
 &=T_\epsilon u(t,x_1,\ldots,x_{n-1},x_n).
 \end{align*}
-\item Se $i<n$, allora
+\item Se \(i<n\), allora
 \begin{align*}
 (\lambda^\epsilon_{i+2}Hu)(t,s,x_1,\ldots,x_{n-1})&=(\lambda^\epsilon_{i+2}H\lambda^0_nu)(t,s,x_1,\ldots,x_{n-2})\\
 &=(H\lambda^\epsilon_i\lambda^0_nu)(t,s,x_1,\ldots,x_{n-2})\\
@@ -261,15 +261,15 @@ Verifichiamo le proprietà.
 &=(\lambda^0_{n+1}H\lambda^\epsilon_iu)(t,s,x_1,\ldots,x_{n-2})\\
 &=(H\lambda^\epsilon_iu)(t,s,x_1,\ldots,x_{n-1}).
 \end{align*}
-Se invece $i=n$, allora
-$$
+Se invece \(i=n\), allora
+\[
 (\lambda^\epsilon_{n+2}Hu)(t,s,x_1,\ldots,x_{n-1})=(H\lambda^0_nu)(t,s,x_1,\ldots,x_{n-1}).
-$$
-\item È evidente che $Hu$ è degenere.
+\]
+\item È evidente che \(Hu\) è degenere.
 \eqitem
-$$
+\[
 (p\circ Hu)(t,s,x_1,\ldots,x_n)=(p\circ H\lambda^0_nu)(t,s,x_1,\ldots,x_{n-1})=h(t,s).
-$$
+\]
 \eqitem
 \begin{align*}
 (Hu)(0,s,x_1,\ldots,x_{n-1})&=(H\lambda^0_nu)(0,s,x_1,\ldots,x_{n-1})\\
@@ -277,27 +277,27 @@ $$
 &=u(x_1,\ldots,x_n).
 \end{align*}
 \end{enumerate}
-\paragraph{Costruzione per $n>0$ e $u$ non degenere.} Consideriamo il diagramma
+\paragraph{Costruzione per \(n>0\) e \(u\) non degenere.} Consideriamo il diagramma
 \begin{diagram}
 A\dar{i}\rar{g}&E\dar{p}\\
 X\rar{f}\ar[ur,dashed,"v"]&B
 \end{diagram}
 dove
 \begin{itemize}
-\item $X=I\times I\times I^n$;
-\item $A=(I\times\{0,1\}\times I^n)\cup(\{0\}\times I\times I^n)\cup(I\times I\times\del I^n)\subs X$;
-\item $f(t,s,x_1,\ldots,x_n)=h(t,s)$;
-\item $g$ è così definita
-$$
+\item \(X=I\times I\times I^n\);
+\item \(A=(I\times\{0,1\}\times I^n)\cup(\{0\}\times I\times I^n)\cup(I\times I\times\del I^n)\subs X\);
+\item \(f(t,s,x_1,\ldots,x_n)=h(t,s)\);
+\item \(g\) è così definita
+\[
 \begin{cases}
 g(t,\epsilon,x_1,\ldots,x_n)=(T_\epsilon u)(t,x_1,\ldots,x_n)&\epsilon\in\{0,1\}\\
 g(0,s,x_1,\ldots,x_n)=u(x_1,\ldots,x_n)\\
 g(t,s,x_1,\ldots,x_{i-1},\epsilon,x_i,\ldots,x_{n-1})=(H\lambda^\epsilon_iu)(t,s,x_1,\ldots,x_{n-1})
 \end{cases};
-$$
-\item l'esistenza di $v$ è garantita dalla \thref{homotopy-lifting-plus}, a patto di dimostrare che $g$ è ben definita sulle intersezioni e che $pg=fi$; si tratta in entrambi i casi di facili verifiche, sfruttando l'ipotesi induttiva e le proprietà delle costruzioni subordinate.
+\]
+\item l'esistenza di \(v\) è garantita dalla \thref{homotopy-lifting-plus}, a patto di dimostrare che \(g\) è ben definita sulle intersezioni e che \(pg=fi\); si tratta in entrambi i casi di facili verifiche, sfruttando l'ipotesi induttiva e le proprietà delle costruzioni subordinate.
 \end{itemize}
-Poniamo $Hu=v$, e mostriamo che le proprietà richieste sono soddisfatte.
+Poniamo \(Hu=v\), e mostriamo che le proprietà richieste sono soddisfatte.
 \begin{enumerate}
 \eqitem
 \begin{align*}
@@ -311,11 +311,11 @@ Poniamo $Hu=v$, e mostriamo che le proprietà richieste sono soddisfatte.
 &=g(t,s,x_1,\ldots,x_{i-1},\epsilon,x_i,x_{n-1})\\
 &=(H\lambda^\epsilon_iu)(t,s,x_1,\ldots,x_{n-1}).
 \end{align*}
-\item Per ipotesi $u$ non è degenere.
+\item Per ipotesi \(u\) non è degenere.
 \eqitem
-$$
+\[
 (p\circ Hu)(t,s,x_1,\ldots,x_n)=f(t,s,x_1,\ldots,x_n)=h(t,s).
-$$
+\]
 \eqitem
 \[
 (Hu)(0,s,x_1,\ldots,x_n)=g(0,s,x_1,\ldots,x_n)=u(0,s,x_1,\ldots,x_n).\qedhere

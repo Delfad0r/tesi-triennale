@@ -2,43 +2,43 @@
 \label{ch:path-spaces}
 \section{H-spazi}
 \begin{definition}
-Sia $\Omega$ uno spazio topologico munito di un prodotto $\map{\vee}{\Omega\times \Omega}{\Omega}$ continuo. $\Omega$ si dice \defterm{H-spazio} se esiste $e\in \Omega$ con $e\vee e=e$ tale che le applicazioni da $\Omega$ in $\Omega$ definite da $x\mapsto x\vee e$ e $x\mapsto e\vee x$ siano omotope all'identità mediante omotopie che fissano $e$.
+Sia \(\Omega\) uno spazio topologico munito di un prodotto \(\map{\vee}{\Omega\times \Omega}{\Omega}\) continuo. \(\Omega\) si dice \defterm{H-spazio} se esiste \(e\in \Omega\) con \(e\vee e=e\) tale che le applicazioni da \(\Omega\) in \(\Omega\) definite da \(x\mapsto x\vee e\) e \(x\mapsto e\vee x\) siano omotope all'identità mediante omotopie che fissano \(e\).
 \end{definition}
 \begin{proposition}\thlabel{h-space-trivial-automorphisms-of-covering-space}
-Siano $\Omega$ un H-spazio, $\map{p}{T}{\Omega}$ un rivestimento connesso. Allora gli automorfismi di rivestimento di $T$ sono omotopi all'identità.
+Siano \(\Omega\) un H-spazio, \(\map{p}{T}{\Omega}\) un rivestimento connesso. Allora gli automorfismi di rivestimento di \(T\) sono omotopi all'identità.
 \end{proposition}
 \begin{proof}
-Siano $\map{f}{T}{T}$ un automorfismo di rivestimento, $\tilde{e}$ un elemento della fibra di $e$, $\tilde{e}'=f(\tilde{e})$. Sia poi $\map{\gamma}{I}{\Omega}$ con $\gamma(0)=\gamma(1)=e$ il cui sollevamento $\tilde\gamma$ soddisfi $\tilde\gamma(0)=\tilde{e},\tilde\gamma(1)=\tilde{e}'$. Sia infine $\map{h}{\Omega\times I}{\Omega}$ un'omotopia con $h_0(x)=x$ e $h_1(x)=e\vee x$. Definiamo l'omotopia
+Siano \(\map{f}{T}{T}\) un automorfismo di rivestimento, \(\tilde{e}\) un elemento della fibra di \(e\), \(\tilde{e}'=f(\tilde{e})\). Sia poi \(\map{\gamma}{I}{\Omega}\) con \(\gamma(0)=\gamma(1)=e\) il cui sollevamento \(\tilde\gamma\) soddisfi \(\tilde\gamma(0)=\tilde{e},\tilde\gamma(1)=\tilde{e}'\). Sia infine \(\map{h}{\Omega\times I}{\Omega}\) un'omotopia con \(h_0(x)=x\) e \(h_1(x)=e\vee x\). Definiamo l'omotopia
 \Map{H}{T\times I}{\Omega}{(x,t)}{
 \begin{cases}
 h_{3t}(p(x))&t\le\frac{1}{3}\\
 \gamma(3t-1)\vee p(x)&\frac{1}{3}\le t\le\frac{2}{3}\\
 h_{3-3t}(p(x))&\frac{2}{3}\le t
 \end{cases}.}
-Per la proprietà di sollevamento dell'omotopia, esiste un'omotopia $\map{\tilde{H}}{T\times I}{T}$ con $\tilde{H}_0=\1$ e $p\tilde{H}=H$. Osserviamo che il cammino $t\mapsto H_t(\tilde{e})$ è omotopo a $\gamma$ e $\tilde{H}_0(\tilde{e})=\tilde{e}$, pertanto $\tilde{H}_1(\tilde{e})=\tilde{\gamma}(1)=\tilde{e}'$. Ma allora $\tilde{H}_1$ è un automorfismo di rivestimento tale che $\tilde{H}_1(\tilde{e})=f(\tilde{e})$. Dalla connessione di $T$ segue che $\tilde{H}_1=f$. Pertanto $\tilde{H}_1=f$ e $\tilde{H}_0=\1$ sono omotope mediante $\tilde H$, ossia la tesi.
+Per la proprietà di sollevamento dell'omotopia, esiste un'omotopia \(\map{\tilde{H}}{T\times I}{T}\) con \(\tilde{H}_0=\1\) e \(p\tilde{H}=H\). Osserviamo che il cammino \(t\mapsto H_t(\tilde{e})\) è omotopo a \(\gamma\) e \(\tilde{H}_0(\tilde{e})=\tilde{e}\), pertanto \(\tilde{H}_1(\tilde{e})=\tilde{\gamma}(1)=\tilde{e}'\). Ma allora \(\tilde{H}_1\) è un automorfismo di rivestimento tale che \(\tilde{H}_1(\tilde{e})=f(\tilde{e})\). Dalla connessione di \(T\) segue che \(\tilde{H}_1=f\). Pertanto \(\tilde{H}_1=f\) e \(\tilde{H}_0=\1\) sono omotope mediante \(\tilde H\), ossia la tesi.
 \end{proof}
 \begin{corollary}\thlabel{h-space-trivial-action}
-Siano $\Omega$ un H-spazio connesso, $T$ il suo rivestimento universale. Allora il gruppo fondamentale di $\Omega$ agisce banalmente sui moduli di omologia e di coomologia di $T$.
+Siano \(\Omega\) un H-spazio connesso, \(T\) il suo rivestimento universale. Allora il gruppo fondamentale di \(\Omega\) agisce banalmente sui moduli di omologia e di coomologia di \(T\).
 \end{corollary}
 
 \section{Prime proprietà degli spazi di cammini}
 \subsection{Topologia compatta-aperta}
-Dati due spazi topologici $X,Y$, denotiamo con $C(X,Y)$ l'insieme delle funzioni continue da $X$ in $Y$. Riportiamo alcune nozioni di base relative alla topologia compatta-aperta (per maggiori dettagli, si veda \citepage{hatcher}{529}).
+Dati due spazi topologici \(X,Y\), denotiamo con \(C(X,Y)\) l'insieme delle funzioni continue da \(X\) in \(Y\). Riportiamo alcune nozioni di base relative alla topologia compatta-aperta (per maggiori dettagli, si veda \citepage{hatcher}{529}).
 \begin{definition}
-La \defterm{topologia compatta-aperta} su $C(X,Y)$ è la topologia generata da 
-$$
-\{V(K,U):\text{$K\subs X$ compatto, $U\subs Y$ aperto}\},
-$$
-dove $V(K,U)$ è l'insieme delle funzioni $f\in C(X,Y)$ tali che $f(K)\subs U$.
+La \defterm{topologia compatta-aperta} su \(C(X,Y)\) è la topologia generata da 
+\[
+\{V(K,U):\text{\(K\subs X\) compatto, \(U\subs Y\) aperto}\},
+\]
+dove \(V(K,U)\) è l'insieme delle funzioni \(f\in C(X,Y)\) tali che \(f(K)\subs U\).
 \end{definition}
-D'ora in poi considereremo sempre $C(X,Y)$ come spazio topologico munito della topologia compatta-aperta.
+D'ora in poi considereremo sempre \(C(X,Y)\) come spazio topologico munito della topologia compatta-aperta.
 \begin{proposition}\thlabel{compact-open-topology-properties}
-Siano $X,Y,Z$ spazi topologici con $X$ localmente compatto di Hausdorff.
+Siano \(X,Y,Z\) spazi topologici con \(X\) localmente compatto di Hausdorff.
 \begin{enumerate}
 \item L'applicazione di valutazione
 \uMap{X\times C(X,Y)}{Y}{(x,f)}{f(x)}
 è continua.
-\item Una funzione $\map{g}{Z}{C(X,Y)}$ è continua se e solo se l'applicazione
+\item Una funzione \(\map{g}{Z}{C(X,Y)}\) è continua se e solo se l'applicazione
 \uMap{Z\times X}{Y}{(z,x)}{g(z)(x)}
 è continua.
 \end{enumerate}
@@ -46,122 +46,122 @@ Siano $X,Y,Z$ spazi topologici con $X$ localmente compatto di Hausdorff.
 
 \subsection{H-spazio dei cammini chiusi}
 
-Dato uno spazio topologico $X$ e due sottospazi $A,B\subs X$, denotiamo con $E_{A,B}$ il sottospazio di $C(I,X)$ delle funzioni $f$ tali che $f(0)\in A$ e $f(1)\in B$. Con lieve abuso di notazione, scriveremo $E_{x,B}$ in luogo di $E_{\{x\},B}$ se $A=\{x\}$, e analogamente per $B$. Per ogni $x\in X$, definiamo $\Omega_x=E_{x,x}$.
+Dato uno spazio topologico \(X\) e due sottospazi \(A,B\subs X\), denotiamo con \(E_{A,B}\) il sottospazio di \(C(I,X)\) delle funzioni \(f\) tali che \(f(0)\in A\) e \(f(1)\in B\). Con lieve abuso di notazione, scriveremo \(E_{x,B}\) in luogo di \(E_{\{x\},B}\) se \(A=\{x\}\), e analogamente per \(B\). Per ogni \(x\in X\), definiamo \(\Omega_x=E_{x,x}\).
 
-Dati due cammini $f\in E_{x,y},g\in E_{y,z}$ si definisce il cammino $f\ast g\in E_{x,z}$ come
-$$
+Dati due cammini \(f\in E_{x,y},g\in E_{y,z}\) si definisce il cammino \(f\ast g\in E_{x,z}\) come
+\[
 (f\ast g)(t)=
 \begin{cases}
 f(2t)&t\le\frac{1}{2}\\
 g(2t-1)&t\ge\frac{1}{2}
 \end{cases}.
-$$
+\]
 
 \begin{proposition}\thlabel{omega-h-space}
-$\Omega_x$, munito del prodotto $\ast$, è un H-spazio.
+\(\Omega_x\), munito del prodotto \(\ast\), è un H-spazio.
 \end{proposition}
 \begin{proof}
-Mostriamo innanzitutto che $\ast$ è continuo. Grazie alla \thref{compact-open-topology-properties}, è sufficiente dimostrare che l'applicazione da $\Omega_x\times\Omega_x\times I$ in $X$ definita da $(f,g,t)\mapsto (f\ast g)(t)$ è continua, e ciò segue dalla continuità di $(f,t)\mapsto f(2t)$ e di $(g,t)\mapsto g(2t-1)$.
+Mostriamo innanzitutto che \(\ast\) è continuo. Grazie alla \thref{compact-open-topology-properties}, è sufficiente dimostrare che l'applicazione da \(\Omega_x\times\Omega_x\times I\) in \(X\) definita da \((f,g,t)\mapsto (f\ast g)(t)\) è continua, e ciò segue dalla continuità di \((f,t)\mapsto f(2t)\) e di \((g,t)\mapsto g(2t-1)\).
 
-Mostriamo poi che l'applicazione $(-\ast e)$
-è omotopa all'identità su $\Omega_x$ (mediante un'omotopia che fissa $e$), dove $e$ è il cammino che vale costantemente $x$ (è evidente che $e\ast e=e$). È sufficiente considerare, per $s\in I$ e $f\in\Omega_x$, 
-$$
+Mostriamo poi che l'applicazione \((-\ast e)\)
+è omotopa all'identità su \(\Omega_x\) (mediante un'omotopia che fissa \(e\)), dove \(e\) è il cammino che vale costantemente \(x\) (è evidente che \(e\ast e=e\)). È sufficiente considerare, per \(s\in I\) e \(f\in\Omega_x\), 
+\[
 \varphi_s(f)(t)=
 \begin{cases}
 f((s+1)t)&t\le 1-\frac{s}{2}\\
 x&t\ge 1-\frac{s}{2}
 \end{cases}.
-$$
-Osserviamo che $\varphi_s(f)(0)=\varphi_s(f)(1)=x$, dunque $\varphi_s(f)\in\Omega_x$; inoltre $\varphi_0=\1$, $\varphi_1=(-\ast e)$ e $\varphi_s(e)=e$. Pertanto è sufficiente mostrare che $\map{\varphi}{\Omega_x\times I}{\Omega_x}$ è continua, ossia, per la \thref{compact-open-topology-properties}, che
+\]
+Osserviamo che \(\varphi_s(f)(0)=\varphi_s(f)(1)=x\), dunque \(\varphi_s(f)\in\Omega_x\); inoltre \(\varphi_0=\1\), \(\varphi_1=(-\ast e)\) e \(\varphi_s(e)=e\). Pertanto è sufficiente mostrare che \(\map{\varphi}{\Omega_x\times I}{\Omega_x}\) è continua, ossia, per la \thref{compact-open-topology-properties}, che
 \Map{\Phi}{\Omega_x\times I\times I}{X}{(f,s,t)}{\varphi_s(f)(t)}
-è continua. Si vede però che $\Phi(f,s,t)=f(\theta(s,t))$, dove
-$$
+è continua. Si vede però che \(\Phi(f,s,t)=f(\theta(s,t))\), dove
+\[
 \theta(s,t)=
 \begin{cases}
 (s+1)t&t\le 1-\frac{s}{2}\\
 1&t\ge 1-\frac{s}{2}
 \end{cases},
-$$
-perciò $\Phi$ è continua. In modo del tutto analogo si mostra che $(e\ast-)$ è omotopa all'identità.
+\]
+perciò \(\Phi\) è continua. In modo del tutto analogo si mostra che \((e\ast-)\) è omotopa all'identità.
 \end{proof}
 
 \subsection{Tipi di omotopia degli spazi di cammini}
 
-Fissiamo un punto $x\in X$, e denotiamo con $e$ il cammino che vale costantemente $x$.
+Fissiamo un punto \(x\in X\), e denotiamo con \(e\) il cammino che vale costantemente \(x\).
 
 \begin{proposition}\thlabel{path-space-contractible}
-Lo spazio $E_{x,X}$ è contrattile.
+Lo spazio \(E_{x,X}\) è contrattile.
 \end{proposition}
 \begin{proof}
 Definiamo l'omotopia
 \Map{H}{E_{x,X}\times I}{E_{x,X}}{(f,s)}{H_s(f)}
-dove $H_s(f)(t)=f(st)$. Per la \thref{compact-open-topology-properties}, $H$ è continua. Inoltre $H_1$ è l'identità, mentre per ogni $f$ vale $H_0(f)=e$. Dunque l'identità su $E_{x,X}$ è omotopa a un'applicazione costante, ossia $E_{x,X}$ è contrattile.
+dove \(H_s(f)(t)=f(st)\). Per la \thref{compact-open-topology-properties}, \(H\) è continua. Inoltre \(H_1\) è l'identità, mentre per ogni \(f\) vale \(H_0(f)=e\). Dunque l'identità su \(E_{x,X}\) è omotopa a un'applicazione costante, ossia \(E_{x,X}\) è contrattile.
 \end{proof}
 
 \begin{proposition}\thlabel{path-space-independent-of-point}
-Supponiamo che $X$ sia connesso per archi. Siano $y\in X$ un punto, $B\subs X$ un sottospazio. Allora $E_{x,B}$ e $E_{y,B}$ sono omotopicamente equivalenti.
+Supponiamo che \(X\) sia connesso per archi. Siano \(y\in X\) un punto, \(B\subs X\) un sottospazio. Allora \(E_{x,B}\) e \(E_{y,B}\) sono omotopicamente equivalenti.
 \end{proposition}
 \begin{proof}
-Sia $\gamma\in E_{x,y}$, e sia $\delta\in E_{y,x}$ il cammino inverso (ossia $\delta(t)=\gamma(1-t)$). Consideriamo le applicazioni $\map{(\gamma\ast-)}{E_{y,B}}{E_{x,B}}$ e $\map{(\delta\ast-)}{E_{x,B}}{E_{y,B}}$ (si vede facilmente che sono continue). Mostriamo che sono una l'inversa omotopica dell'altra. Non è difficile vedere che $(\delta\ast(\gamma\ast-))$ è omotopa a $((\delta\ast\gamma)\ast-)$. Presentiamo ora un lemma che ci permetterà di concludere.
+Sia \(\gamma\in E_{x,y}\), e sia \(\delta\in E_{y,x}\) il cammino inverso (ossia \(\delta(t)=\gamma(1-t)\)). Consideriamo le applicazioni \(\map{(\gamma\ast-)}{E_{y,B}}{E_{x,B}}\) e \(\map{(\delta\ast-)}{E_{x,B}}{E_{y,B}}\) (si vede facilmente che sono continue). Mostriamo che sono una l'inversa omotopica dell'altra. Non è difficile vedere che \((\delta\ast(\gamma\ast-))\) è omotopa a \(((\delta\ast\gamma)\ast-)\). Presentiamo ora un lemma che ci permetterà di concludere.
 \begin{lemma}
-Sia $\alpha\in\Omega_x$ un cammino omotopicamente banale (ossia omotopo a $e$ mediante un'omotopia che fissa gli estremi). Allora l'applicazione $\map{(\alpha\ast-)}{E_{x,B}}{E_{x,B}}$ è omotopa all'identità.
+Sia \(\alpha\in\Omega_x\) un cammino omotopicamente banale (ossia omotopo a \(e\) mediante un'omotopia che fissa gli estremi). Allora l'applicazione \(\map{(\alpha\ast-)}{E_{x,B}}{E_{x,B}}\) è omotopa all'identità.
 \end{lemma}
 \begin{proof}
-Per ipotesi esiste un'omotopia $\map{H}{I\times I}{X}$ con $H_0=\alpha$ e $H_1=e$. Definiamo allora l'omotopia $\map{K}{E_{x,B}\times I}{E_{x,B}}$ come $K_t=(H_t\ast-)$. Si verifica immediatamente che $K$ è effettivamente un'omotopia fra $(\alpha\ast-)$ e $(e\ast-)$. Procedendo come nella dimostrazione della \thref{omega-h-space} si ottiene che $(e\ast-)$ è omotopa all'identità, da cui la tesi.
+Per ipotesi esiste un'omotopia \(\map{H}{I\times I}{X}\) con \(H_0=\alpha\) e \(H_1=e\). Definiamo allora l'omotopia \(\map{K}{E_{x,B}\times I}{E_{x,B}}\) come \(K_t=(H_t\ast-)\). Si verifica immediatamente che \(K\) è effettivamente un'omotopia fra \((\alpha\ast-)\) e \((e\ast-)\). Procedendo come nella dimostrazione della \thref{omega-h-space} si ottiene che \((e\ast-)\) è omotopa all'identità, da cui la tesi.
 \end{proof}
-Applicando il lemma a $\alpha=\delta\ast\gamma$ otteniamo che $(\delta\ast(\gamma\ast-))$ è omotopa all'identità. In modo del tutto analogo si mostra che $(\gamma\ast(\delta\ast-))$ è omotopa all'identità.
+Applicando il lemma a \(\alpha=\delta\ast\gamma\) otteniamo che \((\delta\ast(\gamma\ast-))\) è omotopa all'identità. In modo del tutto analogo si mostra che \((\gamma\ast(\delta\ast-))\) è omotopa all'identità.
 \end{proof}
 \begin{corollary}\thlabel{path-space-independent-of-points}
-Supponiamo che $X$ sia connesso per archi. Allora il tipo di omotopia di $E_{x,y}$ non dipende dalla scelta di $x$ e $y$.
+Supponiamo che \(X\) sia connesso per archi. Allora il tipo di omotopia di \(E_{x,y}\) non dipende dalla scelta di \(x\) e \(y\).
 \end{corollary}
-In particolare, se $X$ è connesso per archi il tipo di omotopia di $\Omega_x$ è indipendente da $x$. Indicheremo allora con $\Omega X$ (o semplicemente con $\Omega$) lo spazio dei cammini chiusi aventi estremi in un punto $x\in X$ fissato, ma irrilevante. Dalla \thref{compact-open-topology-properties} segue facilmente che $\Omega$ è connesso per archi se e solo se $X$ è semplicemente connesso.
+In particolare, se \(X\) è connesso per archi il tipo di omotopia di \(\Omega_x\) è indipendente da \(x\). Indicheremo allora con \(\Omega X\) (o semplicemente con \(\Omega\)) lo spazio dei cammini chiusi aventi estremi in un punto \(x\in X\) fissato, ma irrilevante. Dalla \thref{compact-open-topology-properties} segue facilmente che \(\Omega\) è connesso per archi se e solo se \(X\) è semplicemente connesso.
 
 \section{Fibrazione degli spazi di cammini}
-\begin{proposition}\thlabel{path-space-fibration}
-Sia $X$ uno spazio topologico connesso per archi, e siano $A,B\subs X$ due sottospazi. Allora l'applicazione
+\begin{theorem}\thlabel{path-space-fibration}
+Sia \(X\) uno spazio topologico connesso per archi, e siano \(A,B\subs X\) due sottospazi. Allora l'applicazione
 \Map{p}{E_{A,B}}{A\times B}{f}{(f(0),f(1))}
 è una fibrazione (con fibra non necessariamente connessa).
-\end{proposition}
+\end{theorem}
 \begin{proof}
-Notiamo subito che $p$ è suriettiva, in quanto $X$ è connesso per archi. Mostreremo ora che $p$ soddisfa la proprietà di sollevamento dell'omotopia per tutti gli spazi topologici (e non solo per i poliedri finiti). Siano $Y$ uno spazio topologico, $\map{f=(f_A,f_B)}{Y\times I}{A\times B}$ un'applicazione continua, $\map{g}{Y}{E_{A,B}}$ tale che $pg(y)=f(y,0)$ per ogni $y\in Y$. Per la \thref{compact-open-topology-properties}, l'applicazione
+Notiamo subito che \(p\) è suriettiva, in quanto \(X\) è connesso per archi. Mostreremo ora che \(p\) soddisfa la proprietà di sollevamento dell'omotopia per tutti gli spazi topologici (e non solo per i poliedri finiti). Siano \(Y\) uno spazio topologico, \(\map{f=(f_A,f_B)}{Y\times I}{A\times B}\) un'applicazione continua, \(\map{g}{Y}{E_{A,B}}\) tale che \(pg(y)=f(y,0)\) per ogni \(y\in Y\). Per la \thref{compact-open-topology-properties}, l'applicazione
 \Map{G}{Y\times I}{X}{(y,t)}{g(y)(t)}
-è continua. Dobbiamo trovare una mappa continua $\map{h}{Y\times I}{E_{A,B}}$ tale che $h(y,0)=g(y)$ e $ph=f$ o, equivalentemente, $\map{H}{Y\times I\times I}{X}$ tale che $H(y,0,t)=G(y,t)$, $H(y,s,0)=f_A(y,s)$ e $H(y,s,1)=f_B(y,s)$. Dobbiamo dunque estendere a tutto $Y\times I\times I$ una funzione definita su
-$$
+è continua. Dobbiamo trovare una mappa continua \(\map{h}{Y\times I}{E_{A,B}}\) tale che \(h(y,0)=g(y)\) e \(ph=f\) o, equivalentemente, \(\map{H}{Y\times I\times I}{X}\) tale che \(H(y,0,t)=G(y,t)\), \(H(y,s,0)=f_A(y,s)\) e \(H(y,s,1)=f_B(y,s)\). Dobbiamo dunque estendere a tutto \(Y\times I\times I\) una funzione definita su
+\[
 (Y\times\{0\}\times I)\cup(Y\times I\times \{0,1\}),
-$$
-e ciò è reso possibile dal fatto che questo spazio è un retratto di $I\times I$.
+\]
+e ciò è reso possibile dal fatto che questo spazio è un retratto di \(I\times I\).
 \end{proof}
 
-Consideriamo ora uno spazio topologico $X$ connesso per archi e semplicemente connesso.
+Consideriamo ora uno spazio topologico \(X\) connesso per archi e semplicemente connesso.
 
 \begin{corollary}\thlabel{loop-space-fibration}
-Esistono uno spazio contrattile $E$ e una fibrazione $\map{p}{E}{X}$ con fibra connessa per archi e omotopicamente equivalente a $\Omega$.
+Esistono uno spazio contrattile \(E\) e una fibrazione \(\map{p}{E}{X}\) con fibra connessa per archi e omotopicamente equivalente a \(\Omega\).
 \end{corollary}
 \begin{proof}
-Fissiamo un punto $x\in X$ e consideriamo la fibrazione $\map{p}{E_{x,X}}{\{x\}\times X}$ della \thref{path-space-fibration}. Naturalmente $\{x\}\times X$ è omeomorfo a $X$. Inoltre le fibre sono della forma $E_{x,y}$, dunque per il \thref{path-space-independent-of-points} sono omotopicamente equivalenti a $\Omega$.
+Fissiamo un punto \(x\in X\) e consideriamo la fibrazione \(\map{p}{E_{x,X}}{\{x\}\times X}\) del \thref{path-space-fibration}. Naturalmente \(\{x\}\times X\) è omeomorfo a \(X\). Inoltre le fibre sono della forma \(E_{x,y}\), dunque per il \thref{path-space-independent-of-points} sono omotopicamente equivalenti a \(\Omega\).
 \end{proof}
 
-Possiamo così applicare agli spazi di cammini (almeno nel caso in cui $X$ è semplicemente connesso) i risultati generali sviluppati per gli spazi fibrati, sfruttando in più il fatto che lo spazio totale è contrattile. Con lieve abuso di notazione indicheremo la fibrazione del \thref{loop-space-fibration} con $\fibration{\Omega}{E}{X}$, anche se la fibra è solo omotopicamente equivalente a $\Omega$.
+Possiamo così applicare agli spazi di cammini (almeno nel caso in cui \(X\) è semplicemente connesso) i risultati generali sviluppati per gli spazi fibrati, sfruttando in più il fatto che lo spazio totale è contrattile. Con lieve abuso di notazione indicheremo la fibrazione del \thref{loop-space-fibration} con \(\fibration{\Omega}{E}{X}\), anche se la fibra è solo omotopicamente equivalente a \(\Omega\).
 
 \begin{corollary}\thlabel{loop-space-finitely-generated-homology}
-Supponiamo che i gruppi $H_i(X)$ siano finitamente generati. Allora anche i gruppi $H_i(\Omega)$ lo sono.
+Supponiamo che i gruppi \(H_i(X)\) siano finitamente generati. Allora anche i gruppi \(H_i(\Omega)\) lo sono.
 \end{corollary}
 \begin{proof}
-Consideriamo la fibrazione $\fibration{\Omega}{E}{X}$ del \thref{loop-space-fibration}. Poiché $E$ è contrattile, i suoi gruppi di omologia sono finitamente generati. Applicando la \thref{fibration-finitely-generated-homology-groups} si ottiene immediatamente la tesi.
+Consideriamo la fibrazione \(\fibration{\Omega}{E}{X}\) del \thref{loop-space-fibration}. Poiché \(E\) è contrattile, i suoi gruppi di omologia sono finitamente generati. Applicando la \thref{fibration-finitely-generated-homology-groups} si ottiene immediatamente la tesi.
 \end{proof}
 
 \begin{corollary}\thlabel{loop-space-homology-isomorphism}
-Sia $G$ un PID. Supponiamo che $H_i(X;G)=0$ per $0<i<p$. Allora la mappa $\map{d_i}{H_i(X;G)}{H_{i-1}(\Omega;G)}$ è un isomorfismo per $2\le i\le p$ (in particolare $H_i(\Omega;G)=0$ per $0<i<p-1$).
+Sia \(G\) un PID. Supponiamo che \(H_i(X;G)=0\) per \(0<i<p\). Allora la mappa \(\map{d_i}{H_i(X;G)}{H_{i-1}(\Omega;G)}\) è un isomorfismo per \(2\le i\le p\) (in particolare \(H_i(\Omega;G)=0\) per \(0<i<p-1\)).
 \end{corollary}
 \begin{proof}
-Consideriamo la fibrazione $\fibration{\Omega}{E}{X}$ del \thref{loop-space-fibration}. Dalla \thref{fibration-homology-exact-sequence} (applicata con $q=1$) otteniamo le successioni esatte
+Consideriamo la fibrazione \(\fibration{\Omega}{E}{X}\) del \thref{loop-space-fibration}. Dalla \thref{fibration-homology-exact-sequence} (applicata con \(q=1\)) otteniamo le successioni esatte
 \begin{diagram}
 H_i(E;G)\rar&H_i(X;G)\rar{d_i}&H_{i-1}(\Omega;G)\rar&H_{i-1}(E;G)
 \end{diagram}
-per $2\le i\le p$. Poiché $E$ è contrattile, $H_i(E;G)=0$ per ogni $i>0$, da cui la tesi.
+per \(2\le i\le p\). Poiché \(E\) è contrattile, \(H_i(E;G)=0\) per ogni \(i>0\), da cui la tesi.
 \end{proof}
 
 Naturalmente vale il risultato duale in coomologia.
 \begin{corollary}\thlabel{loop-space-cohomology-isomorphism}
-Sia $G$ un PID. Supponiamo che $H^i(X;G)=0$ per $0<i<p$. Allora la mappa $\map{d_i}{H^{i-1}(\Omega;G)}{H^i(X;G)}$ è un isomorfismo per $2\le i\le p$ (in particolare $H^i(\Omega;G)=0$ per $0<i<p-1$).
+Sia \(G\) un PID. Supponiamo che \(H^i(X;G)=0\) per \(0<i<p\). Allora la mappa \(\map{d_i}{H^{i-1}(\Omega;G)}{H^i(X;G)}\) è un isomorfismo per \(2\le i\le p\) (in particolare \(H^i(\Omega;G)=0\) per \(0<i<p-1\)).
 \end{corollary}

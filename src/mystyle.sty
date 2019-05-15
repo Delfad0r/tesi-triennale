@@ -12,14 +12,14 @@
 \usepackage[style=alphabetic,backend=biber,sorting=none]{biblatex}
 \addbibresource{bibliography.bib}
 \newcommand*{\citechapter}[2]{\cite[cap.\ #2]{#1}}
-\newcommand*{\citenumber}[3]{\cite[cap.\ #2, n$^\circ$ #3]{#1}}
+\newcommand*{\citenumber}[3]{\cite[cap.\ #2, n\(^\circ\) #3]{#1}}
 \newcommand*{\citepage}[2]{\cite[p.\ #2]{#1}}
 \newcommand*{\citetheorem}[2]{\cite[th.\ #2]{#1}}
 
 % Lists
 \usepackage[shortlabels]{enumitem}
 \setlist[enumerate,1]{label={(\roman*)}}
-\setlist[itemize,1]{label=\tiny$\blacksquare$}
+\setlist[itemize,1]{label=\tiny\(\blacksquare\)}
 
 % Math packages
 \usepackage{amsmath}
@@ -62,7 +62,7 @@
 % Debug
 \usepackage[italian]{todonotes}
 \ifdefined\debug%
-    \newcommand*{\missing}{$\blacksquare$}%
+    \newcommand*{\missing}{\(\blacksquare\)}%
     % Unused labels
     \usepackage{refcheck}%
     \renewcommand*{\thlabel}[1]{\label{#1}}%

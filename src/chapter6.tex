@@ -5,150 +5,150 @@
 Introduciamo una classe di spazi topologici chiusa per le operazioni di rivestimento universale e di spazio dei cammini chiusi. Ne faremo uso per giustificare la costruzione della prossima sezione.
 
 \begin{definition}
-Uno spazio topologico $X$ si dice \defterm{uniformemente localmente contrattile (ULC)}\footnote{La definizione che proponiamo è più restrittiva di quella comunemente utilizzata in letteratura (ad esempio in \citenumber{serre}{5}{1}) al fine di semplificare alcune dimostrazioni.} se esistono un intorno $U$ della diagonale $\Delta\subs X\times X$ e un'omotopia $\map{H}{U\times I}{X}$ tale che
+Uno spazio topologico \(X\) si dice \defterm{uniformemente localmente contrattile (ULC)}\footnote{La definizione che proponiamo è più restrittiva di quella comunemente utilizzata in letteratura (ad esempio in \citenumber{serre}{5}{1}) al fine di semplificare alcune dimostrazioni.} se esistono un intorno \(U\) della diagonale \(\Delta\subs X\times X\) e un'omotopia \(\map{H}{U\times I}{X}\) tale che
 \begin{enumerate}
-\item\label{ULC:pr1} $H_0(x,y)=x$;
-\item\label{ULC:pr2} $H_1(x,y)=y$;
-\item\label{ULC:pr3} $H_t(x,x)=x$;
-\item\label{ULC:pr4} per ogni $x_0\in X$ e ogni suo intorno $V\subs X$ esiste un intorno $V'\subs V$ di $x_0$ tale che $V'\times V'\subs U$ e $H_t(V'\times V')\subs V'$.
+\item\label{ULC:pr1} \(H_0(x,y)=x\);
+\item\label{ULC:pr2} \(H_1(x,y)=y\);
+\item\label{ULC:pr3} \(H_t(x,x)=x\);
+\item\label{ULC:pr4} per ogni \(x_0\in X\) e ogni suo intorno \(V\subs X\) esiste un intorno \(V'\subs V\) di \(x_0\) tale che \(V'\times V'\subs U\) e \(H_t(V'\times V')\subs V'\).
 \end{enumerate}
 \end{definition}
 
 \begin{proposition}\thlabel{ULC-loop-space}
-Siano $X$ uno spazio topologico ULC, $x_0\in X$ un punto. Allora $\Omega_{x_0}$ è ULC.
+Siano \(X\) uno spazio topologico ULC, \(x_0\in X\) un punto. Allora \(\Omega_{x_0}\) è ULC.
 \end{proposition}
 \begin{proof}
-Per semplicità di notazione, sia $\Omega=\Omega_{x_0}$. Sia inoltre $\map{H}{U\times I}{X}$ l'omotopia della definizione di ULC. Denotiamo con $\tilde{U}\subs\Omega\times\Omega$ l'insieme delle coppie $(f,g)$ tali che $(f(t),g(t))\in U$ per ogni $t\in I$. Sicuramente $\tilde\Delta\subs\tilde U$, dove $\tilde\Delta$ indica la diagonale di $\Omega\times\Omega$; mostriamo che $\tilde U$ è in realtà un intorno di $\tilde\Delta$. Sia $f\in\Omega$. Per compattezza di $I$ possiamo trovare $0=t_0\le t_1\le\ldots\le t_{n-1}\le t_n=1$ e $U_1,\ldots,U_n$ aperti di $X$ tali che $f([t_{i-1},t_i])\subs U_i$ e $U_i\times U_i\subs U$. Allora $f$ ammette l'intorno
-$$
+Per semplicità di notazione, sia \(\Omega=\Omega_{x_0}\). Sia inoltre \(\map{H}{U\times I}{X}\) l'omotopia della definizione di ULC. Denotiamo con \(\tilde{U}\subs\Omega\times\Omega\) l'insieme delle coppie \((f,g)\) tali che \((f(t),g(t))\in U\) per ogni \(t\in I\). Sicuramente \(\tilde\Delta\subs\tilde U\), dove \(\tilde\Delta\) indica la diagonale di \(\Omega\times\Omega\); mostriamo che \(\tilde U\) è in realtà un intorno di \(\tilde\Delta\). Sia \(f\in\Omega\). Per compattezza di \(I\) possiamo trovare \(0=t_0\le t_1\le\ldots\le t_{n-1}\le t_n=1\) e \(U_1,\ldots,U_n\) aperti di \(X\) tali che \(f([t_{i-1},t_i])\subs U_i\) e \(U_i\times U_i\subs U\). Allora \(f\) ammette l'intorno
+\[
 V=V([t_0,t_1],U_1)\cap\ldots\cap V([t_{n-1},t_n],U_n)
-$$
-tale che $V\times V\subs\tilde{U}$. Definiamo ora l'omotopia
+\]
+tale che \(V\times V\subs\tilde{U}\). Definiamo ora l'omotopia
 \Map{\tilde{H}}{\tilde{U}\times I}{\Omega}{(f,g,s)}{\tilde{H}_s(f,g)}
-dove $\tilde{H}_s(f,g)(t)=H_s(f(t),g(t))$. Si verifica immediatamente che $\tilde{H}$ soddisfa le proprietà \ref{ULC:pr1}, \ref{ULC:pr2} e \ref{ULC:pr3}. Per quanto riguarda la proprietà \ref{ULC:pr4}, consideriamo un cammino $f\in\Omega$ e un suo intorno $V\subs\Omega$. Con un semplice ragionamento di compattezza possiamo trovare un intorno aperto $V'\subs V$ di $f$ della forma
-$$
+dove \(\tilde{H}_s(f,g)(t)=H_s(f(t),g(t))\). Si verifica immediatamente che \(\tilde{H}\) soddisfa le proprietà \ref{ULC:pr1}, \ref{ULC:pr2} e \ref{ULC:pr3}. Per quanto riguarda la proprietà \ref{ULC:pr4}, consideriamo un cammino \(f\in\Omega\) e un suo intorno \(V\subs\Omega\). Con un semplice ragionamento di compattezza possiamo trovare un intorno aperto \(V'\subs V\) di \(f\) della forma
+\[
 V'=V([t_0,t_1],U_1)\cap\ldots\cap V([t_{n-1},t_n],U_n)
-$$
-con $0=t_0\le t_1\le\ldots\le t_{n-1}\le t_n=1$ e $U_1,\ldots,U_n$ aperti di $X$. Sempre per compattezza di $I$ possiamo scegliere gli aperti $U_i$ tali che $U_i\times U_i\subs U$ e $H_t(U_i\times U_i)\subs U_i$. È allora evidente che $V'\times V'\subs\tilde\Delta$ e $\tilde{H}_t(V'\times V')\subs V'$.
+\]
+con \(0=t_0\le t_1\le\ldots\le t_{n-1}\le t_n=1\) e \(U_1,\ldots,U_n\) aperti di \(X\). Sempre per compattezza di \(I\) possiamo scegliere gli aperti \(U_i\) tali che \(U_i\times U_i\subs U\) e \(H_t(U_i\times U_i)\subs U_i\). È allora evidente che \(V'\times V'\subs\tilde\Delta\) e \(\tilde{H}_t(V'\times V')\subs V'\).
 \end{proof}
 
 \begin{proposition}\thlabel{ULC-locally-contractible}
-Sia $X$ uno spazio topologico ULC. Allora $X$ è localmente contrattile\todo{Serve un glossario}.
+Sia \(X\) uno spazio topologico ULC. Allora \(X\) è localmente contrattile\todo{Serve un glossario}.
 \end{proposition}
 \begin{proof}
-Sia $\map{H}{U\times I}{X}$ l'omotopia della definizione di ULC. Siano $x_0\in X$ un punto, $V\subs X$ un suo intorno. Consideriamo l'intorno $V'\subs V$ di $x_0$ dato dalla \ref{ULC:pr4}. Definiamo l'omotopia
+Sia \(\map{H}{U\times I}{X}\) l'omotopia della definizione di ULC. Siano \(x_0\in X\) un punto, \(V\subs X\) un suo intorno. Consideriamo l'intorno \(V'\subs V\) di \(x_0\) dato dalla \ref{ULC:pr4}. Definiamo l'omotopia
 \Map{F}{V'\times I}{V'}{(x,t)}{H_t(x_0,x)}
-che risulta essere una contrazione di $V'$ su $x_0$.
+che risulta essere una contrazione di \(V'\) su \(x_0\).
 \end{proof}
 
 In particolare, ogni spazio connesso e ULC ammette un rivestimento universale.
 
 \begin{proposition}\thlabel{ULC-universal-covering}
-Siano $X$ uno spazio topologico connesso e ULC, $\map{p}{T}{X}$ il suo rivestimento universale. Allora $T$ è ULC.
+Siano \(X\) uno spazio topologico connesso e ULC, \(\map{p}{T}{X}\) il suo rivestimento universale. Allora \(T\) è ULC.
 \end{proposition}
 \begin{proof}
 Consideriamo l'applicazione
 \Map{q}{T\times T}{X\times X}{(x,y)}{(p(x),p(y))}
-Sia $\tilde{U}$ la componente connessa di $q^{-1}(U)$ che contiene la diagonale $\tilde\Delta\subs T\times T$ (notiamo che si tratta di un intorno di $\tilde\Delta$, poiché $T$ è localmente contrattile). Sia $\map{H}{U\times I}{X}$ l'omotopia della definizione di ULC. Consideriamo il diagramma
+Sia \(\tilde{U}\) la componente connessa di \(q^{-1}(U)\) che contiene la diagonale \(\tilde\Delta\subs T\times T\) (notiamo che si tratta di un intorno di \(\tilde\Delta\), poiché \(T\) è localmente contrattile). Sia \(\map{H}{U\times I}{X}\) l'omotopia della definizione di ULC. Consideriamo il diagramma
 \begin{diagram}
 \tilde{U}\ar[rr,"\tilde{F}_0"]\ar[dd,"i"]&&T\ar[dd,"p"]\\
 \\
 \tilde{U}\times I\rar{q\times\1}\ar[uurr,dashed,"\tilde F"]\ar[rr,bend right,"F"]&U\times I\rar{H}&X
 \end{diagram}
-dove $i(x)=(x,0)$, $(q\times\1)(x,y,t)=(q(x,y),t)$,  $F=H\circ(q\times\1)$ e $\tilde{F}_0(x,y)=x$. Per la proprietà di sollevamento dell'omotopia dei rivestimenti, $F$ si solleva a un'omotopia $\map{\tilde{F}}{\tilde{U}\times I}{T}$. Verifichiamo che $\tilde{F}$ soddisfa le proprietà richieste.
+dove \(i(x)=(x,0)\), \((q\times\1)(x,y,t)=(q(x,y),t)\),  \(F=H\circ(q\times\1)\) e \(\tilde{F}_0(x,y)=x\). Per la proprietà di sollevamento dell'omotopia dei rivestimenti, \(F\) si solleva a un'omotopia \(\map{\tilde{F}}{\tilde{U}\times I}{T}\). Verifichiamo che \(\tilde{F}\) soddisfa le proprietà richieste.
 \begin{enumerate}
-\item Per costruzione $\tilde{F}_0(x,y)=x$.
+\item Per costruzione \(\tilde{F}_0(x,y)=x\).
 \setcounter{enumi}{2}
-\item Per ogni $x\in T$ il cammino $(t\mapsto \tilde{F}_t(x,x))$ è un sollevamento del cammino costante $(t\mapsto F_t(x,x)=p(x))$, dunque è costante; poiché $\tilde{F}_0(x,x)=x$, segue che $\tilde{F}_t(x,x)=x$ per ogni $t\in I$.
+\item Per ogni \(x\in T\) il cammino \((t\mapsto \tilde{F}_t(x,x))\) è un sollevamento del cammino costante \((t\mapsto F_t(x,x)=p(x))\), dunque è costante; poiché \(\tilde{F}_0(x,x)=x\), segue che \(\tilde{F}_t(x,x)=x\) per ogni \(t\in I\).
 \setcounter{enumi}{1}
-\item $\tilde{F}_1$ è un sollevamento di $F_1$ tale che $\tilde{F}_1(x,x)=x$; per connessione di $\tilde{U}$ esiste un solo sollevamento con questa proprietà, dunque $\tilde{F}_1(x,y)=y$
+\item \(\tilde{F}_1\) è un sollevamento di \(F_1\) tale che \(\tilde{F}_1(x,x)=x\); per connessione di \(\tilde{U}\) esiste un solo sollevamento con questa proprietà, dunque \(\tilde{F}_1(x,y)=y\)
 \setcounter{enumi}{3}
-\item Siano $x\in T$ un punto, $V\subs T$ un suo intorno. Scegliamo un intorno $W\subs p(V)$ di $p(x)$ in modo che $W$ sia ben rivestito \todo{Che vuol dire? Glossario!} e soddisfi $W\times W\subs U$ e $H_t(W\times W)\subs W$. Osserviamo che quest'ultima condizione implica che $W$ è contrattile, dunque in particolare connesso. Sia $V'$ la componente connessa di $p^{-1}(W)$ che contiene $x$. Notiamo innanzitutto che $V'\times V'\subs q^{-1}(U)$ e $(x,x)\in V'\times V'$, dunque $V'\times V'\subs\tilde{U}$, in quanto $V'\times V'$ è connesso. Inoltre $q(V'\times V')\subs W\times W$, pertanto $p\tilde{F}_t(V'\times V')\subs H_t(W\times W)\subs W$; essendo $\tilde{F}_t(V'\times V')$ connesso segue che $\tilde{F}_t(V'\times V')\subs V'$.
+\item Siano \(x\in T\) un punto, \(V\subs T\) un suo intorno. Scegliamo un intorno \(W\subs p(V)\) di \(p(x)\) in modo che \(W\) sia ben rivestito \todo{Che vuol dire? Glossario!} e soddisfi \(W\times W\subs U\) e \(H_t(W\times W)\subs W\). Osserviamo che quest'ultima condizione implica che \(W\) è contrattile, dunque in particolare connesso. Sia \(V'\) la componente connessa di \(p^{-1}(W)\) che contiene \(x\). Notiamo innanzitutto che \(V'\times V'\subs q^{-1}(U)\) e \((x,x)\in V'\times V'\), dunque \(V'\times V'\subs\tilde{U}\), in quanto \(V'\times V'\) è connesso. Inoltre \(q(V'\times V')\subs W\times W\), pertanto \(p\tilde{F}_t(V'\times V')\subs H_t(W\times W)\subs W\); essendo \(\tilde{F}_t(V'\times V')\) connesso segue che \(\tilde{F}_t(V'\times V')\subs V'\).
 \end{enumerate}
-Abbiamo così dimostrato che $T$ è ULC.
+Abbiamo così dimostrato che \(T\) è ULC.
 \end{proof}
 
-Concludiamo con una proposizione che ci consentirà di applicare i risultati della prossima sezione agli spazi cui siamo interessati, ossia le sfere $S^n$.
+Concludiamo con una proposizione che ci consentirà di applicare i risultati della prossima sezione agli spazi cui siamo interessati, ossia le sfere \(S^n\).
 
 \begin{proposition}\thlabel{sphere-ULC}
-Sia $n\ge 1$. Allora la sfera $S^n$ è ULC.
+Sia \(n\ge 1\). Allora la sfera \(S^n\) è ULC.
 \end{proposition}
 \begin{proof}
-Consideriamo $S^n$ immersa in $\RR^{n+1}$ come
-$$
+Consideriamo \(S^n\) immersa in \(\RR^{n+1}\) come
+\[
 S^n=\{x\in\RR^{n+1}:\norm{x}=1\}.
-$$
+\]
 Definiamo l'intorno aperto della diagonale
-$$
+\[
 U=\{(x,y)\in S^n\times S^n:\langle x,y\rangle>0\}
-$$
+\]
 e l'omotopia
 \Map{H}{U\times I}{S^n}{(x,y,t)}{\frac{(1-t)x+ty}{\norm{(1-t)x+ty}}.}
-Evidentemente $H$ soddisfa le proprietà \ref{ULC:pr1}, \ref{ULC:pr2} e \ref{ULC:pr3}. Per quanto riguarda la proprietà \ref{ULC:pr4}, siano $x_0\in S^n$ un punto e $V\subs S^n$ un suo intorno aperto. Sia
-$$
+Evidentemente \(H\) soddisfa le proprietà \ref{ULC:pr1}, \ref{ULC:pr2} e \ref{ULC:pr3}. Per quanto riguarda la proprietà \ref{ULC:pr4}, siano \(x_0\in S^n\) un punto e \(V\subs S^n\) un suo intorno aperto. Sia
+\[
 \lambda=\max\left\{\frac{1}{\sqrt{2}},\max\{\langle x_0,x\rangle:x\in S^n\setminus V\}\right\}<1.
-$$
-Consideriamo l'intorno aperto di $x_0$
-$$
+\]
+Consideriamo l'intorno aperto di \(x_0\)
+\[
 V'=\{x\in S^n:\langle x_0,x\rangle>\lambda\}\subs V.
-$$
-Si verifica facilmente che $V'\times V'\subs U$ e che $H_t(V'\times V')\subs V'$, dunque $H$ soddisfa anche la proprietà \ref{ULC:pr4}.
+\]
+Si verifica facilmente che \(V'\times V'\subs U\) e che \(H_t(V'\times V')\subs V'\), dunque \(H\) soddisfa anche la proprietà \ref{ULC:pr4}.
 \end{proof}
 
 \section{Metodo generale}
 
-Sia $X$ uno spazio topologico connesso e ULC. Definiamo ricorsivamente:
+Sia \(X\) uno spazio topologico connesso e ULC. Definiamo ricorsivamente:
 \begin{itemize}
-\item $X_0=X$;
-\item $T_n$ è il rivestimento universale di $X_n$ per $n\ge 0$;
-\item $X_{n+1}=\Omega T_n$ per $n\ge 0$.
+\item \(X_0=X\);
+\item \(T_n\) è il rivestimento universale di \(X_n\) per \(n\ge 0\);
+\item \(X_{n+1}=\Omega T_n\) per \(n\ge 0\).
 \end{itemize}
-Osserviamo che si tratta di buone definizioni: $X_0$ è connesso per archi e ULC, dunque ammette un rivestimento universale $T_0$, anch'esso ULC; inoltre $T_0$ è semplicemente connesso, pertanto $X_1$ è connesso per archi e ULC, e la costruzione si può ripetere indefinitamente.
+Osserviamo che si tratta di buone definizioni: \(X_0\) è connesso per archi e ULC, dunque ammette un rivestimento universale \(T_0\), anch'esso ULC; inoltre \(T_0\) è semplicemente connesso, pertanto \(X_1\) è connesso per archi e ULC, e la costruzione si può ripetere indefinitamente.
 
-Possiamo ora ricavare una relazione interessante fra i gruppi di omotopia di $X$ e i gruppi di omologia di $X_n$.
+Possiamo ora ricavare una relazione interessante fra i gruppi di omotopia di \(X\) e i gruppi di omologia di \(X_n\).
 
 \begin{proposition}\thlabel{homotopy-groups-of-x-n}
-Per ogni $n\ge 0,i\ge 1$ vale $\pi_i(X_n)=\pi_{i+n}(X)$.
+Per ogni \(n\ge 0,i\ge 1\) vale \(\pi_i(X_n)=\pi_{i+n}(X)\).
 \end{proposition}
 \begin{proof}
-La relazione è banalmente vera per $n=0$. Ragionando per induzione, possiamo supporre che sia vera per $n-1$. Poiché $T_{n-1}$ è il rivestimento universale di $X_{n-1}$, vale $\pi_1(T_{n-1})=0$ e $\pi_i(T_{n-1})=\pi_i(X_{n-1})=\pi_{i+n-1}(X)$ per $i\ge 2$. Consideriamo la fibrazione $\fibration{X_n}{E}{T_{n-1}}$ del \thref{loop-space-fibration} e la successione esatta lunga dei gruppi di omotopia associata:
+La relazione è banalmente vera per \(n=0\). Ragionando per induzione, possiamo supporre che sia vera per \(n-1\). Poiché \(T_{n-1}\) è il rivestimento universale di \(X_{n-1}\), vale \(\pi_1(T_{n-1})=0\) e \(\pi_i(T_{n-1})=\pi_i(X_{n-1})=\pi_{i+n-1}(X)\) per \(i\ge 2\). Consideriamo la fibrazione \(\fibration{X_n}{E}{T_{n-1}}\) del \thref{loop-space-fibration} e la successione esatta lunga dei gruppi di omotopia associata:
 \begin{diagram}
 \pi_{i+1}(E)\rar&\pi_{i+1}(T_{n-1})\rar&\pi_i(X_n)\rar&\pi_i(E).
 \end{diagram}
-Ma $E$ è contrattile, pertanto per ogni $i\ge 1$ vale $\pi_i(X_n)=\pi_{i+1}(T_{n-1})=\pi_{i+n}(X)$.
+Ma \(E\) è contrattile, pertanto per ogni \(i\ge 1\) vale \(\pi_i(X_n)=\pi_{i+1}(T_{n-1})=\pi_{i+n}(X)\).
 \end{proof}
 \begin{corollary}\thlabel{homotopy-groups-homology-groups}
-Per ogni $n\ge 1$ vale $H_1(X_n)=\pi_{n+1}(X)$.
+Per ogni \(n\ge 1\) vale \(H_1(X_n)=\pi_{n+1}(X)\).
 \end{corollary}
 \begin{proof}
-Sappiamo che $\pi_1(X_n)=\pi_{n+1}(X)$; in particolare $\pi_1(X_n)$ è abeliano. Per il teorema di Hurewicz, $\pi_1(X_n)=H_1(X_n)$.
+Sappiamo che \(\pi_1(X_n)=\pi_{n+1}(X)\); in particolare \(\pi_1(X_n)\) è abeliano. Per il teorema di Hurewicz, \(\pi_1(X_n)=H_1(X_n)\).
 \end{proof}
-Osserviamo che, per $n\ge 1$, $X_n$ è un H-spazio, dunque il suo gruppo fondamentale agisce banalmente sui gruppi di omologia e coomologia di $T_n$ (\thref{h-space-trivial-action}). Supponiamo d'ora in poi che $X$ sia semplicemente connesso e che i gruppi $H_i(X)$ siano finitamente generati.
+Osserviamo che, per \(n\ge 1\), \(X_n\) è un H-spazio, dunque il suo gruppo fondamentale agisce banalmente sui gruppi di omologia e coomologia di \(T_n\) (\thref{h-space-trivial-action}). Supponiamo d'ora in poi che \(X\) sia semplicemente connesso e che i gruppi \(H_i(X)\) siano finitamente generati.
 
 \begin{proposition}\thlabel{homology-groups-finitely-generated}
-I gruppi di omologia di $X_n$ e di $T_n$ sono finitamente generati per ogni $n\ge 0$.
+I gruppi di omologia di \(X_n\) e di \(T_n\) sono finitamente generati per ogni \(n\ge 0\).
 \end{proposition}
 \begin{proof}
-La tesi è sicuramente vera per $X_0$ (stiamo supponendo che i gruppi di omologia di $X$ siano finitamente generati) e per $T_0$ (poiché $T_0=X_0$). Dalla \thref{loop-space-finitely-generated-homology} segue che se la tesi vale per $T_{n-1}$ allora vale anche per $X_n$, mentre dalla \thref{homology-of-universal-covering-finitely-generated} si ottiene che se la tesi è vera per $X_n$ allora è vera anche per $T_n$ (ricordiamo che il gruppo fondamentale di $X_n$ agisce banalmente sui gruppi di omologia di $T_n$). Per induzione si ha la tesi per ogni $n$.
+La tesi è sicuramente vera per \(X_0\) (stiamo supponendo che i gruppi di omologia di \(X\) siano finitamente generati) e per \(T_0\) (poiché \(T_0=X_0\)). Dalla \thref{loop-space-finitely-generated-homology} segue che se la tesi vale per \(T_{n-1}\) allora vale anche per \(X_n\), mentre dalla \thref{homology-of-universal-covering-finitely-generated} si ottiene che se la tesi è vera per \(X_n\) allora è vera anche per \(T_n\) (ricordiamo che il gruppo fondamentale di \(X_n\) agisce banalmente sui gruppi di omologia di \(T_n\)). Per induzione si ha la tesi per ogni \(n\).
 \end{proof}
 
 \begin{corollary}\thlabel{homotopy-groups-finitely-generated}
-I gruppi $\pi_i(X_j)$ sono finitamente generati per ogni $i,j\ge 0$.
+I gruppi \(\pi_i(X_j)\) sono finitamente generati per ogni \(i,j\ge 0\).
 \end{corollary}
 \begin{proof}
 La tesi segue immediatamente dal \thref{homotopy-groups-homology-groups}, dalla \thref{homology-groups-finitely-generated} e dalla \thref{homotopy-groups-of-x-n}
 \end{proof}
 
 \begin{proposition}\thlabel{homotopy-groups-tensor-k}
-Sia $K$ un campo. Supponiamo che $H_i(X;K)=0$ per ogni $i>0$. Allora $\pi_i(X)\tensor K=0$ per ogni $i\ge 2$.
+Sia \(K\) un campo. Supponiamo che \(H_i(X;K)=0\) per ogni \(i>0\). Allora \(\pi_i(X)\tensor K=0\) per ogni \(i\ge 2\).
 \end{proposition}
 \begin{proof}
-Mostriamo che in realtà vale $H_i(X_j;K)=0$ per ogni $i>0,j\ge 0$. Procediamo per induzione su $j$. Per $j=0$ è ovvio; sia dunque $j>0$. Abbiamo
-$$
+Mostriamo che in realtà vale \(H_i(X_j;K)=0\) per ogni \(i>0,j\ge 0\). Procediamo per induzione su \(j\). Per \(j=0\) è ovvio; sia dunque \(j>0\). Abbiamo
+\[
 \pi_1(X_{j-1})\tensor K=H_1(X_{j-1})\tensor K=H_1(X_{j-1};K)=0,
-$$
-dove la seconda uguaglianza deriva dal teorema dei coefficienti universali. Il gruppo abeliano $\pi_1(X_{j-1})$ è finitamente generato (\thref{homotopy-groups-finitely-generated}), dunque è in realtà finito, e il suo ordine non è divisibile per la caratteristica di $K$. Per il \thref{homology-of-universal-covering-finite-fundamental-group} vale $H_i(T_{j-1};K)=H_i(X_{j-1};K)=0$ per ogni $i>0$. Per concludere è sufficiente ricordare che $X_j=\Omega T_{j-1}$ e applicare il \thref{loop-space-homology-isomorphism}.
+\]
+dove la seconda uguaglianza deriva dal teorema dei coefficienti universali. Il gruppo abeliano \(\pi_1(X_{j-1})\) è finitamente generato (\thref{homotopy-groups-finitely-generated}), dunque è in realtà finito, e il suo ordine non è divisibile per la caratteristica di \(K\). Per il \thref{homology-of-universal-covering-finite-fundamental-group} vale \(H_i(T_{j-1};K)=H_i(X_{j-1};K)=0\) per ogni \(i>0\). Per concludere è sufficiente ricordare che \(X_j=\Omega T_{j-1}\) e applicare il \thref{loop-space-homology-isomorphism}.
 
-La tesi della proposizione segue immediatamente: se $2\le i\le n$ vale
+La tesi della proposizione segue immediatamente: se \(2\le i\le n\) vale
 \[
 \pi_i(X)\tensor K=H_1(X_{i-1})\tensor K=H_1(X_{i-1};K)=0.\qedhere
 \]
@@ -156,58 +156,58 @@ La tesi della proposizione segue immediatamente: se $2\le i\le n$ vale
 
 \section{Sfere di dimensione dispari}
 \begin{lemma}\thlabel{cohomology-of-omega-of-space-with-exterior-cohomology}
-Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso; sia inoltre $K$ un campo di caratteristica nulla. Supponiamo che $H^*(X;K)$ sia l'algebra esterna generata da un elemento di grado $n\ge 3$ dispari. Allora $H^*(\Omega;K)$ è l'algebra di polinomi generata da un elemento di grado $n-1$.
+Sia \(X\) uno spazio topologico connesso per archi e semplicemente connesso; sia inoltre \(K\) un campo di caratteristica nulla. Supponiamo che \(H^*(X;K)\) sia l'algebra esterna generata da un elemento di grado \(n\ge 3\) dispari. Allora \(H^*(\Omega;K)\) è l'algebra di polinomi generata da un elemento di grado \(n-1\).
 \end{lemma}
 \begin{proof}
-Consideriamo la fibrazione $\fibration{\Omega}{E}{X}$ del \thref{loop-space-fibration}. Osserviamo che $X$ ha la stessa algebra di coomologia della sfera $S^n$, dunque possiamo scrivere la successione esatta di Wang (\thref{wang-exact-sequence}) associata alla suddetta fibrazione:
+Consideriamo la fibrazione \(\fibration{\Omega}{E}{X}\) del \thref{loop-space-fibration}. Osserviamo che \(X\) ha la stessa algebra di coomologia della sfera \(S^n\), dunque possiamo scrivere la successione esatta di Wang (\thref{wang-exact-sequence}) associata alla suddetta fibrazione:
 \begin{diagram}
 H^i(E;K)\rar&H^i(\Omega;K)\rar{\theta}&H^{i-n+1}(\Omega; K)\rar&H^{i+1}(E;K).
 \end{diagram}
-Poiché $E$ è contrattile, $\theta$ è un isomorfismo e $H^i(\Omega;K)=H^{i-(n-1)}(\Omega;K)$ per ogni $i>0$, ossia
-$$
+Poiché \(E\) è contrattile, \(\theta\) è un isomorfismo e \(H^i(\Omega;K)=H^{i-(n-1)}(\Omega;K)\) per ogni \(i>0\), ossia
+\[
 H^i(\Omega;K)=
 \begin{cases}
-K&\text{se $i\equiv 0\pmod{n-1}$}\\
+K&\text{se \(i\equiv 0\pmod{n-1}\)}\\
 0&\text{altrimenti}
 \end{cases}.
-$$
-Definiamo per ogni $i\ge 0$ un elemento $e_i\in H^{(n-1)i}(\Omega;K)$ per ricorsione: $e_0=1\in H^0(\Omega;K)$ e $e_i=i\theta^{-1}e_{i-1}$. È evidente che gli $e_i$ formano una base di $H^*(\Omega;K)$ come $K$-modulo; basta allora dimostrare che $e_i\cdot e_j=e_{i+j}$ per concludere che $H^*(\Omega;K)$ è l'algebra di polinomi generata da $e_1$. Dalla successione esatta di Wang sappiamo che $\theta$ è una derivazione, in quanto $n$ è dispari. Per induzione su $i+j$ si vede (supponendo $i,j>0$) che
+\]
+Definiamo per ogni \(i\ge 0\) un elemento \(e_i\in H^{(n-1)i}(\Omega;K)\) per ricorsione: \(e_0=1\in H^0(\Omega;K)\) e \(e_i=i\theta^{-1}e_{i-1}\). È evidente che gli \(e_i\) formano una base di \(H^*(\Omega;K)\) come \(K\)-modulo; basta allora dimostrare che \(e_i\cdot e_j=e_{i+j}\) per concludere che \(H^*(\Omega;K)\) è l'algebra di polinomi generata da \(e_1\). Dalla successione esatta di Wang sappiamo che \(\theta\) è una derivazione, in quanto \(n\) è dispari. Per induzione su \(i+j\) si vede (supponendo \(i,j>0\)) che
 \begin{align*}
 \theta(e_i\cdot e_j)&=\theta e_i\cdot e_j+e_i\cdot\theta e_j\\
 &=i e_{i-1}\cdot e_j+e_i\cdot je_{j-1}\\
 &=(i+j)e_{i+j-1}\\
 &=\theta e_{i+j}
 \end{align*}
-da cui (essendo $\theta$ un isomorfismo) $e_i\cdot e_j=e_{i+j}$.
+da cui (essendo \(\theta\) un isomorfismo) \(e_i\cdot e_j=e_{i+j}\).
 \end{proof}
 \begin{lemma}\thlabel{cohomology-of-omega-of-space-with-polynomyal-cohomology}
-Sia $X$ uno spazio topologico connesso per archi e semplicemente connesso; sia inoltre $K$ un campo. Supponiamo che $H^*(X;K)$ sia l'algebra di polinomi generata da un elemento $u$ di grado $n\ge 2$ pari. Allora $H^*(\Omega;K)$ è l'algebra esterna generata da un elemento $v$ di grado $n-1$.
+Sia \(X\) uno spazio topologico connesso per archi e semplicemente connesso; sia inoltre \(K\) un campo. Supponiamo che \(H^*(X;K)\) sia l'algebra di polinomi generata da un elemento \(u\) di grado \(n\ge 2\) pari. Allora \(H^*(\Omega;K)\) è l'algebra esterna generata da un elemento \(v\) di grado \(n-1\).
 \end{lemma}
 \begin{proof}
-Abbiamo che $H^i(X;K)=0$ per $0<i<n$; dal \thref{loop-space-cohomology-isomorphism} segue che $H^i(\Omega;K)=0$ per $0<i<n-1$ e che $\map{d_n}{H^{n-1}(\Omega;K)}{H^n(X;K)}$ è un isomorfismo. Consideriamo la fibrazione $\fibration{\Omega}{E}{X}$ del \thref{loop-space-fibration} e la successione spettrale coomologica associata $E^{p,q}_r\converges H^{p+q}(E;K)$. Notiamo che siamo nelle condizioni di applicare la \thref{cohomological-spectral-sequence-of-fibration-simplification}, da cui $E_2=H^*(X;K)\tensor H^*(\Omega;K)$; in particolare, identificheremo $H^*(X;K)$ con $H^*(X;K)\tensor 1$ e $1\tensor H^*(\Omega;K)$ con $H^*(\Omega;K)$. Osserviamo, di conseguenza, che se $p$ non è multiplo di $n$ allora $E^{p,q}_2=0$ (e dunque anche $E^{p,q}_r=0$ per $r\ge2$). Pertanto, per $r$ non multiplo di $n$, le mappe di bordo $\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}$ sono tutte nulle (infatti almeno uno fra $p$ e $p+r$ non è divisibile per $n$). In particolare vale $E_2=E_3=\ldots=E_n$.
+Abbiamo che \(H^i(X;K)=0\) per \(0<i<n\); dal \thref{loop-space-cohomology-isomorphism} segue che \(H^i(\Omega;K)=0\) per \(0<i<n-1\) e che \(\map{d_n}{H^{n-1}(\Omega;K)}{H^n(X;K)}\) è un isomorfismo. Consideriamo la fibrazione \(\fibration{\Omega}{E}{X}\) del \thref{loop-space-fibration} e la successione spettrale coomologica associata \(E^{p,q}_r\converges H^{p+q}(E;K)\). Notiamo che siamo nelle condizioni di applicare la \thref{cohomological-spectral-sequence-of-fibration-simplification}, da cui \(E_2=H^*(X;K)\tensor H^*(\Omega;K)\); in particolare, identificheremo \(H^*(X;K)\) con \(H^*(X;K)\tensor 1\) e \(1\tensor H^*(\Omega;K)\) con \(H^*(\Omega;K)\). Osserviamo, di conseguenza, che se \(p\) non è multiplo di \(n\) allora \(E^{p,q}_2=0\) (e dunque anche \(E^{p,q}_r=0\) per \(r\ge2\)). Pertanto, per \(r\) non multiplo di \(n\), le mappe di bordo \(\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}\) sono tutte nulle (infatti almeno uno fra \(p\) e \(p+r\) non è divisibile per \(n\)). In particolare vale \(E_2=E_3=\ldots=E_n\).
 
-Poiché $u$ è un generatore di $H^n(X;K)$, allora $v=d_n^{-1}u$ è un generatore di $H^{n-1}(\Omega;K)$. Denotiamo con $U_r$ il sottomodulo di $E_r$ generato dagli elementi di grado complementare $q\le n-1$, ossia
-$$
+Poiché \(u\) è un generatore di \(H^n(X;K)\), allora \(v=d_n^{-1}u\) è un generatore di \(H^{n-1}(\Omega;K)\). Denotiamo con \(U_r\) il sottomodulo di \(E_r\) generato dagli elementi di grado complementare \(q\le n-1\), ossia
+\[
 U_r=\Dirsum_{\substack{p\\q\le n-1}}E^{p,q}_r.
-$$
-Osserviamo che $\{u^k,u^k\cdot v\}_{k\ge 0}$ è una base di $U_n$. Dal fatto che $d_n$ è un'antiderivazione e $d_nv=u$ segue che $d_n u^k=0$ e $d_n(u^k\cdot v)=u^{k+1}$. Ma allora tutti i cocicli di $U_n$ sono anche cobordi (rispetto a $d_n$), eccezion fatta per gli elementi di grado $0$, pertanto $U_r=E^{0,0}_r$ per ogni $r\ge n+1$.
+\]
+Osserviamo che \(\{u^k,u^k\cdot v\}_{k\ge 0}\) è una base di \(U_n\). Dal fatto che \(d_n\) è un'antiderivazione e \(d_nv=u\) segue che \(d_n u^k=0\) e \(d_n(u^k\cdot v)=u^{k+1}\). Ma allora tutti i cocicli di \(U_n\) sono anche cobordi (rispetto a \(d_n\)), eccezion fatta per gli elementi di grado \(0\), pertanto \(U_r=E^{0,0}_r\) per ogni \(r\ge n+1\).
 
-Mostriamo infine, per induzione su $q\ge n$, che $H^q(\Omega;K)=0$. Supponiamo per assurdo che esista un $w\in H^q(\Omega;K)$ non nullo. Ricordiamo che $H^q(\Omega;K)=E^{0,q}_n$. Se $w$ annullasse tutte le mappe di bordo $d_r$ con $r\ge n$, allora avremmo che $E^{0,q}_\infty\neq 0$, contro il fatto che $H^q(E_{x,X})=0$. Sia dunque $r$ il minimo intero $\ge n$ tale che $d_rw\neq 0$.
+Mostriamo infine, per induzione su \(q\ge n\), che \(H^q(\Omega;K)=0\). Supponiamo per assurdo che esista un \(w\in H^q(\Omega;K)\) non nullo. Ricordiamo che \(H^q(\Omega;K)=E^{0,q}_n\). Se \(w\) annullasse tutte le mappe di bordo \(d_r\) con \(r\ge n\), allora avremmo che \(E^{0,q}_\infty\neq 0\), contro il fatto che \(H^q(E_{x,X})=0\). Sia dunque \(r\) il minimo intero \(\ge n\) tale che \(d_rw\neq 0\).
 \begin{itemize}
-\item Se $r=n$ allora $d_nw\in E^{n,q-(n-1)}_n$. Affinché $E^{n,q-(n-1)}_n$ sia non nullo è necessario, per ipotesi induttiva, che $q-(n-1)$ valga $n-1$ (o $0$, ma $q>n-1$). Pertanto $d_nw=ku\cdot v$ per un certo $k\in K$. Applicando $d_n$ a entrambi i membri si ottiene $0=ku^2$, da cui, essendo $u^2\neq 0$, necessariamente $k=0$ e $d_nw=0$, assurdo.
-\item Se $r>n$ allora $U_r=E^{0,0}_r$ e $E^{p,q'}_r=0$ per $n\le q'<q$ per ipotesi induttiva. Poiché $d_rw\in E^{r,q-r+1}_r$, necessariamente $d_rw=0$, assurdo.
+\item Se \(r=n\) allora \(d_nw\in E^{n,q-(n-1)}_n\). Affinché \(E^{n,q-(n-1)}_n\) sia non nullo è necessario, per ipotesi induttiva, che \(q-(n-1)\) valga \(n-1\) (o \(0\), ma \(q>n-1\)). Pertanto \(d_nw=ku\cdot v\) per un certo \(k\in K\). Applicando \(d_n\) a entrambi i membri si ottiene \(0=ku^2\), da cui, essendo \(u^2\neq 0\), necessariamente \(k=0\) e \(d_nw=0\), assurdo.
+\item Se \(r>n\) allora \(U_r=E^{0,0}_r\) e \(E^{p,q'}_r=0\) per \(n\le q'<q\) per ipotesi induttiva. Poiché \(d_rw\in E^{r,q-r+1}_r\), necessariamente \(d_rw=0\), assurdo.
 \end{itemize}
-Dunque non può esistere alcun $w\in H^q(\Omega;K)$ non nullo, e questo conclude la dimostrazione (infatti $H^*(\Omega;K)=H^0(\Omega;K)\dirsum H^{n-1}(\Omega;K)$, e entrambi gli addendi sono isomorfi a $K$).
+Dunque non può esistere alcun \(w\in H^q(\Omega;K)\) non nullo, e questo conclude la dimostrazione (infatti \(H^*(\Omega;K)=H^0(\Omega;K)\dirsum H^{n-1}(\Omega;K)\), e entrambi gli addendi sono isomorfi a \(K\)).
 \end{proof}
-\begin{proposition}\thlabel{homotopy-groups-of-odd-sphere-finite}
-Per ogni $n\ge 3$ dispari e per ogni $i>n$, il gruppo $\pi_i(S^n)$ è finito.
-\end{proposition}
+\begin{theorem}\thlabel{homotopy-groups-of-odd-sphere-finite}
+Per ogni \(n\ge 3\) dispari e per ogni \(i>n\), il gruppo \(\pi_i(S^n)\) è finito.
+\end{theorem}
 \begin{proof}
-Sia $X=S^n$, e siano $X_i,T_i$ gli spazi costruiti secondo il metodo generale della sezione precedente (la costruzione è lecita, in quanto $S^n$ è ULC per la \thref{sphere-ULC}). Sia $K$ un campo di caratteristica nulla; calcoliamo le algebre di coomologia degli spazi $X_i$ e $T_i$ a coefficienti in $K$. Abbiamo che $T_0=X$, dunque la sua algebra di coomologia è l'algebra esterna generata da un elemento di grado $n$. Per il \thref{cohomology-of-omega-of-space-with-exterior-cohomology}, l'algebra di coomologia di $X_1$ è l'algebra di polinomi generata da un elemento di grado $n-1$. Dalla \thref{homotopy-groups-of-x-n} deduciamo che $\pi_1(X_1)=\pi_2(X)=0$, ossia $X_1$ è semplicemente connesso, da cui $T_1=X_1$. Applicando il \thref{cohomology-of-omega-of-space-with-polynomyal-cohomology} otteniamo che l'algebra di coomologia di $X_2$ è l'algebra esterna generata da un elemento di grado $n-2$.
+Sia \(X=S^n\), e siano \(X_i,T_i\) gli spazi costruiti secondo il metodo generale della sezione precedente (la costruzione è lecita, in quanto \(S^n\) è ULC per la \thref{sphere-ULC}). Sia \(K\) un campo di caratteristica nulla; calcoliamo le algebre di coomologia degli spazi \(X_i\) e \(T_i\) a coefficienti in \(K\). Abbiamo che \(T_0=X\), dunque la sua algebra di coomologia è l'algebra esterna generata da un elemento di grado \(n\). Per il \thref{cohomology-of-omega-of-space-with-exterior-cohomology}, l'algebra di coomologia di \(X_1\) è l'algebra di polinomi generata da un elemento di grado \(n-1\). Dalla \thref{homotopy-groups-of-x-n} deduciamo che \(\pi_1(X_1)=\pi_2(X)=0\), ossia \(X_1\) è semplicemente connesso, da cui \(T_1=X_1\). Applicando il \thref{cohomology-of-omega-of-space-with-polynomyal-cohomology} otteniamo che l'algebra di coomologia di \(X_2\) è l'algebra esterna generata da un elemento di grado \(n-2\).
 
-Proseguendo in questo modo risulta che l'algebra di coomologia di $X_{n-1}$ è l'algebra esterna generata da un elemento di grado $1$; in particolare $H^i(X_{n-1};K)=0$ per $i\ge 2$. Dal teorema dei coefficienti universali si deduce immediatamente che $H_i(X_{n-1};K)=0$ per $i\ge 2$. Essendo $\pi_1(X_{n-1})=\pi_n(X)=\ZZ$, dal \thref{homology-of-universal-covering-Z-fundamental-group} segue che $H_i(T_{n-1};K)=0$ per $i>0$. Ma $T_{n-1}$ è semplicemente connesso e ULC, e i suoi gruppi di omologia sono finitamente generati, dunque possiamo applicare la \thref{homotopy-groups-tensor-k} e dedurre che $\pi_i(T_{n-1})\tensor K=0$ per ogni $i\ge 2$. Sfruttando la \thref{homotopy-groups-of-x-n} e il fatto che $T_{n-1}$ è il rivestimento universale di $X_{n-1}$ otteniamo infine che 
-$$
+Proseguendo in questo modo risulta che l'algebra di coomologia di \(X_{n-1}\) è l'algebra esterna generata da un elemento di grado \(1\); in particolare \(H^i(X_{n-1};K)=0\) per \(i\ge 2\). Dal teorema dei coefficienti universali si deduce immediatamente che \(H_i(X_{n-1};K)=0\) per \(i\ge 2\). Essendo \(\pi_1(X_{n-1})=\pi_n(X)=\ZZ\), dal \thref{homology-of-universal-covering-Z-fundamental-group} segue che \(H_i(T_{n-1};K)=0\) per \(i>0\). Ma \(T_{n-1}\) è semplicemente connesso e ULC, e i suoi gruppi di omologia sono finitamente generati, dunque possiamo applicare la \thref{homotopy-groups-tensor-k} e dedurre che \(\pi_i(T_{n-1})\tensor K=0\) per ogni \(i\ge 2\). Sfruttando la \thref{homotopy-groups-of-x-n} e il fatto che \(T_{n-1}\) è il rivestimento universale di \(X_{n-1}\) otteniamo infine che 
+\[
 \pi_{n+i-1}(X)\tensor K=\pi_i(X_{n-1})\tensor K=\pi_i(T_{n-1})\tensor K=0
-$$
-per ogni $i\ge 2$, ossia che $\pi_i(X)\tensor K=0$ per $i>n$. Ricordando che i gruppi di omotopia di $X$ sono abeliani e finitamente generati (\thref{homotopy-groups-finitely-generated}) possiamo concludere che $\pi_i(S^n)$ è un gruppo finito per $i>n$.
+\]
+per ogni \(i\ge 2\), ossia che \(\pi_i(X)\tensor K=0\) per \(i>n\). Ricordando che i gruppi di omotopia di \(X\) sono abeliani e finitamente generati (\thref{homotopy-groups-finitely-generated}) possiamo concludere che \(\pi_i(S^n)\) è un gruppo finito per \(i>n\).
 \end{proof}

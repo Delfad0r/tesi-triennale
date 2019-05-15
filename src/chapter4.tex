@@ -1,68 +1,68 @@
 \chapter{Successione spettrale coomologica di uno spazio fibrato}
 \label{ch:cohomological-spectral-sequence-of-fibration}
 \section{Costruzione della successione spettrale}
-Come è lecito aspettarsi, dato uno spazio fibrato è possibile associarvi anche una successione spettrale coomologica. Sia $G$ un gruppo abeliano. Partendo dal complesso filtrato $C_\bullet$ procediamo come mostrato nel paragrafo \ref{cohomological-spectral-sequence:dual-complex}, costruendo il cocomplesso $C^\bullet=\Hom(C_\bullet, G)$ e filtrandolo mediante i sottocomplessi $C^\bullet_p=\Ann C^{p-1}_\bullet$. Otteniamo così una successione spettrale coomologica $E^{\ast p,q}_r \converges H^{p+q}(E;G)$.
+Come è lecito aspettarsi, dato uno spazio fibrato è possibile associarvi anche una successione spettrale coomologica. Sia \(G\) un gruppo abeliano. Partendo dal complesso filtrato \(C_\bullet\) procediamo come mostrato nel paragrafo \ref{cohomological-spectral-sequence:dual-complex}, costruendo il cocomplesso \(C^\bullet=\Hom(C_\bullet, G)\) e filtrandolo mediante i sottocomplessi \(C^\bullet_p=\Ann C^{p-1}_\bullet\). Otteniamo così una successione spettrale coomologica \(E^{\ast p,q}_r \converges H^{p+q}(E;G)\).
 
 Osserviamo che
-$$
+\[
 E^{\ast p,q}_0=\frac{\Ann C^{p-1}_n}{\Ann C^p_n}=\frac{\Hom(C_n/C^{p-1}_n,G)}{\Hom(C_n/C^p_n,G)},
-$$
+\]
 ma, poiché la successione esatta
 \begin{diagram}
 0\rar&C^p_n/C^{p-1}_n\rar&C_n/C^{p-1}_n\rar&C_n/C^p_n\rar&0
 \end{diagram}
 spezza, otteniamo
-$$
+\[
 E^{\ast p,q}_0=\Hom(C^p_n/C^{p-1}_n,G)=\Hom(E^{p,q}_0,G).
-$$
-Possiamo quindi interpretare gli elementi di $E^{\ast p,q}_0$ come funzioni che associano a ogni cubo di $Q^p_n$ un elemento di $G$ e che sono nulle sui cubi degeneri e su quelli di $Q^{p-1}_n$.
+\]
+Possiamo quindi interpretare gli elementi di \(E^{\ast p,q}_0\) come funzioni che associano a ogni cubo di \(Q^p_n\) un elemento di \(G\) e che sono nulle sui cubi degeneri e su quelli di \(Q^{p-1}_n\).
 
-Ripercorriamo brevemente i passi della sezione precedente, applicati questa volta a $E^{\ast p,q}_r$. Per ogni $p$ definiamo il complesso $J^\bullet_p=\Hom(J^p_\bullet, G)$ e i morfismi $\map{\varphi_p}{J^\bullet_p}{E^{\ast p,\bullet}_0}$, $\map{\psi_p}{E^{\ast p,\bullet}_0}{J^\bullet_p}$, trasposti di $\varphi^p$ e $\psi^p$. Naturalmente $\varphi_p$ è un'equivalenza omotopica e $\psi_p$ è una sua inversa omotopica, pertanto il morfismo indotto $\varphi_*$ è un isomorfismo fra $E^{\ast p,q}_1$ e $H^q(J^\bullet_p)$. Poiché $C_p(B)$ è un gruppo abeliano libero, vale
-$$
+Ripercorriamo brevemente i passi della sezione precedente, applicati questa volta a \(E^{\ast p,q}_r\). Per ogni \(p\) definiamo il complesso \(J^\bullet_p=\Hom(J^p_\bullet, G)\) e i morfismi \(\map{\varphi_p}{J^\bullet_p}{E^{\ast p,\bullet}_0}\), \(\map{\psi_p}{E^{\ast p,\bullet}_0}{J^\bullet_p}\), trasposti di \(\varphi^p\) e \(\psi^p\). Naturalmente \(\varphi_p\) è un'equivalenza omotopica e \(\psi_p\) è una sua inversa omotopica, pertanto il morfismo indotto \(\varphi_*\) è un isomorfismo fra \(E^{\ast p,q}_1\) e \(H^q(J^\bullet_p)\). Poiché \(C_p(B)\) è un gruppo abeliano libero, vale
+\[
 H^q(J^\bullet_p)=H^q(\Hom(C_p(B),\Hom(C_\bullet(F),G)))=\Hom(C_p(B),H^q(F;G))=C^p(B;H^q(F;G)).
-$$
-Si mostra poi, in modo del tutto analogo a quanto fatto per la successione spettrale omologica, che le mappe di bordo $d^{\ast p,q}_1$ vengono mandate da $\psi^*$ nei morfismi di bordo standard di $C^\bullet(B;H^q(F;G))$, da cui si ottiene il risultato duale della \thref{spectral-sequence-of-fibration-E-2}.
-\begin{proposition}\thlabel{cohomological-spectral-sequence-of-fibration-E-2}
-Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coomologia di $F$. Allora $\psi^*$ induce un isomorfismo $E^{\ast p,q}_2\iso H^p(B;H^q(F;G))$.
-\end{proposition}
+\]
+Si mostra poi, in modo del tutto analogo a quanto fatto per la successione spettrale omologica, che le mappe di bordo \(d^{\ast p,q}_1\) vengono mandate da \(\psi^*\) nei morfismi di bordo standard di \(C^\bullet(B;H^q(F;G))\), da cui si ottiene il risultato duale del \thref{spectral-sequence-of-fibration-E-2}.
+\begin{theorem}\thlabel{cohomological-spectral-sequence-of-fibration-E-2}
+Supponiamo che il gruppo fondamentale di \(B\) agisca banalmente sui gruppi di coomologia di \(F\). Allora \(\psi^*\) induce un isomorfismo \(E^{\ast p,q}_2\iso H^p(B;H^q(F;G))\).
+\end{theorem}
 
 
-\section{Struttura moltiplicativa di \texorpdfstring{$E^*_2$}{E*2}}
-Supponiamo ora che $G$ sia anche un anello. Allora i gruppi di coomologia di $E$ acquistano una struttura di $G$-algebra, e lo stesso accade per i gruppi $E^\ast_r$. Infatti il \cupproduct{} definisce una struttura di anello su $C^\bullet(E)$; si verifica facilmente che tale prodotto soddisfa la condizione $C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}$, dunque come mostrato nel paragrafo \ref{cohomological-spectral-sequence:multiplicative-structure} i termini della successione spettrale $E^\ast_r$ ereditano una struttura di anello per la quale le mappe di bordo sono antiderivazioni. È naturale domandarsi come questa struttura si trasformi mediante l'isomorfismo della \thref{cohomological-spectral-sequence-of-fibration-E-2}.
+\section{Struttura moltiplicativa di \texorpdfstring{\(E^*_2\)}{E*2}}
+Supponiamo ora che \(G\) sia anche un anello. Allora i gruppi di coomologia di \(E\) acquistano una struttura di \(G\)-algebra, e lo stesso accade per i gruppi \(E^\ast_r\). Infatti il \cupproduct{} definisce una struttura di anello su \(C^\bullet(E)\); si verifica facilmente che tale prodotto soddisfa la condizione \(C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}\), dunque come mostrato nel paragrafo \ref{cohomological-spectral-sequence:multiplicative-structure} i termini della successione spettrale \(E^\ast_r\) ereditano una struttura di anello per la quale le mappe di bordo sono antiderivazioni. È naturale domandarsi come questa struttura si trasformi mediante l'isomorfismo del \thref{cohomological-spectral-sequence-of-fibration-E-2}.
 Definiamo
-$$
+\[
 H^*(B;H^*(F))=\Dirsum_{p,q}H^p(B;H^q(F)).
-$$
-La proposizione precedente ci dice che $\psi^*$ induce un isomorfismo $E^\ast_2\iso H^*(B;H^*(F))$ di gruppi abeliani.
-Osserviamo però che su $H^*(B;H^*(F))$ è definita anche una struttura di anello, data dal \cupproduct{} su $B$ e su $F$:
-$$
+\]
+La proposizione precedente ci dice che \(\psi^*\) induce un isomorfismo \(E^\ast_2\iso H^*(B;H^*(F))\) di gruppi abeliani.
+Osserviamo però che su \(H^*(B;H^*(F))\) è definita anche una struttura di anello, data dal \cupproduct{} su \(B\) e su \(F\):
+\[
 H^p(B;H^q(F))\times H^{p'}(B;H^{q'}(F))\longrightarrow H^{p+p'}(B;H^{q+q'}(F)).
-$$
-Vedremo con la proposizione seguente che $\psi^*$ è anche un isomorfismo di $G$-algebre, a meno di un segno.
+\]
+Vedremo con la proposizione seguente che \(\psi^*\) è anche un isomorfismo di \(G\)-algebre, a meno di un segno.
 
 \begin{proposition}\thlabel{cohomological-spectral-sequence-of-fibration-ring}
-Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coomologia di $F$. Siano $g\in E^{\ast p,q}_2$, $g'\in E^{\ast p',q'}_2$. Allora $\psi^*(g\cdot g')=(-1)^{p'q}\psi^*(g)\cdot\psi^*(g')$.
+Supponiamo che il gruppo fondamentale di \(B\) agisca banalmente sui gruppi di coomologia di \(F\). Siano \(g\in E^{\ast p,q}_2\), \(g'\in E^{\ast p',q'}_2\). Allora \(\psi^*(g\cdot g')=(-1)^{p'q}\psi^*(g)\cdot\psi^*(g')\).
 \end{proposition}
 \begin{proof}
 Cerchiamo di studiare più approfonditamente la struttura di anello indotta dal \cupproduct{} su 
-$$
+\[
 C^\bullet(B;H^*(F;G))=\Dirsum_qC^\bullet(B;H^q(F;G))=H^*(J^\bullet_p).
-$$
-Siano dunque $\bar{f}\in H^q(J^\bullet_p)$, $\bar{f}'\in H^{q'}(J^\bullet_{p'})$, e consideriamo $f\in J^q_p$, $f'\in J^{q'}_{p'}$ rappresentanti delle classi di coomologia rispettivamente di $\bar{f}$, $\bar{f}'$. Possiamo interpretare $f$ come una funzione che a ogni coppia di cubi $u\in C_p(B)$, $v\in C_q(F)$ associa un elemento $f(u,v)\in G$; inoltre $f(u,v)=0$ ogniqualvolta uno fra $u$ e $v$ è degenere. Allora il prodotto $f\cupp f'$ appartiene a $J^{q+q'}_{p+p'}$, e sviluppando il \cupproduct{} su $B$ e su $F$ si ottiene che
-$$
+\]
+Siano dunque \(\bar{f}\in H^q(J^\bullet_p)\), \(\bar{f}'\in H^{q'}(J^\bullet_{p'})\), e consideriamo \(f\in J^q_p\), \(f'\in J^{q'}_{p'}\) rappresentanti delle classi di coomologia rispettivamente di \(\bar{f}\), \(\bar{f}'\). Possiamo interpretare \(f\) come una funzione che a ogni coppia di cubi \(u\in C_p(B)\), \(v\in C_q(F)\) associa un elemento \(f(u,v)\in G\); inoltre \(f(u,v)=0\) ogniqualvolta uno fra \(u\) e \(v\) è degenere. Allora il prodotto \(f\cupp f'\) appartiene a \(J^{q+q'}_{p+p'}\), e sviluppando il \cupproduct{} su \(B\) e su \(F\) si ottiene che
+\[
 (f\cupp f')(u,v)=\sum_{H,M}\rho_{H,L}\rho_{M,N}f(\lambda^0_Lu,\lambda^0_Nv)\cdot f'(\lambda^1_Hu,\lambda^1_Mv),
-$$
-dove $H$ varia fra i sottoinsiemi di $\{1,\ldots,p+q\}$ di cardinalità $p$, $M$ fra quelli di $\{1,\ldots,p'+q'\}$ di cardinalità $p'$, $L$ e $N$ sono i complementari di $H$ e $M$, e $\rho_{H,L},\rho_{M,N}$ sono stati definiti insieme al \cupproduct{} nel paragrafo \ref{cubic-homology:cup-product}. Calcoliamo allora
+\]
+dove \(H\) varia fra i sottoinsiemi di \(\{1,\ldots,p+q\}\) di cardinalità \(p\), \(M\) fra quelli di \(\{1,\ldots,p'+q'\}\) di cardinalità \(p'\), \(L\) e \(N\) sono i complementari di \(H\) e \(M\), e \(\rho_{H,L},\rho_{M,N}\) sono stati definiti insieme al \cupproduct{} nel paragrafo \ref{cubic-homology:cup-product}. Calcoliamo allora
 \begin{align*}
 \psi_{p+p'}(\varphi_p(f)\cupp\varphi_{p'}(f'))(u,v)&=(\varphi_p(f)\cupp\varphi_{p'}(f'))K(u,v)\\
 &=\sum_P\rho_{P,Q}\varphi_p(f)(\lambda^0_QK(u,v))\cdot\varphi_{p'}(f')(\lambda^1_PK(u,v)),
 \end{align*}
-dove $P$ varia fra i sottoinsiemi di $\{1,\ldots,p+p'+q+q'\}$ di cardinalità $p+q$ e $Q$ è il complementare di $P$. Ricordiamo che $\varphi_p(f)$, come ogni elemento di $E^{p,q}_0$, è una funzione che a ogni cubo di $Q^p_n$ associa un elemento di $G$, ed è nulla sui cubi degeneri e su quelli che appartengono a $Q^{p-1}_n$, dove al solito $n=p+q$. Poiché $K(u,v)\in Q^{p+p'}_{n+n'}$, se $P\cap\{1,\ldots,p+p'\}$ ha meno di $p$ elementi allora $\lambda^0_QK(u,v)\in Q^{p-1}_{n}$, dunque $\varphi_{p}(f)(\lambda^0_QK(u,v))=0$. Analogamente se $P\cap\{1,\ldots,p+p'\}$ ha più di $p$ elementi allora $\varphi_{p'}(f')(\lambda^1_PK(u,v))=0$. Pertanto possiamo limitarci a sommare sui $P$ della forma $P=H\cup(p+p'+M)$, dove $H\subs\{1,\ldots,p+p'\}$ ha cardinalità $p$ e $M\subs\{1,\ldots,q+q'\}$ ha cardinalità $q$. Denotiamo con $L,N$ i complementari di $H,M$. Le seguenti formule sono di verifica immediata ($w$ denota un qualunque cubo di $Q^{p+p'}_{n+n'}$):
+dove \(P\) varia fra i sottoinsiemi di \(\{1,\ldots,p+p'+q+q'\}\) di cardinalità \(p+q\) e \(Q\) è il complementare di \(P\). Ricordiamo che \(\varphi_p(f)\), come ogni elemento di \(E^{p,q}_0\), è una funzione che a ogni cubo di \(Q^p_n\) associa un elemento di \(G\), ed è nulla sui cubi degeneri e su quelli che appartengono a \(Q^{p-1}_n\), dove al solito \(n=p+q\). Poiché \(K(u,v)\in Q^{p+p'}_{n+n'}\), se \(P\cap\{1,\ldots,p+p'\}\) ha meno di \(p\) elementi allora \(\lambda^0_QK(u,v)\in Q^{p-1}_{n}\), dunque \(\varphi_{p}(f)(\lambda^0_QK(u,v))=0\). Analogamente se \(P\cap\{1,\ldots,p+p'\}\) ha più di \(p\) elementi allora \(\varphi_{p'}(f')(\lambda^1_PK(u,v))=0\). Pertanto possiamo limitarci a sommare sui \(P\) della forma \(P=H\cup(p+p'+M)\), dove \(H\subs\{1,\ldots,p+p'\}\) ha cardinalità \(p\) e \(M\subs\{1,\ldots,q+q'\}\) ha cardinalità \(q\). Denotiamo con \(L,N\) i complementari di \(H,M\). Le seguenti formule sono di verifica immediata (\(w\) denota un qualunque cubo di \(Q^{p+p'}_{n+n'}\)):
 \begin{itemize}
-\item $B^p\lambda^0_Qw=\lambda^0_LB^{p+p'}w$;
-\item $B^{p'}\lambda^1_Pw=\lambda^1_HB^{p+p'}w$;
-\item $F^p\lambda^0_Qw=\lambda^0_NF^{p+p'}w$;
-\item $F^{p'}\lambda^1_Pw=\lambda^{0,1}_{L,H}\lambda^1_{p+p'+M}w$, dove l'operazione $\lambda^{0,1}_{L,H}$ consiste nel rimpiazzare le coordinate con indice in $L$ con $0$ e quelle con indice in $H$ con $1$.
+\item \(B^p\lambda^0_Qw=\lambda^0_LB^{p+p'}w\);
+\item \(B^{p'}\lambda^1_Pw=\lambda^1_HB^{p+p'}w\);
+\item \(F^p\lambda^0_Qw=\lambda^0_NF^{p+p'}w\);
+\item \(F^{p'}\lambda^1_Pw=\lambda^{0,1}_{L,H}\lambda^1_{p+p'+M}w\), dove l'operazione \(\lambda^{0,1}_{L,H}\) consiste nel rimpiazzare le coordinate con indice in \(L\) con \(0\) e quelle con indice in \(H\) con \(1\).
 \end{itemize}
 Osserviamo inoltre che
 \begin{align*}
@@ -76,26 +76,26 @@ Otteniamo dunque
 &=\sum_{H,M}(-1)^{p'q}\rho_{H,L}\rho_{M,N} f(B^p\lambda^0_QK(u,v),F^p\lambda^0_QK(u,v))\cdot f'(B^{p'}\lambda^1_PK(u,v),F^{p'}\lambda^1_PK(u,v))\\
 &=\sum_{H,M}(-1)^{p'q}\rho_{H,L}\rho_{M,N}f(\lambda^0_Lu,\lambda^0_Nv)\cdot f'(\lambda^1_Hu,\lambda^{0,1}_{L,H}K(u,\lambda^1_Mv)).
 \end{align*}
-Consideriamo l'applicazione $T$ che a ogni cubo $w$ di $F$ di dimensione $q'$ associa un cubo $Tw$ di $E$ di dimensione $q'+1$ definito da
-$$
+Consideriamo l'applicazione \(T\) che a ogni cubo \(w\) di \(F\) di dimensione \(q'\) associa un cubo \(Tw\) di \(E\) di dimensione \(q'+1\) definito da
+\[
 (Tw)(t,x_1,\ldots,x_{q'})=K(u,w)(t\delta_1,\ldots,t\delta_{p+p'},x_1,\ldots,x_{q'}),
-$$
-dove $\delta_i=0$ se $i\in L$ e $\delta_i=1$ se $i\in H$. Si vede facilmente che $T$ è una costruzione subordinata al cammino $t\mapsto u(t\delta_1,\ldots,t\delta_{p+p'})$ e che $S_Tw=\lambda^{0,1}_{L,H}K(u,w)$. Se denotiamo con $S_{H,u}$ il morfismo $S_T$ associamo all'applicazione $T$ determinata dai valori fissati di $H$ e $u$, possiamo scrivere
-$$
+\]
+dove \(\delta_i=0\) se \(i\in L\) e \(\delta_i=1\) se \(i\in H\). Si vede facilmente che \(T\) è una costruzione subordinata al cammino \(t\mapsto u(t\delta_1,\ldots,t\delta_{p+p'})\) e che \(S_Tw=\lambda^{0,1}_{L,H}K(u,w)\). Se denotiamo con \(S_{H,u}\) il morfismo \(S_T\) associamo all'applicazione \(T\) determinata dai valori fissati di \(H\) e \(u\), possiamo scrivere
+\[
 \psi_{p+p'}(\varphi_p(f)\cupp\varphi_{p'}(f'))(u,v)=(-1)^{p'q}\sum_{H,M}\rho_{H,L}\rho_{M,N}f(\lambda^0_Lu,\lambda^0_Nv)\cdot f'(\lambda^1_Hu,S_{H,u}\lambda^1_Mv).
-$$
-Passando al quoziente, ricordando che $S_{H,u}$ induce l'identità in coomologia, otteniamo
-$$
+\]
+Passando al quoziente, ricordando che \(S_{H,u}\) induce l'identità in coomologia, otteniamo
+\[
 \bar{f}\cdot\bar{f}'=\psi^*(\varphi^*(\bar{f})\cdot\varphi^*(\bar{f}')),
-$$
+\]
 da cui, passando nuovamente al quoziente, si ha la tesi.
 \end{proof}
 
 \begin{corollary}\thlabel{cohomological-spectral-sequence-of-fibration-anticommutative}
-Supponiamo che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coomologia di $F$. Allora gli anelli $E^\ast_r$ con $r\ge 2$ sono anticommutativi rispetto al grado totale $n=p+q$.
+Supponiamo che il gruppo fondamentale di \(B\) agisca banalmente sui gruppi di coomologia di \(F\). Allora gli anelli \(E^\ast_r\) con \(r\ge 2\) sono anticommutativi rispetto al grado totale \(n=p+q\).
 \end{corollary}
 \begin{proof}
-Sappiamo che l'anello $H^*(F;-)$ è anticommutativo rispetto al grado di $F$ e che l'anello $H^*(B;-)$ è anticommutativo rispetto al grado di $B$. Siano $g\in E^{\ast p,q}_2,g'\in E^{\ast p',q'}_2$. Allora
+Sappiamo che l'anello \(H^*(F;-)\) è anticommutativo rispetto al grado di \(F\) e che l'anello \(H^*(B;-)\) è anticommutativo rispetto al grado di \(B\). Siano \(g\in E^{\ast p,q}_2,g'\in E^{\ast p',q'}_2\). Allora
 \begin{align*}
 g\cdot g'&=\varphi^*(\psi^*(g\cdot g'))\\
 &=\varphi^*((-1)^{p'q}\psi^*(g)\cdot\psi^*(g'))\\
@@ -103,79 +103,79 @@ g\cdot g'&=\varphi^*(\psi^*(g\cdot g'))\\
 &=(-1)^{p'q}(-1)^{pp'+qq'}(-1)^{pq'}\varphi^*(\psi^*(g'))\cdot\varphi^*(\psi^*(g))\\
 &=(-1)^{nn'}g'\cdot g,
 \end{align*}
-dove abbiamo sfruttato la \thref{cohomological-spectral-sequence-of-fibration-ring} e il risultato analogo per $\varphi^*$. Dunque la tesi è vera per $r=2$. Ma allora è vera per ogni $r\ge 2$, poiché la struttura di anello di $E^\ast_r$ si ottiene per passaggio al quoziente da quella di $E^\ast_{r-1}$.
+dove abbiamo sfruttato la \thref{cohomological-spectral-sequence-of-fibration-ring} e il risultato analogo per \(\varphi^*\). Dunque la tesi è vera per \(r=2\). Ma allora è vera per ogni \(r\ge 2\), poiché la struttura di anello di \(E^\ast_r\) si ottiene per passaggio al quoziente da quella di \(E^\ast_{r-1}\).
 \end{proof}
 
-\section{Semplificazione di \texorpdfstring{$E^*_2$}{E*2}}
-Continuiamo a supporre che $G$ sia un anello. Sotto alcune ipotesi risulta possibile semplificare il calcolo del termine $E^\ast_2$ della successione spettrale. Se $M$ e $N$ sono due $G$-algebre graduate, possiamo definire su $M\tensor N$ una struttura di $G$-algebra come segue: se $x,x'\in M$ e $y,y'\in N$ sono elementi omogenei di gradi, rispettivamente $p,p',q,q'$, allora
-$$
+\section{Semplificazione di \texorpdfstring{\(E^*_2\)}{E*2}}
+Continuiamo a supporre che \(G\) sia un anello. Sotto alcune ipotesi risulta possibile semplificare il calcolo del termine \(E^\ast_2\) della successione spettrale. Se \(M\) e \(N\) sono due \(G\)-algebre graduate, possiamo definire su \(M\tensor N\) una struttura di \(G\)-algebra come segue: se \(x,x'\in M\) e \(y,y'\in N\) sono elementi omogenei di gradi, rispettivamente \(p,p',q,q'\), allora
+\[
 (x\tensor y)(x'\tensor y')=(-1)^{p'q}(xx'\tensor yy').
-$$
+\]
 \begin{proposition}\thlabel{cohomological-spectral-sequence-of-fibration-simplification}
-Supponiamo che $G$ sia un PID, che il gruppo fondamentale di $B$ agisca banalmente sui gruppi di coomologia di $F$ e che sia soddisfatta una delle due condizioni seguenti:
+Supponiamo che \(G\) sia un PID, che il gruppo fondamentale di \(B\) agisca banalmente sui gruppi di coomologia di \(F\) e che sia soddisfatta una delle due condizioni seguenti:
 \begin{enumerate}
-\item $H_p(B;G)$ è un $G$-modulo libero finitamente generato per ogni $p\ge 0$;
-\item $H^q(F;G)$ è un $G$-modulo libero finitamente generato per ogni $q\ge 0$.
+\item \(H_p(B;G)\) è un \(G\)-modulo libero finitamente generato per ogni \(p\ge 0\);
+\item \(H^q(F;G)\) è un \(G\)-modulo libero finitamente generato per ogni \(q\ge 0\).
 \end{enumerate}
-Allora esiste un isomorfismo di $G$-algebre $H^*(B;G)\tensor H^*(F;G)\iso E^\ast_2$.
+Allora esiste un isomorfismo di \(G\)-algebre \(H^*(B;G)\tensor H^*(F;G)\iso E^\ast_2\).
 \end{proposition}
 \begin{proof}
 Consideriamo l'applicazione
 \Map{i}{C^p(B;G)\tensor H^q(F;G)}{C^p(B;H^q(F;G))}{b\tensor f}{(u\mapsto b(u)\cdot f).}
 Per passaggio al quoziente otteniamo
-$$
+\[
 \map{i^*}{H^p(B;G)\tensor H^q(F;G)}{H^p(B;H^q(F;G))}.
-$$
-È evidente che $\varphi^*\circ i^*$ preserva la struttura moltiplicativa (ricordiamo la \thref{cohomological-spectral-sequence-of-fibration-ring}), dunque è sufficiente mostrare che, sotto le ipotesi dell'enunciato, $i^*$ è un isomorfismo di $G$-moduli.
+\]
+È evidente che \(\varphi^*\circ i^*\) preserva la struttura moltiplicativa (ricordiamo la \thref{cohomological-spectral-sequence-of-fibration-ring}), dunque è sufficiente mostrare che, sotto le ipotesi dell'enunciato, \(i^*\) è un isomorfismo di \(G\)-moduli.
 \begin{enumerate}
 \item Per il teorema dei coefficienti universali abbiamo che
-$$
+\[
 H^p(B;H^q(F;G))\iso\Hom(H_p(B;G),H^q(F;G))
-$$
+\]
 e
-$$
+\[
 H^p(B;G)\iso\Hom(H_p(B;G),G),
-$$
-dunque possiamo interpretare $i^*$ come la mappa canonica
-$$
+\]
+dunque possiamo interpretare \(i^*\) come la mappa canonica
+\[
 \map{i^*}{\Hom(H_p(B;G),G)\tensor H^q(F;G)}{\Hom(H_p(B;G),H^q(F;G))}.
-$$
-Per additività di $\Hom(-,-)$ e di $-\tensor-$, essendo $H_p(B;G)$ libero e finitamente generato, possiamo limitarci a considerare il caso $H_p(B;G)=G$, in cui $i^*$ è ovviamente un isomorfismo.
-\item Per additività di $-\tensor-$ e di $H^p(B;-)$, essendo $H^q(F;G)$ libero e finitamente generato, possiamo limitarci a considerare il caso $H^q(F;G)=G$, in cui $i^*$ è ovviamente un isomorfismo.\qedhere
+\]
+Per additività di \(\Hom(-,-)\) e di \(-\tensor-\), essendo \(H_p(B;G)\) libero e finitamente generato, possiamo limitarci a considerare il caso \(H_p(B;G)=G\), in cui \(i^*\) è ovviamente un isomorfismo.
+\item Per additività di \(-\tensor-\) e di \(H^p(B;-)\), essendo \(H^q(F;G)\) libero e finitamente generato, possiamo limitarci a considerare il caso \(H^q(F;G)=G\), in cui \(i^*\) è ovviamente un isomorfismo.\qedhere
 \end{enumerate}
 \end{proof}
 
 \section{Applicazioni}
 Presentiamo innanzitutto il risultato duale della \thref{fibration-homology-exact-sequence}; omettiamo la dimostrazione, del tutto analoga.
 \begin{proposition}\thlabel{fibration-cohomology-exact-sequence}
-Siano $G$ un PID, $\fibration{F}{E}{B}$ una fibrazione in cui il gruppo fondamentale di $B$ agisce banalmente sui moduli di coomologia di $F$. Supponiamo che $H^i(B;G)=0$ per $0<i<p$ e che $H^i(F;G)=0$ per $0<i<q$. Allora esiste una successione esatta
+Siano \(G\) un PID, \(\fibration{F}{E}{B}\) una fibrazione in cui il gruppo fondamentale di \(B\) agisce banalmente sui moduli di coomologia di \(F\). Supponiamo che \(H^i(B;G)=0\) per \(0<i<p\) e che \(H^i(F;G)=0\) per \(0<i<q\). Allora esiste una successione esatta
 \longexactsequence{H^1(B;G)\rar\&H^1(E;G)\rar\&H^1(F;G)\rar{d_2}\&H^2(B;G)\rar\&\ldots}{\ldots\rar\&H^{p+q-2}(F;G)\rar{d_{p+q-1}}\&H^{p+q-1}(B;G)\rar\&H^{p+q-1}(E;G)\rar\&H^{p+q-1}(F;G).}
 \end{proposition}
 
 Riportiamo ora un risultato noto come \enquote{Successione esatta di Wang}.
 \begin{proposition}\thlabel{wang-exact-sequence}
-Siano $G$ un PID, $\fibration{F}{E}{B}$ una fibrazione in cui il gruppo fondamentale di $B$ agisce banalmente sui moduli di coomologia di $F$. Supponiamo che $B$ sia semplicemente connesso e abbia la stessa $G$-algebra di coomologia della sfera $S^k$ con $k\ge 2$.  Allora esiste una successione esatta
+Siano \(G\) un PID, \(\fibration{F}{E}{B}\) una fibrazione in cui il gruppo fondamentale di \(B\) agisce banalmente sui moduli di coomologia di \(F\). Supponiamo che \(B\) sia semplicemente connesso e abbia la stessa \(G\)-algebra di coomologia della sfera \(S^k\) con \(k\ge 2\).  Allora esiste una successione esatta
 \begin{diagram}
 \ldots\rar&H^n(E;G)\rar&H^n(F;G)\rar{\theta}&H^{n-k+1}(F;G)\rar&H^{n+1}(E;G)\rar&\ldots
 \end{diagram}
-Inoltre $\theta$ è una derivazione se $k$ è dispari e un'antiderivazione se $k$ è pari, ossia
-$$
+Inoltre \(\theta\) è una derivazione se \(k\) è dispari e un'antiderivazione se \(k\) è pari, ossia
+\[
 \theta(x\cdot y)=\theta x\cdot y+(-1)^{(k+1)\deg x}x\cdot\theta y.
-$$
+\]
 \end{proposition}
 \begin{proof}
-Denotiamo con $E^{p,q}_r$ la successione spettrale coomologica associata alla fibrazione. Per ipotesi $H^i(B;G)$ è un $G$-modulo libero finitamente generato per ogni $i$, dunque per la \thref{cohomological-spectral-sequence-of-fibration-simplification} $E_2$ è isomorfo come $G$-algebra a $H^*(B;G)\tensor H^*(F;G)$. Pertanto, per ogni grado totale $n$, $E_2$ ha al più due termini $E^{i,j}_2$ non nulli, corrispondenti a $i=0$ e $i=k$. Applicando la \thref{cohomological-spectral-exact-sequence} (è evidente che le ipotesi sono soddisfatte) otteniamo la successione esatta
+Denotiamo con \(E^{p,q}_r\) la successione spettrale coomologica associata alla fibrazione. Per ipotesi \(H^i(B;G)\) è un \(G\)-modulo libero finitamente generato per ogni \(i\), dunque per la \thref{cohomological-spectral-sequence-of-fibration-simplification} \(E_2\) è isomorfo come \(G\)-algebra a \(H^*(B;G)\tensor H^*(F;G)\). Pertanto, per ogni grado totale \(n\), \(E_2\) ha al più due termini \(E^{i,j}_2\) non nulli, corrispondenti a \(i=0\) e \(i=k\). Applicando la \thref{cohomological-spectral-exact-sequence} (è evidente che le ipotesi sono soddisfatte) otteniamo la successione esatta
 \begin{diagram}
 \ldots\rar&H^n(E;G)\rar&E^{0,n}_2\rar{d_k}&E^{k,n-k+1}_2\rar&H^{n+1}(E;G)\rar&\ldots
 \end{diagram}
-Ricordiamo che $E^{0,n}_2=H^n(F;G)$ e che $E^{k,n-k+1}_2=H^k(B;G)\tensor H^{n-k+1}(F;G)$.
-Sia $s$ un generatore di $H^k(B;G)$; consideriamo l'isomorfismo
+Ricordiamo che \(E^{0,n}_2=H^n(F;G)\) e che \(E^{k,n-k+1}_2=H^k(B;G)\tensor H^{n-k+1}(F;G)\).
+Sia \(s\) un generatore di \(H^k(B;G)\); consideriamo l'isomorfismo
 \Map{g}{H^{n-k+1}(F;G)}{H^k(B;G)\tensor H^{n-k+1}(F;G)}{x}{s\tensor x.}
-Posto $\theta=g^{-1}d_k$, otteniamo la successione esatta della tesi. Per mostrare la seconda parte, calcoliamo
+Posto \(\theta=g^{-1}d_k\), otteniamo la successione esatta della tesi. Per mostrare la seconda parte, calcoliamo
 \begin{align*}
 d_k(x\cdot y)&=d_kx\cdot y+(-1)^{\deg x}x\cdot d_ky\\
 &=(s\tensor\theta x)\cdot(1\tensor y)+(-1)^{\deg x}(1\tensor x)\cdot (s\tensor\theta y)\\
 &=s\tensor(\theta x\cdot y+(-1)^{(k+1)\deg x}x\cdot\theta y),
 \end{align*}
-ma anche $d_k(x\cdot y)=s\tensor\theta(x\cdot y)$, da cui la tesi.
+ma anche \(d_k(x\cdot y)=s\tensor\theta(x\cdot y)\), da cui la tesi.
 \end{proof}
