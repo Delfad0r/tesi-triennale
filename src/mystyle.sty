@@ -3,10 +3,22 @@
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 
+% Logic
+\usepackage{ifthen}
+
 % Style
 \usepackage[italian=quotes]{csquotes}
 \usepackage{geometry}
 \usepackage{emptypage}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{thmtools}
+\usepackage{thm-restate}
 
 % Bibliography
 \usepackage[style=alphabetic,backend=biber,sorting=none]{biblatex}
@@ -21,14 +33,10 @@
 \setlist[enumerate,1]{label={(\roman*)}}
 \setlist[itemize,1]{label=\tiny\(\blacksquare\)}
 
-% Math packages
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{bbm}
-\usepackage{thmtools}
-\usepackage{thm-restate}
+% Tables
+\usepackage{ltablex}
+\keepXColumns
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 % Diagrams
 \usepackage{tikz}
@@ -50,18 +58,21 @@
 % Spectral sequences
 \usepackage{spectralsequences}
 \newcommand*{\drawsseq}[2]{%
-\begin{sseqpage}[run off=...-...,classes={circle,fill},#1 Serre grading,x range={0}{3},y range={0}{3},xscale=0.8,yscale=0.8,title={$r=#2$},differentials={-stealth}]
+\begin{sseqpage}[grid=chess,minor tick step=1,run off=...-...,#1 Serre grading,x range={0}{5},y range={0}{5},xscale=0.6,yscale=0.6,title={$r=#2$},differentials={-stealth,shorten <=0.05cm,shorten >=0.05cm}]
+\def\r{#2}
 \begin{scope}[background]
-\node at (\xmax+1,-1) {p};
-\node at (-1,\ymax+1) {q};
+\node at (\xmax+1.2,-1) {p};
+\node at (-1,\ymax+1.2) {q};
 \end{scope}
-\foreach \i in {\the\numexpr-#2\relax,...,\the\numexpr3+#2\relax}
-\foreach \j in {\the\numexpr-#2-1\relax,...,\the\numexpr4+#2\relax}{
-\class(\i,\j)
+\foreach \p in {0,...,\the\numexpr5+\r\relax}
+\foreach \q in {0,...,\the\numexpr6+\r\relax}{
+\class(\p,\q)
 }
-\foreach \i in {0,...,\the\numexpr3+#2\relax}
-\foreach \j in {\the\numexpr-#2\relax,...,\the\numexpr4\relax}{
-\d#2(\i,\j)
+\foreach \p in {\r,...,\the\numexpr5+\r\relax}
+\foreach \q in {0,...,6}{
+\def\pp{\the\numexpr\p-\r\relax}
+\def\qq{\the\numexpr\q+\r-1\relax}
+\ifthenelse{\qq<0\OR\(\p>5\AND\(\pp<0\OR\qq<0\OR\qq>5\)\)}{}{\d\r(\p,\q);\classoptions[fill,minimum size=0.1cm](\p,\q);\classoptions[fill,minimum size=0.1cm](\pp,\qq)}
 }
 \end{sseqpage}
 }
