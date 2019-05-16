@@ -145,7 +145,7 @@ Poiché \(K(b,u_\alpha)\in Q^p_{p+q}\), abbiamo che \(\lambda^\epsilon_iK(b,u_\a
 \[
 \varphi^{p-1}d\psi^p(b\tensor m)=\sum_\alpha\sum_{i=1}^p\sum_\epsilon(-1)^{i+\epsilon}g_\alpha B^{p-1}\lambda^\epsilon_iK(b,u_\alpha)\tensor F^{p-1}\lambda^\epsilon_iK(b,u_\alpha).
 \]
-Si vede facilmente che \(B^{p-1}\lambda^{\epsilon}_iK(b,u_\alpha)=\lambda^\epsilon_i B^pK(b,u_\alpha)=\lambda^\epsilon_ib\). Per quanto riguarda \(F^{p-1}\lambda^\epsilon_iK(b,u_\alpha)\) abbiamo invece
+Si vede facilmente che \(B^{p-1}\lambda^{\epsilon}_iK(b,u_\alpha)=\lambda^\epsilon_i B^pK(b,u_\alpha)=\lambda^\epsilon_ib\). Per quanto riguarda i cubi \(F^{p-1}\lambda^\epsilon_iK(b,u_\alpha)\) abbiamo invece
 \[
 (F^{p-1}\lambda^\epsilon_iK(b,u_\alpha))(x_1,\ldots,x_q)=K(b,u_\alpha)(0,\ldots,0,\epsilon,0,\ldots,0,x_1,\ldots,x_q)
 \]
@@ -246,7 +246,10 @@ dove
 \[
 \begin{cases}
 g(0,\ldots,0,y_1,\ldots,y_q)=v(y_1,\ldots,y_q)\\
-g(x_1,\ldots,x_p,y_1,\ldots,y_{i-1},\epsilon,y_i,\ldots,y_{q-1})=K(u,\lambda^\epsilon_iv)(x_1,\ldots,x_p,y_1,\ldots,y_{q-1})&\epsilon\in\{0,1\}
+\!\begin{aligned}[b]
+&g(x_1,\ldots,x_p,y_1,\ldots,y_{i-1},\epsilon,y_i,\ldots,y_{q-1})=\\
+&\qquad K(u,\lambda^\epsilon_iv)(x_1,\ldots,x_p,y_1,\ldots,y_{q-1})
+\end{aligned}&\epsilon\in\{0,1\}
 \end{cases};
 \]
 \item l'esistenza di \(w\) è garantita dalla \thref{homotopy-lifting-plus}, a patto di dimostrare che \(g\) è ben definita sulle intersezioni e che \(pg=fi\); si tratta in entrambi i casi di facili verifiche, sfruttando l'ipotesi induttiva.
