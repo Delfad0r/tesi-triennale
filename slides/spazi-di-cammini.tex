@@ -1,0 +1,39 @@
+\section{Spazi di cammini}
+\begin{frame}
+\frametitle{.}
+\begin{block}{Definizione}
+Siano \(X\) uno spazio topologico connesso per archi, \(A,B\subs X\) sottospazi. Si definisce
+\[
+E_{A,B}=\{f\in C([0,1],X):f(0)\in A, f(1)\in B\}
+\]
+con la topologia compatta-aperta.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{.}
+Supponiamo che \(X\) sia semplicemente connesso.
+\pause
+\begin{block}{Teorema}
+L'applicazione
+\Map{p}{E_{x,X}}{X}{f}{f(1)}
+è una fibrazione.
+\end{block}
+\pause
+\begin{itemize}[<+->]
+\item Lo spazio totale \(E_{x,X}\) è contrattile.
+\item Il tipo di omotopia delle fibre \(E_{x,y}\) non dipende da \(x\) e \(y\).
+\item Le fibre sono omotopicamente equivalenti a \(\Omega X=E_{x,x}\).
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{.}
+Abbiamo dunque una fibrazione \(\fibration{\Omega X}{E}{X}\) con \(E\) contrattile.
+\begin{itemize}
+\item<2->\(
+\begin{tikzcd}[ampersand replacement=\&]
+\cancelto<3->{0}{\pi_{n+1}(E)}\rar\&\pi_{n+1}(X)\rar[visible on=<2-3>]\rar[visible on=<4->,text=blue]{\iso}\&\pi_n(\Omega X)\rar\&\cancelto<3->{0}{\pi_n(E)}.
+\end{tikzcd}
+\)
+\item<5-> \(E^{p,q}_r\converges H_{p+q}(E)\) con \(E^{p,q}_2=H_p(X;H_q(\Omega X))\).
+\end{itemize}
+\end{frame}

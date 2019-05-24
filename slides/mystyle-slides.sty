@@ -1,0 +1,29 @@
+\ProvidesPackage{mystyle-slides}
+
+\usepackage{mathtools}
+
+% Beamer
+\addtobeamertemplate{frametitle}{\let\insertframetitle\insertsectionhead}{}
+
+% Uncovering diagrams
+\tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt={#1{}{invisible}}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}}%
+  }
+}
+
+% Cancel
+\usepackage{cancel}
+\renewcommand{\CancelColor}{\color{blue}}
+\makeatletter
+\let\my@cancelto\cancelto
+\newcommand<>{\cancelto}[2]{\alt#3{\my@cancelto{#1}{#2}}{\mathrlap{#2}\phantom{\my@cancelto{#1}{#2}}}}
+\makeatother
+
+% Checklist
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+    \hspace{-2.5pt}}
