@@ -24,6 +24,7 @@
 \vfill
 \end{frame}
 }
+\newcommand<>{\highlighton}[2]{\alt<#1>{\invboxx{#2}}{\alt#3{\boxx{#2}}{{\color{white}\fbox{\color{gray!50}#2}}}}}
 \begin{frame}
 \frametitle{.}
 Vogliamo mostrare che per \(n\ge 3\) dispari e \(i>n\) il gruppo di omotopia \(\pi_i(S^n)\) è finito.
@@ -56,7 +57,9 @@ X_0=X\\
 \end{sphereframe}
 \begin{frame}[t]
 \frametitle{.}
-\alt<9->{\sphereheader{1}{0}}{\sphereheader{0}{0}}
+\only<-8>{\sphereheader{0}{0}}
+\only<9-31>{\sphereheader{1}{0}}
+\only<32->{\sphereheader{1}{1}}
 \vfill
 \begin{columns}
 \begin{column}{0.3\textwidth}
@@ -64,21 +67,23 @@ X_0=X\\
 \checklistsize
 \begin{itemize}
 \item<2->[\(\blacktriangleright\)]
-\boxxon{16}{\(\pi_{n+i}(X)=\pi_i(X_n)\)}
-\item<11->[\(\blacktriangleright\)]\boxxon{11}{\(\pi_i(X)\tensor K=0\)}
-\item<12->[\(\blacktriangleright\)]\boxxon{12}{\(\Exterior\langle u_n\rangle\Rightarrow K[u_{n-1}]\)}
-\item<13->[\(\blacktriangleright\)]\boxxon{13}{\(K[u_n]\Rightarrow\Exterior\langle u_{n-1}\rangle\)}
+\highlighton<16,30>{2}{\(\pi_{n+i}(X)=\pi_i(X_n)\)}
+\item<11->[\(\blacktriangleright\)] \highlighton<28>{11}{\(\pi_i(X)\tensor K=0\)}
+\item<12->[\(\blacktriangleright\)] \highlighton<20,22>{12}{\(\Exterior\langle u_n\rangle\Rightarrow K[u_{n-1}]\)}
+\item<13->[\(\blacktriangleright\)] \highlighton<21-23>{13}{\(K[u_n]\Rightarrow\Exterior\langle u_{n-1}\rangle\)}
+\item<17->[\(\blacktriangleright\)] \highlighton<20-23>{17}{\(\pi_1(X_i)=0\)}
+\item<17->[\(\blacktriangleright\)] \highlighton<27>{17}{\(\pi_1(X_{n-1})=\ZZ\)}
 \end{itemize}
 \end{minipage}
 \end{column}
-\vrule{}
+{\vrule{}}
 \begin{column}{0.7\textwidth}
-\begin{minipage}{\textwidth}
+%\begin{minipage}{\textwidth}
 \only<-9>{
 \begin{itemize}
 \addtolength{\itemsep}{8pt}
-\item<1-> \(\pi_i(X_{n+1})=\pi_{i+1}(T_n)=\pi_{i+1}(X_n)\) per \(i\ge 1\)\\\visible<+(1)->{
-\(\qquad\implies\)\boxxon{.(1)}{\(\pi_{n+i}(X)=\pi_i(X_n)\)}}\visible<+>{}
+\item<+-> \(\pi_i(X_{n+1})=\pi_{i+1}(T_n)=\pi_{i+1}(X_n)\)\\\visible<+->{
+\(\qquad\implies\)\boxxon<.>{\(\pi_{n+i}(X)=\pi_i(X_n)\)}}
 \item<+-> \(\pi_{n+1}(X)=\pi_1(X_n)\visible<+->{\stackrel{\textcolor{blue}{\text{Hurewicz}}}{=}H_1(X_n)}\)
 \item<+-> \(H_i(X)\) f.g. \visible<+->{\(\implies H_i(T_n)\), \(H_i(X_n)\) f.g.}\\ \visible<+->{\(\qquad\implies H_1(X_{i-1})\visible<+->{=\pi_i(X)}\) f.g.}
 \end{itemize}
@@ -86,22 +91,45 @@ X_0=X\\
 \only<10-13>{
 \addtocounter{beamerpauses}{10}
 \begin{itemize}
-\item<+-> Se \(H_i(X;K)=0\) per \(i>0\), allora \boxxon{.}{\(\pi_i(X)\tensor K=0\)} per \(i\ge 2\).
-\item<+-> Se \(H^*(X;K)=\Exterior\langle u_n\rangle\) con \(n\ge3\) dispari, allora \boxxon{.}{\(H^*(\Omega X;K)=K[u_{n-1}]\)}.
-\item<+-> Se \(H^*(X;K)=K[u_n]\) con \(n\ge 2\) pari, allora \boxxon{.}{\(H^*(\Omega X;K)=\Exterior\langle u_{n-1}\rangle\)}.
+\item<+-> Se \(H_i(X;K)=0\) per \(i>0\), allora \boxxon<.>{\(\pi_i(X)\tensor K=0\)} per \(i\ge 2\).
+\item<+-> Se \(H^*(X;K)=\Exterior\langle u_n\rangle\) con \(n\ge3\) dispari, allora \boxxon<.>{\(H^*(\Omega X;K)=K[u_{n-1}]\)}.
+\item<+-> Se \(H^*(X;K)=K[u_n]\) con \(n\ge 2\) pari, allora \boxxon<.>{\(H^*(\Omega X;K)=\Exterior\langle u_{n-1}\rangle\)}.
 \end{itemize}
 }
-\only<14->{
+\only<14-17>{
 \addtocounter{beamerpauses}{14}
 \begin{itemize}
 \item<+-> Poniamo \(X=S^n\).
-\item<+-> \(\pi_1(X_i)=\pi_{i+1}(S^n)\visible<+->{=\begin{cases}
+\item<+-> \(\pi_1(X_i)=\boxxon<.(1)>{\(\pi_{i+1}(S^n)\visible<+->{=\begin{cases}
 0&i\le n-2\\
 \ZZ&i=n-1
-\end{cases}}\)
+\end{cases}}\)}\)
 \end{itemize}
 }
-\end{minipage}
+\only<18-25>{
+\addtocounter{beamerpauses}{18}
+\begin{itemize}
+\eqitem<+-24>\begin{align*}
+&H^*(X_0;K)=H^*(S^n)=\Exterior\langle u_n\rangle\\
+\visible<+->{&\qquad\implies H^*(X_1;K)=K[u_{n-1}]}\\
+\visible<+->{&\qquad\implies H^*(X_2;K)=\Exterior\langle u_{n-2}\rangle}\\
+\visible<+->{&\qquad\implies\ldots}\\
+\visible<+->{&\qquad\implies H^*(X_{n-1};K)=\Exterior\langle u_1\rangle}
+\end{align*}
+\item<+-> In particolare, \(H^i(X_{n-1};K)=0\) per \(i>1\).
+\end{itemize}
+}
+\only<26->{
+\addtocounter{beamerpauses}{26}
+\begin{itemize}
+\item<.-> In particolare, \(H^i(X_{n-1};K)=0\) per \(i>1\).
+\item<+-> Si può dimostrare che allora \(H_i(T_{n-1};K)=0\) per \(i>0\).
+\item<+-> \hspace{-3pt}\mbox{\begin{overprint}[50pt]\onslide<.>\(\pi_i(T_{n-1})\)
+\onslide<+>\color{blue}\(\pi_i(X_{n-1})\)\onslide<+>\color{blue}\(\pi_{i+n-1}(X)\)\onslide<+->\(\pi_{i+n-1}(X)\)\end{overprint}}\(\tensor K=0\) per \(i\ge 2\)\\
+\visible<.->{\(\qquad\implies\pi_i(S^n)\tensor K=0\) per \(i\ge n-1\)}
+\end{itemize}
+}
+%\end{minipage}
 \end{column}
 \end{columns}
 \vfill

@@ -10,11 +10,16 @@
 \usepackage{xcolor}
 \newcommand*{\boxx}[1]{{\color{blue}\fbox{\color{black}{#1}}}}
 \newcommand*{\invboxx}[1]{{\color{white}\fbox{\color{black}{#1}}}}
-\newcommand*{\boxxon}[2]{\alt<#1>{\boxx{#2}}{\invboxx{#2}}}
+\newcommand<>{\boxxon}[1]{\alt#2{\boxx{#1}}{\invboxx{#1}}}
 
 % Line spacing
 \usepackage{setspace}
 \setstretch{1.2}
+
+% Equation item
+\newcommand<>\eqitem[1][]{%
+  \ifx\relax#1\relax  \item#2 \else \item#2[#1] \fi
+  \abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
 
 % Math
 \newcommand{\Exterior}{\mathchoice{{\textstyle\bigwedge}}%
@@ -42,6 +47,6 @@
 % Checklist
 \usepackage{pifont}
 \newcommand*{\cmark}{\ding{51}}%
-\newcommand*{\notdone}{\rlap{\(\square\)}{\phantom{\raisebox{2pt}{\large\hspace{1pt}\cmark}}\hspace{-2.5pt}}}
+\newcommand*{\notdone}{\rlap{\(\square\)}{\phantom{\raisebox{2pt}{\larger\hspace{1pt}\cmark}}\hspace{-2.5pt}}}
 \newcommand*{\done}{\rlap{\(\square\)}{\raisebox{2pt}{\larger\hspace{1pt}\cmark}}\hspace{-2.5pt}}
 \newcommand*{\checklistsize}{\footnotesize}
