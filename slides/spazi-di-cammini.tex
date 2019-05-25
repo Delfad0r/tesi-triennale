@@ -29,11 +29,13 @@ L'applicazione
 \frametitle{.}
 Abbiamo dunque una fibrazione \(\fibration{\Omega X}{E}{X}\) con \(E\) contrattile.
 \begin{itemize}
+\addtolength{\itemsep}{10pt}
 \item<2->\(
 \begin{tikzcd}[ampersand replacement=\&]
-\cancelto<3->{0}{\pi_{n+1}(E)}\rar\&\pi_{n+1}(X)\rar[visible on=<2-3>]\rar[visible on=<4->,text=blue]{\iso}\&\pi_n(\Omega X)\rar\&\cancelto<3->{0}{\pi_n(E)}.
+\cancelto<3->{0}{\pi_{n+1}(E)}\rar\&\pi_{n+1}(X)\rar[visible on=<2-3>]\rar[visible on=<4->,text=blue]{\iso}\&\pi_n(\Omega X)\rar\&\cancelto<3->{0}{\pi_n(E)}
 \end{tikzcd}
 \)
 \item<5-> \(E^{p,q}_r\converges H_{p+q}(E)\) con \(E^{p,q}_2=H_p(X;H_q(\Omega X))\).
+\item<6-> Se i gruppi \(H_i(X)\) sono finitamente generati, allora anche i gruppi \(H_i(\Omega X)\) lo sono.
 \end{itemize}
 \end{frame}

@@ -1,9 +1,26 @@
 \ProvidesPackage{mystyle-slides}
 
 \usepackage{mathtools}
+\usepackage{relsize}
 
 % Beamer
 \addtobeamertemplate{frametitle}{\let\insertframetitle\insertsectionhead}{}
+
+% Color
+\usepackage{xcolor}
+\newcommand*{\boxx}[1]{{\color{blue}\fbox{\color{black}{#1}}}}
+\newcommand*{\invboxx}[1]{{\color{white}\fbox{\color{black}{#1}}}}
+\newcommand*{\boxxon}[2]{\alt<#1>{\boxx{#2}}{\invboxx{#2}}}
+
+% Line spacing
+\usepackage{setspace}
+\setstretch{1.2}
+
+% Math
+\newcommand{\Exterior}{\mathchoice{{\textstyle\bigwedge}}%
+    {{\bigwedge}}%
+    {{\textstyle\wedge}}%
+    {{\scriptstyle\wedge}}}
 
 % Uncovering diagrams
 \tikzset{
@@ -24,6 +41,7 @@
 
 % Checklist
 \usepackage{pifont}
-\newcommand{\cmark}{\ding{51}}%
-\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
-    \hspace{-2.5pt}}
+\newcommand*{\cmark}{\ding{51}}%
+\newcommand*{\notdone}{\rlap{\(\square\)}{\phantom{\raisebox{2pt}{\large\hspace{1pt}\cmark}}\hspace{-2.5pt}}}
+\newcommand*{\done}{\rlap{\(\square\)}{\raisebox{2pt}{\larger\hspace{1pt}\cmark}}\hspace{-2.5pt}}
+\newcommand*{\checklistsize}{\footnotesize}

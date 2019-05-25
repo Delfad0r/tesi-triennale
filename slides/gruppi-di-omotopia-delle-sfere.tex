@@ -1,29 +1,108 @@
 \section{Gruppi di omotopia delle sfere}
-\newcommand{\sphereheader}[2]{%
+\newcommand*{\sphereheader}[2]{%
 \begin{columns}
+\checklistsize
 \begin{column}{0.5\textwidth}
 \begin{itemize}
-\item[\ifnum #1=1 \done\else \(\square\)\fi] \(\pi_i(S^n)\) f.g.
+\item[\ifnum #1=1 \done\else\notdone\fi] \(\pi_i(S^n)\) f.g.
 \end{itemize}
 \end{column}
 \begin{column}{0.5\textwidth}
 \begin{itemize}
-\item[\ifnum #2=1 \done\else \(\square\)\fi] \(\pi_i(S^n)\tensor K=0\)
+\item[\ifnum #2=1 \done\else\notdone\fi] \(\pi_i(S^n)\tensor K=0\)
 \end{itemize}
 \end{column}
 \end{columns}
 \rule{\textwidth}{0.4pt}
+}
+\newenvironment*{sphereframe}[3][]{%
+\begin{frame}[t,#1]
+\frametitle{.}
+\sphereheader{#2}{#3}
+\vfill
+}{%
+\vfill
+\end{frame}
 }
 \begin{frame}
 \frametitle{.}
 Vogliamo mostrare che per \(n\ge 3\) dispari e \(i>n\) il gruppo di omotopia \(\pi_i(S^n)\) è finito.
 \pause
 \begin{itemize}[<+->]
-\item[\(\square\)] \(\pi_i(S^n)\) è finitamente generato.
-\item[\(\square\)] \(\pi_i(S^n)\tensor K=0\) (dove \(K\) denota un campo di caratteristica \(0\)).
+\item[\notdone] \(\pi_i(S^n)\) è finitamente generato.
+\item[\notdone] \(\pi_i(S^n)\tensor K=0\) (dove \(K\) denota un campo di caratteristica \(0\)).
 \end{itemize}
 \end{frame}
+\begin{sphereframe}{0}{0}
+Sia \(X\) uno spazio topologico semplicemente connesso con gruppi di omologia finitamente generati.
+\pause
+\begin{block}{Costruzione}
+\[
+\begin{cases}
+X_0=X\\
+\visible<+(1)->{T_n=\text{rivestimento universale di \(X_n\)}}\\
+\visible<+(1)->{X_{n+1}=\Omega T_n}
+\end{cases}
+\]
+\end{block}
+\end{sphereframe}
+\begin{sphereframe}{0}{0}
+\begin{itemize}
+\item \(T_n\to X_n\quad\rightsquigarrow\quad\begin{cases}\pause\pi_i(T_n)=\pi_i(X_n)&i\ge 2\vspace{0.2cm}\pause\\\text{\(E^{p,q}_r\converges H_{p+q}(X_n)\) con}\\ \qquad E^{p,q}_2=H_p(\pi_1(X_n);H_q(T_n))\end{cases}\)
+\vspace{0.2cm}
+\pause
+\item \(\fibration{X_{n+1}}{E}{T_n}\quad\rightsquigarrow\quad\begin{cases}\pause\pi_i(X_{n+1})=\pi_{i+1}(T_n)\vspace{0.2cm}\pause\\\text{\(E^{p,q}_r\converges H_{p+q}(E)\) con}\\ \qquad E^{p,q}_2=H_p(T_n;H_q(X_{n+1}))\end{cases}\)
+\end{itemize}
+\end{sphereframe}
 \begin{frame}[t]
 \frametitle{.}
-\sphereheader{0}{0}
+\alt<9->{\sphereheader{1}{0}}{\sphereheader{0}{0}}
+\vfill
+\begin{columns}
+\begin{column}{0.3\textwidth}
+\begin{minipage}[t][.6\textheight]{2\textwidth}
+\checklistsize
+\begin{itemize}
+\item<2->[\(\blacktriangleright\)]
+\boxxon{16}{\(\pi_{n+i}(X)=\pi_i(X_n)\)}
+\item<11->[\(\blacktriangleright\)]\boxxon{11}{\(\pi_i(X)\tensor K=0\)}
+\item<12->[\(\blacktriangleright\)]\boxxon{12}{\(\Exterior\langle u_n\rangle\Rightarrow K[u_{n-1}]\)}
+\item<13->[\(\blacktriangleright\)]\boxxon{13}{\(K[u_n]\Rightarrow\Exterior\langle u_{n-1}\rangle\)}
+\end{itemize}
+\end{minipage}
+\end{column}
+\vrule{}
+\begin{column}{0.7\textwidth}
+\begin{minipage}{\textwidth}
+\only<-9>{
+\begin{itemize}
+\addtolength{\itemsep}{8pt}
+\item<1-> \(\pi_i(X_{n+1})=\pi_{i+1}(T_n)=\pi_{i+1}(X_n)\) per \(i\ge 1\)\\\visible<+(1)->{
+\(\qquad\implies\)\boxxon{.(1)}{\(\pi_{n+i}(X)=\pi_i(X_n)\)}}\visible<+>{}
+\item<+-> \(\pi_{n+1}(X)=\pi_1(X_n)\visible<+->{\stackrel{\textcolor{blue}{\text{Hurewicz}}}{=}H_1(X_n)}\)
+\item<+-> \(H_i(X)\) f.g. \visible<+->{\(\implies H_i(T_n)\), \(H_i(X_n)\) f.g.}\\ \visible<+->{\(\qquad\implies H_1(X_{i-1})\visible<+->{=\pi_i(X)}\) f.g.}
+\end{itemize}
+}
+\only<10-13>{
+\addtocounter{beamerpauses}{10}
+\begin{itemize}
+\item<+-> Se \(H_i(X;K)=0\) per \(i>0\), allora \boxxon{.}{\(\pi_i(X)\tensor K=0\)} per \(i\ge 2\).
+\item<+-> Se \(H^*(X;K)=\Exterior\langle u_n\rangle\) con \(n\ge3\) dispari, allora \boxxon{.}{\(H^*(\Omega X;K)=K[u_{n-1}]\)}.
+\item<+-> Se \(H^*(X;K)=K[u_n]\) con \(n\ge 2\) pari, allora \boxxon{.}{\(H^*(\Omega X;K)=\Exterior\langle u_{n-1}\rangle\)}.
+\end{itemize}
+}
+\only<14->{
+\addtocounter{beamerpauses}{14}
+\begin{itemize}
+\item<+-> Poniamo \(X=S^n\).
+\item<+-> \(\pi_1(X_i)=\pi_{i+1}(S^n)\visible<+->{=\begin{cases}
+0&i\le n-2\\
+\ZZ&i=n-1
+\end{cases}}\)
+\end{itemize}
+}
+\end{minipage}
+\end{column}
+\end{columns}
+\vfill
 \end{frame}
