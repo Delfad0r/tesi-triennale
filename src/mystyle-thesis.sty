@@ -28,6 +28,17 @@
 \newcommand*{\citepage}[2]{\cite[p.\ #2]{#1}}
 \newcommand*{\citetheorem}[2]{\cite[th.\ #2]{#1}}
 
+% References
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage[lowercase]{theoremref}
+
 % Lists
 \usepackage[shortlabels]{enumitem}
 \setlist[enumerate,1]{label={(\roman*)}}
