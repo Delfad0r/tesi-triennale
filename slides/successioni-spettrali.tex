@@ -3,7 +3,7 @@
 \newcommand*{\sseqTwo}{\(d^{p+r,q-r+1}_r\circ d^{p,q}_r=0\)}
 \newcommand*{\sseqThree}{\(E^{p,q}_{r+1}=\ker d^{p,q}_r/\im d^{p+r,q-r+1}_r\)}
 \begin{frame}
-\frametitle{.}
+\frametitle{\secname}
 \begin{block}{Definizione}
 Si dice \emph{successione spettrale} una famiglia di gruppi abeliani \(E^{p,q}_r\) indicizzata da \(p,q\in\ZZ\), \(r\in\NN\) dotata di mappe di bordo \(\map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}_r}\) che soddisfa le seguenti proprietà:
 \begin{enumerate}
@@ -14,11 +14,11 @@ Si dice \emph{successione spettrale} una famiglia di gruppi abeliani \(E^{p,q}_r
 \end{block}
 \end{frame}
 \begin{frame}
-\frametitle{.}
+\frametitle{\secname}
 \begin{overprint}
 \onslide<1>
 \begin{enumerate}
-\item \sseqOne
+\item \sseqOne\vphantom{\sseqTwo}
 \end{enumerate}
 \onslide<2>
 \begin{enumerate}
@@ -30,11 +30,6 @@ Si dice \emph{successione spettrale} una famiglia di gruppi abeliani \(E^{p,q}_r
 \setcounter{enumi}{2}
 \item \sseqThree
 \end{enumerate}
-%\begin{enumerate}
-%\only<1>{\item \sseqOne}
-%\only<2>{\setcounter{enumi}{1}\item \sseqTwo}
-%\only<3>{\setcounter{enumi}{2}\item \sseqThree}
-%\end{enumerate}
 \onslide<4>Fissati \(p\) e \(q\), per \(r\) sufficientemente grande vale
 \[
 E^{p,q}_r=E^{p,q}_{r+1}=\ldots=E^{p,q}_\infty.
@@ -49,7 +44,7 @@ E^{p,q}_r=E^{p,q}_{r+1}=\ldots=E^{p,q}_\infty.
 \end{overprint}
 \end{frame}
 \begin{frame}
-\frametitle{.}
+\frametitle{\secname}
 I gruppi $E^{p,q}_\infty$ sono detti \emph{gruppi terminali}.
 \vspace{0.5cm}
 \visible<2->{
@@ -63,7 +58,7 @@ tali che \(E^{p,q}_\infty=H^p_{p+q}/H^{p-1}_{p+q}\).
 }
 \end{frame}
 \begin{frame}
-\frametitle{.}
+\frametitle{\secname}
 \begin{block}{Teorema}
 Siano \(\map{p}{T}{X}\) un rivestimento universale, \(\pi=\pi_1(X)\). Allora esiste una successione spettrale \(E^{p,q}_r\converges H_{p+q}(X)\) con
 \[

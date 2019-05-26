@@ -13,20 +13,20 @@
 \end{itemize}
 \end{column}
 \end{columns}
-\rule{\textwidth}{0.4pt}
+{\color{gray}\rule{\textwidth}{0.4pt}}
 }
 \newenvironment*{sphereframe}[3][]{%
 \begin{frame}[t,#1]
-\frametitle{.}
+\frametitle{\secname}
 \sphereheader{#2}{#3}
 \vfill
 }{%
 \vfill
 \end{frame}
 }
-\newcommand<>{\highlighton}[2]{\alt<#1>{\invboxx{#2}}{\alt#3{\boxx{#2}}{{\color{white}\fbox{\color{gray!50}#2}}}}}
+\newcommand<>{\highlighton}[2]{\alt<#1>{\invboxx{#2}}{\alt#3{\boxx{#2}}{{\color{white}\fbox{\color{gray!60}#2}}}}}
 \begin{frame}
-\frametitle{.}
+\frametitle{\secname}
 Vogliamo mostrare che per \(n\ge 3\) dispari e \(i>n\) il gruppo di omotopia \(\pi_i(S^n)\) è finito.
 \pause
 \begin{itemize}[<+->]
@@ -56,7 +56,7 @@ X_0=X\\
 \end{itemize}
 \end{sphereframe}
 \begin{frame}[t]
-\frametitle{.}
+\frametitle{\secname}
 \only<-8>{\sphereheader{0}{0}}
 \only<9-31>{\sphereheader{1}{0}}
 \only<32->{\sphereheader{1}{1}}
@@ -66,17 +66,17 @@ X_0=X\\
 \begin{minipage}[t][.6\textheight]{2\textwidth}
 \checklistsize
 \begin{itemize}
-\item<2->[\(\blacktriangleright\)]
-\highlighton<16,30>{2}{\(\pi_{n+i}(X)=\pi_i(X_n)\)}
-\item<11->[\(\blacktriangleright\)] \highlighton<28>{11}{\(\pi_i(X)\tensor K=0\)}
-\item<12->[\(\blacktriangleright\)] \highlighton<20,22>{12}{\(\Exterior\langle u_n\rangle\Rightarrow K[u_{n-1}]\)}
-\item<13->[\(\blacktriangleright\)] \highlighton<21-23>{13}{\(K[u_n]\Rightarrow\Exterior\langle u_{n-1}\rangle\)}
-\item<17->[\(\blacktriangleright\)] \highlighton<20-23>{17}{\(\pi_1(X_i)=0\)}
-\item<17->[\(\blacktriangleright\)] \highlighton<27>{17}{\(\pi_1(X_{n-1})=\ZZ\)}
+\item<2->
+\highlighton<3,16,30>{2}{\(\pi_{n+i}(X)=\pi_i(X_n)\)}
+\item<11-> \highlighton<28>{11}{\(\pi_i(X)\tensor K=0\)}
+\item<12-> \highlighton<20,22>{12}{\(\Exterior\langle u_n\rangle\Rightarrow K[u_{n-1}]\)}
+\item<13-> \highlighton<21-23>{13}{\(K[u_n]\Rightarrow\Exterior\langle u_{n-1}\rangle\)}
+\item<17-> \highlighton<20-23>{17}{\(\pi_1(X_i)=0\)}
+\item<17-> \highlighton<27>{17}{\(\pi_1(X_{n-1})=\ZZ\)}
 \end{itemize}
 \end{minipage}
 \end{column}
-{\vrule{}}
+{\color{gray}\vrule{}}
 \begin{column}{0.7\textwidth}
 %\begin{minipage}{\textwidth}
 \only<-9>{
@@ -110,7 +110,7 @@ X_0=X\\
 \addtocounter{beamerpauses}{18}
 \begin{itemize}
 \eqitem<+-24>\begin{align*}
-&H^*(X_0;K)=H^*(S^n)=\Exterior\langle u_n\rangle\\
+&H^*(X_0;K)=H^*(S^n;K)=\Exterior\langle u_n\rangle\\
 \visible<+->{&\qquad\implies H^*(X_1;K)=K[u_{n-1}]}\\
 \visible<+->{&\qquad\implies H^*(X_2;K)=\Exterior\langle u_{n-2}\rangle}\\
 \visible<+->{&\qquad\implies\ldots}\\
@@ -126,7 +126,7 @@ X_0=X\\
 \item<+-> Si può dimostrare che allora \(H_i(T_{n-1};K)=0\) per \(i>0\).
 \item<+-> \hspace{-3pt}\mbox{\begin{overprint}[50pt]\onslide<.>\(\pi_i(T_{n-1})\)
 \onslide<+>\color{blue}\(\pi_i(X_{n-1})\)\onslide<+>\color{blue}\(\pi_{i+n-1}(X)\)\onslide<+->\(\pi_{i+n-1}(X)\)\end{overprint}}\(\tensor K=0\) per \(i\ge 2\)\\
-\visible<.->{\(\qquad\implies\pi_i(S^n)\tensor K=0\) per \(i\ge n-1\)}
+\visible<.->{\(\qquad\implies\pi_i(S^n)\tensor K=0\) per \(i\ge n+1\)}
 \end{itemize}
 }
 %\end{minipage}
