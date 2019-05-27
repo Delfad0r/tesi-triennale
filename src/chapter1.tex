@@ -9,7 +9,6 @@ Si dice \defterm{successione spettrale (omologica)} una famiglia di gruppi abeli
 \item\label{spectral-sequences:pr3} \(E^{p,q}_{r+1}=\ker d^{p,q}_r/\im d^{p+r,q-r+1}_r\).
 \end{enumerate}
 \end{definition}
-\todo{Utile disegnino illustrativo e descrizione a parole.}
 L'intero \(p\) è detto grado filtrante, \(q\) è detto grado complementare e \(n=p+q\) è detto grado totale.
 Fissato un valore di \(r\), possiamo disporre i gruppi \(E^{p,q}_r\) su un reticolo bidimensionale con \(p\) e \(q\) come coordinate, come mostrato in figura.
 
@@ -272,7 +271,7 @@ per ogni \(i\).
 \begin{proof}
 Consideriamo la successione spettrale \(E^{p,q}_r\) data dal \thref{spectral-sequence-of-universal-covering}. Poiché l'azione di \(\ZZ\) su \(H_q(T;G)\) è banale vale
 \[
-E^{p,q}_2=H_p(\ZZ;H_q(T;G))=H_p(S^1;H_q(T;G))=
+E^{p,q}_2=H_p(\ZZ;H_q(T;G)))=
 \begin{cases}
 H_q(T;G)&p=0,1\\
 0&p\ge 2
@@ -309,5 +308,5 @@ Consideriamo la successione spettrale \(E^{p,q}_r\) data dal \thref{spectral-seq
 \[
 E^{p,j}_2=H_p(\pi;H_j(T))=(H_p(\pi)\tensor H_j(T))\dirsum\Tor(H_{p-1}(\pi),H_j(T));
 \]
-essendo \(\pi\) abeliano e finitamente generato, i gruppi di omologia di \(\pi\) sono finitamente generati\footnote{Per il teorema di Künneth è sufficiente verificarlo per i gruppi ciclici, dei quali l'omologia a coefficienti interi è ben nota.}; inoltre \(H_j(T)\) è finitamente generato per ipotesi induttiva, e prodotto tensore e \(\Tor\) di gruppi finitamente generati sono finitamente generati. Notiamo poi che anche i gruppi \(E^{p,j}_r\) con \(r>2\) sono finitamente generati, in quanto \(E^{p,j}_r\) è quoziente di un sottogruppo di \(E^{p,j}_{r-1}\). Se \(E^{0,i}_2\) non fosse finitamente generato, allora nemmeno \(E^{0,i}_3\) lo sarebbe, in quanto quoziente di \(E^{0,i}_2\) per l'immagine di \(\map{d^{2,i-1}_2}{E^{2,i-1}_2}{E^{0,i}_2}\), che è finitamente generata. Procedendo allo stesso modo si ricava che \(E^{0,i}_r\) non sarebbe finitamente generato per alcun \(r\ge 2\), e dunque nemmeno \(E^{0,i}_\infty\) sarebbe finitamente generato. Ma \(E^{0,i}_\infty\) è un quoziente di un sottogruppo di \(H_i(X)\), che per ipotesi è finitamente generato.
+essendo \(\pi\) abeliano e finitamente generato, i gruppi di omologia di \(\pi\) sono finitamente generati\footnote{Per il teorema di Künneth è sufficiente verificarlo per i gruppi ciclici, dei quali conosciamo l'omologia a coefficienti interi.}; inoltre \(H_j(T)\) è finitamente generato per ipotesi induttiva, e prodotto tensore e \(\Tor\) di gruppi finitamente generati sono finitamente generati. Notiamo poi che anche i gruppi \(E^{p,j}_r\) con \(r>2\) sono finitamente generati, in quanto \(E^{p,j}_r\) è quoziente di un sottogruppo di \(E^{p,j}_{r-1}\). Se \(E^{0,i}_2\) non fosse finitamente generato, allora nemmeno \(E^{0,i}_3\) lo sarebbe, in quanto quoziente di \(E^{0,i}_2\) per l'immagine di \(\map{d^{2,i-1}_2}{E^{2,i-1}_2}{E^{0,i}_2}\), che è finitamente generata. Procedendo allo stesso modo si ricava che \(E^{0,i}_r\) non sarebbe finitamente generato per alcun \(r\ge 2\), e dunque nemmeno \(E^{0,i}_\infty\) sarebbe finitamente generato. Ma \(E^{0,i}_\infty\) è un quoziente di un sottogruppo di \(H_i(X)\), che per ipotesi è finitamente generato.
 \end{proof}
