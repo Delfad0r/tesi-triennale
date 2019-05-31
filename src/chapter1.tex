@@ -106,7 +106,7 @@ dunque la mappa di bordo passa al quoziente
 \map{d^{p,q}_r}{E^{p,q}_r}{E^{p-r,q+r-1}_r}.
 \]
 \begin{proposition}\thlabel{spectral-sequence-of-filtered-complex}
-I gruppi \(E^{p,q}_r\), insieme alle mappe di bordo \(d^{p,q}_r\), formano una successione spettrale con gruppo terminale \(E^{p,q}_\infty\). Inoltre \(E^{p,q}_r\converges H_{p+q}(C_\bullet)\).
+I gruppi \(E^{p,q}_r\), insieme alle mappe di bordo \(d^{p,q}_r\), formano una successione spettrale con gruppi terminali \(E^{p,q}_\infty\). Inoltre \(E^{p,q}_r\converges H_{p+q}(C_\bullet)\).
 \end{proposition}
 \begin{proof}
 Mostriamo preliminarmente un semplice lemma che utilizzeremo più volte nel corso della dimostrazione.
@@ -133,13 +133,13 @@ Verifichiamo le tre proprietà che caratterizzano una successione spettrale.
 \]
 Mostriamo che 
 \[
-d^{-1}(Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1})=Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1}.
+d^{-1}(Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1})\cap Z^{p,q}_r=Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1}.
 \]
 \begin{itemize}
-\item[(\(\subs\))] Sia \(x\in d^{-1}(Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1})\). Ciò significa che esiste un \(y\in B^{p-r,q+r-1}_{r-1}\) tale che \(dx-y\in Z^{p-r-1,q+r}_{r-1}\). Inoltre esiste un \(y'\in Z^{p-1,q+1}_{r-1}\) tale che \(dy'=y\). Segue che \(d(x-y')\in C^{p-r-1}_{n-1}\), da cui \(x-y'\in C^p_n\cap d^{-1}(C^{p-r-1}_{n-1})=Z^{p,q}_{r+1}\). Ma allora \(x\in Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1}\).
+\item[(\(\subs\))] Sia \(x\in Z^{p,q}_r\) tale che \(dx\in Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1}\). Ciò significa che esiste un \(y\in B^{p-r,q+r-1}_{r-1}\) tale che \(dx-y\in Z^{p-r-1,q+r}_{r-1}\). Inoltre esiste un \(y'\in Z^{p-1,q+1}_{r-1}\) tale che \(dy'=y\). Segue che \(d(x-y')\in C^{p-r-1}_{n-1}\), da cui \(x-y'\in C^p_n\cap d^{-1}(C^{p-r-1}_{n-1})=Z^{p,q}_{r+1}\). Ma allora \(x\in Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1}\).
 \item[(\(\sups\))] Per il lemma abbiamo
 \[
-d(Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1})\subs B^{p-r,q+r-1}_{r-1}+B^{p-r-1,q+r}_{r-1}\subs B^{p-r,q+r-1}_{r-1}+Z^{p-r-1,q+r}_{r-1}.
+d(Z^{p,q}_{r+1}+Z^{p-1,q+1}_{r-1})\subs B^{p-r-1,q+r}_{r+1}+B^{p-r,q+r-1}_{r-1}\subs Z^{p-r-1,q+r}_{r-1}+B^{p-r,q+r-1}_{r-1}.
 \]
 \end{itemize}
 Dall'uguaglianza appena dimostrata segue che
@@ -163,13 +163,13 @@ Possiamo infine calcolare
 &=E^{p,q}_{r+1}.
 \end{align*}
 \end{enumerate}
-Dunque i gruppi \(E^{p,q}_r\) formano una successione spettrale. Verifichiamo ora che \(E^{p,q}_\infty\) sono effettivamente i gruppi terminali di tale successione. Osserviamo che per \(p>r\) vale \(Z^{p,q}_r=Z^{p,q}_\infty\), mentre per \(r\ge q+1\) vale \(B^{p,q}_r=B^{p,q}_\infty\). Dunque per \(r\) sufficientemente grande vale
+Dunque i gruppi \(E^{p,q}_r\) formano una successione spettrale. Verifichiamo ora che \(E^{p,q}_\infty\) sono effettivamente i gruppi terminali di tale successione. Osserviamo che per \(r>p\) vale \(Z^{p,q}_r=Z^{p,q}_\infty\), mentre per \(r\ge q+1\) vale \(B^{p,q}_r=B^{p,q}_\infty\). Dunque, fissati \(p\) e \(q\), per \(r\) sufficientemente grande vale
 \[
 E^{p,q}_r=\frac{Z^{p,q}_r}{Z^{p-1,q+1}_{r-1}+B^{p,q}_{r-1}}=\frac{Z^{p,q}_\infty}{Z^{p-1,q+1}_{\infty}+B^{p,q}_\infty}=E^{p,q}_\infty.
 \]
 Mostriamo infine che \(E^{p,q}_r\converges H_{p+q}(C_\bullet)\). Definiamo \(H^p_n\) come l'immagine di \(H_n(C^p_\bullet)\) in \(H_n(C_\bullet)\) mediante la mappa indotta dall'inclusione \(C^p_\bullet\subs C_\bullet\). Concretamente,
 \[
-H^p_n=\frac{(\ker d_n\cap C^p)+\im d_{n+1}}{\im d_{n+1}}=\frac{Z^{p,q}_\infty+\im d_{n+1}}{\im d_{n+1}}.
+H^p_n=\frac{(\ker d_n\cap C^p_n)+\im d_{n+1}}{\im d_{n+1}}=\frac{Z^{p,q}_\infty+\im d_{n+1}}{\im d_{n+1}}.
 \]
 È evidente che
 \[
@@ -186,7 +186,7 @@ da cui la tesi.
 
 \section{Successioni spettrali coomologiche}
 
-Esiste una nozione di successione spettrale coomologica, duale rispetto a quella introdotta all'inizio del capitolo.
+Esiste una nozione di successione spettrale coomologica, duale rispetto a quella omologica introdotta all'inizio del capitolo.
 
 \begin{definition}
 Si dice \defterm{successione spettrale coomologica} una famiglia di gruppi abeliani \(E^{p,q}_r\) indicizzata da \(p,q\in\ZZ\), \(r\in\NN\) dotata di omomorfismi \(\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}\) (detti mappe di bordo) che soddisfa le seguenti proprietà:
@@ -196,7 +196,7 @@ Si dice \defterm{successione spettrale coomologica} una famiglia di gruppi abeli
 \item \(E^{p,q}_{r+1}=\ker d^{p,q}_r/\im d^{p-r,q+r-1}_r\).
 \end{enumerate}
 \end{definition}
-Come nel caso omologico, per \(p,q\) fissati esiste un gruppo abeliano \(E^{p,q}_\infty\) (detto gruppo terminale) tale che per \(r\) sufficientemente grande valga \(E^{p,q}_r=E^{p,q}_\infty\).
+Come nel caso omologico, per \(p\) e \(q\) fissati esiste un gruppo abeliano \(E^{p,q}_\infty\) (detto gruppo terminale) tale che per \(r\) sufficientemente grande valga \(E^{p,q}_r=E^{p,q}_\infty\).
 \begin{definition}
 Sia \(H^n\) una famiglia di gruppi abeliani indicizzata da \(n\in\ZZ\).
 Si dice che una successione spettrale coomologica \(E^{p,q}_r\) \defterm{converge} ai gruppi \(H^n\) (e si scrive \(E^{p,q}_r\converges H^{p+q}\)) se esistono filtrazioni
@@ -229,7 +229,7 @@ Sia \(C^\bullet\) un cocomplesso di gruppi abeliani con \(C^n=0\) per \(n<0\). S
 \item \(C^p_{p+1}=0\).
 \end{enumerate}
 \end{definition}
-In modo del tutto analogo a quanto visto per le filtrazioni crescenti di complessi, è possibile costruire una successione spettrale coomologica associata a un cocomplesso filtrato. Riportiamo per completezza i passi fondamentali. Definiamo
+In modo del tutto analogo a quanto visto per le filtrazioni crescenti di complessi, è possibile costruire una successione spettrale coomologica associata a un cocomplesso filtrato. Riportiamo per completezza i passi fondamentali. Definiamo:
 \begin{itemize}
 \item \(Z^{p,q}_r=C_p^n\cap (d^n)^{-1}(C_{p+r}^{n+1})\);
 \item \(Z^{p,q}_\infty=C_p^n\cap(d^n)^{-1}(0)\);
@@ -255,13 +255,12 @@ Si verifica \todo{Farlo a un certo punto.} allora che \(\cupp\) passa al quozien
 Esibiamo ora una costruzione che permette di associare una successione spettrale coomologica a un complesso filtrato \(C_\bullet\) con mappe di bordo \(d\). Sia \(G\) un gruppo abeliano. Consideriamo il cocomplesso \(C^\bullet=\Hom(C_\bullet,G)\) con mappe di bordo \(-\circ d\). Il cocomplesso \(C^\bullet\) eredita una filtrazione decrescente \(C^n_p=\Ann C_n^{p-1}\) (le proprietà richieste si verificano facilmente), a partire dalla quale possiamo costruire una successione spettrale coomologica \(E^{p,q}_r\converges H^{p+q}(C_\bullet;G)\).
 
 \section{Successione spettrale di un rivestimento universale}
-\todo{Breve introduzione.}
 Riportiamo il risultato presentato in \citetheorem{seminaire-cartan}{2}, riformulato usando le notazioni che abbiamo introdotto. Consideriamo uno spazio topologico \(X\) che ammette un rivestimento universale \(\map{p}{T}{X}\). Sia \(\pi\) il gruppo fondamentale di \(X\), e supponiamo che \(\pi\) agisca banalmente sui gruppi di omologia di \(T\). Sia inoltre \(G\) un gruppo abeliano. Denotiamo con \(H_p(\pi;H_q(T;G)))\) il \(p\)-esimo gruppo di omologia di \(\pi\) a coefficienti nel \(\pi\)-modulo (banale) \(H_q(T;G)\).
 \begin{theorem}\thlabel{spectral-sequence-of-universal-covering}
 Esiste una successione spettrale \(E^{p,q}_r\converges H_{p+q}(X;G)\) con \(E^{p,q}_2=H_p(\pi;H_q(T;G))\).
 \end{theorem}
 \begin{corollary}\thlabel{homology-of-universal-covering-Z-fundamental-group}
-Supponiamo che \(G\) sia un campo; supponiamo inoltre che il gruppo fondamentale \(\pi\) sia il gruppo additivo \(\ZZ\). Allora
+Supponiamo che \(\pi\) sia il gruppo additivo \(\ZZ\) e che \(G\) sia un campo. Allora
 \[
 H_i(X;G)=H_i(T;G)\dirsum H_{i-1}(T;G)
 \]
@@ -285,7 +284,7 @@ H_i(X;G)=\Dirsum_{p+q=i}E^{p,q}_\infty=E^{0,i}_2\dirsum E^{1,i-1}_2=H_i(T;G)\dir
 Supponiamo che \(\pi\) sia finito e che \(G\) sia un campo la cui caratteristica non divide l'ordine di \(\pi\). Allora \(H_i(X;G)=H_i(T;G)\) per ogni \(i\).
 \end{corollary}
 \begin{proof}
-Consideriamo la successione spettrale \(E^{p,q}_r\) data dal \thref{spectral-sequence-of-universal-covering}. È ben noto che, con le ipotesi fatte, vale\footnote{Per il teorema di Künneth è sufficiente verificarlo nel caso in cui \(\pi\) è ciclico; sotto questa ipotesi il risultato segue immediatamente dal teorema dei coefficienti universali e dal fatto che \(H_p(\ZZ/m)\) è \(0\) o \(\ZZ/m\) per \(p>0\).}
+Consideriamo la successione spettrale \(E^{p,q}_r\) data dal \thref{spectral-sequence-of-universal-covering}. È ben noto che, con le ipotesi fatte, vale\footnote{Per il teorema dei coefficienti universali, \(H_p(\pi;H_q(T;G))=H_p(\pi;G)\tensor H_q(T;G)\). Per il teorema di Künneth è sufficiente verificare che \(H_p(\pi;G)=0\) per \(p>0\) quando \(\pi\) è ciclico; sotto questa ipotesi il risultato segue immediatamente dal teorema dei coefficienti universali e dal fatto che \(H_p(\ZZ/m)\) è \(0\) o \(\ZZ/m\) per \(p>0\).}
 \[
 H_p(\pi;H_q(T;G))=
 \begin{cases}
@@ -307,5 +306,5 @@ Consideriamo la successione spettrale \(E^{p,q}_r\) data dal \thref{spectral-seq
 \[
 E^{p,j}_2=H_p(\pi;H_j(T))=(H_p(\pi)\tensor H_j(T))\dirsum\Tor(H_{p-1}(\pi),H_j(T));
 \]
-essendo \(\pi\) abeliano e finitamente generato, i suoi gruppi di omologia sono finitamente generati\footnote{Per il teorema di Künneth è sufficiente verificarlo per i gruppi ciclici, dei quali conosciamo l'omologia a coefficienti interi.}; inoltre \(H_j(T)\) è finitamente generato per ipotesi induttiva, e prodotto tensore e \(\Tor\) di gruppi finitamente generati sono finitamente generati. Notiamo poi che anche i gruppi \(E^{p,j}_r\) con \(r>2\) sono finitamente generati, in quanto \(E^{p,j}_r\) è quoziente di un sottogruppo di \(E^{p,j}_{r-1}\). Se \(E^{0,i}_2\) non fosse finitamente generato, allora nemmeno \(E^{0,i}_3\) lo sarebbe, in quanto quoziente di \(E^{0,i}_2\) per l'immagine di \(\map{d^{2,i-1}_2}{E^{2,i-1}_2}{E^{0,i}_2}\), che è finitamente generata. Procedendo allo stesso modo si ricava che \(E^{0,i}_r\) non sarebbe finitamente generato per alcun \(r\ge 2\), e dunque nemmeno \(E^{0,i}_\infty\) sarebbe finitamente generato. Ma \(E^{0,i}_\infty\) è un quoziente di un sottogruppo di \(H_i(X)\), che per ipotesi è finitamente generato.
+essendo \(\pi\) abeliano e finitamente generato, i suoi gruppi di omologia sono finitamente generati\footnote{Per il teorema di Künneth è sufficiente verificarlo per i gruppi ciclici, dei quali conosciamo l'omologia a coefficienti interi.}; inoltre \(H_j(T)\) è finitamente generato per ipotesi induttiva, e prodotto tensore e \(\Tor\) di gruppi finitamente generati sono finitamente generati. Notiamo poi che anche i gruppi \(E^{p,j}_r\) con \(r>2\) sono finitamente generati, in quanto \(E^{p,j}_r\) è quoziente di un sottogruppo di \(E^{p,j}_{r-1}\). Se \(E^{0,i}_2\) non fosse finitamente generato, allora nemmeno \(E^{0,i}_3\) lo sarebbe, in quanto quoziente di \(E^{0,i}_2\) per l'immagine di \(\map{d^{2,i-1}_2}{E^{2,i-1}_2}{E^{0,i}_2}\), che è finitamente generata. Procedendo allo stesso modo si ricava che \(E^{0,i}_r\) non sarebbe finitamente generato per alcun \(r\ge 2\), e dunque nemmeno \(E^{0,i}_\infty\) sarebbe finitamente generato. Ma ciò è assurdo, poiché \(E^{0,i}_\infty\) è quoziente di un sottogruppo di \(H_i(X)\), che per ipotesi è finitamente generato.
 \end{proof}
