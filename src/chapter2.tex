@@ -14,13 +14,13 @@ Denotiamo con \(Q_n(X)\) il gruppo abeliano libero avente per base l'insieme dei
 
 Siano \(u\) un cubo di dimensione \(n\), \(p,q\in\NN\) con \(p+q=n\), \(H\) un sottoinsieme di \(\{1,\ldots,n\}\) di cardinalità \(p\), \(K\) il complementare di \(H\), \(\varphi_K\) l'unica applicazione strettamente crescente da \(K\) in \(\{1,\ldots,q\}\); sia inoltre \(\epsilon\in\{0,1\}\). Definiamo allora il cubo singolare \(\lambda^\epsilon_Hu\) di dimensione \(q\):
 \[
-\lambda^\epsilon_Hu(x_1,\ldots,x_n)=u(y_1,\ldots,y_n)\qquad\text{, dove }y_i=\begin{cases}\epsilon&i\in H\\x_{\varphi_K(i)}&i\in K\end{cases}.
+(\lambda^\epsilon_Hu)(x_1,\ldots,x_q)=u(y_1,\ldots,y_n)\qquad\text{, dove }y_i=\begin{cases}\epsilon&i\in H\\x_{\varphi_K(i)}&i\in K\end{cases}.
 \]
 Per snellire la notazione, se \(H=\{i\}\) (ossia se \(p=1\)), scriviamo \(\lambda^\epsilon_i\) in luogo di \(\lambda^\epsilon_{\{i\}}\). Dato un cubo \(u\) di dimensione \(n\), definiamo dunque
 \[
 d_nu=\sum_{i=1}^n\sum_{\epsilon=0}^1(-1)^{i+\epsilon}\lambda^\epsilon_iu,
 \]
-estendendola per \(\ZZ\)-linearità a tutto \(Q_n(X)\). È immediato verificare che \(\lambda^\epsilon_i\lambda^{\epsilon'}_j=\lambda^{\epsilon'}_{j-1}\lambda^\epsilon_i\); un semplice conto mostra allora che \(d_nd_{n+1}=0\). Abbiamo così definito il complesso \(Q_\bullet(X)\). Si vede inoltre che \(D_\bullet(X)\) è un sottocomplesso di \(Q_\bullet(X)\): se \(u\) è un cubo degenere di dimensione \(n\), allora anche \(\lambda^\epsilon_iu\) è degenere per \(0\le i<n\), mentre \(\lambda^0_nu=\lambda^1_nu\), pertanto \(du\) è degenere.
+estendendo la mappa \(d_n\) a tutto \(Q_n(X)\) per \(\ZZ\)-linearità. È immediato verificare che \(\lambda^\epsilon_i\lambda^{\epsilon'}_j=\lambda^{\epsilon'}_{j-1}\lambda^\epsilon_i\); un semplice conto mostra allora che \(d_nd_{n+1}=0\). Abbiamo così definito il complesso \(Q_\bullet(X)\). Si vede inoltre che \(D_\bullet(X)\) è un sottocomplesso di \(Q_\bullet(X)\): se \(u\) è un cubo degenere di dimensione \(n\), allora anche \(\lambda^\epsilon_iu\) è degenere per \(0\le i<n\), mentre \(\lambda^0_nu=\lambda^1_nu\), pertanto \(du\) è degenere.
 \begin{definition}
 Si dice \defterm{complesso singolare cubico} di \(X\) il complesso \(C_\bullet(X)=Q_\bullet(X)/D_\bullet(X)\). I suoi gruppi di omologia e coomologia a coefficienti in un gruppo abeliano \(G\) si dicono \defterm{gruppi di omologia e coomologia singolare cubica} di \(X\) a coefficienti in \(G\).
 \end{definition}

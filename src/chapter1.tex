@@ -214,7 +214,7 @@ Siano \(E^{p,q}_r\converges H^{p+q}\) una successione spettrale coomologica, \(r
 \item \(p+q=n-1\) e \(p\le a'_n-r\);
 \item \(p+q=n+1\) e \(p\ge a''_n+r\).
 \end{itemize}
-Denotiamo con \(\pre{n}{E}'_r\) il gruppo \(E^{p,q}_r\) con \(p=a'_n,q=b'_n\), e analogamente sia \(\pre{n}{E}''_r\) il gruppo \(E^{p,q}_r\) con \(p=a''_n,q=b''_n\). Denotiamo inoltre con \(\pre{n}{d}\) l'applicazione \(\map{d^{p,q}_s}{\pre{n}{E}'_r}{\pre{n+1}{E}''_r}\) corrispondente a \(p=a'_n\), \(q=b'_n\), \(s=a''_n-a'_{n+1}\), oppure l'applicazione nulla se \(s<r\). Allora \(\pre{n}{d}\) è ben definita per ogni \(i<n\le j\) ed esiste una successione esatta
+Denotiamo con \(\pre{n}{E}'_r\) il gruppo \(E^{p,q}_r\) con \(p=a'_n\), \(q=b'_n\), e analogamente sia \(\pre{n}{E}''_r\) il gruppo \(E^{p,q}_r\) con \(p=a''_n\), \(q=b''_n\). Denotiamo inoltre con \(\pre{n}{d}\) l'applicazione \(\map{d^{p,q}_s}{\pre{n}{E}'_r}{\pre{n+1}{E}''_r}\) corrispondente a \(p=a'_n\), \(q=b'_n\), \(s=a''_{n+1}-a'_n\), oppure l'applicazione nulla se \(s<r\). Allora \(\pre{n}{d}\) è ben definita per ogni \(i<n\le j\) ed esiste una successione esatta
 \begin{diagram}
 \pre{i}{E}''_r\rar&H^i\rar&\pre{i}{E}'_r\rar{\pre{i}{d}}&\pre{i+1}E''_r\rar&\ldots\rar{\pre{j-1}{d}}&\pre{j}{E}''_r\rar&H^j\rar&\pre{j}{E}'_r.
 \end{diagram}
@@ -238,13 +238,13 @@ In modo del tutto analogo a quanto visto per le filtrazioni crescenti di comples
 \item \(E^{p,q}_r=Z^{p,q}_r/(Z^{p+1,q-1}_{r-1}+B^{p,q}_{r-1})\);
 \item \(E^{p,q}_\infty=Z^{p,q}_\infty/(Z^{p+1,q-1}_{\infty}+B^{p,q}_\infty)\).
 \end{itemize}
-La mappa di bordo passa al quoziente \(\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}\).
+Le mappe di bordo di \(C^\bullet\) passano al quoziente, permettendo di definire  \(\map{d^{p,q}_r}{E^{p,q}_r}{E^{p+r,q-r+1}_r}\).
 \begin{proposition}\thlabel{spectral-sequence-of-filtered-cocomplex}
 I gruppi \(E^{p,q}_r\), insieme alle mappe di bordo \(d^{p,q}_r\), formano una successione spettrale coomologica con gruppo terminale \(E^{p,q}_\infty\). Inoltre \(E^{p,q}_r\converges H^{p+q}(C^\bullet)\).
 \end{proposition}
 
 \subsection{Struttura moltiplicativa}\label{cohomological-spectral-sequence:multiplicative-structure}
-Se \(C^\bullet\) è munito di una struttura di anello, come spesso accade nel contesto topologico, allora ne esiste anche una indotta sui termini della successione spettrale associata. Più precisamente, supponiamo che sia definito un prodotto bilineare \(\map{\cupp}{C^n\times C^m}{C^{n+m}}\) che soddisfa le seguenti proprietà:
+Se \(C^\bullet\) è munito di una struttura moltiplicativa, come spesso accade nel contesto topologico, allora ne esiste anche una indotta sui termini della successione spettrale associata. Più precisamente, supponiamo che sia definito un prodotto bilineare \(\map{\cupp}{C^n\times C^m}{C^{n+m}}\) che soddisfa le seguenti proprietà:
 \begin{enumerate}
 \item \(d(x\cupp y)=dx\cupp y+(-1)^{\deg x}x\cupp dy\) (in altre parole, \(d\) è un'antiderivazione);
 \item \(C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}\).
