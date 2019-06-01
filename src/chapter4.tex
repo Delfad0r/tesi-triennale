@@ -28,7 +28,7 @@ Supponiamo che il gruppo fondamentale di \(B\) agisca banalmente sui gruppi di c
 
 
 \section{Struttura moltiplicativa di \texorpdfstring{\(E^*_2\)}{E*2}}
-Supponiamo ora che \(G\) sia anche un anello. Allora i gruppi di coomologia di \(E\) acquistano una struttura di \(G\)-algebra, e lo stesso accade per i gruppi \(E^\ast_r\). Infatti il \cupproduct{} definisce una struttura di anello su \(C^\bullet(E)\); si verifica facilmente che tale prodotto soddisfa la condizione \(C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}\), dunque come mostrato nel paragrafo \ref{cohomological-spectral-sequence:multiplicative-structure} i termini della successione spettrale \(E^\ast_r\) ereditano una struttura di anello per la quale le mappe di bordo sono antiderivazioni. È naturale domandarsi come questa struttura si trasformi mediante l'isomorfismo del \thref{cohomological-spectral-sequence-of-fibration-E-2}.
+Supponiamo ora che \(G\) sia anche un anello. Allora i gruppi di coomologia di \(E\) acquistano una struttura di \(G\)-algebra, e lo stesso accade per i gruppi \(E^\ast_r\). Infatti il \cupproduct{} definisce una struttura moltiplicativa su \(C^\bullet(E)\); si verifica facilmente che tale prodotto soddisfa la condizione \(C^n_p\cupp C^m_q\subs C^{m+n}_{p+q}\), dunque come mostrato nel paragrafo \ref{cohomological-spectral-sequence:multiplicative-structure} i termini della successione spettrale \(E^\ast_r\) ereditano una struttura di anello per la quale le mappe di bordo sono antiderivazioni. È naturale domandarsi come questa struttura si trasformi mediante l'isomorfismo del \thref{cohomological-spectral-sequence-of-fibration-E-2}.
 Definiamo
 \[
 H^*(B;H^*(F))=\Dirsum_{p,q}H^p(B;H^q(F)).
@@ -48,16 +48,16 @@ Cerchiamo di studiare più approfonditamente la struttura di anello indotta dal 
 \[
 C^\bullet(B;H^*(F;G))=\Dirsum_qC^\bullet(B;H^q(F;G))=H^*(J^\bullet_p).
 \]
-Siano dunque \(\bar{f}\in H^q(J^\bullet_p)\), \(\bar{f}'\in H^{q'}(J^\bullet_{p'})\), e consideriamo \(f\in J^q_p\), \(f'\in J^{q'}_{p'}\) rappresentanti delle classi di coomologia rispettivamente di \(\bar{f}\), \(\bar{f}'\). Possiamo interpretare \(f\) come una funzione che a ogni coppia di cubi \(u\in C_p(B)\), \(v\in C_q(F)\) associa un elemento \(f(u,v)\in G\); inoltre \(f(u,v)=0\) ogniqualvolta uno fra \(u\) e \(v\) è degenere. Allora il prodotto \(f\cupp f'\) appartiene a \(J^{q+q'}_{p+p'}\), e sviluppando il \cupproduct{} su \(B\) e su \(F\) si ottiene che
+Siano dunque \(\bar{f}\in H^q(J^\bullet_p)\), \(\bar{f}'\in H^{q'}(J^\bullet_{p'})\), e consideriamo \(f\in J^q_p\), \(f'\in J^{q'}_{p'}\) rappresentanti delle classi di coomologia rispettivamente di \(\bar{f}\), \(\bar{f}'\). Possiamo interpretare \(f\) come una funzione che a ogni coppia di cubi \(u\in Q_p(B)\), \(v\in Q_q(F)\) associa un elemento \(f(u,v)\in G\); inoltre \(f(u,v)=0\) ogniqualvolta uno fra \(u\) e \(v\) è degenere. Allora il prodotto \(f\cupp f'\) appartiene a \(J^{q+q'}_{p+p'}\), e sviluppando il \cupproduct{} su \(B\) e su \(F\) si ottiene che
 \[
 (f\cupp f')(u,v)=\sum_{H,M}\rho_{H,L}\rho_{M,N}f(\lambda^0_Lu,\lambda^0_Nv)\cdot f'(\lambda^1_Hu,\lambda^1_Mv),
 \]
-dove \(H\) varia fra i sottoinsiemi di \(\{1,\ldots,p+q\}\) di cardinalità \(p\), \(M\) fra quelli di \(\{1,\ldots,p'+q'\}\) di cardinalità \(p'\), \(L\) e \(N\) sono i complementari di \(H\) e \(M\), e \(\rho_{H,L},\rho_{M,N}\) sono stati definiti insieme al \cupproduct{} nel paragrafo \ref{cubic-homology:cup-product}. Calcoliamo allora
+dove \(H\) varia fra i sottoinsiemi di \(\{1,\ldots,p+p'\}\) di cardinalità \(p\), \(M\) fra quelli di \(\{1,\ldots,q+q'\}\) di cardinalità \(p'\), \(L\) e \(N\) sono i complementari di \(H\) e \(M\), e \(\rho_{H,L},\rho_{M,N}\) sono stati definiti insieme al \cupproduct{} nel paragrafo \ref{cubic-homology:cup-product}. Calcoliamo allora
 \begin{align*}
 \psi_{p+p'}(\varphi_p(f)\cupp\varphi_{p'}(f'))(u,v)&=(\varphi_p(f)\cupp\varphi_{p'}(f'))K(u,v)\\
 &=\sum_P\rho_{P,Q}\varphi_p(f)(\lambda^0_QK(u,v))\cdot\varphi_{p'}(f')(\lambda^1_PK(u,v)),
 \end{align*}
-dove \(P\) varia fra i sottoinsiemi di \(\{1,\ldots,p+p'+q+q'\}\) di cardinalità \(p+q\) e \(Q\) è il complementare di \(P\). Ricordiamo che \(\varphi_p(f)\), come ogni elemento di \(E^{p,q}_0\), è una funzione che a ogni cubo di \(Q^p_n\) associa un elemento di \(G\), ed è nulla sui cubi degeneri e su quelli che appartengono a \(Q^{p-1}_n\), dove al solito \(n=p+q\). Poiché \(K(u,v)\in Q^{p+p'}_{n+n'}\), se \(P\cap\{1,\ldots,p+p'\}\) ha meno di \(p\) elementi allora \(\lambda^0_QK(u,v)\in Q^{p-1}_{n}\), dunque \(\varphi_{p}(f)(\lambda^0_QK(u,v))=0\). Analogamente se \(P\cap\{1,\ldots,p+p'\}\) ha più di \(p\) elementi allora \(\varphi_{p'}(f')(\lambda^1_PK(u,v))=0\). Pertanto possiamo limitarci a sommare sui \(P\) della forma \(P=H\cup(p+p'+M)\), dove \(H\subs\{1,\ldots,p+p'\}\) ha cardinalità \(p\) e \(M\subs\{1,\ldots,q+q'\}\) ha cardinalità \(q\). Denotiamo con \(L,N\) i complementari di \(H,M\). Le seguenti formule sono di verifica immediata (\(w\) denota un qualunque cubo di \(Q^{p+p'}_{n+n'}\)):
+dove \(P\) varia fra i sottoinsiemi di \(\{1,\ldots,p+p'+q+q'\}\) di cardinalità \(p+q\) e \(Q\) è il complementare di \(P\). Ricordiamo che \(\varphi_p(f)\), come ogni elemento di \(E^{p,q}_0\), è una funzione che a ogni cubo di \(Q^p_n\) associa un elemento di \(G\), ed è nulla sui cubi degeneri e su quelli che appartengono a \(Q^{p-1}_n\), dove al solito \(n=p+q\). Poiché \(K(u,v)\in Q^{p+p'}_{n+n'}\), se \(P\cap\{1,\ldots,p+p'\}\) ha meno di \(p\) elementi allora \(\lambda^0_QK(u,v)\in Q^{p-1}_{n}\), dunque \(\varphi_{p}(f)(\lambda^0_QK(u,v))=0\). Analogamente se \(P\cap\{1,\ldots,p+p'\}\) ha più di \(p\) elementi allora \(\varphi_{p'}(f')(\lambda^1_PK(u,v))=0\). Pertanto possiamo limitarci a sommare sui \(P\) della forma \(P=H\cup(p+p'+M)\), dove \(H\subs\{1,\ldots,p+p'\}\) ha cardinalità \(p\) e \(M\subs\{1,\ldots,q+q'\}\) ha cardinalità \(q\). Denotiamo con \(L\), \(N\) i complementari di \(H\), \(M\). Le seguenti formule sono di verifica immediata (\(w\) denota un qualunque cubo di \(Q^{p+p'}_{n+n'}\)):
 \begin{itemize}
 \item \(B^p\lambda^0_Qw=\lambda^0_LB^{p+p'}w\);
 \item \(B^{p'}\lambda^1_Pw=\lambda^1_HB^{p+p'}w\);
@@ -76,7 +76,7 @@ Otteniamo dunque
 &=\sum_{H,M}(-1)^{p'q}\rho_{H,L}\rho_{M,N} f(B^p\lambda^0_QK(u,v),F^p\lambda^0_QK(u,v))\cdot f'(B^{p'}\lambda^1_PK(u,v),F^{p'}\lambda^1_PK(u,v))\\
 &=\sum_{H,M}(-1)^{p'q}\rho_{H,L}\rho_{M,N}f(\lambda^0_Lu,\lambda^0_Nv)\cdot f'(\lambda^1_Hu,\lambda^{0,1}_{L,H}K(u,\lambda^1_Mv)).
 \end{align*}
-Consideriamo l'applicazione \(T\) che a ogni cubo \(w\) di \(F\) di dimensione \(q'\) associa un cubo \(Tw\) di \(E\) di dimensione \(q'+1\) definito da
+Consideriamo l'applicazione \(T\) che a ogni cubo \(w\) di \(F\) di dimensione \(q'\) associa il cubo \(Tw\) di \(E\) di dimensione \(q'+1\) definito da
 \[
 (Tw)(t,x_1,\ldots,x_{q'})=K(u,w)(t\delta_1,\ldots,t\delta_{p+p'},x_1,\ldots,x_{q'}),
 \]
