@@ -2,7 +2,7 @@
 \label{ch:homology-and-cohomology-of-fibrations}
 \section{Omologia singolare cubica}
 
-L'omologia singolare classica utilizza i simplessi singolari come oggetti fondamentali. Per la teoria degli spazi fibrati dovremo introdurre la nozione di omologia singolare cubica, che impiega cubi in luogo dei simplessi. Tuttavia, come vedremo nel paragrafo \ref{cubic-homology:comparison}, dal punto di vista dell'omologia e della coomologia non vi è alcuna differenza. Per una trattazione completa della teoria dell'omologia singolare cubica, senza alcun riferimento a quella singolare classica, si veda \cite{massey}.
+L'omologia singolare classica utilizza i simplessi singolari come oggetti fondamentali. Per lo studio degli spazi fibrati dovremo introdurre la nozione di omologia singolare cubica, che impiega cubi in luogo dei simplessi. Tuttavia, come vedremo nel paragrafo \ref{cubic-homology:comparison}, dal punto di vista dell'omologia e della coomologia non vi è alcuna differenza. Per una trattazione completa della teoria dell'omologia singolare cubica, senza alcun riferimento a quella singolare classica, si veda \cite{massey}.
 
 Denoteremo con \(I\) l'intervallo chiuso \([0,1]\) munito dell'usuale topologia euclidea. Consideriamo uno spazio topologico \(X\).
 
@@ -20,7 +20,7 @@ Per snellire la notazione, se \(H=\{i\}\) (ossia se \(p=1\)), scriviamo \(\lambd
 \[
 d_nu=\sum_{i=1}^n\sum_{\epsilon=0}^1(-1)^{i+\epsilon}\lambda^\epsilon_iu,
 \]
-estendendo la mappa \(d_n\) a tutto \(Q_n(X)\) per \(\ZZ\)-linearità. È immediato verificare che \(\lambda^\epsilon_i\lambda^{\epsilon'}_j=\lambda^{\epsilon'}_{j-1}\lambda^\epsilon_i\); un semplice conto mostra allora che \(d_nd_{n+1}=0\). Abbiamo così definito il complesso \(Q_\bullet(X)\). Si vede inoltre che \(D_\bullet(X)\) è un sottocomplesso di \(Q_\bullet(X)\): se \(u\) è un cubo degenere di dimensione \(n\), allora anche \(\lambda^\epsilon_iu\) è degenere per \(0\le i<n\), mentre \(\lambda^0_nu=\lambda^1_nu\), pertanto \(du\) è degenere.
+estendendo la mappa \(d_n\) a tutto \(Q_n(X)\) per \(\ZZ\)-linearità. È immediato verificare che \(\lambda^\epsilon_i\lambda^{\epsilon'}_j=\lambda^{\epsilon'}_{j-1}\lambda^\epsilon_i\); un semplice conto mostra allora che \(d_nd_{n+1}=0\). Abbiamo così definito il complesso \(Q_\bullet(X)\). Si vede inoltre che \(D_\bullet(X)\) è un sottocomplesso di \(Q_\bullet(X)\): se \(u\) è un cubo degenere di dimensione \(n\), allora anche \(\lambda^\epsilon_iu\) è degenere per \(1\le i<n\), mentre \(\lambda^0_nu=\lambda^1_nu\), pertanto \(du\) è degenere.
 \begin{definition}
 Si dice \defterm{complesso singolare cubico} di \(X\) il complesso \(C_\bullet(X)=Q_\bullet(X)/D_\bullet(X)\). I suoi gruppi di omologia e coomologia a coefficienti in un gruppo abeliano \(G\) si dicono \defterm{gruppi di omologia e coomologia singolare cubica} di \(X\) a coefficienti in \(G\).
 \end{definition}
@@ -38,7 +38,7 @@ H^*(X;G)&=\Dirsum_{n\ge 0}H^n(X;G).
 \end{align*}
 
 \subsection{Prodotto cup}\label{cubic-homology:cup-product}
-Esattamente come nel caso della teoria singolare classica, se \(G\) è un anello \(H^*(X;G)\) acquisisce una struttura di \(G\)-algebra graduata. Si definisce il \cupproduct{} come segue: se \(u\) è un cubo di dimensione \(p+q\) e \(f,g\) sono cocatene di dimensione \(p,q\) rispettivamente, allora
+Esattamente come nel caso della teoria singolare classica, se \(G\) è un anello \(H^*(X;G)\) acquisisce una struttura di \(G\)-algebra graduata. Si definisce il \cupproduct{} come segue: se \(u\) è un cubo di dimensione \(p+q\) e \(f\), \(g\) sono cocatene di dimensione \(p\), \(q\) rispettivamente, allora
 \[
 (f\cupp g)u=\sum_H\rho_{H,K}f(\lambda^0_Ku)\cdot g(\lambda^1_Hu),
 \]
@@ -80,7 +80,7 @@ Alla luce di questa proposizione, nel seguito utilizzeremo sempre (almeno quando
 
 \section{Spazi fibrati}
 \begin{definition}
-Un'applicazione continua suriettiva \(\map{p}{E}{B}\) si dice \defterm{fibrazione} se soddisfa la seguente proprietà (sollevamento dell'omotopia per poliedri finiti): dati un poliedro finito \(P\) e due applicazioni continue \(\map{f}{P\times I}{B}\), \(\map{g}{P}{E}\) tali che \(pg=fi\) (dove \(i\) denota l'inclusione \(\map{i}{P}{P\times I}\) definita da \(i(x)=(0,x)\)), esiste un'applicazione continua \(\map{h}{P\times I}{E}\) tale che \(ph=f\) e \(hi=g\).
+Un'applicazione continua suriettiva \(\map{p}{E}{B}\) si dice \defterm{fibrazione} se soddisfa la seguente proprietà (sollevamento dell'omotopia per poliedri finiti): dati un poliedro finito \(P\) e due applicazioni continue \(\map{f}{P\times I}{B}\), \(\map{g}{P}{E}\) tali che \(pg=fi\) (dove \(i\) denota l'inclusione \(\map{i}{P}{P\times I}\) definita da \(i(x)=(x,0)\)), esiste un'applicazione continua \(\map{h}{P\times I}{E}\) tale che \(ph=f\) e \(hi=g\).
 \begin{diagram}
 P\rar{g}\dar{i}&E\dar{p}\\
 P\times I\rar{f}\ar[ru,dashed,"h"]&B
@@ -107,9 +107,10 @@ A\rar{g}\dar{j}&E\dar{p}\\
 X'\ar[dr,"i'"]\rar{f'}\ar[ru,"g'"]&B\\
 &X\ar[u,"f"]\ar[uu,bend right=60,dashed,"h"]
 \end{diagram}
-dove \(X'=A\times I^{n-1}\), \(j(x)=(x,s_1\ldots,s_{n-1})\), \(i'(x)=(x,s_n)\) e \(f'=fi'\); L'esistenza di \(g'\) è garantita dall'ipotesi induttiva, e l'esistenza di \(g\) deriva dalla definizione di fibrazione (infatti \(X=X'\times I\), e si vede facilmente che non serve richiedere \(s_n=0\)). Poiché \(i=i'j\) e il diagramma commuta, si ottiene immediatamente che \(ph=f\) e \(hi=g\).
+dove \(X'=A\times I^{n-1}\), \(j(x)=(x,s_1\ldots,s_{n-1})\), \(i'(x)=(x,s_n)\) e \(f'=fi'\); l'esistenza di \(g'\) è garantita dall'ipotesi induttiva, e l'esistenza di \(h\) deriva dalla definizione di fibrazione (infatti \(X=X'\times I\), e si vede facilmente che non serve richiedere \(s_n=0\)). Poiché \(i=i'j\) e il diagramma commuta, si ottiene immediatamente che \(ph=f\) e \(hi=g\).
 \end{proof}
-Sia \(Y\) il poliedro \(X/A\); denotiamo con \(\map{q}{X}{Y}\) la proiezione. Consideriamo un'immersione \(\map{j}{Y}{I^n}\) per un qualche \(n\ge 0\). Sia \(s\) il punto di \(I^n\) tale che \(jq(A)=\{s\}\). Poiché \(A\) è contrattile, esiste una retrazione\footnote{Questo si può vedere, ad esempio, applicando il lemma di estensione (\cite[lemma 4.7]{hatcher}) all'identità \(\map{\1}{A}{A}\).} \(\map{r}{X}{A}\). Definiamo l'immersione
+% Y è un CW-complesso perché quoziente di CW-complessi, e dunque si immerge in R^n
+Sia \(Y=X/A\); denotiamo con \(\map{q}{X}{Y}\) la proiezione. Consideriamo un'immersione \(\map{j}{Y}{I^n}\) per un qualche \(n\ge 0\). Sia \(s\) il punto di \(I^n\) tale che \(jq(A)=\{s\}\). Poiché \(A\) è contrattile, esiste una retrazione\footnote{Questo si può vedere, ad esempio, applicando il lemma di estensione (\cite[lemma 4.7]{hatcher}) all'identità \(\map{\1}{A}{A}\).} \(\map{r}{X}{A}\). Definiamo l'immersione
 \Map{l}{X}{A\times I^n}{x}{(r(x),jq(x)).}
 Poiché \(l(X)\) è un poliedro contrattile, esiste una retrazione \(A\times I^n\to l(X)\), che permette di estendere \(\map{fl^{-1}}{l(X)}{B}\) a \(\map{\tilde{f}}{A\times I^n}{B}\). Abbiamo così il diagramma commutativo
 \begin{diagram}
@@ -120,11 +121,11 @@ X\rar{f}\ar[dr,"l"]\ar[ru,"h",dashed]&B\\
 Poiché \(li(x)=(x,s)\) per ogni \(x\in A\), l'esistenza di \(\tilde{h}\) segue dal lemma. È ora evidente che \(h=\tilde{h}l\) soddisfa la tesi.
 \end{proof}
 \begin{proposition}\thlabel{fibration-homotopy-exact-sequence}
-Siano \(\map{p}{E}{B}\) una fibrazione, \(e\in E\), \(b=p(e)\), \(F=p^{-1}(e)\).
+Siano \(\map{p}{E}{B}\) una fibrazione, \(e\in E\), \(b=p(e)\), \(F=p^{-1}(b)\).
 \begin{enumerate}
 \item\label{fibration-homotopy-exact-sequence:1} La mappa \(p\) induce un isomorfismo \(\map{p_*}{\pi_i(E,F,e)}{\pi_i(B,b)}\) per ogni \(i\ge 1\).
 \item\label{fibration-homotopy-exact-sequence:2} Esiste una successione esatta lunga di gruppi
-\longexactsequence{\ldots\rar\&\pi_{i+1}(E,e)\rar\&\pi_{i+1}(B,b)\rar\&\pi_i(F,e)\rar\&\pi_i(E,e)\rar\&\ldots}{\ldots\rar\&\pi_1(F)\rar\&\pi_1(E,e)\rar\&\pi_1(B,b).}
+\longexactsequence{\ldots\rar\&\pi_{i+1}(B,b)\rar\&\pi_i(F,e)\rar\&\pi_i(E,e)\rar\&\pi_i(B,b)\rar\&\ldots}{\ldots\rar\&\pi_2(B,b)\rar\&\pi_1(F,e)\rar\&\pi_1(E,e)\rar\&\pi_1(B,b).}
 %\begin{diagram}
 %\ldots\rar&\pi_{i+1}(E,e)\rar&\pi_{i+1}(B,b)\rar&\pi_i(F,e)\rar&\pi_i(E,e)\rar&\ldots\\
 %&\ldots\rar&\pi_1(F)\rar&\pi_1(E,e)\rar&\pi_1(B,b).
@@ -141,7 +142,7 @@ A=(D^n\times\{0\})\cup(S^{n-1}\times I)\subs D^n\times I.
 Definiamo un sollevamento di \(H\)
 \Map{\tilde{H}}{A}{E}{(x,t)}{f(x).}
 Per la \thref{homotopy-lifting-plus} \(\tilde{H}\) si estende un'omotopia definita su tutto a tutto \(D^n\times I\). Osserviamo che \(\tilde{H}_0=f\), \(\tilde{H}_1(D^n)\subs F\) e \(\tilde{H}\) è stazionaria su \(S^{n-1}\), dunque \(\bar{f}=0\).
-\item Per verificare che \(p_*\) è suriettiva, sia \(\bar{g}\in\pi_i(B,b)\). Sia \(\map{g}{(D^n,S^n)}{(B,b)}\) un rappresentante della classe \(\bar{g}\). Consideriamo il poliedro finito contrattile \(\{s\}\subs D^n\) e l'applicazione \(\map{f}{\{s\}}{E}\) tale che \(f(s)=e\). Per la \thref{homotopy-lifting-plus} \(f\) si estende a tutto \(D^n\) in modo che \(pf=g\). Si vede immediatamente che la classe di omotopia di \(f\) appartiene a \(\pi_i(E,F,e)\), dunque \(p_*\bar{f}=\bar{g}\).\qedhere
+\item Per verificare che \(p_*\) è suriettiva, sia \(\bar{g}\in\pi_i(B,b)\). Sia \(\map{g}{(D^n,S^{n-1})}{(B,b)}\) un rappresentante della classe \(\bar{g}\). Consideriamo il poliedro finito contrattile \(\{s\}\subs D^n\) e l'applicazione \(\map{f}{\{s\}}{E}\) tale che \(f(s)=e\). Per la \thref{homotopy-lifting-plus} \(f\) si estende a tutto \(D^n\) in modo che \(pf=g\). Si vede immediatamente che la classe di omotopia di \(f\) appartiene a \(\pi_i(E,F,e)\), dunque \(p_*\bar{f}=\bar{g}\).\qedhere
 \end{itemize}
 \end{proof}
 
