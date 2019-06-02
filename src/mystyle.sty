@@ -33,7 +33,7 @@
       edge node={node [sloped, allow upside down, auto=false]{$#1$}}}
   }
 }
-\newenvironment*{diagram}[1][]{\begin{equation*}\begin{tikzcd}[#1]}{\end{tikzcd}\end{equation*}}
+\newenvironment*{diagram}[1][]{\begin{equation*}\begin{tikzcd}[#1]}{\end{tikzcd}\end{equation*}\ignorespacesafterend}
 \newcommand*{\longexactsequence}[2]{%
 \begin{flalign*}\begin{tikzcd}[ampersand replacement=\&]#1\end{tikzcd}&&\end{flalign*}%
 \vspace{-0.4cm}%
