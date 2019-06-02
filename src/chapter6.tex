@@ -25,24 +25,24 @@ V=V([t_0,t_1],U_1)\cap\ldots\cap V([t_{n-1},t_n],U_n)
 tale che \(V\times V\subs\tilde{U}\). Definiamo ora l'omotopia
 \Map{\tilde{H}}{\tilde{U}\times I}{\Omega}{(f,g,s)}{\tilde{H}_s(f,g)}
 dove \(\tilde{H}_s(f,g)(t)=H_s(f(t),g(t))\). Si verifica immediatamente che \(\tilde{H}\) soddisfa le proprietà \ref{ULC:pr1}, \ref{ULC:pr2} e \ref{ULC:pr3}. Per quanto riguarda la proprietà \ref{ULC:pr4}, consideriamo un cammino \(f\in\Omega\) e un suo intorno \(V\subs\Omega\).
-È ovviamente sufficiente considerare intorni della forma
-\[
-V=V(K_1,U_1)\cap\ldots\cap V(K_n,U_n)
-\]
-con \(K_1,\ldots,K_n\subs I\) compatti e \(U_1,\ldots,U_n\subs X\) aperti. Sfruttando la compattezza dei \(K_i\) e la proprietà \ref{ULC:pr4} soddisfatta da \(U\), possiamo trovare compatti \(K'_1,\ldots,K'_m\subs I\) e aperti \(U'_1,\ldots,U'_m\subs X\) tali che \(U'_i\times U'_i\subs U\), \(H_t(U'_i\times U'_i)\subs U'_i\) e
-\[
-V'=V(K'_1,U'_1)\cap\ldots\cap V(K'_m,U'_m)\subs V.
-\]
-È allora evidente che \(V'\times V'\subs\tilde{U}\) e \(\tilde{H}_t(V'\times V')\subs V'\).
-%Con un semplice ragionamento di compattezza possiamo trovare un intorno aperto \(V'\subs V\) di \(f\) della forma
+%È ovviamente sufficiente considerare intorni della forma
 %\[
-%V'=V([t_0,t_1],U_1)\cap\ldots\cap V([t_{n-1},t_n],U_n)
+%V=V(K_1,U_1)\cap\ldots\cap V(K_n,U_n)
 %\]
-%con \(0=t_0\le t_1\le\ldots\le t_{n-1}\le t_n=1\) e \(U_1,\ldots,U_n\) aperti di \(X\). Sempre per compattezza di \(I\) possiamo scegliere gli aperti \(U_i\) tali che \(U_i\times U_i\subs U\) e \(H_t(U_i\times U_i)\subs U_i\). È allora evidente che \(V'\times V'\subs\tilde{U}\) e \(\tilde{H}_t(V'\times V')\subs V'\).
+%con \(K_1,\ldots,K_n\subs I\) compatti e \(U_1,\ldots,U_n\subs X\) aperti. Sfruttando la compattezza dei \(K_i\) e la proprietà \ref{ULC:pr4} soddisfatta da \(U\), possiamo trovare compatti \(K'_1,\ldots,K'_m\subs I\) e aperti \(U'_1,\ldots,U'_m\subs X\) tali che \(U'_i\times U'_i\subs U\), \(H_t(U'_i\times U'_i)\subs U'_i\) e
+%\[
+%V'=V(K'_1,U'_1)\cap\ldots\cap V(K'_m,U'_m)\subs V.
+%\]
+%È allora evidente che \(V'\times V'\subs\tilde{U}\) e \(\tilde{H}_t(V'\times V')\subs V'\).
+Con un semplice ragionamento di compattezza possiamo trovare un intorno aperto \(V'\subs V\) di \(f\) della forma
+\[
+V'=V([t_0,t_1],U_1)\cap\ldots\cap V([t_{n-1},t_n],U_n)
+\]
+con \(0=t_0\le t_1\le\ldots\le t_{n-1}\le t_n=1\) e \(U_1,\ldots,U_n\) aperti di \(X\). È facile vedere che, a meno di suddividere ulteriormente \(I\), grazie al fatto che \(X\) soddisfa la proprietà \ref{ULC:pr4} possiamo scegliere gli aperti \(U_i\) tali che \(U_i\times U_i\subs U\) e \(H_t(U_i\times U_i)\subs U_i\). È allora evidente che \(V'\times V'\subs\tilde{U}\) e \(\tilde{H}_t(V'\times V')\subs V'\).
 \end{proof}
 
 \begin{proposition}\thlabel{ULC-locally-contractible}
-Sia \(X\) uno spazio topologico ULC. Allora \(X\) è localmente contrattile\todo{Serve un glossario}.
+Sia \(X\) uno spazio topologico ULC. Allora \(X\) è localmente contrattile.
 \end{proposition}
 \begin{proof}
 Sia \(\map{H}{U\times I}{X}\) l'omotopia della definizione di ULC. Siano \(x_0\in X\) un punto, \(V\subs X\) un suo intorno. Consideriamo l'intorno \(V'\subs V\) di \(x_0\) dato dalla \ref{ULC:pr4}. Definiamo l'omotopia
@@ -72,7 +72,7 @@ dove \(i(x)=(x,0)\), \((q\times\1)(x,y,t)=(q(x,y),t)\),  \(F=H\circ(q\times\1)\)
 \setcounter{enumi}{1}
 \item \(\tilde{F}_1\) è un sollevamento di \(F_1\) tale che \(\tilde{F}_1(x,x)=x\); per connessione di \(\tilde{U}\) esiste un solo sollevamento con questa proprietà, ossia \(\tilde{F}_1(x,y)=y\)
 \setcounter{enumi}{3}
-\item Siano \(x\in T\) un punto, \(V\subs T\) un suo intorno. Scegliamo un intorno \(W\subs p(V)\) di \(p(x)\) in modo che \(W\) sia ben rivestito\todo{Che vuol dire? Glossario!} e soddisfi \(W\times W\subs U\) e \(H_t(W\times W)\subs W\). Osserviamo che quest'ultima condizione implica che \(W\) è contrattile, dunque in particolare connesso. Sia \(V'\) la componente connessa di \(p^{-1}(W)\) che contiene \(x\). Notiamo innanzitutto che \(V'\times V'\subs q^{-1}(U)\) e \((x,x)\in V'\times V'\), dunque \(V'\times V'\subs\tilde{U}\), in quanto \(V'\times V'\) è connesso. Inoltre \(q(V'\times V')\subs W\times W\), pertanto \(p\tilde{F}_t(V'\times V')\subs H_t(W\times W)\subs W\); essendo \(\tilde{F}_t(V'\times V')\) connesso segue che \(\tilde{F}_t(V'\times V')\subs V'\).
+\item Siano \(x\in T\) un punto, \(V\subs T\) un suo intorno. Scegliamo un intorno \(W\subs p(V)\) di \(p(x)\) in modo che \(W\) sia ben rivestito e soddisfi \(W\times W\subs U\) e \(H_t(W\times W)\subs W\). Osserviamo che quest'ultima condizione implica che \(W\) è contrattile, dunque in particolare connesso. Sia \(V'\) la componente connessa di \(p^{-1}(W)\) che contiene \(x\). Notiamo innanzitutto che \(V'\times V'\subs q^{-1}(U)\) e \((x,x)\in V'\times V'\), dunque \(V'\times V'\subs\tilde{U}\), in quanto \(V'\times V'\) è connesso. Inoltre \(q(V'\times V')\subs W\times W\), pertanto \(p\tilde{F}_t(V'\times V')\subs H_t(W\times W)\subs W\); essendo \(\tilde{F}_t(V'\times V')\) connesso segue che \(\tilde{F}_t(V'\times V')\subs V'\).
 \end{enumerate}
 Abbiamo così dimostrato che \(T\) è ULC.
 \end{proof}

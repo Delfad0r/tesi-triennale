@@ -62,16 +62,3 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem*{lemma*}{Lemma}
 \newcommand*{\defterm}[1]{\emph{#1}}
-
-% Debug
-\usepackage[italian]{todonotes}
-\ifdefined\debug%
-    \newcommand*{\missing}{\(\blacksquare\)}%
-    % Unused labels
-    \usepackage{refcheck}%
-    \renewcommand*{\thlabel}[1]{\label{#1}}%
-    \renewcommand*{\thref}[1]{\ref{#1}}%
-\else%
-    \renewcommand*{\listoftodos}{}
-    \renewcommand*{\todo}[1]{}
-\fi
